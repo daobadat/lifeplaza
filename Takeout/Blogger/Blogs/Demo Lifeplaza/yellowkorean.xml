@@ -754,7 +754,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; }
 .yk-filter-btn {
   padding: 7px 16px;
-  border-radius: 8px;
+  border-radius: 3px;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -775,7 +775,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-card {
   background:#fff;
   border:1px solid #e0e0e0;
-  border-radius:12px;
+  border-radius:3px;
   padding:24px 28px;
   transition: border-color .2s, box-shadow .2s;
   cursor:pointer;
@@ -830,7 +830,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
   margin-top:40px;
   background:linear-gradient(135deg,#c8e6c9,#a5d6a7);
   border:1px solid #81c784;
-  border-radius:12px;
+  border-radius:3px;
   padding:36px 24px;
   text-align:center;
   box-shadow:0 2px 8px rgba(46,125,50,.1);
@@ -1139,13 +1139,13 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
         <!-- Toolbar: search + city filter + counter -->
         <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;align-items:center">
           <input id="ykSearchInput" type="text" placeholder="업체명 검색..." oninput="ykSearch()"
-            style="flex:1;min-width:180px;padding:9px 14px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none;font-family:inherit"
+            style="flex:1;min-width:180px;padding:9px 14px;border:1px solid #e0e0e0;border-radius:3px;font-size:13px;outline:none;font-family:inherit"
             onfocus="this.style.borderColor='#2e7d32'" onblur="this.style.borderColor='#e0e0e0'"/>
           <select id="ykCitySelect" onchange="ykCityFilter(this)"
-            style="padding:9px 14px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;background:#fff;cursor:pointer;font-family:inherit">
+            style="padding:9px 14px;border:1px solid #e0e0e0;border-radius:3px;font-size:13px;background:#fff;cursor:pointer;font-family:inherit">
             <option value="">모든 지역</option>
           </select>
-          <span id="ykCounter" style="font-size:12px;color:#888;white-space:nowrap"></span>
+          <span id="ykCounter" style="font-size:12px;color:##000000;white-space:nowrap"></span>
         </div>
 
         <div class="yk-grid" id="ykGrid"></div>
@@ -2302,16 +2302,14 @@ function lpSubToggle(arrow){
 <script type="text/javascript">
 //<![CDATA[
 (function(){
-  var lastY = 0;
-  var threshold = 60;
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
-    if (y > threshold) {
+    var isScrolled = document.body.classList.contains('scrolled');
+    if (!isScrolled && y > 150) {
       document.body.classList.add('scrolled');
-    } else {
+    } else if (isScrolled && y <= 20) {
       document.body.classList.remove('scrolled');
     }
-    lastY = y;
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
