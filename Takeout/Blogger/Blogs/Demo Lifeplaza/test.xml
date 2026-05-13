@@ -1,0 +1,2185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="vi" lang="vi" dir="<$BlogLanguageDirection$>">
+<head>
+  <title><$BlogPageTitle$></title>
+  <$BlogMetaData$>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizUqjZuHuromQCSH794matdgebJGe-65SJ8hIxrpHQGTeEULUzmq_a4p0jumvdbSA4Kw1WpBGSNjjcIX19ILSayAgaqKSqeTuNFoIV4zCHyIOy5Dcyu0BgN9XaFFAIs_TZJm93iGKzaD-h2PbhO0rc-dFELk_mo1079DZcSEIx-6eDTei7qULk2Xp_UjxL/s48/download.png' rel='icon' type='image/png'/>
+  <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizUqjZuHuromQCSH794matdgebJGe-65SJ8hIxrpHQGTeEULUzmq_a4p0jumvdbSA4Kw1WpBGSNjjcIX19ILSayAgaqKSqeTuNFoIV4zCHyIOy5Dcyu0BgN9XaFFAIs_TZJm93iGKzaD-h2PbhO0rc-dFELk_mo1079DZcSEIx-6eDTei7qULk2Xp_UjxL/s48/download.png' rel='shortcut icon' type='image/png'/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+  <style type="text/css">
+/* ===== RESET ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden;width:100%}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#333;font-size:14px;text-align:left}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ul,ol{list-style:none;padding:0;margin:0}
+
+body {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+#header {
+  margin: 0 !important;
+  padding: 12px 0 !important;
+}
+#navbar-iframe {
+  display: none !important;
+  height: 0 !important;
+  visibility: hidden !important;
+}
+/* ===== LAYOUT ===== */
+.lp-wrap{max-width:1650px;margin:0 auto;padding:0 20px}
+
+/* ===== TOPBAR ===== */
+#header{background:#fff;border-bottom:1px solid #e0e0e0;padding:12px 0!important;margin:0!important}
+.lp-topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#blog-title{font-size:24px;font-weight:800;margin:0;padding-bottom:5px;line-height:1}
+#blog-title a{text-decoration:none}
+#blog-title .g{color:#8BC34A}
+#blog-title .d{color:#444}
+#description{display:none}
+.lp-search-wrap{display:flex;align-items:center;gap:6px;flex:1;max-width:400px}
+.lp-search-box{position:relative;flex:1}
+.lp-search-box input{width:100%;padding:7px 34px 7px 10px;border:1px solid #ccc;font-size:13px;outline:none;background:#fafafa;font-family:inherit}
+.lp-search-box input:focus{border-color:#8BC34A}
+.lp-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#888;font-size:15px;padding:0}
+.lp-lang-flags{display:flex;align-items:center;gap:4px;flex-shrink:0}
+.lp-flag-btn{display:inline-flex;align-items:center;justify-content:center;border:2px solid rgba(0,0,0,.12);border-radius:4px;overflow:hidden;cursor:pointer;background:none;padding:0;transition:border-color .2s,transform .2s;width:40px;height:28px}
+.lp-flag-btn:hover{border-color:#8BC34A;transform:scale(1.08)}
+.lp-flag-btn img{width:40px;height:28px;object-fit:cover;display:block}
+
+/* ===== NAV (Dropdown Menu) ===== */
+#lp-nav{background:#8BC34A;margin:0;padding:0;position:relative;z-index:200}
+#lp-nav .lp-wrap{position:static}
+#lp-nav ul#lp-menu{display:flex;overflow:visible;margin:0;padding:0 10px;list-style:none;justify-content:space-between}
+#lp-nav ul#lp-menu::-webkit-scrollbar{height:3px}
+
+/* Top-level items */
+#lp-menu > li{position:relative;text-align:center;flex:1}
+#lp-menu > li > a{display:block;padding:11px 10px;color:#fff;font-size:12px;font-weight:700;letter-spacing:.5px;white-space:nowrap;transition:background .2s;text-transform:uppercase}
+#lp-menu > li:hover > a,
+#lp-menu > li > a:hover{background:rgba(0,0,0,.18);color:#fff}
+#lp-menu > li#mn-yellow:hover > a{background:#FFD200;color:#333}
+
+/* Dropdown panel */
+#lp-menu ul.lp-dropdown{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:100%;
+  min-width:170px;
+  background:#fff;
+  border-radius:0 0 6px 6px;
+  box-shadow:0 4px 12px rgba(0,0,0,.18);
+  list-style:none;
+  padding:4px 0;
+  margin:0;
+  z-index:300;
+  opacity:0;
+  visibility:hidden;
+  transform:translateX(-50%) translateY(8px);
+  transition:opacity .22s ease, transform .22s ease;
+  pointer-events:none;
+}
+#lp-menu > li:hover > ul.lp-dropdown{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(0);
+  pointer-events:auto;
+}
+
+/* Dropdown items */
+#lp-menu ul.lp-dropdown li{padding:0;text-align:left}
+#lp-menu ul.lp-dropdown li a{
+  display:block;
+  padding:9px 18px;
+  font-size:12px;
+  font-weight:600;
+  color:#333;
+  white-space:nowrap;
+  transition:background .15s, color .15s;
+}
+#lp-menu ul.lp-dropdown li:hover > a{background:#8BC34A;color:#fff}
+#lp-menu #mn-yellow ul.lp-dropdown li:hover > a{background:#FFD200;color:#333}
+
+/* Arrow indicator for parent items with submenu */
+#lp-menu > li.has-sub > a::after{
+  content:' ▾';
+  font-size:9px;
+  vertical-align:middle;
+  opacity:.8;
+}
+
+/* Mobile: hide nav overflow, show scroll */
+@media(max-width:700px){
+  #lp-menu > li{flex:none}
+  #lp-nav ul#lp-menu{overflow-x:auto;justify-content:flex-start}
+  #lp-menu ul.lp-dropdown{left:0;transform:none;min-width:140px}
+  #lp-menu > li:hover > ul.lp-dropdown{transform:translateY(0)}
+}
+
+/* ===== CONTENT AREA ===== */
+#content{max-width:1650px;margin:0 auto;padding:18px 20px 40px;text-align:left}
+.lp-grid{display:grid;grid-template-columns:1fr;gap:22px}
+@media(min-width:900px){.lp-grid{grid-template-columns:3fr 1fr}}
+
+/* SECTION TITLE */
+.lp-section-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.lp-section-title .bar{width:4px;height:20px;background:#8BC34A;flex-shrink:0}
+.lp-section-title h2{font-size:15px;font-weight:700;color:#333;white-space:nowrap;margin:0;padding:0;line-height:1}
+.lp-section-title .line{flex:1;height:1px;background:#e0e0e0}
+
+/* CARD */
+.lp-card{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.lp-divider>*+*{border-top:1px solid #f0f0f0}
+
+/* ===== NEWS SLIDER ===== */
+.lp-slider{position:relative;height:360px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:18px}
+.lp-slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+.lp-slide.active{opacity:1;z-index:2}
+.lp-slide img{width:100%;height:100%;object-fit:cover}
+.lp-slide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 55%,transparent 100%)}
+.lp-slide-content{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:3}
+.lp-slide-cat{display:inline-block;background:#8BC34A;color:#fff;font-size:10px;font-weight:700;padding:3px 9px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.lp-slide-date{color:rgba(255,255,255,.65);font-size:11px;margin-bottom:6px}
+.lp-slide-title{color:#fff;font-size:16px;font-weight:700;line-height:1.4;overflow:hidden;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.lp-slide-sub{color:rgba(255,255,255,.75);font-size:12px;line-height:1.5;overflow:hidden;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.lp-slide-btn{display:inline-block;background:#8BC34A;color:#fff;font-size:11px;font-weight:600;padding:6px 14px;cursor:pointer;border:none;transition:background .2s}
+.lp-slide-btn:hover{background:#7CB342}
+.lp-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(0,0,0,.4);color:#fff;border:none;cursor:pointer;padding:8px 11px;font-size:20px;transition:background .2s;line-height:1}
+.lp-slider-arrow:hover{background:rgba(0,0,0,.65)}
+.lp-slider-arrow.prev{left:8px}
+.lp-slider-arrow.next{right:8px}
+.lp-slider-dots{position:absolute;top:10px;right:10px;z-index:10;display:flex;gap:4px;align-items:center}
+.lp-dot{height:8px;background:rgba(255,255,255,.55);border:none;cursor:pointer;width:8px;transition:width .3s,background .3s;padding:0}
+.lp-dot.active{width:22px;background:#8BC34A}
+.lp-slider-progress{position:absolute;bottom:0;left:0;height:3px;background:#8BC34A;z-index:10;transition:width .4s}
+
+/* ===== COMPANY LISTINGS ===== */
+.lp-company-item{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;transition:background .2s}
+.lp-company-item:hover{background:#fafafa}
+.lp-company-logo{width:52px;height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+.lp-company-info{flex:1;min-width:0}
+.lp-company-name-row{display:flex;align-items:center;gap:6px;margin-bottom:3px}
+.lp-company-name{font-size:13px;font-weight:700;color:#222;transition:color .2s}
+.lp-company-item:hover .lp-company-name{color:#8BC34A}
+.lp-company-tag{font-size:10px;padding:1px 6px}
+/* FIX: phone icon + green color */
+.lp-company-phone{font-size:11px;color:#8BC34A;font-weight:600;display:flex;align-items:center;gap:4px}
+.lp-company-phone::before{content:"";display:inline-block;width:12px;height:12px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238BC34A'%3E%3Cpath d='M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:contain;flex-shrink:0}
+.lp-company-addr{font-size:11px;color:#aaa;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* FIX: external icon */
+.lp-external{color:#ccc;font-size:13px;flex-shrink:0;transition:color .2s;line-height:1;display:flex;align-items:center;justify-content:center;width:24px;height:24px}
+.lp-company-item:hover .lp-external{color:#8BC34A}
+
+/* ===== NEWS LIST (improved) ===== */
+.lp-post-list .post-outer,
+.lp-news-item{display:flex;gap:14px;padding:14px 16px;cursor:pointer;transition:background .2s;align-items:flex-start}
+.lp-post-list .post-outer:hover,
+.lp-news-item:hover{background:#fafafa}
+.lp-post-list .post-outer+.post-outer,
+.lp-divider .post-outer+.post-outer{border-top:1px solid #f0f0f0}
+
+.lp-news-thumb,.post-thumbnail{width:110px;height:76px;flex-shrink:0;overflow:hidden;border-radius:2px}
+.lp-news-thumb img,.post-thumbnail img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.lp-news-item:hover .lp-news-thumb img,
+.lp-post-list .post-outer:hover .post-thumbnail img{transform:scale(1.06)}
+.lp-news-body,.post-body-container{flex:1;min-width:0}
+
+/* Meta row: badge + date */
+.lp-news-meta,.post-meta{display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap}
+.lp-cat-badge{font-size:10px;padding:2px 7px;font-weight:700;border-radius:2px}
+.lp-news-date,.post-date{font-size:11px;color:#aaa;white-space:nowrap}
+
+/* Title: green on hover like image */
+.lp-news-title,.post-title{
+  font-size:13px;font-weight:700;color:#222;line-height:1.45;
+  overflow:hidden;transition:color .2s;margin-bottom:4px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;padding:0
+}
+.lp-news-title a,.post-title a{color:#222;font-size:13px;font-weight:700}
+.lp-news-item:hover .lp-news-title,
+.lp-post-list .post-outer:hover .post-title,
+.lp-post-list .post-outer:hover .post-title a{color:#5a9e1a}
+
+/* Excerpt */
+.lp-news-excerpt,.post-snippet{font-size:11px;color:#888;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+
+/* Label wrap — dùng font-size:0 để ẩn dấu phẩy text node (CSS trick) */
+.lp-label-wrap,
+.lp-label-wrap .labels,
+.lp-label-wrap .labels-links{
+  display:inline-flex;
+  flex-wrap:wrap;
+  gap:4px;
+  align-items:center;
+  vertical-align:middle;
+  font-size:0; /* ẩn dấu phẩy / text node */
+}
+/* ── Pill style cho mọi <a> bên trong lp-label-wrap ── */
+.lp-label-wrap a{
+  display:inline-block;
+  font-size:10px !important; /* override font-size:0 của cha */
+  padding:2px 8px;
+  font-weight:700;
+  border-radius:3px;
+  text-decoration:none;
+  white-space:nowrap;
+  letter-spacing:.3px;
+  line-height:1.5;
+  background:#e5e7eb; /* fallback màu xám nếu label không khớp */
+  color:#374151;
+  transition:opacity .2s, transform .15s;
+}
+.lp-label-wrap a:hover{opacity:.8;transform:translateY(-1px)}
+
+/* ── Màu theo href (CSS-only, hoạt động kể cả khi JS chưa chạy) ── */
+.lp-label-wrap a[href*="NEWS"]{background:#dbeafe;color:#1d4ed8}
+.lp-label-wrap a[href*="LIFESTYLE"]{background:#f3e8ff;color:#7e22ce}
+.lp-label-wrap a[href*="EVENT"]{background:#ffedd5;color:#c2410c}
+.lp-label-wrap a[href*="INTERVIEW"]{background:#fce7f3;color:#be185d}
+.lp-label-wrap a[href*="COOPERATION"]{background:#dcfce7;color:#166534}
+.lp-label-wrap a[href*="USEFUL"]{background:#fef9c3;color:#854d0e}
+.lp-label-wrap a[href*="EDUCATION"]{background:#e0e7ff;color:#3730a3}
+.lp-label-wrap a[href*="REAL"]{background:#ccfbf1;color:#0f766e}
+.lp-label-wrap a[href*="YELLOW"]{background:#fef3c7;color:#92400e}
+.lp-label-wrap a[href*="YOUTUBE"]{background:#fee2e2;color:#dc2626}
+.lp-label-wrap a[href*="BOARD"]{background:#f0f0f0;color:#555}
+.lp-label-wrap a[href*="BANNER"]{background:#e0f2fe;color:#0369a1}
+.lp-label-wrap a[href*="SPECIAL"]{background:#ede9fe;color:#4c1d95}
+.lp-label-wrap a[href*="CONTRIBUTION"]{background:#ecfdf5;color:#065f46}
+.lp-label-wrap a[href*="MARKET"]{background:#fff7ed;color:#9a3412}
+.lp-label-wrap a[href*="EBOOK"]{background:#f0fdf4;color:#14532d}
+.lp-label-wrap a[href*="PHOTO"]{background:#f0f9ff;color:#0c4a6e}
+.lp-label-wrap a[href*="K-FOOD"]{background:#fee2e2;color:#b91c1c}
+.lp-label-wrap a[href*="LIFE"]{background:#d1fae5;color:#065f46}
+.lp-label-wrap a[href*="PLAZA"]{background:#d1fae5;color:#065f46}
+.lp-label-wrap a[href*="VIETNAM"]{background:#fef2f2;color:#991b1b}
+.lp-label-wrap a[href*="BUILDING"]{background:#fef3c7;color:#78350f}
+.lp-label-wrap a[href*="KOREAN"]{background:#eff6ff;color:#1e40af}
+.lp-label-wrap a[href*="TRANSPORTATION"]{background:#f5f3ff;color:#5b21b6}
+.lp-label-wrap a[href*="COLLABORATION"]{background:#ecfdf5;color:#064e3b}
+.lp-label-wrap a[href*="APPs"]{background:#f0f9ff;color:#0369a1}
+.lp-label-wrap a[href*="SOFTWARE"]{background:#faf5ff;color:#6b21a8}
+.lp-label-wrap a[href*="TECHNOLOGY"]{background:#eff6ff;color:#1e3a8a}
+.lp-label-wrap a[href*="AUDITING"]{background:#fff1f2;color:#9f1239}
+.lp-label-wrap a[href*="CONSTRUCTION"]{background:#fefce8;color:#713f12}
+.lp-label-wrap a[href*="FURNITURE"]{background:#fff7ed;color:#7c2d12}
+.lp-label-wrap a[href*="MEDICATION"]{background:#fdf4ff;color:#701a75}
+.lp-label-wrap a[href*="CONSULTING"]{background:#fef9c3;color:#78350f}
+.lp-label-wrap a[href*="CONTACT"]{background:#e0f2fe;color:#075985}
+.lp-label-wrap a[href*="PLAN"]{background:#ede9fe;color:#5b21b6}
+.lp-label-wrap a[href*="PRESIDENT"]{background:#fce7f3;color:#9d174d}
+.lp-label-wrap a[href*="PRIORITY"]{background:#fee2e2;color:#991b1b}
+.lp-label-wrap a[href*="SOCIAL"]{background:#fdf4ff;color:#7e22ce}
+.lp-label-wrap a[href*="VISION"]{background:#f0fdf4;color:#166534}
+/* Xóa dấu phẩy/khoảng trắng thêm: dùng JS hoặc font-size:0 trick ở trên */
+#lp-latest-list{list-style:none;margin:0;padding:0}
+#lp-latest-list li{padding:10px 14px;border-top:1px solid #f0f0f0;transition:background .2s}
+#lp-latest-list li:first-child{border-top:none}
+#lp-latest-list li:hover{background:#fafafa}
+#lp-latest-list li a.lp-ln-title{
+  display:flex;align-items:flex-start;gap:7px;
+  font-size:12px;font-weight:600;color:#333;
+  text-decoration:none;line-height:1.4;
+  transition:color .2s;
+}
+#lp-latest-list li:hover a.lp-ln-title{color:#5a9e1a}
+#lp-latest-list li a.lp-ln-title::before{content:"■";color:#8BC34A;font-size:8px;flex-shrink:0;margin-top:4px}
+.lp-ln-meta{display:flex;align-items:center;gap:6px;margin-top:4px;padding-left:15px}
+.lp-ln-badge{font-size:9px;padding:1px 6px;font-weight:700;border-radius:2px}
+.lp-ln-date{font-size:10px;color:#aaa}
+
+/* Blogger native post reset inside our layout */
+#main .date-header{display:none}
+#main .post{margin:0;padding:0;border:none}
+#main p.post-footer{display:none}
+
+/* CATEGORY COLORS */
+.cat-NEWS{background:#dbeafe;color:#1d4ed8}
+.cat-LIFESTYLE{background:#f3e8ff;color:#7e22ce}
+.cat-EVENT{background:#ffedd5;color:#c2410c}
+.cat-INTERVIEW{background:#fce7f3;color:#be185d}
+.cat-COOPERATION{background:#dcfce7;color:#166534}
+.cat-USEFUL{background:#fef9c3;color:#854d0e}
+.cat-K-FOOD{background:#fee2e2;color:#b91c1c}
+.cat-EDUCATION{background:#e0e7ff;color:#3730a3}
+.cat-REAL-ESTATE{background:#ccfbf1;color:#0f766e}
+.cat-default{background:#f0f0f0;color:#555}
+
+
+
+/* ===== SIDEBAR ===== */
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+#sidebar{float:none;width:auto;margin:0;font-size:14px;line-height:1.5}
+.lp-sidebar-block{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);overflow:hidden;margin-bottom:14px;animation:fadeSlideUp 0.6s ease-out both}
+.lp-sidebar-block:nth-child(1){animation-delay:0.1s}
+.lp-sidebar-block:nth-child(2){animation-delay:0.2s}
+.lp-sidebar-block:nth-child(3){animation-delay:0.3s}
+.lp-sidebar-block:nth-child(4){animation-delay:0.4s}
+.lp-sidebar-block:nth-child(5){animation-delay:0.5s}
+.lp-sidebar-head{display:flex;align-items:center;gap:8px;padding:9px 14px}
+.lp-sidebar-head .icon{font-size:13px}
+.lp-sidebar-head .stitle{font-size:13px;font-weight:700;color:#fff}
+.lp-head-green{background:#8BC34A}
+.lp-head-dark{background:#1f2937}
+.lp-head-gray{background:#374151}
+
+.lp-hot-item{display:flex;gap:10px;padding:10px 12px;cursor:pointer;transition:background .2s;border-top:1px solid #f0f0f0}
+.lp-hot-item:first-of-type{border-top:none}
+.lp-hot-item:hover{background:#fafafa}
+.lp-hot-thumb{position:relative;width:60px;height:46px;flex-shrink:0;overflow:hidden}
+.lp-hot-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.lp-hot-item:hover .lp-hot-thumb img{transform:scale(1.06)}
+.lp-hot-num{position:absolute;top:0;left:0;width:18px;height:18px;background:#8BC34A;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.lp-hot-title{font-size:12px;font-weight:600;color:#333;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s}
+.lp-hot-item:hover .lp-hot-title{color:#8BC34A}
+.lp-hot-date{font-size:10px;color:#aaa;margin-top:3px}
+
+.lp-latest-item{padding:10px 14px;cursor:pointer;transition:background .2s;border-top:1px solid #f0f0f0}
+.lp-latest-item:first-of-type{border-top:none}
+.lp-latest-item:hover{background:#fafafa}
+.lp-latest-inner{display:flex;align-items:flex-start;gap:8px}
+.lp-latest-dot{width:6px;height:6px;background:#8BC34A;border-radius:50%;flex-shrink:0;margin-top:5px}
+.lp-latest-title{font-size:12px;font-weight:600;color:#333;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s;margin-bottom:3px}
+.lp-latest-item:hover .lp-latest-title{color:#8BC34A}
+.lp-latest-title a{color:inherit;font-size:inherit;font-weight:inherit}
+.lp-latest-date{font-size:10px;color:#aaa}
+
+/* Blogger sidebar widget reset */
+.box,.box2,.box3{background:none!important;margin:0!important;padding:0!important}
+.sidebar-title{display:none}
+.profile-textblock,.profile-img,.profile-data{padding:8px 14px}
+#profile-container{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:14px;padding:0}
+#profile-container h2{background:#374151;color:#fff;font-size:13px;font-weight:700;padding:9px 14px;margin:0;border:none}
+#profile-container a{color:#8BC34A}
+
+.lp-cats{padding:12px 14px;display:flex;flex-wrap:wrap;gap:6px}
+.lp-cat-pill{padding:4px 11px;font-size:11px;font-weight:600;cursor:pointer;border:none;border-radius:3px;display:inline-block;transition:all .2s ease;transform:translateY(0)}
+.lp-cat-pill:hover{filter:brightness(0.85);transform:translateY(-2px);box-shadow:0 3px 8px rgba(0,0,0,.15)}
+
+/* Recent posts in sidebar */
+#recently{margin:0;padding:0;list-style:none}
+#recently li{border-top:1px solid #f0f0f0;padding:9px 14px}
+#recently li:first-child{border-top:none}
+#recently li a{font-size:12px;font-weight:600;color:#333;transition:color .2s;display:flex;align-items:flex-start;gap:6px}
+#recently li a::before{content:"•";color:#8BC34A;font-weight:900;flex-shrink:0}
+#recently li a:hover{color:#8BC34A}
+
+/* Archive list */
+.archive-list{margin:0;padding:0;list-style:none}
+.archive-list li{border-top:1px solid #f0f0f0;padding:8px 14px}
+.archive-list li:first-child{border-top:none}
+.archive-list li a{font-size:12px;color:#555;transition:color .2s}
+.archive-list li a:hover{color:#8BC34A}
+
+/* Contact sidebar */
+.lp-contact-item{display:flex;gap:12px;padding:10px 14px;transition:background .2s;border-top:1px solid #f0f0f0;align-items:center}
+.lp-contact-item:first-of-type{border-top:none}
+.lp-contact-item:hover{background:#fafafa}
+.lp-contact-logo{width:56px;height:56px;flex-shrink:0;border:1px solid #eee;border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
+.lp-contact-logo img{width:100%;height:100%;object-fit:contain;padding:4px}
+.lp-contact-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:4px;font-size:11px;font-weight:800}
+.lp-contact-name{font-size:12px;font-weight:700;color:#333;transition:color .2s;margin-bottom:2px}
+.lp-contact-item:hover .lp-contact-name{color:#8BC34A}
+.lp-contact-phone{font-size:11px;color:#8BC34A;font-weight:600}
+.lp-contact-addr{font-size:10px;color:#aaa;line-height:1.4}
+
+/* ===== SINGLE POST PAGE ===== */
+.lp-single-post{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);padding:20px 24px;margin-bottom:16px}
+.lp-single-post .post-title{font-size:20px;font-weight:700;color:#222;line-height:1.4;margin-bottom:8px;display:block;-webkit-line-clamp:unset}
+.lp-single-post .post-title a{font-size:20px;font-weight:700;color:#222}
+.lp-single-post .lp-news-meta{margin-bottom:14px}
+.lp-single-post .post-body{font-size:14px;line-height:1.8;color:#333;margin-bottom:16px}
+.lp-single-post .post-body img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 4px;
+  margin: 12px 0;
+}
+.lp-single-post .post-body p{margin-bottom:12px}
+.lp-single-post .post-body h2{font-size:17px;font-weight:700;margin:18px 0 8px;color:#222}
+.lp-single-post .post-body blockquote{border-left:3px solid #8BC34A;margin:12px 0;padding:8px 14px;background:#f9f9f9;color:#555;font-style:italic}
+.lp-single-post .post-footer-info{font-size:11px;color:#aaa;padding-top:12px;border-top:1px solid #f0f0f0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lp-single-post .post-footer-info a{color:#8BC34A}
+
+/* (label badge CSS đã được định nghĩa đầy đủ ở trên) */
+
+/* Comments */
+#comments{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);padding:20px 24px;margin-bottom:16px}
+#comments h4{font-size:14px;font-weight:700;color:#333;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #f0f0f0}
+.comment-data{font-size:11px;color:#aaa;margin-bottom:4px}
+.comment-poster{font-weight:700;color:#333}
+.comment-body{font-size:13px;color:#555;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0}
+.comment-body:last-child{border-bottom:none}
+
+/* ===== FOOTER ===== */
+#footer{clear:both;margin:0;padding:0}
+#footer div{background:#f9f9f9;padding:0}
+    #footer div {
+  border-top: none !important;
+}
+#footer div div{background:none;padding:16px 12px}
+.lp-footer-inner{max-width:1440px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:0 20px}
+.lp-footer-logo{font-size:18px;font-weight:800}
+.lp-footer-logo .g{color:#8BC34A}
+.lp-footer-logo .d{color:#444}
+.lp-footer-copy{font-size:12px;color:#888}
+.lp-footer-copy a{color:#1a73e8;font-weight:600}
+.lp-footer-social{display:flex;gap:14px}
+.lp-footer-social a{color:#666;font-size:12px;font-weight:600;transition:color .2s}
+.lp-footer-social a:hover{color:#8BC34A}
+#footer hr{display:none}
+#footer p{margin:0}
+
+/* New Footer Grid */
+.lp-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .lp-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .lp-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ===== MOBILE NAV TOGGLE ===== */
+#lp-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;color:#fff;font-size:22px;line-height:1;flex-shrink:0}
+#lp-nav-mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:400}
+#lp-nav-mobile-overlay.open{display:block}
+#lp-mobile-menu{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:260px;
+  height:100vh;
+  background:#fff;
+  z-index:500;
+  overflow-y:auto;
+  box-shadow:4px 0 18px rgba(0,0,0,.18);
+  transform:translateX(-100%);
+  transition:transform .3s ease;
+  flex-direction:column;
+}
+#lp-mobile-menu.open{
+  display:flex;
+  transform:translateX(0);
+}
+#lp-mobile-menu-head{
+  background:#8BC34A;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+#lp-mobile-menu-head .mm-logo{font-size:18px;font-weight:800;color:#fff;text-decoration:none}
+#lp-mobile-menu-head .mm-logo span{color:#FFD200}
+#lp-mobile-menu-close{background:none;border:none;color:#fff;font-size:22px;cursor:pointer;line-height:1;padding:0}
+#lp-mobile-menu ul{list-style:none;margin:0;padding:8px 0}
+#lp-mobile-menu ul li{
+  border-bottom:1px solid #f0f0f0;
+  position:relative;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+}
+    #lp-mobile-menu ul li > a{
+  flex:1;
+}
+    #lp-mobile-menu ul li > i.mm-arrow{
+  padding:12px 16px;
+  cursor:pointer;
+  flex-shrink:0;
+}
+    #lp-mobile-menu ul li ul.mm-sub{
+  width:100%;
+  flex-basis:100%;
+}
+#lp-mobile-menu ul li a{display:block;padding:12px 18px;font-size:13px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:.3px}
+#lp-mobile-menu ul li a:hover{background:#f5f5f5;color:#8BC34A}
+#lp-mobile-menu ul li ul.mm-sub{display:none;background:#fafafa;padding:0}
+#lp-mobile-menu ul li.mm-open ul.mm-sub{display:block}
+#lp-mobile-menu ul li ul.mm-sub li{border-bottom:1px solid #eee}
+#lp-mobile-menu ul li ul.mm-sub li a{padding:10px 28px;font-size:12px;font-weight:600;text-transform:none;color:#555}
+#lp-mobile-menu ul li ul.mm-sub li a:hover{color:#8BC34A}
+.mm-arrow{
+  float:right;
+  transition:transform .25s;
+  color:#aaa;
+  font-style:normal;
+  margin-right:8px;
+  line-height:1.8;
+}
+li.mm-open .mm-arrow{transform:rotate(180deg)}
+
+/* ===== RESPONSIVE — TABLET ===== */
+@media(max-width:900px){
+  .lp-grid{grid-template-columns:1fr!important}
+  #sidebar{margin-top:0}
+  .lp-slider{height:280px}
+  #lp-nav ul#lp-menu{padding:0 4px}
+  #lp-menu > li > a{padding:10px 7px;font-size:11px}
+}
+
+/* ===== RESPONSIVE — MOBILE ===== */
+@media(max-width:640px){
+  /* Topbar */
+  #header{padding:12px 0}
+  .lp-topbar-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+  #blog-title{font-size:20px;flex-shrink:0;padding-left:0;order:1}
+  #description{display:none}
+  .lp-search-wrap{display:contents}
+  .lp-lang-flags{order:2;gap:6px;display:flex}
+  .lp-search-box{order:3;width:100%;flex:none}
+  .lp-search-box input{font-size:13px;padding:8px 34px 8px 12px;border-radius:4px}
+  .lp-flag-btn{width:36px;height:24px}
+  .lp-flag-btn img{width:36px;height:24px}
+
+  /* Nav: show hamburger, hide desktop menu */
+  #lp-nav-toggle{display:flex!important;align-items:center;justify-content:center}
+  #lp-nav .lp-wrap{display:flex;align-items:center;justify-content:space-between;padding:0 12px;min-height:40px}
+  #lp-nav ul#lp-menu{display:none!important}
+
+  /* Content */
+  #content{padding:12px 8px 30px}
+  .lp-slider{height:200px}
+  .lp-slide-title{font-size:12px;-webkit-line-clamp:2}
+  .lp-slide-sub{display:none}
+  .lp-slide-content{padding:12px}
+  .lp-slider-arrow{padding:5px 8px;font-size:16px}
+
+  /* Company items */
+  .lp-company-logo{width:40px;height:40px;font-size:10px}
+  .lp-company-name{font-size:12px}
+  .lp-company-addr{display:none}
+
+  /* News list */
+  .lp-news-thumb,.post-thumbnail{width:76px;height:56px}
+  .lp-news-title,.post-title{font-size:12px}
+
+  /* Sidebar */
+  #sidebar{margin-top:12px}
+  .lp-hot-thumb{width:50px;height:38px}
+  .lp-hot-title{font-size:11px}
+
+  /* Single post */
+  .lp-single-post{padding:14px 12px}
+  .lp-single-post .post-title{font-size:16px}
+  .lp-single-post .post-body{font-size:13px}
+
+  /* Footer */
+  .lp-footer-inner{flex-direction:column;align-items:flex-start;gap:8px}
+  .lp-footer-social{flex-wrap:wrap;gap:10px}
+}
+/* Footer links hover */
+#footer a:hover {
+  color: #8BC34A !important;
+  transform: translateX(4px);
+  display: inline-block;
+  transition: all .2s ease;
+}
+
+/* Footer list items */
+#footer ul li a {
+  transition: all .2s ease;
+  display: inline-block;
+}
+
+#footer ul li a:hover {
+  color: #8BC34A !important;
+  transform: translateX(4px);
+}
+/* ===== RESPONSIVE — SMALL PHONE ===== */
+@media(max-width:380px){
+  #blog-title{font-size:17px}
+  .lp-search-box input{font-size:11px}
+  .lp-flag-btn{width:28px;height:20px}
+  .lp-flag-btn img{width:28px;height:20px}
+  .lp-slider{height:170px}
+  .lp-company-item{padding:10px 10px}
+}
+
+/* ===== PAGINATION ===== */
+.blog-pager{display:flex;justify-content:center;align-items:center;gap:5px;padding:24px 0;margin-top:8px;flex-wrap:wrap}
+.blog-pager .bp-num,
+.blog-pager .bp-arrow{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:34px;height:34px;padding:0 10px;
+  font-size:13px;font-weight:500;
+  border:0.5px solid #d0d0d0;
+  border-radius:6px;
+  background:#fff;color:#444;
+  text-decoration:none;
+  transition:background .15s,border-color .15s,color .15s;
+  cursor:pointer
+}
+.blog-pager .bp-num:hover,
+.blog-pager .bp-arrow:hover{background:#f4f4f2;border-color:#bbb}
+.blog-pager .bp-active{background:#8BC34A!important;border-color:#8BC34A!important;color:#fff!important;cursor:default;font-weight:600}
+.blog-pager .bp-arrow{font-size:17px;color:#888}
+.blog-pager .bp-arrow:hover{color:#333}
+.blog-pager .bp-arrow.disabled{opacity:.3;pointer-events:none;cursor:default}
+.blog-pager .bp-ellipsis{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;font-size:13px;color:#bbb;pointer-events:none;letter-spacing:1px}
+
+/* ===== BREAKING NEWS TICKER ===== */
+.lp-ticker-wrap {
+  background: #1e3a1e ;
+  padding: 10px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.lp-ticker-label {
+  background: #d4500a;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  flex-shrink: 0;
+  color: #fff;
+  position: relative;
+  z-index: 10;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lp-ticker-track {
+  display: flex;
+  flex-shrink: 0;
+  margin-left: 40px;
+  -webkit-animation: -webkit-ticker 80s linear infinite;
+  animation: ticker 80s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0); /* bắt buộc */
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+@media (hover: hover) {
+  .lp-ticker-track:hover {
+    animation-play-state: paused;
+  }
+}
+.lp-ticker-content {
+  display: flex;
+  flex-shrink: 0;
+  gap: 64px;
+  padding-right: 64px;
+}
+.lp-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #fff;
+  white-space: nowrap;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.lp-ticker-item:hover {
+  color: #a5d6a7;
+}
+.lp-ticker-item-icon {
+  color: #a5d6a7;
+}
+
+@-webkit-keyframes -webkit-ticker {
+  0%   { -webkit-transform: translate3d(0, 0, 0); }
+  100% { -webkit-transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes ticker {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* ===== YELLOWKOREA DIRECTORY PAGE ===== */
+#lp-yk-directory { display:none; padding-bottom: 48px; }
+#lp-yk-directory.active { display:block; }
+
+/* Hide normal content when YK directory is active */
+body.yk-page .lp-slider,
+body.yk-page #lp-company-section,
+body.yk-page #lp-news-section,
+body.yk-page .lp-post-list,
+body.yk-page .blog-pager { display:none !important; }
+
+/* Header */
+.yk-header { margin-bottom: 28px; }
+.yk-header h1 { font-size:26px; font-weight:900; color:#1a1a1a; margin-bottom:6px; font-family:'Segoe UI',Arial,sans-serif; }
+.yk-header p { font-size:13px; color:#777; }
+
+/* Category filter pills */
+.yk-filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; }
+.yk-filter-btn {
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  color: #666;
+  transition: all .2s;
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+.yk-filter-btn:hover { background:#e8f5e9; color:#2e7d32; border-color:#a5d6a7; }
+.yk-filter-btn.active { background:#2e7d32; color:#fff; border-color:#2e7d32; box-shadow:0 2px 6px rgba(46,125,50,.3); }
+
+/* Grid */
+.yk-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+@media(max-width:700px){ .yk-grid { grid-template-columns:1fr; } }
+
+/* Business Card */
+.yk-card {
+  background:#fff;
+  border:1px solid #e0e0e0;
+  border-radius:10px;
+  padding:22px;
+  transition: border-color .2s, box-shadow .2s;
+  cursor:pointer;
+}
+.yk-card:hover { border-color:#2e7d32; box-shadow:0 4px 16px rgba(46,125,50,.12); }
+
+.yk-card-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; }
+.yk-card-name { font-size:17px; font-weight:800; color:#1a1a1a; margin-bottom:4px; font-family:'Segoe UI',Arial,sans-serif; }
+.yk-card-badge {
+  display:inline-block;
+  background:#2e7d32; color:#fff;
+  font-size:9px; font-weight:700;
+  padding:2px 7px; border-radius:3px;
+  letter-spacing:.5px; margin-left:6px;
+  vertical-align:middle;
+}
+.yk-card-cat { font-size:11px; color:#2e7d32; font-weight:700; letter-spacing:.5px; text-transform:uppercase; }
+.yk-card-rating { display:flex; align-items:center; gap:3px; font-size:13px; font-weight:700; color:#1a1a1a; flex-shrink:0; }
+.yk-card-rating .star { color:#2e7d32; }
+
+.yk-card-desc { font-size:12px; color:#666; line-height:1.6; margin-bottom:14px; }
+
+.yk-card-info { margin-bottom:16px; display:flex; flex-direction:column; gap:6px; }
+.yk-card-info-row { display:flex; align-items:center; gap:7px; font-size:11px; color:#666; }
+.yk-card-info-icon { width:14px; height:14px; flex-shrink:0; color:#2e7d32; fill:none; stroke:#2e7d32; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
+.yk-card-actions { display:flex; gap:8px; }
+.yk-btn-primary {
+  flex:1; background:#2e7d32; color:#fff;
+  border:none; border-radius:6px;
+  font-size:12px; font-weight:600;
+  padding:10px 0; cursor:pointer;
+  transition:background .2s;
+  display:flex; align-items:center; justify-content:center; gap:6px;
+}
+.yk-btn-primary:hover { background:#1b5e20; }
+.yk-btn-secondary {
+  flex:1; background:#fff; color:#1a1a1a;
+  border:1px solid #e0e0e0; border-radius:6px;
+  font-size:12px; font-weight:600;
+  padding:10px 0; cursor:pointer;
+  transition:background .2s;
+  display:flex; align-items:center; justify-content:center; gap:6px;
+}
+.yk-btn-secondary:hover { background:#e8f5e9; }
+
+/* CTA Banner */
+.yk-cta {
+  margin-top:40px;
+  background:linear-gradient(135deg,#c8e6c9,#a5d6a7);
+  border:1px solid #81c784;
+  border-radius:12px;
+  padding:36px 24px;
+  text-align:center;
+  box-shadow:0 2px 8px rgba(46,125,50,.1);
+}
+.yk-cta-icon { font-size:36px; margin-bottom:12px; }
+.yk-cta h3 { font-size:18px; font-weight:800; color:#1a1a1a; margin-bottom:8px; font-family:'Segoe UI',Arial,sans-serif; }
+.yk-cta p { font-size:13px; color:#333; margin-bottom:20px; }
+.yk-cta-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  background:#2e7d32; color:#fff;
+  border:none; border-radius:8px;
+  padding:12px 28px;
+  font-size:13px; font-weight:700;
+  cursor:pointer; transition:background .2s;
+  box-shadow:0 2px 6px rgba(46,125,50,.3);
+  text-decoration:none;
+}
+.yk-cta-btn:hover { background:#1b5e20; }
+
+/* No results */
+.yk-no-result { text-align:center; padding:40px 20px; color:#aaa; font-size:13px; }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== HEADER / TOPBAR ===== -->
+<div id="header">
+  <div class="lp-wrap">
+    <div class="lp-topbar-inner">
+      <h1 id="blog-title">
+  <a href="<$BlogURL$>">
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEimZpVMLBOwAuZRLhO94AqNQcX1fswtzjZiJRr_IgLlvHpaLTlrJTcmys2Oag1gIWt10o7z611v3m1QJ3qfwl8g_zSWtj9IeYKTxQJZV3ih4Hp1iP-Y96ZH3yy6XpbcYyWo_D0zb1GNyt6HgXJXy5ZiEmLX4JaZuhPtprdob3MKZWPnd8xM6nNNyiI5rjk=s320"
+         alt="Lifeplaza"
+         style="height:45px;width:auto;display:block"/>
+  </a>
+</h1>
+      <p id="description"><$BlogDescription$></p>
+      <div class="lp-search-wrap">
+        <div class="lp-search-box">
+          <input id="lpSearchInput" onkeydown="if(event.key=='Enter'){window.location='<$BlogURL$>search?q='+encodeURIComponent(this.value)}" placeholder="콘텐츠를 입력해주세요..." type="text"/>
+          <button class="lp-search-btn" onclick="window.location='<$BlogURL$>search?q='+encodeURIComponent(document.getElementById('lpSearchInput').value)">🔍</button>
+        </div>
+        <div class="lp-lang-flags">
+          <button class="lp-flag-btn" title="Tiếng Việt">
+            <img alt="Vietnam" src="https://flagcdn.com/w40/vn.png"/>
+          </button>
+          <button class="lp-flag-btn" title="한국어">
+            <img alt="Korea" src="https://flagcdn.com/w40/kr.png"/>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NAV (Dropdown Menu) ===== -->
+<!-- Mobile overlay & sidebar -->
+<div id="lp-nav-mobile-overlay" onclick="lpMenuClose()"></div>
+<nav id="lp-mobile-menu">
+  <div id="lp-mobile-menu-head">
+    <a class="mm-logo" href="<$BlogURL$>">Life<span>plaza</span></a>
+    <button id="lp-mobile-menu-close" onclick="lpMenuClose()">&#10005;</button>
+  </div>
+  <ul>
+    <li><a href="<$BlogURL$>search/label/NEWS">NEWS</a><i class="mm-arrow" onclick="lpSubToggle(this)">&#9660;</i>
+      <ul class="mm-sub">
+        <li><a href="<$BlogURL$>search/label/BUILDING">BUILDING</a></li>
+        <li><a href="<$BlogURL$>search/label/COLLABORATION">COLLABORATION</a></li>
+        <li><a href="<$BlogURL$>search/label/KOREAN">KOREAN</a></li>
+        <li><a href="<$BlogURL$>search/label/TRANSPORTATION">TRANSPORTATION</a></li>
+        <li><a href="<$BlogURL$>search/label/VIETNAM">VIETNAM</a></li>
+      </ul>
+    </li>
+    <li><a href="<$BlogURL$>search/label/INTERVIEW">INTERVIEW</a><i class="mm-arrow" onclick="lpSubToggle(this)">&#9660;</i>
+      <ul class="mm-sub">
+        <li><a href="<$BlogURL$>search/label/INTERVIEW">Interview</a></li>
+      </ul>
+    </li>
+    <li><a href="<$BlogURL$>search/label/LIFESTYLE">LIFESTYLE</a><i class="mm-arrow" onclick="lpSubToggle(this)">&#9660;</i>
+      <ul class="mm-sub">
+        <li><a href="<$BlogURL$>search/label/LIFESTYLE">Vietnamese of the day</a></li>
+        <li><a href="<$BlogURL$>search/label/LIFESTYLE">Restaurant Tour</a></li>
+        <li><a href="<$BlogURL$>search/label/LIFESTYLE">Vietnam travel</a></li>
+        <li><a href="<$BlogURL$>search/label/LIFESTYLE">Fashion &amp; Beauty</a></li>
+        <li><a href="<$BlogURL$>search/label/LIFESTYLE">Vietnam Story</a></li>
+      </ul>
+    </li>
+    <li><a href="<$BlogURL$>search/label/SPECIAL">SPECIAL</a><i class="mm-arrow" onclick="lpSubToggle(this)">&#9660;</i>
+      <ul class="mm-sub">
+        <li><a href="<$BlogURL$>search/label/SPECIAL">Special</a></li>
+        <li><a href="<$BlogURL$>search/label/SPECIAL">Issue</a></li>
+        <li><a href="<$BlogURL$>search/label/SPECIAL">Education &amp; Literature</a></li>
+        <li><a href="<$BlogURL$>search/label/SPECIAL">Focus</a></li>
+      </ul>
+    </li>
+    <li><a href="<$BlogURL$>search/label/CONTRIBUTION">CONTRIBUTION</a><i class="mm-arrow" onclick="lpSubToggle(this)">&#9660;</i>
+      <ul class="mm-sub">
+        <li><a href="<$BlogURL$>search/label/CONTRIBUTION">Intern Reporter</a></li>
+        <li><a href="<$BlogURL$>search/label/CONTRIBUTION">Economic Column</a></li>
+        <li><a href="<$BlogURL$>search/label/CONTRIBUTION">Editor-in-Chief</a></li>
+        <li><a href="<$BlogURL$>search/label/CONTRIBUTION">ASEAN</a></li>
+        <li><a href="<$BlogURL$>search/label/CONTRIBUTION">YOGA</a></li>
+        <li><a href="<$BlogURL$>search/label/CONTRIBUTION">Culture</a></li>
+      </ul>
+    </li>
+    <li><a href="<$BlogURL$>search/label/BOARD">BOARD</a></li>
+    <li><a href="<$BlogURL$>search/label/MARKET">MARKET</a><i class="mm-arrow" onclick="lpSubToggle(this)">&#9660;</i>
+      <ul class="mm-sub">
+        <li><a href="<$BlogURL$>search/label/MARKET">Jobs Opening</a></li>
+        <li><a href="<$BlogURL$>search/label/MARKET">MarketPlace</a></li>
+      </ul>
+    </li>
+    <li><a href="<$BlogURL$>search/label/EBOOK">E-BOOK</a><i class="mm-arrow" onclick="lpSubToggle(this)">&#9660;</i>
+      <ul class="mm-sub">
+        <li><a href="<$BlogURL$>search/label/EBOOK">HN E-Book</a></li>
+        <li><a href="<$BlogURL$>search/label/EBOOK">Laterest E-Book</a></li>
+      </ul>
+    </li>
+    <li><a href="<$BlogURL$>search/label/PHOTO">PHOTO</a></li>
+    <li><a href="<$BlogURL$>search/label/YOUTUBE">YOUTUBE</a></li>
+    <li><a href="<$BlogURL$>search/label/YELLOWKOREA">YELLOWKOREA</a><i class="mm-arrow" onclick="lpSubToggle(this)">&#9660;</i>
+      <ul class="mm-sub">
+        <li><a href="<$BlogURL$>search/label/APPs">APPs</a></li>
+        <li><a href="<$BlogURL$>search/label/AUDITING">AUDITING</a></li>
+        <li><a href="<$BlogURL$>search/label/CONSTRUCTION">CONSTRUCTION</a></li>
+        <li><a href="<$BlogURL$>search/label/EDUCATION">EDUCATION</a></li>
+        <li><a href="<$BlogURL$>search/label/FURNITURE">FURNITURE</a></li>
+        <li><a href="<$BlogURL$>search/label/MEDICATION">MEDICATION</a></li>
+        <li><a href="<$BlogURL$>search/label/NEWS">NEWS</a></li>
+        <li><a href="<$BlogURL$>search/label/SOFTWARE">SOFTWARE</a></li>
+        <li><a href="<$BlogURL$>search/label/TECHNOLOGY">TECHNOLOGY</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div id="lp-nav">
+  <div class="lp-wrap">
+    <!-- Hamburger button (mobile only) -->
+    <button id="lp-nav-toggle" onclick="lpMenuOpen()" title="Menu">&#9776;</button>
+    <ul id="lp-menu">
+
+      <li id="mn-news" class="has-sub">
+        <a href="<$BlogURL$>search/label/NEWS" translate="no">NEWS</a>
+        <ul class="lp-dropdown">
+          <li><a href="<$BlogURL$>search/label/BUILDING">BUILDING</a></li>
+          <li><a href="<$BlogURL$>search/label/COLLABORATION">COLLABORATION</a></li>
+          <li><a href="<$BlogURL$>search/label/KOREAN">KOREAN</a></li>
+          <li><a href="<$BlogURL$>search/label/TRANSPORTATION">TRANSPORTATION</a></li>
+          <li><a href="<$BlogURL$>search/label/VIETNAM">VIETNAM</a></li>
+        </ul>
+      </li>
+
+      <li id="mn-interview" class="has-sub">
+        <a href="<$BlogURL$>search/label/INTERVIEW" translate="no">INTERVIEW</a>
+        <ul class="lp-dropdown">
+          <li><a href="<$BlogURL$>search/label/INTERVIEW">Interview</a></li>
+        </ul>
+      </li>
+
+      <li id="mn-lifestyle" class="has-sub">
+        <a href="<$BlogURL$>search/label/LIFESTYLE" translate="no">LIFESTYLE</a>
+        <ul class="lp-dropdown">
+          <li><a href="<$BlogURL$>search/label/LIFESTYLE">Vietnamese of the day</a></li>
+          <li><a href="<$BlogURL$>search/label/LIFESTYLE">Restaurant Tour</a></li>
+          <li><a href="<$BlogURL$>search/label/LIFESTYLE">Vietnam travel</a></li>
+          <li><a href="<$BlogURL$>search/label/LIFESTYLE">Fashion &amp; Beauty</a></li>
+          <li><a href="<$BlogURL$>search/label/LIFESTYLE">Vietnam Story</a></li>
+        </ul>
+      </li>
+
+      <li id="mn-special" class="has-sub">
+        <a href="<$BlogURL$>search/label/SPECIAL" translate="no">SPECIAL</a>
+        <ul class="lp-dropdown">
+          <li><a href="<$BlogURL$>search/label/SPECIAL">Special</a></li>
+          <li><a href="<$BlogURL$>search/label/SPECIAL">Issue</a></li>
+          <li><a href="<$BlogURL$>search/label/SPECIAL">Education &amp; Literature</a></li>
+          <li><a href="<$BlogURL$>search/label/SPECIAL">Focus</a></li>
+        </ul>
+      </li>
+
+      <li id="mn-contribution" class="has-sub">
+        <a href="<$BlogURL$>search/label/CONTRIBUTION" translate="no">CONTRIBUTION</a>
+        <ul class="lp-dropdown">
+          <li><a href="<$BlogURL$>search/label/CONTRIBUTION">Intern Reporter</a></li>
+          <li><a href="<$BlogURL$>search/label/CONTRIBUTION">Economic Column</a></li>
+          <li><a href="<$BlogURL$>search/label/CONTRIBUTION">Editor-in-Chief</a></li>
+          <li><a href="<$BlogURL$>search/label/CONTRIBUTION">ASEAN</a></li>
+          <li><a href="<$BlogURL$>search/label/CONTRIBUTION">YOGA</a></li>
+          <li><a href="<$BlogURL$>search/label/CONTRIBUTION">Culture</a></li>
+        </ul>
+      </li>
+
+      <li id="mn-board">
+        <a href="<$BlogURL$>search/label/BOARD" translate="no">BOARD</a>
+      </li>
+
+      <li id="mn-market" class="has-sub">
+        <a href="<$BlogURL$>search/label/MARKET" translate="no">MARKET</a>
+        <ul class="lp-dropdown">
+          <li><a href="<$BlogURL$>search/label/MARKET">Jobs Opening</a></li>
+          <li><a href="<$BlogURL$>search/label/MARKET">MarketPlace</a></li>
+        </ul>
+      </li>
+
+      <li id="mn-ebook" class="has-sub">
+        <a href="<$BlogURL$>search/label/EBOOK" translate="no">E-BOOK</a>
+        <ul class="lp-dropdown">
+          <li><a href="<$BlogURL$>search/label/EBOOK">HN E-Book</a></li>
+          <li><a href="<$BlogURL$>search/label/EBOOK">Laterest E-Book</a></li>
+        </ul>
+      </li>
+
+      <li id="mn-photo">
+        <a href="<$BlogURL$>search/label/PHOTO" translate="no">PHOTO</a>
+      </li>
+
+      <li id="mn-youtube">
+        <a href="<$BlogURL$>search/label/YOUTUBE" translate="no">YOUTUBE</a>
+      </li>
+
+      <li id="mn-yellow" class="has-sub">
+        <a href="<$BlogURL$>search/label/YELLOWKOREA" translate="no">YELLOWKOREA</a>
+        <ul class="lp-dropdown">
+          <li><a href="<$BlogURL$>search/label/APPs">APPs</a></li>
+          <li><a href="<$BlogURL$>search/label/AUDITING">AUDITING</a></li>
+          <li><a href="<$BlogURL$>search/label/CONSTRUCTION">CONSTRUCTION</a></li>
+          <li><a href="<$BlogURL$>search/label/EDUCATION">EDUCATION</a></li>
+          <li><a href="<$BlogURL$>search/label/FURNITURE">FURNITURE</a></li>
+          <li><a href="<$BlogURL$>search/label/MEDICATION">MEDICATION</a></li>
+          <li><a href="<$BlogURL$>search/label/NEWS">NEWS</a></li>
+          <li><a href="<$BlogURL$>search/label/SOFTWARE">SOFTWARE</a></li>
+          <li><a href="<$BlogURL$>search/label/TECHNOLOGY">TECHNOLOGY</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<!-- ===== BREAKING NEWS TICKER ===== -->
+<div class="lp-ticker-wrap">
+  <div class="lp-ticker-label">
+    속보 BREAKING
+  </div>
+  <div class="lp-ticker-track">
+  </div>
+</div>
+
+<!-- ===== MAIN CONTENT AREA ===== -->
+<div id="content">
+  <div class="lp-grid">
+
+    <!-- ══════════════════════════════════
+         LEFT: MAIN COLUMN
+    ══════════════════════════════════ -->
+    <div id="main"><div id="main2"><div id="main3">
+
+      <!-- ── NEWS SLIDER ── -->
+      <MainOrArchivePage>
+
+      <!-- ===== YELLOWKOREA BUSINESS DIRECTORY ===== -->
+      <div id="lp-yk-directory">
+
+        <div class="yk-header">
+          <h1>베트남 한인 업체 디렉토리</h1>
+          <p>베트남에서 필요한 모든 한국 업체 정보를 한곳에서 확인하세요</p>
+        </div>
+
+        <div class="yk-filters" id="ykFilters">
+          <button class="yk-filter-btn active" data-cat="전체" onclick="ykFilter(this)">전체</button>
+          <button class="yk-filter-btn" data-cat="식당/카페" onclick="ykFilter(this)">식당/카페</button>
+          <button class="yk-filter-btn" data-cat="병원/의료" onclick="ykFilter(this)">병원/의료</button>
+          <button class="yk-filter-btn" data-cat="교육" onclick="ykFilter(this)">교육</button>
+          <button class="yk-filter-btn" data-cat="부동산" onclick="ykFilter(this)">부동산</button>
+          <button class="yk-filter-btn" data-cat="법률/세무" onclick="ykFilter(this)">법률/세무</button>
+          <button class="yk-filter-btn" data-cat="물류/운송" onclick="ykFilter(this)">물류/운송</button>
+          <button class="yk-filter-btn" data-cat="제조업" onclick="ykFilter(this)">제조업</button>
+          <button class="yk-filter-btn" data-cat="서비스" onclick="ykFilter(this)">서비스</button>
+          <button class="yk-filter-btn" data-cat="건설/인테리어" onclick="ykFilter(this)">건설/인테리어</button>
+          <button class="yk-filter-btn" data-cat="IT/소프트웨어" onclick="ykFilter(this)">IT/소프트웨어</button>
+        </div>
+
+        <div class="yk-grid" id="ykGrid"></div>
+
+        <div class="yk-cta">
+          <div class="yk-cta-icon">🏢</div>
+          <h3>업체 등록을 원하시나요?</h3>
+          <p>베트남 한인 커뮤니티에 귀사를 소개하고 더 많은 고객을 만나보세요</p>
+          <a class="yk-cta-btn" href="mailto:info@lifeplaza.net">✉️ 업체 등록 문의하기</a>
+        </div>
+
+      </div>
+      <!-- END YELLOWKOREA DIRECTORY -->
+
+      <div class="lp-slider" id="lpSlider">
+        <div id="lpSliderWrapper"></div>
+        <button class="lp-slider-arrow prev" onclick="sliderMove(-1)">&#8249;</button>
+        <button class="lp-slider-arrow next" onclick="sliderMove(1)">&#8250;</button>
+        <div class="lp-slider-dots" id="lpDots"></div>
+        <div class="lp-slider-progress" id="lpProgress"></div>
+      </div>
+
+      <!-- ── COMPANY LISTINGS ── -->
+      <div id="lp-company-section">
+      <div class="lp-section-title">
+        <div class="bar"></div><h2>기업 정보</h2><div class="line"></div>
+      </div>
+      <div class="lp-card lp-divider" style="margin-bottom:18px">
+
+        <!-- ADD GROUP -->
+        <a class="lp-company-item" href="<$BlogURL$>search?q=ADD+GROUP" onclick="jumpToCompany('ADD GROUP', event)">
+          <div class="lp-contact-logo" style="width:52px;height:52px;flex-shrink:0;overflow:hidden;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPmHfuHQ7HSVaWhSfXwYeAprAvTKpcpiTvKBvR2rP-EXiBQ_ICDi0PoftkEKRwnUUS2guaOB1rrDmINUbCRQHB8Itu30KcE95PwHbmbev6cNGhCcJIbk1_zN7Js6ROFWZpfIPqPHSfyQtmcrhb8MJg0MqBcVhrj-uspEKMFvb2cM7exDJUwb0hP_B8BXnD/s1600/image.png"
+                 alt="ADD GROUP" loading="lazy"
+                 style="width:100%;height:100%;object-fit:contain;padding:4px"/>
+          </div>
+          <div class="lp-company-info">
+            <div class="lp-company-name-row">
+              <span class="lp-company-name">ADD GROUP</span>
+              <span class="lp-company-tag cat-default">CONSTRUCTION</span>
+            </div>
+            <div class="lp-company-phone">+84 90 613 3456</div>
+            <div class="lp-company-addr">Tầng 3, Tòa nhà Dolphin Plaza, 56 Trần Bình, Phường Cầu Giấy, Hà Nội</div>
+          </div>
+          <span class="lp-external">↗</span>
+        </a>
+
+        <!-- KPOP ART SCHOOL -->
+        <a class="lp-company-item" href="<$BlogURL$>search?q=KPOP+ART+SCHOOL" onclick="jumpToCompany('KPOP ART SCHOOL', event)">
+          <div class="lp-contact-logo" style="width:52px;height:52px;flex-shrink:0;overflow:hidden;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdo2WxayISgCeCNtU9zUlfNQRyQJl1VLBeac-nD0DU3j2q6a9UehipKXKF4cNglC8IUJELL6gJ7jgeRCB4kuqkuoGdSJwBb_H8q8jrrNc8OfX-L_Z42qEAbNWr1Ifqlv5-H22Dx_3YTEpRuudidrJkxpha5G7Il_Isy0E-QLQ7rESeQIYTqO4JcPA7LjYb/s320/image%20(1).png"
+                 alt="KPOP ART SCHOOL" loading="lazy"
+                 style="width:100%;height:100%;object-fit:contain;padding:4px"/>
+          </div>
+          <div class="lp-company-info">
+            <div class="lp-company-name-row">
+              <span class="lp-company-name">KPOP ART SCHOOL</span>
+              <span class="lp-company-tag cat-EDUCATION">EDUCATION</span>
+            </div>
+            <div class="lp-company-phone">+82 10 5107 5991</div>
+            <div class="lp-company-addr">4F, Lasara Tower, 138 Wausan-ro, Mapo-gu, Seoul</div>
+          </div>
+          <span class="lp-external">↗</span>
+        </a>
+
+        <!-- IDP VIETNAM -->
+        <a class="lp-company-item" href="<$BlogURL$>search?q=IDP+VIETNAM" onclick="jumpToCompany('IDP VIETNAM', event)">
+          <div class="lp-contact-logo" style="width:52px;height:52px;flex-shrink:0;overflow:hidden;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBanB3U2Txlmq7GhZug1Kr6VuBZsibCrmXB-lSvLo7oZkZmUDDxmNF5vQ1elv98wV4rFG41WeWL8P5Pbsq3XqbSVtaIMVq0KwItZb0i6g-ixM1bQJColerD2-fluMgsYbj0fZ2xc6cZ4SU0O0dkb5WUYtoYLt2HwxowStND3Ycd76dDxugwGBZIAaSIBkf/s320/image%20(2).png"
+                 alt="IDP VIETNAM" loading="lazy"
+                 style="width:100%;height:100%;object-fit:contain;padding:4px"/>
+          </div>
+          <div class="lp-company-info">
+            <div class="lp-company-name-row">
+              <span class="lp-company-name">IDP VIETNAM</span>
+              <span class="lp-company-tag cat-EDUCATION">EDUCATION</span>
+            </div>
+            <div class="lp-company-phone">+84 1900 6955</div>
+            <div class="lp-company-addr">161-163A Hải Bà Trưng, Phường Xuân Hòa, TP.HCM</div>
+          </div>
+          <span class="lp-external">↗</span>
+        </a>
+
+      </div><!-- /.lp-card lp-divider (company list) -->
+      </div><!-- /#lp-company-section -->
+
+      <!-- ── NEWS & EVENTS (Blogger posts) ── -->
+      <div id="lp-news-section">
+      <div class="lp-section-title">
+        <div class="bar"></div><h2>NEWS &amp; EVENTS</h2><div class="line"></div>
+      </div>
+      <div class="lp-card lp-post-list" style="margin-bottom:12px">
+      </MainOrArchivePage>
+
+      <!-- ==============================
+           BLOGGER POSTS LOOP
+      ============================== -->
+      <Blogger>
+        <BlogDateHeader><h2 class="date-header" style="display:none"><$BlogDateHeaderDate$></h2></BlogDateHeader>
+
+        <!-- HOME / ARCHIVE: card-style list item -->
+        <MainOrArchivePage>
+        <div class="post-outer" data-post-url="<$BlogItemPermalinkUrl$>">
+          <div class="post-thumbnail">
+            <a href="<$BlogItemPermalinkUrl$>">
+              <img alt="" class="lp-auto-thumb" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+            </a>
+          </div>
+          <div class="post-body-container">
+            <div class="post-meta">
+              <!-- Labels: JS inject via JSONP (native tag chỉ hoạt động trên ItemPage) -->
+              <span class="lp-label-wrap lp-post-labels"></span>
+              <span class="post-date"><$BlogItemDateTime$></span>
+            </div>
+            <div class="post-title">
+              <a href="<$BlogItemPermalinkUrl$>"><$BlogItemTitle$></a>
+            </div>
+            <div class="lp-body-src" style="display:none"><$BlogItemBody$></div>
+            <div class="post-excerpt-text"></div>
+          </div>
+        </div>
+        </MainOrArchivePage>
+
+        <!-- SINGLE POST PAGE: full article -->
+        <ItemPage>
+        <div class="lp-single-post">
+          <div class="post-meta">
+            <span class="lp-label-wrap"><$BlogItemLabelsWithSeparator$></span>
+            <span class="post-date"><$BlogItemDateTime$></span>
+          </div>
+          <BlogItemTitle>
+          <div class="post-title"><a href="<$BlogItemPermalinkUrl$>"><$BlogItemTitle$></a></div>
+          </BlogItemTitle>
+          <div class="post-body"><$BlogItemBody$></div>
+          <div class="post-footer-info">
+            <span>✍️ <$I18NPostedByAuthorNickname$></span>
+            <BlogItemCommentsEnabled>
+              <a href="<$BlogItemCommentCreate$>"><$I18NNumComments$></a>
+            </BlogItemCommentsEnabled>
+            <$BlogItemControl$>
+          </div>
+        </div>
+
+        <!-- Comments section -->
+        <div id="comments">
+          <BlogItemCommentsEnabled>
+          <a name="comments"></a>
+          <h4><$I18NNumComments$></h4>
+          <dl id="comments-block">
+            <$CommentPager$>
+            <BlogItemComments>
+              <dt class="comment-data" id="<$BlogCommentAnchorName$>">
+                <span class="comment-poster"><$BlogCommentAuthor$></span> — <$I18NAtCommentTimeWithPermalink$>
+              </dt>
+              <dd class="comment-body"><p><$BlogCommentBody$></p><$BlogCommentDeleteIcon$></dd>
+            </BlogItemComments>
+            <$CommentPager$>
+          </dl>
+          <p style="margin-top:12px">
+            <a href="<$BlogItemCommentCreate$>" style="background:#8BC34A;color:#fff;padding:7px 16px;font-size:12px;font-weight:600;display:inline-block">💬 Leave a comment</a>
+          </p>
+          </BlogItemCommentsEnabled>
+        </div>
+        </ItemPage>
+
+      </Blogger>
+      <!-- END BLOGGER LOOP -->
+
+      <MainOrArchivePage>
+      </div><!-- /.lp-post-list -->
+
+      <!-- Pagination (JS sẽ inject số trang) -->
+      <div class="blog-pager" id="blog-pager"></div>
+      </div><!-- /#lp-news-section -->
+      </MainOrArchivePage>
+
+    </div></div></div>
+    <!-- /#main -->
+
+    <!-- ══════════════════════════════════
+         RIGHT: SIDEBAR
+    ══════════════════════════════════ -->
+    <div id="sidebar">
+
+      <!-- HOT NEWS (dynamic) -->
+      <div class="lp-sidebar-block" id="lpHotNewsBlock">
+        <div class="lp-sidebar-head lp-head-green">
+          <span class="material-icons-outlined" style="font-size:18px;color:white">trending_up</span><span class="stitle">HOT NEWS</span>
+        </div>
+        <div id="lpHotNewsWrapper"></div>
+      </div>
+
+      <!-- LATEST NEWS (BloggerPreviousItems - server-side, always works) -->
+      <div class="lp-sidebar-block">
+        <div class="lp-sidebar-head lp-head-dark">
+          <span class="icon">📖</span><span class="stitle">LATEST NEWS</span>
+        </div>
+        <ul id="lp-latest-list">
+          <MainOrArchivePage>
+          <BloggerPreviousItems>
+            <li data-post-url="<$BlogItemPermalinkURL$>">
+              <a class="lp-ln-title" href="<$BlogItemPermalinkURL$>"><$BlogPreviousItemTitle$></a>
+              <div class="lp-ln-meta">
+                <span class="lp-label-wrap lp-ln-labels"></span>
+                <span class="lp-ln-date"><$BlogItemDateTime$></span>
+              </div>
+            </li>
+          </BloggerPreviousItems>
+          </MainOrArchivePage>
+        </ul>
+      </div>
+
+      <!-- CATEGORIES — all labels -->
+      <div class="lp-sidebar-block">
+        <div class="lp-sidebar-head lp-head-gray">
+          <span class="material-icons-outlined" style="font-size:18px;color:#fff">label</span><span class="stitle">CATEGORY</span>
+        </div>
+        <div class="lp-cats">
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/NEWS" style="background:#dbeafe;color:#1d4ed8">NEWS</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/INTERVIEW" style="background:#fce7f3;color:#be185d">INTERVIEW</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/LIFESTYLE" style="background:#f3e8ff;color:#7e22ce">LIFESTYLE</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/USEFUL" style="background:#fef9c3;color:#854d0e">USEFUL</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/COOPERATION" style="background:#dcfce7;color:#166534">COOPERATION</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/K-FOOD" style="background:#fee2e2;color:#b91c1c">K-FOOD</a>
+
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/REAL-ESTATE" style="background:#ccfbf1;color:#0f766e">REAL-ESTATE</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/EVENT" style="background:#ffedd5;color:#c2410c">EVENT</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/BOARD" style="background:#f0f0f0;color:#555555">BOARD</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/YOUTUBE" style="background:#fee2e2;color:#dc2626">YOUTUBE</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/BANNER" style="background:#e0f2fe;color:#0369a1">BANNER</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/SPECIAL" style="background:#ede9fe;color:#4c1d95">SPECIAL</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/CONTRIBUTION" style="background:#ecfdf5;color:#065f46">CONTRIBUTION</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/MARKET" style="background:#fff7ed;color:#9a3412">MARKET</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/EBOOK" style="background:#f0fdf4;color:#14532d">E-BOOK</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/PHOTO" style="background:#f0f9ff;color:#0c4a6e">PHOTO</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/LIFE+PLAZA" style="background:#d1fae5;color:#065f46">LIFE PLAZA</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/VIETNAM" style="background:#fef2f2;color:#991b1b">VIETNAM</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/BUILDING" style="background:#fef3c7;color:#78350f">BUILDING</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/KOREAN" style="background:#eff6ff;color:#1e40af">KOREAN</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/TRANSPORTATION" style="background:#f5f3ff;color:#5b21b6">TRANSPORTATION</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/COLLABORATION" style="background:#ecfdf5;color:#064e3b">COLLABORATION</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/APPs" style="background:#f0f9ff;color:#0369a1">APPs</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/SOFTWARE" style="background:#faf5ff;color:#6b21a8">SOFTWARE</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/TECHNOLOGY" style="background:#eff6ff;color:#1e3a8a">TECHNOLOGY</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/AUDITING" style="background:#fff1f2;color:#9f1239">AUDITING</a>
+
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/ADD+CONSULTING" style="background:#fef9c3;color:#78350f">ADD CONSULTING</a>
+
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/PLAN+ADD" style="background:#ede9fe;color:#5b21b6">PLAN ADD</a>
+
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/SOCIAL+MEDIA" style="background:#fdf4ff;color:#7e22ce">SOCIAL MEDIA</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/YELLOWKOREA" style="background:#fef3c7;color:#92400e">YELLOWKOREA</a>
+        </div>
+      </div>
+
+
+
+      <!-- CONTACT (AJAX - dynamic from label CONTACT) -->
+      <div class="lp-sidebar-block">
+        <div class="lp-sidebar-head lp-head-dark">
+          <span class="material-icons-outlined" style="font-size:18px;color:#fff">phone</span><span class="stitle">CONTACT</span>
+        </div>
+        <div id="lp-contact-list">
+          <div style="padding:15px;text-align:center;font-size:12px;color:#888;">Đang tải...</div>
+        </div>
+        <div id="lp-contact-pager" style="display:none;justify-content:center;padding:10px;gap:4px;border-top:1px solid #f0f0f0;flex-wrap:wrap;"></div>
+      </div>
+
+      <style>
+        .lp-contact-page{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:11px;color:#555;border:1px solid #ddd;cursor:pointer;background:#fff;text-decoration:none;border-radius:3px}
+        .lp-contact-page:hover{background:#f5f5f5}
+        .lp-contact-page.lp-pg-active{background:#1f2937;color:#fff;border-color:#1f2937;font-weight:bold}
+      </style>
+
+      <!-- Callback phải định nghĩa TRƯỚC khi script JSONP được load -->
+      <script type='text/javascript'>
+      //<![CDATA[
+      window.__lpContactCB = function(data) {
+        var listEl = document.getElementById('lp-contact-list');
+        var pagerEl = document.getElementById('lp-contact-pager');
+        if (!listEl) return;
+
+        var entries = (data && data.feed && data.feed.entry) || [];
+        if (!entries.length) {
+          listEl.innerHTML = '<div style="padding:15px;text-align:center;font-size:11px;color:#aaa;">Không có dữ liệu.</div>';
+          return;
+        }
+
+        var COLORS = ['#b8a040','#1d4ed8','#00a3b4','#6b21a8','#ea580c','#047857','#be123c','#b45309','#0e7490'];
+        var cards = [];
+
+        for (var i = 0; i < entries.length; i++) {
+          var e = entries[i];
+          var title = (e.title && e.title.$t) || '';
+          var postUrl = '';
+          if (e.link) {
+            for (var l = 0; l < e.link.length; l++) {
+              if (e.link[l].rel === 'alternate') { postUrl = e.link[l].href; break; }
+            }
+          }
+
+          // Lấy thumbnail từ media$thumbnail (đơn giản & đáng tin cậy nhất)
+          var imgSrc = (e.media$thumbnail && e.media$thumbnail.url) ? e.media$thumbnail.url.replace('=s72-c','=s120-c') : '';
+
+          // Parse phone & address từ content
+          var phone = '', address = '';
+          var ct = (e.content && e.content.$t) || '';
+          // Xóa tất cả thẻ HTML và tách dòng
+          var plain = ct.replace(/<[^>]+>/g, '\n').replace(/&nbsp;/g,' ').replace(/\u00a0/g,' ');
+          var lns = plain.split('\n').map(function(s){ return s.replace(/[●•▶\-]/g,'').trim(); }).filter(function(s){ return s.length > 3; });
+          // Dòng đầu có số điện thoại (chứa + hoặc 0 ở đầu)
+          for (var li = 0; li < lns.length; li++) {
+            if (/^[\+\d\s\-\(\)]{7,}/.test(lns[li])) { phone = lns[li]; break; }
+          }
+          // Dòng có địa chỉ (chứa từ khóa địa danh)
+          for (var li2 = 0; li2 < lns.length; li2++) {
+            if (lns[li2] !== phone && lns[li2].length > 10) { address = lns[li2]; break; }
+          }
+
+          // Màu fallback theo hash của title
+          var hash = 0;
+          for (var c = 0; c < title.length; c++) hash = title.charCodeAt(c) + ((hash << 5) - hash);
+          var bg = COLORS[Math.abs(hash) % COLORS.length];
+          var initials = title.split(' ').slice(0,2).map(function(w){ return w.charAt(0); }).join('').toUpperCase() || 'CT';
+
+          var logoHtml = imgSrc
+            ? '<img src="' + imgSrc + '" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" alt="' + title + '" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:4px"/>'
+            + '<div class="lp-contact-fallback" style="display:none;background:' + bg + ';color:#fff;font-weight:800;font-size:11px">' + initials + '</div>'
+            : '<div class="lp-contact-fallback" style="display:flex;background:' + bg + ';color:#fff;font-weight:800;font-size:11px">' + initials + '</div>';
+
+          cards.push(
+            '<a class="lp-contact-item" href="' + postUrl + '">' +
+              '<div class="lp-contact-logo">' + logoHtml + '</div>' +
+              '<div>' +
+                '<div class="lp-contact-name">' + title + '</div>' +
+                '<div class="lp-contact-phone">' + (phone || 'Xem chi tiết') + '</div>' +
+                '<div class="lp-contact-addr">' + (address || '') + '</div>' +
+              '</div>' +
+            '</a>'
+          );
+        }
+
+        // Phân trang
+        var PER = 5;
+        var total = Math.ceil(cards.length / PER);
+        function goPage(pg) {
+          listEl.innerHTML = cards.slice((pg-1)*PER, pg*PER).join('');
+          // Rebuild pager
+          if (total > 1) {
+            pagerEl.style.display = 'flex';
+            pagerEl.innerHTML = '';
+            var mkBtn = function(label, page, active) {
+              var a = document.createElement('a');
+              a.href = 'javascript:void(0)';
+              a.className = 'lp-contact-page' + (active ? ' lp-pg-active' : '');
+              a.innerHTML = label;
+              a.onclick = function(){ goPage(page); };
+              pagerEl.appendChild(a);
+            };
+            mkBtn('&lt;', Math.max(1, pg-1), false);
+            for (var p = 1; p <= total; p++) mkBtn(p, p, p === pg);
+            mkBtn('&gt;', Math.min(total, pg+1), false);
+          }
+        }
+        goPage(1);
+      };
+      //]]>
+      </script>
+      <!-- JSONP tĩnh - Blogger load trực tiếp, không qua dynamic createElement -->
+      <script src='https://www.lifeplaza.net/feeds/posts/default/-/CONTACT?alt=json-in-script&amp;max-results=50&amp;callback=__lpContactCB' type='text/javascript'></script>
+      
+
+    </div>
+    <!-- /#sidebar -->
+
+  </div><!-- /.lp-grid -->
+</div><!-- /#content -->
+
+<!-- ===== FOOTER ===== -->
+<div id="footer">
+<div><div>
+<div style="background:#1a1a1a;border-top:3px solid #8BC34A;padding:18px 32px">
+  <div style="max-width:1600px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    
+    <!-- Logo -->
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEimZpVMLBOwAuZRLhO94AqNQcX1fswtzjZiJRr_IgLlvHpaLTlrJTcmys2Oag1gIWt10o7z611v3m1QJ3qfwl8g_zSWtj9IeYKTxQJZV3ih4Hp1iP-Y96ZH3yy6XpbcYyWo_D0zb1GNyt6HgXJXy5ZiEmLX4JaZuhPtprdob3MKZWPnd8xM6nNNyiI5rjk=s320"
+         alt="Lifeplaza" style="height:32px;width:auto"/>
+
+    <!-- Copyright -->
+    <div style="font-size:12px;color:#666">
+      © <$BlogTitle$> · Powered by <a href="https://www.blogger.com" target="_blank" style="color:#8BC34A;text-decoration:none">Blogger</a>
+    </div>
+
+    <!-- Social -->
+    <div style="display:flex;gap:10px">
+      <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#333;color:#ccc;font-size:12px;font-weight:700;text-decoration:none;transition:background .2s" onmouseover="this.style.background='#8BC34A'" onmouseout="this.style.background='#333'">f</a>
+      <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#333;color:#ccc;font-size:12px;font-weight:700;text-decoration:none;transition:background .2s" onmouseover="this.style.background='#8BC34A'" onmouseout="this.style.background='#333'">in</a>
+      <a href="#" style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#333;color:#ccc;font-size:12px;font-weight:700;text-decoration:none;transition:background .2s" onmouseover="this.style.background='#8BC34A'" onmouseout="this.style.background='#333'">▶</a>
+    </div>
+
+  </div>
+</div>
+</div></div>
+</div>
+
+<!-- Blog URL for JSON Feed -->
+<script type="text/javascript">var __LP_BLOG_URL=(function(){var u='<$BlogURL$>';u=u.replace(/^http:/i,'https:');if(u.charAt(u.length-1)!=='/') u+='/';return u;})();</script>
+
+<!-- ===== JS ===== -->
+<script type="text/javascript">
+//<![CDATA[
+// ── SLIDER & HOT NEWS (DYNAMIC) ──
+window.initLpSlider = function(){
+  var slides=document.querySelectorAll('#lpSlider .lp-slide');
+  var dotsEl=document.getElementById('lpDots');
+  var progEl=document.getElementById('lpProgress');
+  if(!slides||!slides.length||!dotsEl||!progEl)return;
+  var cur=0,total=slides.length,tmr;
+  dotsEl.innerHTML='';
+  for(var i=0;i<total;i++){
+    var d=document.createElement('button');
+    d.className='lp-dot'+(i===0?' active':'');
+    d.setAttribute('data-i',i);
+    (function(n){d.onclick=function(){stop();go(n);start();};})(i);
+    dotsEl.appendChild(d);
+  }
+  function ui(){dotsEl.querySelectorAll('.lp-dot').forEach(function(d,i){d.className='lp-dot'+(i===cur?' active':'');});progEl.style.width=(((cur+1)/total)*100)+'%';}
+  function go(n){slides[cur].classList.remove('active');cur=(n+total)%total;slides[cur].classList.add('active');ui();}
+  function start(){tmr=setInterval(function(){go(cur+1);},5000);}
+  function stop(){clearInterval(tmr);}
+  window.sliderMove=function(d){stop();go(cur+d);start();};
+  ui();start();
+};
+
+(function(){
+  // ── AUTO THUMBNAIL: extract first img from post body (Synchronous for server-rendered posts) ──
+  var PLACEHOLDER='https://placehold.co/96x68/f0f0f0/aaa?text=News';
+  document.querySelectorAll('.post-outer').forEach(function(card){
+    var bodyEl=card.querySelector('.lp-body-src');
+    var thumbEl=card.querySelector('.lp-auto-thumb');
+    var excerptEl=card.querySelector('.post-excerpt-text');
+    if(!bodyEl||!thumbEl)return;
+    var html=bodyEl.innerHTML;
+    var m=html.match(/<img[^>]+src=["']([^"']+)["']/i);
+    thumbEl.src=(m&&m[1])?m[1]:PLACEHOLDER;
+    if(!m){thumbEl.style.opacity='0.35';}
+    if(excerptEl){
+      var tmp=document.createElement('div');
+      tmp.innerHTML=html;
+      var txt=(tmp.textContent||tmp.innerText||'').replace(/\s+/g,' ').trim();
+      excerptEl.textContent=txt.substring(0,110);
+      excerptEl.style.cssText='font-size:11px;color:#888;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;margin-top:2px';
+    }
+    bodyEl.parentNode.removeChild(bodyEl);
+  });
+
+  // ―― Reformat date: "April 25, 2026" → "2026-04-25" (Synchronous) ――
+  var MONTHS={January:'01',February:'02',March:'03',April:'04',May:'05',June:'06',July:'07',August:'08',September:'09',October:'10',November:'11',December:'12'};
+  document.querySelectorAll('.post-date,.lp-news-date,.lp-ln-date').forEach(function(el){
+    var m=(el.textContent||'').trim().match(/^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/);
+    if(m){
+      var mon=null; Object.keys(MONTHS).forEach(function(k){ if(k.toLowerCase().indexOf(m[1].toLowerCase())===0) mon=MONTHS[k]; });
+      if(mon) el.textContent=m[3]+'-'+mon+(m[2].length===1?'-0':'-')+m[2];
+    }
+  });
+
+  var perPage = 12;
+  var allPosts = [];
+  var filteredPosts = [];
+  var currentPage = 1;
+  
+  var sliderWrap = document.getElementById('lpSliderWrapper');
+  var hotWrap = document.getElementById('lpHotNewsWrapper');
+  var postListWrap = document.querySelector('.lp-post-list'); // Only exists on Main/Archive
+  var pagerWrap = document.getElementById('blog-pager');
+
+  // Detect context
+  var loc = location.href;
+  var isLabel = loc.indexOf('/search/label/') > -1;
+  var currentLabel = '';
+  if(isLabel){
+    var lm = loc.match(/\/search\/label\/([^\?&#]+)/);
+    if(lm) currentLabel = decodeURIComponent(lm[1]);
+  }
+  var isSearch = loc.indexOf('/search') > -1 && loc.indexOf('?q=') > -1;
+  var searchQuery = '';
+  if(isSearch){
+     var qm = loc.match(/\?q=([^&]+)/);
+     if(qm) searchQuery = decodeURIComponent(qm[1]).toLowerCase();
+  }
+
+  window.__lpMainAppCB = function(data) {
+    var entries = (data.feed && data.feed.entry) || [];
+    var excludeLabels = ['CONTACT', 'PRESIDENT'];
+    var isExcludePage = (currentLabel && excludeLabels.indexOf(currentLabel.toUpperCase()) > -1);
+
+    for(var i=0; i<entries.length; i++) {
+      var entry = entries[i];
+      var cats = entry.category || [];
+      var labels = cats.map(function(c){ return c.term; });
+      var hasExcluded = false;
+      if(!isExcludePage) {
+        for(var j=0; j<labels.length; j++) {
+          if(excludeLabels.indexOf(labels[j].toUpperCase()) > -1) { hasExcluded = true; break; }
+        }
+      }
+
+      var link = '';
+      for(var l=0; l<entry.link.length; l++){
+        if(entry.link[l].rel === 'alternate'){ link = entry.link[l].href; break; }
+      }
+      
+      var imgUrl = entry.media$thumbnail ? entry.media$thumbnail.url.replace(/\/(s\d+|w\d+-h\d+)[^\/]*\//, '/s900/').replace(/\=s\d+[^\/]*$/, '=s900') : '';
+      if(!imgUrl) {
+         var content = (entry.content && entry.content.$t) || '';
+         var imgMatch = content.match(/<img[^>]+src=["']([^"']+)["']/i);
+         imgUrl = imgMatch ? imgMatch[1] : 'https://placehold.co/900x500/f0f0f0/aaa?text=News';
+      }
+      
+      var summaryText = (entry.summary && entry.summary.$t) || (entry.content && entry.content.$t) || '';
+      var tmp = document.createElement('div');
+      var htmlWithNewlines = summaryText.replace(/<br\s*[\/]?>/gi, '\n').replace(/<\/p>/gi, '\n').replace(/<\/div>/gi, '\n');
+      tmp.innerHTML = htmlWithNewlines;
+      var rawText = (tmp.textContent || tmp.innerText || '').trim();
+      var text = rawText.replace(/\s+/g, ' ').trim();
+      var excerpt = text.substring(0, 120) + (text.length > 120 ? '...' : '');
+      
+      var rawDate = entry.published.$t; // 2026-04-25T...
+      var dateStr = rawDate.substring(0, 10);
+
+      allPosts.push({
+        title: entry.title.$t,
+        url: link,
+        img: imgUrl,
+        labels: labels,
+        date: dateStr,
+        excerpt: excerpt,
+        rawText: rawText,
+        hasExcluded: hasExcluded
+      });
+    }
+
+    var validGlobal = allPosts.filter(function(p){ return !p.hasExcluded; });
+    
+    // 1. Slider
+    if(sliderWrap) {
+      var sliderHtml = '';
+      var sCount = Math.min(4, validGlobal.length);
+      for(var s=0; s<sCount; s++){
+        var p = validGlobal[s];
+        var firstLabel = p.labels.length ? p.labels[0] : 'NEWS';
+        sliderHtml += '<div class="lp-slide' + (s===0?' active':'') + '">' +
+          '<img alt="slide" src="'+p.img+'"/>' +
+          '<div class="lp-slide-overlay"></div>' +
+          '<div class="lp-slide-content">' +
+            '<span class="lp-slide-cat">'+firstLabel+'</span>' +
+            '<div class="lp-slide-date">'+p.date+'</div>' +
+            '<div class="lp-slide-title"><a href="'+p.url+'" style="color:#fff">'+p.title+'</a></div>' +
+            '<div class="lp-slide-sub">'+p.excerpt+'</div>' +
+            '<button class="lp-slide-btn" onclick="window.location=\''+p.url+'\'">Đọc tiếp / 더보기</button>' +
+          '</div>' +
+        '</div>';
+      }
+      sliderWrap.innerHTML = sliderHtml;
+      if(window.initLpSlider) window.initLpSlider();
+    }
+
+    // 2. Hot News
+    if(hotWrap) {
+      var hotHtml = '';
+      var startIdx = validGlobal.length > 8 ? 4 : 0;
+      var hCount = Math.min(5, validGlobal.length - startIdx);
+      if(hCount <= 0) hCount = Math.min(5, validGlobal.length);
+      for(var h=0; h<hCount; h++){
+        var pIdx = startIdx + h;
+        if(pIdx >= validGlobal.length) pIdx = h;
+        var p = validGlobal[pIdx];
+        hotHtml += '<a class="lp-hot-item" href="'+p.url+'">' +
+          '<div class="lp-hot-thumb">' +
+            '<img alt="" loading="lazy" src="'+p.img+'"/>' +
+            '<div class="lp-hot-num">'+(h+1)+'</div>' +
+          '</div>' +
+          '<div>' +
+            '<div class="lp-hot-title">'+p.title+'</div>' +
+            '<div class="lp-hot-date">⏰ '+p.date+'</div>' +
+          '</div>' +
+        '</a>';
+      }
+      hotWrap.innerHTML = hotHtml;
+    }
+
+    // 2.5 Breaking News Ticker
+    var tickerTrack = document.querySelector('.lp-ticker-track');
+    if(tickerTrack) {
+      var tCount = Math.min(10, validGlobal.length);
+      var tickerHtml = '';
+      for(var t=0; t<tCount; t++){
+        var p = validGlobal[t];
+        tickerHtml += '<a class="lp-ticker-item" href="'+p.url+'"><span class="lp-ticker-item-icon">&#9656;</span><span>'+p.title+'</span></a>';
+      }
+      tickerTrack.innerHTML = '<div class="lp-ticker-content">' + tickerHtml + '</div><div class="lp-ticker-content">' + tickerHtml + '</div>';
+    }
+
+    // 3. Main Post List & Pagination (AJAX)
+    if(postListWrap) {
+      filteredPosts = allPosts.filter(function(p){
+        if(p.hasExcluded && !isExcludePage) return false;
+        if(currentLabel) {
+          var match = false;
+          for(var i=0; i<p.labels.length; i++){
+            if(p.labels[i].toUpperCase() === currentLabel.toUpperCase()) { match=true; break; }
+          }
+          if(!match) return false;
+        }
+        if(searchQuery) {
+          if(p.title.toLowerCase().indexOf(searchQuery) === -1 && p.excerpt.toLowerCase().indexOf(searchQuery) === -1) return false;
+        }
+        return true;
+      });
+
+      renderPage(1);
+    }
+
+    // 4. Latest News Labels & Date
+    var latestItems = document.querySelectorAll('#lp-latest-list li');
+    latestItems.forEach(function(li){
+      var url = li.getAttribute('data-post-url');
+      if(!url) return;
+      var path = url.replace(/^https?:\/\/[^\/]+/i, '').split('?')[0];
+      var matched = allPosts.find(function(p){ return p.url.indexOf(path) > -1; });
+      if(matched) {
+        if(matched.hasExcluded && !isExcludePage) { li.style.display = 'none'; return; }
+        var span = li.querySelector('.lp-ln-labels');
+        if(span && matched.labels.length) {
+          span.innerHTML = '<a href="/search/label/'+encodeURIComponent(matched.labels[0])+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+matched.labels[0]+'</a>';
+        }
+        var dateSpan = li.querySelector('.lp-ln-date');
+        if(dateSpan) dateSpan.textContent = matched.date;
+      }
+    });
+
+    // 5. Contact List (Main & Sidebar)
+    var contactMainWrap = document.getElementById('lpContactMainWrap');
+    var contactSidebarInner = document.getElementById('lpContactSidebarInner');
+    if(contactMainWrap || contactSidebarInner) {
+      var contactPosts = allPosts.filter(function(p){
+        return p.labels.some(function(l){ return l.toUpperCase() === 'CONTACT'; });
+      });
+      var mHtml = '', sHtml = '';
+      for(var c=0; c<contactPosts.length; c++){
+         var p = contactPosts[c];
+         var secondLabel = '';
+         for(var i=0; i<p.labels.length; i++){
+            if(p.labels[i].toUpperCase() !== 'CONTACT') { secondLabel = p.labels[i]; break; }
+         }
+         if(!secondLabel) secondLabel = 'DEFAULT';
+         
+         var pLines = p.rawText ? p.rawText.split('\n').map(function(s){return s.trim();}).filter(Boolean) : [];
+         var phone = pLines.length > 0 ? pLines[0] : '';
+         var addr = pLines.length > 1 ? pLines.slice(1).join(', ') : '';
+
+         if(contactMainWrap) {
+            mHtml += '<a class="lp-company-item" href="'+p.url+'" onclick="jumpToCompany(\''+p.title+'\', event)">' +
+              '<div class="lp-contact-logo" style="width:52px;height:52px;flex-shrink:0;overflow:hidden;background:#fff;border:1px solid #eee;display:flex;align-items:center;justify-content:center">' +
+                '<img src="'+p.img+'" alt="'+p.title+'" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:4px"/>' +
+              '</div>' +
+              '<div class="lp-company-info">' +
+                '<div class="lp-company-name-row">' +
+                  '<span class="lp-company-name">'+p.title+'</span>' +
+                  '<span class="lp-company-tag cat-'+secondLabel+'">'+secondLabel+'</span>' +
+                '</div>' +
+                '<div class="lp-company-phone">'+phone+'</div>' +
+                '<div class="lp-company-addr">'+addr+'</div>' +
+              '</div>' +
+              '<span class="lp-external">↗</span>' +
+            '</a>';
+         }
+         
+         if(contactSidebarInner) {
+            var fallback = p.title.substring(0,2).toUpperCase();
+            var bgColors = ['#b8a040', '#1d4ed8', '#00a3b4', '#6b21a8', '#c2410c', '#15803d'];
+            var bg = bgColors[c % bgColors.length];
+            sHtml += '<a class="lp-contact-item" href="'+p.url+'" onclick="jumpToCompany(\''+p.title+'\', event)">' +
+              '<div class="lp-contact-logo">' +
+                '<img src="'+p.img+'" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" alt="'+p.title+'" loading="lazy"/>' +
+                '<div class="lp-contact-fallback" style="display:none;background:'+bg+';color:#fff;font-weight:800;font-size:11px">'+fallback+'</div>' +
+              '</div>' +
+              '<div>' +
+                '<div class="lp-contact-name">'+p.title+'</div>' +
+                '<div class="lp-contact-phone">'+phone+'</div>' +
+                '<div class="lp-contact-addr">'+addr+'</div>' +
+              '</div>' +
+            '</a>';
+         }
+      }
+      if(contactMainWrap) contactMainWrap.innerHTML = mHtml;
+      if(contactSidebarInner) contactSidebarInner.innerHTML = sHtml;
+    }
+  };
+
+  function makeBadgeHTML(label) {
+    return '<a href="/search/label/' + encodeURIComponent(label) + '">' + label + '</a>';
+  }
+
+  function renderPage(page) {
+    currentPage = page;
+    var start = (page - 1) * perPage;
+    var end = start + perPage;
+    var pagePosts = filteredPosts.slice(start, end);
+    
+    var html = '';
+    if(pagePosts.length === 0) {
+      html = '<div style="padding:20px;text-align:center;color:#888;">Không có bài viết nào. / No posts found.</div>';
+    } else {
+      for(var i=0; i<pagePosts.length; i++){
+        var p = pagePosts[i];
+        var badges = p.labels.map(makeBadgeHTML).join('');
+        html += '<div class="post-outer">' +
+          '<div class="post-thumbnail">' +
+            '<a href="'+p.url+'">' +
+              '<img alt="" class="lp-auto-thumb" src="'+p.img+'" loading="lazy" onerror="this.src=\'https://placehold.co/96x68/f0f0f0/aaa?text=News\'"/>' +
+            '</a>' +
+          '</div>' +
+          '<div class="post-body-container">' +
+            '<div class="post-meta">' +
+              '<span class="lp-label-wrap lp-post-labels">' + badges + '</span>' +
+              '<span class="post-date">' + p.date + '</span>' +
+            '</div>' +
+            '<div class="post-title">' +
+              '<a href="'+p.url+'">' + p.title + '</a>' +
+            '</div>' +
+            '<div class="post-excerpt-text">' + p.excerpt + '</div>' +
+          '</div>' +
+        '</div>';
+      }
+    }
+    
+    postListWrap.style.opacity = '0.5';
+    setTimeout(function() {
+      postListWrap.innerHTML = html;
+      postListWrap.style.opacity = '1';
+      postListWrap.style.transition = 'opacity 0.3s ease';
+    }, 100);
+
+    renderPagination();
+
+    if(page > 1) {
+       var topPos = postListWrap.previousElementSibling ? postListWrap.previousElementSibling.offsetTop : postListWrap.offsetTop;
+       window.scrollTo({ top: topPos - 20, behavior: 'smooth' });
+    }
+  }
+
+  window.goToPage = function(p) { renderPage(p); };
+
+  function renderPagination() {
+    if(!pagerWrap) return;
+    var totalPages = Math.ceil(filteredPosts.length / perPage);
+    if(totalPages <= 1) { pagerWrap.style.display = 'none'; return; }
+    pagerWrap.style.display = 'flex';
+
+    var html = '';
+    var startP = Math.max(1, currentPage - 2);
+    var endP   = Math.min(totalPages, startP + 4);
+    startP     = Math.max(1, endP - 4);
+
+    if(currentPage > 1) html += '<button class="bp-arrow" onclick="goToPage('+(currentPage-1)+')">&#8249;</button>';
+    else html += '<button class="bp-arrow disabled">&#8249;</button>';
+
+    if(startP > 1){
+      html += '<button class="bp-num" onclick="goToPage(1)">1</button>';
+      if(startP > 2) html += '<span class="bp-ellipsis">&middot;&middot;&middot;</span>';
+    }
+
+    for(var i = startP; i <= endP; i++){
+      if(i === currentPage) html += '<button class="bp-num bp-active">'+i+'</button>';
+      else html += '<button class="bp-num" onclick="goToPage('+i+')">'+i+'</button>';
+    }
+
+    if(endP < totalPages){
+      if(endP < totalPages - 1) html += '<span class="bp-ellipsis">&middot;&middot;&middot;</span>';
+      html += '<button class="bp-num" onclick="goToPage('+totalPages+')">'+totalPages+'</button>';
+    }
+
+    if(currentPage < totalPages) html += '<button class="bp-arrow" onclick="goToPage('+(currentPage+1)+')">&#8250;</button>';
+    else html += '<button class="bp-arrow disabled">&#8250;</button>';
+
+    pagerWrap.innerHTML = html;
+  }
+
+  var s = document.createElement('script');
+  s.src = __LP_BLOG_URL + 'feeds/posts/summary?alt=json-in-script&max-results=500&callback=__lpMainAppCB';
+  document.head.appendChild(s);
+})();
+
+  // ―― Reformat date: "April 25, 2026" → "2026-04-25" ――
+  var MONTHS={January:'01',February:'02',March:'03',April:'04',May:'05',June:'06',July:'07',August:'08',September:'09',October:'10',November:'11',December:'12'};
+  document.querySelectorAll('.post-date,.lp-news-date,.lp-ln-date').forEach(function(el){
+    var m=(el.textContent||'').trim().match(/^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/);
+    if(m){
+      var mon=null; Object.keys(MONTHS).forEach(function(k){ if(k.toLowerCase().indexOf(m[1].toLowerCase())===0) mon=MONTHS[k]; });
+      if(mon) el.textContent=m[3]+'-'+mon+(m[2].length===1?'-0':'-')+m[2];
+    }
+  });
+
+  // ―― AUTO JUMP TO COMPANY POST ――
+  window.jumpToCompany = function(query, event) {
+    if(event) event.preventDefault();
+    window.__lpJumpQuery = query.toLowerCase().trim();
+    var s = document.createElement('script');
+    s.src = __LP_BLOG_URL + 'feeds/posts/summary?q=' + encodeURIComponent(query) + '&max-results=10&alt=json-in-script&callback=__lpJumpCB';
+    document.head.appendChild(s);
+  };
+  window.__lpJumpCB = function(data) {
+    if(data.feed && data.feed.entry && data.feed.entry.length > 0) {
+      var targetEntry = null;
+      for(var i=0; i<data.feed.entry.length; i++) {
+        if(data.feed.entry[i].title.$t.toLowerCase().trim() === window.__lpJumpQuery) {
+          targetEntry = data.feed.entry[i];
+          break;
+        }
+      }
+      if(!targetEntry) targetEntry = data.feed.entry[0];
+
+      var link = null;
+      for(var j=0; j<targetEntry.link.length; j++){
+        if(targetEntry.link[j].rel === 'alternate') {
+          link = targetEntry.link[j].href;
+          break;
+        }
+      }
+      if(link) window.location.href = link;
+    }
+  };
+
+  // ―― FIX IOS SAFARI TICKER ANIMATION (BFCACHE & LOAD) ――
+  window.addEventListener('load', function() {
+    var track = document.querySelector('.lp-ticker-track');
+    if (!track) return;
+    track.style.animation = 'none';
+    track.offsetHeight; /* force reflow */
+    track.style.animation = 'ticker 80s linear infinite';
+    track.style.webkitAnimation = '-webkit-ticker 80s linear infinite';
+    
+    setTimeout(function() {
+      track.style.animation = 'none';
+      track.offsetHeight;
+      track.style.animation = 'ticker 80s linear infinite';
+      track.style.webkitAnimation = '-webkit-ticker 80s linear infinite';
+    }, 300);
+  });
+
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) {
+      var track = document.querySelector('.lp-ticker-track');
+      if (!track) return;
+      track.style.animation = 'none';
+      track.offsetHeight;
+      track.style.animation = 'ticker 80s linear infinite';
+      track.style.webkitAnimation = '-webkit-ticker 80s linear infinite';
+    }
+  });
+//]]>
+</script>
+
+<!-- ===== YELLOWKOREA DIRECTORY JS ===== -->
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+
+  // ── Business data (add/remove companies here) ──
+  var YK_BUSINESSES = [
+    {
+      id: 1,
+      name: "ADD GROUP",
+      verified: true,
+      cat: "건설/인테리어",
+      rating: 4.8,
+      desc: "베트남 건설·인테리어 전문 그룹. 하노이 오피스 및 주거 공간 시공",
+      location: "Tầng 3, Dolphin Plaza, 56 Trần Bình, Hà Nội",
+      phone: "+84 90 613 3456",
+      website: "addgroup.vn",
+      url: ""
+    },
+    {
+      id: 2,
+      name: "KPOP ART SCHOOL",
+      verified: true,
+      cat: "교육",
+      rating: 4.7,
+      desc: "K-POP 댄스 및 보컬 전문 교육기관. 서울·하노이 동시 운영",
+      location: "4F, Lasara Tower, 138 Wausan-ro, Mapo-gu, Seoul",
+      phone: "+82 10 5107 5991",
+      website: "kpopartschool.com",
+      url: ""
+    },
+    {
+      id: 3,
+      name: "IDP VIETNAM",
+      verified: true,
+      cat: "교육",
+      rating: 4.6,
+      desc: "국제 어학 시험·유학 컨설팅 전문. IELTS 공식 시험센터 운영",
+      location: "161-163A Hải Bà Trưng, Phường Xuân Hòa, TP.HCM",
+      phone: "+84 1900 6955",
+      website: "idp.com/vietnam",
+      url: ""
+    },
+    {
+      id: 4,
+      name: "서울 한식당",
+      verified: true,
+      cat: "식당/카페",
+      rating: 4.8,
+      desc: "정통 한식을 맛볼 수 있는 호치민 최고의 한식당",
+      location: "District 1, Ho Chi Minh City",
+      phone: "+84 28 3823 xxxx",
+      website: "seoulrestaurant.vn",
+      url: ""
+    },
+    {
+      id: 5,
+      name: "한국 국제병원",
+      verified: true,
+      cat: "병원/의료",
+      rating: 4.9,
+      desc: "한국어 가능 의료진, 24시간 응급실 운영",
+      location: "District 2, Ho Chi Minh City",
+      phone: "+84 28 3744 xxxx",
+      website: "koreanhospital.vn",
+      url: ""
+    },
+    {
+      id: 6,
+      name: "K-LAW FIRM",
+      verified: false,
+      cat: "법률/세무",
+      rating: 4.5,
+      desc: "베트남 법인 설립·세무·노무 전문 한국 법률 사무소",
+      location: "Ba Đình, Hà Nội",
+      phone: "+84 24 3xxx xxxx",
+      website: "klawvn.com",
+      url: ""
+    }
+  ];
+
+  // SVG icons (inline, no external dependency)
+  var SVG_PIN  = '<svg class="yk-card-info-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+  var SVG_PHONE= '<svg class="yk-card-info-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>';
+  var SVG_GLOBE= '<svg class="yk-card-info-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>';
+
+  function buildCard(b) {
+    var contactHref = b.phone ? 'tel:' + b.phone.replace(/\s/g,'') : '#';
+    var detailHref  = b.url || '#';
+    return '<div class="yk-card" data-cat="'+b.cat+'">' +
+      '<div class="yk-card-top">' +
+        '<div>' +
+          '<div class="yk-card-name">'+b.name+(b.verified?'<span class="yk-card-badge">인증</span>':'')+'</div>' +
+          '<div class="yk-card-cat">'+b.cat+'</div>' +
+        '</div>' +
+        '<div class="yk-card-rating"><span class="star">★</span>'+b.rating+'</div>' +
+      '</div>' +
+      '<div class="yk-card-desc">'+b.desc+'</div>' +
+      '<div class="yk-card-info">' +
+        '<div class="yk-card-info-row">'+SVG_PIN+'<span>'+b.location+'</span></div>' +
+        '<div class="yk-card-info-row">'+SVG_PHONE+'<span>'+b.phone+'</span></div>' +
+        '<div class="yk-card-info-row">'+SVG_GLOBE+'<span>'+b.website+'</span></div>' +
+      '</div>' +
+      '<div class="yk-card-actions">' +
+        '<a class="yk-btn-primary" href="'+contactHref+'">📞 연락하기</a>' +
+        '<a class="yk-btn-secondary" href="'+detailHref+'">› 상세보기</a>' +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderGrid(cat) {
+    var grid = document.getElementById('ykGrid');
+    if (!grid) return;
+    var list = cat === '전체' ? YK_BUSINESSES : YK_BUSINESSES.filter(function(b){ return b.cat === cat; });
+    if (list.length === 0) {
+      grid.innerHTML = '<div class="yk-no-result" style="grid-column:1/-1">해당 카테고리의 업체 정보가 없습니다.</div>';
+    } else {
+      grid.innerHTML = list.map(buildCard).join('');
+    }
+  }
+
+  window.ykFilter = function(btn) {
+    document.querySelectorAll('.yk-filter-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    renderGrid(btn.getAttribute('data-cat'));
+  };
+
+  // ── Detect YELLOWKOREA page and activate directory ──
+  function initYKDirectory() {
+    var path = window.location.pathname + window.location.search;
+    var isYKPage = path.indexOf('YELLOWKOREA') !== -1 || path.indexOf('yellowkorea') !== -1;
+
+    if (!isYKPage) return;
+
+    // Show directory, hide normal page elements
+    var dir = document.getElementById('lp-yk-directory');
+    if (dir) {
+      dir.classList.add('active');
+      document.body.classList.add('yk-page');
+    }
+
+    // Hide slider, company section, post list, pager
+    var toHide = ['lpSlider', 'lp-company-section', 'lp-news-section', 'blog-pager'];
+    toHide.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.style.display = 'none';
+    });
+
+    // Also hide section-title divs and post list
+    document.querySelectorAll('.lp-post-list, .blog-pager, .lp-slider').forEach(function(el){
+      el.style.display = 'none';
+    });
+
+    // Render default (all)
+    renderGrid('전체');
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initYKDirectory);
+  } else {
+    initYKDirectory();
+  }
+
+})();
+//]]>
+</script>
+
+<!-- ===== MOBILE MENU JS ===== -->
+<script type="text/javascript">
+//<![CDATA[
+function lpMenuOpen(){
+  var m=document.getElementById('lp-mobile-menu');
+  var o=document.getElementById('lp-nav-mobile-overlay');
+  if(m){m.classList.add('open');}
+  if(o){o.classList.add('open');}
+  document.body.style.overflow='hidden';
+}
+function lpMenuClose(){
+  var m=document.getElementById('lp-mobile-menu');
+  var o=document.getElementById('lp-nav-mobile-overlay');
+  if(m){m.classList.remove('open');}
+  if(o){o.classList.remove('open');}
+  document.body.style.overflow='';
+}
+function lpSubToggle(arrow){
+  var li=arrow.parentElement;
+  li.classList.toggle('mm-open');
+}
+//]]>
+</script>
+
+<!-- ===== YELLOWKOREA PAGE: ẨN SIDEBAR ===== -->
+<script type="text/javascript">
+//<![CDATA[
+(function(){
+  // Detect nếu đang ở trang YELLOWKOREA (Blogger Page URL thường có /p/yellow hoặc tên page)
+  var path = window.location.pathname.toLowerCase();
+  var isYKPage = path.indexOf('yellow') !== -1 || path.indexOf('yk') !== -1 ||
+                 path.indexOf('ko-cham') !== -1 || path.indexOf('kocham') !== -1 ||
+                 path.indexOf('주소록') !== -1;
+
+  // Cũng check title của page
+  var pageTitle = (document.title || '').toLowerCase();
+  if (!isYKPage) {
+    isYKPage = pageTitle.indexOf('yellow') !== -1 || pageTitle.indexOf('주소록') !== -1;
+  }
+
+  // Check nếu có #yk-wrap trong DOM (dấu hiệu chắc chắn nhất)
+  if (!isYKPage && document.getElementById('yk-wrap')) {
+    isYKPage = true;
+  }
+
+  if (!isYKPage) return;
+
+  // Inject CSS để ẩn sidebar và mở rộng main
+  var style = document.createElement('style');
+  style.textContent =
+    '#sidebar { display: none !important; }' +
+    '.lp-grid { grid-template-columns: 1fr !important; }' +
+    '#main { max-width: 100% !important; }' +
+    /* Ẩn post meta (date, author) vì đây là page directory */
+    '.post-header, .post-footer, .date-header, #yk-wrap + .post-footer { display:none !important; }';
+  document.head.appendChild(style);
+
+})();
+//]]>
+</script>
+
+</body>
+</html>

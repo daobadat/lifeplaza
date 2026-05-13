@@ -1,0 +1,720 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="vi" lang="vi" dir="<$BlogLanguageDirection$>">
+
+<head>
+  <title><$BlogPageTitle$></title>
+  <$BlogMetaData$>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+  <style type="text/css">
+/* ===== RESET ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#333;font-size:14px;text-align:left}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ul,ol{list-style:none;padding:0;margin:0}
+
+/* ===== LAYOUT ===== */
+.lp-wrap{max-width:1100px;margin:0 auto;padding:0 12px}
+
+/* ===== TOPBAR ===== */
+#header{background:#fff;border-bottom:1px solid #e0e0e0;padding:10px 0;margin:0}
+.lp-topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#blog-title{font-size:24px;font-weight:800;margin:0;padding:0;line-height:1}
+#blog-title a{text-decoration:none}
+#blog-title .g{color:#8BC34A}
+#blog-title .d{color:#444}
+#description{display:none}
+.lp-search-wrap{display:flex;align-items:center;gap:6px;flex:1;max-width:400px}
+.lp-search-box{position:relative;flex:1}
+.lp-search-box input{width:100%;padding:7px 34px 7px 10px;border:1px solid #ccc;font-size:13px;outline:none;background:#fafafa;font-family:inherit}
+.lp-search-box input:focus{border-color:#8BC34A}
+.lp-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#888;font-size:15px;padding:0}
+.lp-lang-ko{background:#d32f2f;color:#fff;border:none;padding:7px 10px;font-size:12px;font-weight:700;cursor:pointer}
+.lp-lang-flag{border:1px solid #ccc;padding:6px 8px;font-size:14px;background:#fff;cursor:pointer}
+
+/* ===== NAV ===== */
+#lp-nav{background:#8BC34A;margin:0;padding:0}
+#lp-nav ul{display:flex;overflow-x:auto;margin:0;padding:0;list-style:none}
+#lp-nav ul::-webkit-scrollbar{height:3px}
+#lp-nav ul li a{display:block;padding:11px 14px;color:#fff;font-size:12px;font-weight:600;letter-spacing:.5px;white-space:nowrap;transition:background .2s}
+#lp-nav ul li a:hover{background:rgba(0,0,0,.18);color:#fff}
+
+/* ===== CONTENT AREA ===== */
+#content{max-width:1100px;margin:0 auto;padding:18px 12px 40px;text-align:left}
+.lp-grid{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:900px){.lp-grid{grid-template-columns:2fr 1fr}}
+
+/* SECTION TITLE */
+.lp-section-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.lp-section-title .bar{width:4px;height:20px;background:#8BC34A;flex-shrink:0}
+.lp-section-title h2{font-size:15px;font-weight:700;color:#333;white-space:nowrap;margin:0;padding:0;line-height:1}
+.lp-section-title .line{flex:1;height:1px;background:#e0e0e0}
+
+/* CARD */
+.lp-card{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.lp-divider>*+*{border-top:1px solid #f0f0f0}
+
+/* ===== NEWS SLIDER ===== */
+.lp-slider{position:relative;height:360px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:18px}
+.lp-slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+.lp-slide.active{opacity:1;z-index:2}
+.lp-slide img{width:100%;height:100%;object-fit:cover}
+.lp-slide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 55%,transparent 100%)}
+.lp-slide-content{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:3}
+.lp-slide-cat{display:inline-block;background:#8BC34A;color:#fff;font-size:10px;font-weight:700;padding:3px 9px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.lp-slide-date{color:rgba(255,255,255,.65);font-size:11px;margin-bottom:6px}
+.lp-slide-title{color:#fff;font-size:16px;font-weight:700;line-height:1.4;overflow:hidden;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.lp-slide-sub{color:rgba(255,255,255,.75);font-size:12px;line-height:1.5;overflow:hidden;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.lp-slide-btn{display:inline-block;background:#8BC34A;color:#fff;font-size:11px;font-weight:600;padding:6px 14px;cursor:pointer;border:none;transition:background .2s}
+.lp-slide-btn:hover{background:#7CB342}
+.lp-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(0,0,0,.4);color:#fff;border:none;cursor:pointer;padding:8px 11px;font-size:20px;transition:background .2s;line-height:1}
+.lp-slider-arrow:hover{background:rgba(0,0,0,.65)}
+.lp-slider-arrow.prev{left:8px}
+.lp-slider-arrow.next{right:8px}
+.lp-slider-dots{position:absolute;top:10px;right:10px;z-index:10;display:flex;gap:4px;align-items:center}
+.lp-dot{height:8px;background:rgba(255,255,255,.55);border:none;cursor:pointer;width:8px;transition:width .3s,background .3s;padding:0}
+.lp-dot.active{width:22px;background:#8BC34A}
+.lp-slider-progress{position:absolute;bottom:0;left:0;height:3px;background:#8BC34A;z-index:10;transition:width .4s}
+
+/* ===== COMPANY LISTINGS ===== */
+.lp-company-item{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;transition:background .2s}
+.lp-company-item:hover{background:#fafafa}
+.lp-company-logo{width:52px;height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+.lp-company-info{flex:1;min-width:0}
+.lp-company-name-row{display:flex;align-items:center;gap:6px;margin-bottom:2px}
+.lp-company-name{font-size:13px;font-weight:700;color:#222;transition:color .2s}
+.lp-company-item:hover .lp-company-name{color:#8BC34A}
+.lp-company-tag{font-size:10px;padding:1px 6px}
+.lp-company-phone{font-size:11px;color:#666}
+.lp-company-addr{font-size:11px;color:#aaa;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lp-external{color:#ccc;font-size:14px;flex-shrink:0;transition:color .2s}
+.lp-company-item:hover .lp-external{color:#8BC34A}
+
+/* ===== NEWS LIST ===== */
+.lp-post-list .post-outer,
+.lp-news-item{display:flex;gap:12px;padding:12px 14px;cursor:pointer;transition:background .2s}
+.lp-post-list .post-outer:hover,
+.lp-news-item:hover{background:#fafafa}
+.lp-post-list .post-outer+.post-outer,
+.lp-divider .post-outer+.post-outer{border-top:1px solid #f0f0f0}
+
+.lp-news-thumb,.post-thumbnail{width:96px;height:68px;flex-shrink:0;overflow:hidden}
+.lp-news-thumb img,.post-thumbnail img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.lp-news-item:hover .lp-news-thumb img,
+.lp-post-list .post-outer:hover .post-thumbnail img{transform:scale(1.06)}
+.lp-news-body,.post-body-container{flex:1;min-width:0}
+.lp-news-meta,.post-meta{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.lp-cat-badge{font-size:10px;padding:1px 6px}
+.lp-news-date,.post-date{font-size:11px;color:#aaa}
+.lp-news-title,.post-title{font-size:13px;font-weight:700;color:#222;line-height:1.4;overflow:hidden;transition:color .2s;margin-bottom:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;padding:0}
+.lp-news-title a,.post-title a{color:#222;font-size:13px;font-weight:700}
+.lp-news-item:hover .lp-news-title,
+.lp-post-list .post-outer:hover .post-title,
+.lp-post-list .post-outer:hover .post-title a{color:#8BC34A}
+.lp-news-excerpt,.post-snippet{font-size:11px;color:#888;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
+
+/* Blogger native post reset inside our layout */
+#main .date-header{display:none}
+#main .post{margin:0;padding:0;border:none}
+#main p.post-footer{display:none}
+
+/* CATEGORY COLORS */
+.cat-NEWS{background:#dbeafe;color:#1d4ed8}
+.cat-LIFESTYLE{background:#f3e8ff;color:#7e22ce}
+.cat-EVENT{background:#ffedd5;color:#c2410c}
+.cat-INTERVIEW{background:#fce7f3;color:#be185d}
+.cat-COOPERATION{background:#dcfce7;color:#166534}
+.cat-USEFUL{background:#fef9c3;color:#854d0e}
+.cat-K-FOOD{background:#fee2e2;color:#b91c1c}
+.cat-EDUCATION{background:#e0e7ff;color:#3730a3}
+.cat-REAL-ESTATE{background:#ccfbf1;color:#0f766e}
+.cat-default{background:#f0f0f0;color:#555}
+
+/* PAGINATION */
+.blog-pager{display:flex;justify-content:center;align-items:center;gap:10px;padding:16px 0}
+.blog-pager a{padding:6px 16px;background:#e5e7eb;color:#555;font-size:12px;font-weight:600;transition:background .2s}
+.blog-pager a:hover{background:#8BC34A;color:#fff}
+.home-link a{background:#8BC34A;color:#fff;padding:6px 16px;font-size:12px;font-weight:600;transition:opacity .2s}
+.home-link a:hover{opacity:.85}
+.paging-control-container{float:none!important;text-align:center}
+
+/* ===== SIDEBAR ===== */
+#sidebar{float:none;width:auto;margin:0;font-size:14px;line-height:1.5}
+.lp-sidebar-block{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);overflow:hidden;margin-bottom:14px}
+.lp-sidebar-head{display:flex;align-items:center;gap:8px;padding:9px 14px}
+.lp-sidebar-head .icon{font-size:13px}
+.lp-sidebar-head .stitle{font-size:13px;font-weight:700;color:#fff}
+.lp-head-green{background:#8BC34A}
+.lp-head-dark{background:#1f2937}
+.lp-head-gray{background:#374151}
+
+.lp-hot-item{display:flex;gap:10px;padding:10px 12px;cursor:pointer;transition:background .2s;border-top:1px solid #f0f0f0}
+.lp-hot-item:first-of-type{border-top:none}
+.lp-hot-item:hover{background:#fafafa}
+.lp-hot-thumb{position:relative;width:60px;height:46px;flex-shrink:0;overflow:hidden}
+.lp-hot-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.lp-hot-item:hover .lp-hot-thumb img{transform:scale(1.06)}
+.lp-hot-num{position:absolute;top:0;left:0;width:18px;height:18px;background:#8BC34A;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.lp-hot-title{font-size:12px;font-weight:600;color:#333;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s}
+.lp-hot-item:hover .lp-hot-title{color:#8BC34A}
+.lp-hot-date{font-size:10px;color:#aaa;margin-top:3px}
+
+.lp-latest-item{padding:10px 14px;cursor:pointer;transition:background .2s;border-top:1px solid #f0f0f0}
+.lp-latest-item:first-of-type{border-top:none}
+.lp-latest-item:hover{background:#fafafa}
+.lp-latest-inner{display:flex;align-items:flex-start;gap:8px}
+.lp-latest-dot{width:6px;height:6px;background:#8BC34A;border-radius:50%;flex-shrink:0;margin-top:5px}
+.lp-latest-title{font-size:12px;font-weight:600;color:#333;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s;margin-bottom:3px}
+.lp-latest-item:hover .lp-latest-title{color:#8BC34A}
+.lp-latest-title a{color:inherit;font-size:inherit;font-weight:inherit}
+.lp-latest-date{font-size:10px;color:#aaa}
+
+/* Blogger sidebar widget reset */
+.box,.box2,.box3{background:none!important;margin:0!important;padding:0!important}
+.sidebar-title{display:none}
+.profile-textblock,.profile-img,.profile-data{padding:8px 14px}
+#profile-container{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:14px;padding:0}
+#profile-container h2{background:#374151;color:#fff;font-size:13px;font-weight:700;padding:9px 14px;margin:0;border:none}
+#profile-container a{color:#8BC34A}
+
+.lp-cats{padding:12px 14px;display:flex;flex-wrap:wrap;gap:6px}
+.lp-cat-pill{padding:4px 11px;background:#f0f0f0;color:#555;font-size:11px;font-weight:600;cursor:pointer;border:none;transition:background .2s,color .2s;border-radius:20px;display:inline-block}
+.lp-cat-pill:hover{background:#8BC34A;color:#fff}
+
+/* Recent posts in sidebar */
+#recently{margin:0;padding:0;list-style:none}
+#recently li{border-top:1px solid #f0f0f0;padding:9px 14px}
+#recently li:first-child{border-top:none}
+#recently li a{font-size:12px;font-weight:600;color:#333;transition:color .2s;display:flex;align-items:flex-start;gap:6px}
+#recently li a::before{content:"•";color:#8BC34A;font-weight:900;flex-shrink:0}
+#recently li a:hover{color:#8BC34A}
+
+/* Archive list */
+.archive-list{margin:0;padding:0;list-style:none}
+.archive-list li{border-top:1px solid #f0f0f0;padding:8px 14px}
+.archive-list li:first-child{border-top:none}
+.archive-list li a{font-size:12px;color:#555;transition:color .2s}
+.archive-list li a:hover{color:#8BC34A}
+
+/* Contact sidebar */
+.lp-contact-item{display:flex;gap:10px;padding:10px 14px;cursor:pointer;transition:background .2s;border-top:1px solid #f0f0f0}
+.lp-contact-item:first-of-type{border-top:none}
+.lp-contact-item:hover{background:#fafafa}
+.lp-contact-pin{color:#f59e0b;font-size:14px;flex-shrink:0;margin-top:2px}
+.lp-contact-name{font-size:12px;font-weight:700;color:#333;transition:color .2s;margin-bottom:2px}
+.lp-contact-item:hover .lp-contact-name{color:#8BC34A}
+.lp-contact-phone{font-size:11px;color:#666}
+.lp-contact-addr{font-size:10px;color:#aaa;line-height:1.4}
+
+/* ===== SINGLE POST PAGE ===== */
+.lp-single-post{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);padding:20px 24px;margin-bottom:16px}
+.lp-single-post .post-title{font-size:20px;font-weight:700;color:#222;line-height:1.4;margin-bottom:8px;display:block;-webkit-line-clamp:unset}
+.lp-single-post .post-title a{font-size:20px;font-weight:700;color:#222}
+.lp-single-post .lp-news-meta{margin-bottom:14px}
+.lp-single-post .post-body{font-size:14px;line-height:1.8;color:#333;margin-bottom:16px}
+.lp-single-post .post-body img{margin:12px 0;max-width:100%;border:1px solid #eee;padding:2px}
+.lp-single-post .post-body p{margin-bottom:12px}
+.lp-single-post .post-body h2{font-size:17px;font-weight:700;margin:18px 0 8px;color:#222}
+.lp-single-post .post-body blockquote{border-left:3px solid #8BC34A;margin:12px 0;padding:8px 14px;background:#f9f9f9;color:#555;font-style:italic}
+.lp-single-post .post-footer-info{font-size:11px;color:#aaa;padding-top:12px;border-top:1px solid #f0f0f0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lp-single-post .post-footer-info a{color:#8BC34A}
+
+/* Comments */
+#comments{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);padding:20px 24px;margin-bottom:16px}
+#comments h4{font-size:14px;font-weight:700;color:#333;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #f0f0f0}
+.comment-data{font-size:11px;color:#aaa;margin-bottom:4px}
+.comment-poster{font-weight:700;color:#333}
+.comment-body{font-size:13px;color:#555;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0}
+.comment-body:last-child{border-bottom:none}
+
+/* ===== FOOTER ===== */
+#footer{clear:both;margin:0;padding:0}
+#footer div{background:#f9f9f9;border-top:1px solid #e5e5e5;padding:0}
+#footer div div{background:none;padding:16px 12px}
+.lp-footer-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.lp-footer-logo{font-size:18px;font-weight:800}
+.lp-footer-logo .g{color:#8BC34A}
+.lp-footer-logo .d{color:#444}
+.lp-footer-copy{font-size:12px;color:#888}
+.lp-footer-copy a{color:#1a73e8;font-weight:600}
+.lp-footer-social{display:flex;gap:14px}
+.lp-footer-social a{color:#666;font-size:12px;font-weight:600;transition:color .2s}
+.lp-footer-social a:hover{color:#8BC34A}
+#footer hr{display:none}
+#footer p{margin:0}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+  .lp-slider{height:240px}
+  .lp-slide-title{font-size:13px}
+  #blog-title{font-size:20px}
+  .lp-search-wrap{max-width:100%;flex:none;width:100%}
+  .lp-topbar-inner{flex-direction:column;align-items:flex-start}
+}
+  </style>
+</head>
+
+<body>
+
+<!-- ===== HEADER / TOPBAR ===== -->
+<div id="header">
+  <div class="lp-wrap">
+    <div class="lp-topbar-inner">
+      <h1 id="blog-title">
+        <a href="<$BlogURL$>"><span class="g">Life</span><span class="d">plaza</span></a>
+      </h1>
+      <p id="description"><$BlogDescription$></p>
+      <div class="lp-search-wrap">
+        <div class="lp-search-box">
+          <input id="lpSearchInput" onkeydown="if(event.key=='Enter'){window.location='<$BlogURL$>search?q='+encodeURIComponent(this.value)}" placeholder="콘텐츠를 입력해주세요..." type="text"/>
+          <button class="lp-search-btn" onclick="window.location='<$BlogURL$>search?q='+encodeURIComponent(document.getElementById('lpSearchInput').value)">🔍</button>
+        </div>
+        <button class="lp-lang-ko">KO</button>
+        <button class="lp-lang-flag">🇰🇷</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<div id="lp-nav">
+  <div class="lp-wrap">
+    <ul>
+      <li><a href="<$BlogURL$>">HOME</a></li>
+      <li><a href="<$BlogURL$>search/label/NEWS">NEWS</a></li>
+      <li><a href="<$BlogURL$>search/label/INTERVIEW">INTERVIEW</a></li>
+      <li><a href="<$BlogURL$>search/label/LIFESTYLE">LIFESTYLE</a></li>
+      <li><a href="<$BlogURL$>search/label/USEFUL">USEFUL</a></li>
+      <li><a href="<$BlogURL$>search/label/COOPERATION">COOPERATION</a></li>
+      <li><a href="<$BlogURL$>search/label/BOARD">BOARD</a></li>
+      <li><a href="<$BlogURL$>search/label/BANNER">BANNER</a></li>
+      <li><a href="<$BlogURL$>search/label/K-FOOD">K-FOOD</a></li>
+      <li><a href="<$BlogURL$>search/label/YOUTUBE">YOUTUBE</a></li>
+      <li><a href="<$BlogURL$>search/label/YELLOWKOREA">YELLOWKOREA</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== MAIN CONTENT AREA ===== -->
+<div id="content">
+  <div class="lp-grid">
+
+    <!-- ══════════════════════════════════
+         LEFT: MAIN COLUMN
+    ══════════════════════════════════ -->
+    <div id="main"><div id="main2"><div id="main3">
+
+      <!-- ── NEWS SLIDER ── -->
+      <MainOrArchivePage>
+      <div class="lp-slider" id="lpSlider">
+
+        <div class="lp-slide active">
+          <img alt="slide" src="https://images.unsplash.com/photo-1650784855038-9f4d5ed154a9?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;w=900"/>
+          <div class="lp-slide-overlay"></div>
+          <div class="lp-slide-content">
+            <span class="lp-slide-cat">INTERVIEW</span>
+            <div class="lp-slide-date">2026-02-28</div>
+            <div class="lp-slide-title">2025 세계여성의날 리더스포럼 개최 - 한국 여성 기업인들의 베트남 네트워크</div>
+            <div class="lp-slide-sub">2025년 세계여성의날을 기념해 리더스 포럼이 성대하게 개최됐다. 베트남 내 한국 여성 기업인들이 참여.</div>
+            <button class="lp-slide-btn">Đọc tiếp / 더보기</button>
+          </div>
+        </div>
+
+        <div class="lp-slide">
+          <img alt="slide" src="https://images.unsplash.com/photo-1752159684779-0639174cdfac?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;w=900"/>
+          <div class="lp-slide-overlay"></div>
+          <div class="lp-slide-content">
+            <span class="lp-slide-cat">NEWS</span>
+            <div class="lp-slide-date">2026-03-10</div>
+            <div class="lp-slide-title">LIFE PLAZA VÀ VTV TIMES: HỢP TÁC NÂNG TẦM HỒI DUNG SỚI VIỆT - HÀN</div>
+            <div class="lp-slide-sub">Báo Life Plaza và VTV Times đã ký kết hợp tác truyền thông nhằm thắt chặt sợi dây liên kết Việt - Hàn.</div>
+            <button class="lp-slide-btn">Đọc tiếp / 더보기</button>
+          </div>
+        </div>
+
+        <div class="lp-slide">
+          <img alt="slide" src="https://images.unsplash.com/photo-1765510103179-0c2f628d2ff2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;w=900"/>
+          <div class="lp-slide-overlay"></div>
+          <div class="lp-slide-content">
+            <span class="lp-slide-cat">LIFESTYLE</span>
+            <div class="lp-slide-date">2026-03-08</div>
+            <div class="lp-slide-title">베트남 코리안 페스티벌(VKF) 성대한 개막! 한-베 우호의 새 장을 열다</div>
+            <div class="lp-slide-sub">베트남 코리안 페스티벌(VKF)이 성공적으로 개막했다. 한국과 베트남의 우호 관계를 더욱 돈독히 하는 문화 행사.</div>
+            <button class="lp-slide-btn">Đọc tiếp / 더보기</button>
+          </div>
+        </div>
+
+        <div class="lp-slide">
+          <img alt="slide" src="https://images.unsplash.com/photo-1606443192517-919653213206?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;w=900"/>
+          <div class="lp-slide-overlay"></div>
+          <div class="lp-slide-content">
+            <span class="lp-slide-cat">EVENT</span>
+            <div class="lp-slide-date">2026-03-05</div>
+            <div class="lp-slide-title">제1회 재베트남한국청년회 골프 대회 성황리 개최!</div>
+            <div class="lp-slide-sub">호치민시 송베 골프장에서 개최된 제1회 재베트남한국청년회 골프 대회가 성황리에 종료됐다.</div>
+            <button class="lp-slide-btn">Đọc tiếp / 더보기</button>
+          </div>
+        </div>
+
+        <div class="lp-slide">
+          <img alt="slide" src="https://images.unsplash.com/photo-1714013582510-bb8cb0f62af7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;w=900"/>
+          <div class="lp-slide-overlay"></div>
+          <div class="lp-slide-content">
+            <span class="lp-slide-cat">USEFUL</span>
+            <div class="lp-slide-date">2026-03-15</div>
+            <div class="lp-slide-title">베드남 현대 생활 · 기술의 미래를 보았다 - 제23회 VIETBUILD 2026</div>
+            <div class="lp-slide-sub">VIETBUILD 2026에서 베트남 현대 건축과 기술의 미래를 한눈에 볼 수 있는 기회를 제공하였다.</div>
+            <button class="lp-slide-btn">Đọc tiếp / 더보기</button>
+          </div>
+        </div>
+
+        <button class="lp-slider-arrow prev" onclick="sliderMove(-1)">&#8249;</button>
+        <button class="lp-slider-arrow next" onclick="sliderMove(1)">&#8250;</button>
+        <div class="lp-slider-dots" id="lpDots"></div>
+        <div class="lp-slider-progress" id="lpProgress"></div>
+      </div>
+
+      <!-- ── COMPANY LISTINGS ── -->
+      <div class="lp-section-title">
+        <div class="bar"></div><h2>기업 정보</h2><div class="line"></div>
+      </div>
+      <div class="lp-card lp-divider" style="margin-bottom:18px">
+        <div class="lp-company-item">
+          <div class="lp-company-logo" style="background:#FDD835;color:#333">AD</div>
+          <div class="lp-company-info">
+            <div class="lp-company-name-row">
+              <span class="lp-company-name">ADD GROUP</span>
+              <span class="lp-company-tag cat-default">CONSTRUCTION</span>
+            </div>
+            <div class="lp-company-phone">+84 90 613 3456</div>
+            <div class="lp-company-addr">Tầng 3, Tòa nhà Dophin Plaza, 56 Trần Bình, Phường Cầu Giấy, Hà Nội</div>
+          </div>
+          <span class="lp-external">↗</span>
+        </div>
+        <div class="lp-company-item">
+          <div class="lp-company-logo" style="background:#1565C0;color:#fff">HP</div>
+          <div class="lp-company-info">
+            <div class="lp-company-name-row">
+              <span class="lp-company-name">POP ART SCHOOL</span>
+              <span class="lp-company-tag cat-EDUCATION">EDUCATION</span>
+            </div>
+            <div class="lp-company-phone">+82 10 9197 4991</div>
+            <div class="lp-company-addr">4F, Lasara Tower, 138 Wausan-ro, Mapo-gu, Seoul</div>
+          </div>
+          <span class="lp-external">↗</span>
+        </div>
+        <div class="lp-company-item">
+          <div class="lp-company-logo" style="background:linear-gradient(135deg,#42a5f5,#66bb6a);color:#fff">IDP</div>
+          <div class="lp-company-info">
+            <div class="lp-company-name-row">
+              <span class="lp-company-name">IDP VIETNAM</span>
+              <span class="lp-company-tag cat-EDUCATION">EDUCATION</span>
+            </div>
+            <div class="lp-company-phone">+84 1900 6955</div>
+            <div class="lp-company-addr">161-163A Hải Ba Trưng, Phường Xuân Đinh, TP.HCM</div>
+          </div>
+          <span class="lp-external">↗</span>
+        </div>
+      </div>
+
+      <!-- ── NEWS & EVENTS (Blogger posts) ── -->
+      <div class="lp-section-title">
+        <div class="bar"></div><h2>NEWS &amp; EVENTS</h2><div class="line"></div>
+      </div>
+      <div class="lp-card lp-post-list" style="margin-bottom:12px">
+      </MainOrArchivePage>
+
+      <!-- ==============================
+           BLOGGER POSTS LOOP
+      ============================== -->
+      <Blogger>
+        <BlogDateHeader><h2 class="date-header" style="display:none"><$BlogDateHeaderDate$></h2></BlogDateHeader>
+
+        <!-- HOME / ARCHIVE: card-style list item -->
+        <MainOrArchivePage>
+        <div class="post-outer">
+          <div class="post-thumbnail">
+            <a href="<$BlogItemPermalinkUrl$>">
+              <img alt="" class="lp-auto-thumb" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"/>
+            </a>
+          </div>
+          <div class="post-body-container">
+            <div class="post-meta">
+              <span class="lp-cat-badge cat-default"><$BlogItemLabels$></span>
+              <span class="post-date"><$BlogItemDateTime$></span>
+            </div>
+            <div class="post-title">
+              <a href="<$BlogItemPermalinkUrl$>"><$BlogItemTitle$></a>
+            </div>
+            <!-- hidden body used to extract thumbnail -->
+            <div class="post-snippet lp-body-src" style="display:none"><$BlogItemBody$></div>
+            <div class="post-excerpt-text" style="font-size:11px;color:#888;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical"></div>
+          </div>
+        </div>
+        </MainOrArchivePage>
+
+        <!-- SINGLE POST PAGE: full article -->
+        <ItemPage>
+        <div class="lp-single-post">
+          <div class="post-meta">
+            <span class="lp-cat-badge cat-default"><$BlogItemLabels$></span>
+            <span class="post-date"><$BlogItemDateTime$></span>
+          </div>
+          <BlogItemTitle>
+          <div class="post-title"><a href="<$BlogItemPermalinkUrl$>"><$BlogItemTitle$></a></div>
+          </BlogItemTitle>
+          <div class="post-body"><$BlogItemBody$></div>
+          <div class="post-footer-info">
+            <span>✍️ <$I18NPostedByAuthorNickname$></span>
+            <BlogItemCommentsEnabled>
+              <a href="<$BlogItemCommentCreate$>"><$I18NNumComments$></a>
+            </BlogItemCommentsEnabled>
+            <$BlogItemControl$>
+          </div>
+        </div>
+
+        <!-- Comments section -->
+        <div id="comments">
+          <BlogItemCommentsEnabled>
+          <a name="comments"></a>
+          <h4><$I18NNumComments$></h4>
+          <dl id="comments-block">
+            <$CommentPager$>
+            <BlogItemComments>
+              <dt class="comment-data" id="<$BlogCommentAnchorName$>">
+                <span class="comment-poster"><$BlogCommentAuthor$></span> — <$I18NAtCommentTimeWithPermalink$>
+              </dt>
+              <dd class="comment-body"><p><$BlogCommentBody$></p><$BlogCommentDeleteIcon$></dd>
+            </BlogItemComments>
+            <$CommentPager$>
+          </dl>
+          <p style="margin-top:12px">
+            <a href="<$BlogItemCommentCreate$>" style="background:#8BC34A;color:#fff;padding:7px 16px;font-size:12px;font-weight:600;display:inline-block">💬 Leave a comment</a>
+          </p>
+          </BlogItemCommentsEnabled>
+        </div>
+        </ItemPage>
+
+      </Blogger>
+      <!-- END BLOGGER LOOP -->
+
+      <MainOrArchivePage>
+      </div><!-- /.lp-post-list -->
+
+      <!-- Pagination -->
+      <div class="blog-pager" id="blog-pager">
+        <a class="blog-pager-newer-link" id="Blog1_blog-pager-newer-link"><$I18NNewerPosts$></a>
+        <span class="home-link"><a href="<$BlogURL$>"><$I18NHome$></a></span>
+        <a class="blog-pager-older-link" id="Blog1_blog-pager-older-link"><$I18NOlderPosts$></a>
+      </div>
+      </MainOrArchivePage>
+
+    </div></div></div>
+    <!-- /#main -->
+
+    <!-- ══════════════════════════════════
+         RIGHT: SIDEBAR
+    ══════════════════════════════════ -->
+    <div id="sidebar">
+
+      <!-- HOT NEWS (static) -->
+      <div class="lp-sidebar-block">
+        <div class="lp-sidebar-head lp-head-green">
+          <span class="icon">🔥</span><span class="stitle">HOT NEWS</span>
+        </div>
+        <div class="lp-hot-item">
+          <div class="lp-hot-thumb">
+            <img alt="" loading="lazy" src="https://images.unsplash.com/photo-1765510103179-0c2f628d2ff2?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;w=200"/>
+            <div class="lp-hot-num">1</div>
+          </div>
+          <div>
+            <div class="lp-hot-title">한-베 수교 30주년 기념 문화제 성황리 마무리</div>
+            <div class="lp-hot-date">⏰ 2026-03-18</div>
+          </div>
+        </div>
+        <div class="lp-hot-item">
+          <div class="lp-hot-thumb">
+            <img alt="" loading="lazy" src="https://images.unsplash.com/photo-1752159684779-0639174cdfac?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;w=200"/>
+            <div class="lp-hot-num">2</div>
+          </div>
+          <div>
+            <div class="lp-hot-title">호치민 한인 상공회의소, 신규 회원사 50개 추가 유치</div>
+            <div class="lp-hot-date">⏰ 2026-03-16</div>
+          </div>
+        </div>
+        <div class="lp-hot-item">
+          <div class="lp-hot-thumb">
+            <img alt="" loading="lazy" src="https://images.unsplash.com/photo-1606443192517-919653213206?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;w=200"/>
+            <div class="lp-hot-num">3</div>
+          </div>
+          <div>
+            <div class="lp-hot-title">K-Food 문화 축제 하노이서 열려...현지인 관심 폭발</div>
+            <div class="lp-hot-date">⏰ 2026-03-14</div>
+          </div>
+        </div>
+        <div class="lp-hot-item">
+          <div class="lp-hot-thumb">
+            <img alt="" loading="lazy" src="https://images.unsplash.com/photo-1650784855038-9f4d5ed154a9?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;w=200"/>
+            <div class="lp-hot-num">4</div>
+          </div>
+          <div>
+            <div class="lp-hot-title">Cộng đồng người Hàn tại Việt Nam tổ chức hội thảo giáo dục 2026</div>
+            <div class="lp-hot-date">⏰ 2026-03-12</div>
+          </div>
+        </div>
+        <div class="lp-hot-item">
+          <div class="lp-hot-thumb">
+            <img alt="" loading="lazy" src="https://images.unsplash.com/photo-1714013582510-bb8cb0f62af7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;w=200"/>
+            <div class="lp-hot-num">5</div>
+          </div>
+          <div>
+            <div class="lp-hot-title">베트남 부동산 시장 동향 2026 - 한국 투자자를 위한 가이드</div>
+            <div class="lp-hot-date">⏰ 2026-03-09</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LATEST NEWS (Blogger recent posts) -->
+      <div class="lp-sidebar-block">
+        <div class="lp-sidebar-head lp-head-dark">
+          <span class="icon">📖</span><span class="stitle">LATEST NEWS</span>
+        </div>
+        <div class="box"><div class="box2"><div class="box3">
+          <MainOrArchivePage>
+          <ul id="recently">
+            <BloggerPreviousItems>
+              <li><a href="<$BlogItemPermalinkURL$>"><$BlogPreviousItemTitle$></a></li>
+            </BloggerPreviousItems>
+          </ul>
+          </MainOrArchivePage>
+        </div></div></div>
+      </div>
+
+      <!-- CATEGORIES (Archive list acts as navigation) -->
+      <div class="lp-sidebar-block">
+        <div class="lp-sidebar-head lp-head-gray">
+          <span class="icon">🏷</span><span class="stitle">CATEGORY</span>
+        </div>
+        <div class="lp-cats">
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/NEWS">NEWS</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/INTERVIEW">INTERVIEW</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/LIFESTYLE">LIFESTYLE</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/USEFUL">USEFUL</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/COOPERATION">COOPERATION</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/K-FOOD">K-FOOD</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/EDUCATION">EDUCATION</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/REAL-ESTATE">REAL-ESTATE</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/EVENT">EVENT</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/BOARD">BOARD</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/YOUTUBE">YOUTUBE</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/BANNER">BANNER</a>
+        </div>
+      </div>
+
+      <!-- ARCHIVES -->
+      <div class="lp-sidebar-block">
+        <div class="lp-sidebar-head lp-head-dark">
+          <span class="icon">📅</span><span class="stitle">ARCHIVES</span>
+        </div>
+        <div class="box"><div class="box2"><div class="box3">
+          <ul class="archive-list">
+            <MainOrArchivePage>
+            <BloggerArchives>
+              <li><a href="<$BlogArchiveURL$>"><$BlogArchiveName$></a></li>
+            </BloggerArchives>
+            </MainOrArchivePage>
+          </ul>
+        </div></div></div>
+      </div>
+
+      <!-- CONTACT (static) -->
+      <div class="lp-sidebar-block">
+        <div class="lp-sidebar-head lp-head-dark">
+          <span class="icon">📞</span><span class="stitle">CONTACT</span>
+        </div>
+        <div class="lp-contact-item"><span class="lp-contact-pin">📍</span><div><div class="lp-contact-name">ADD GROUP</div><div class="lp-contact-phone">+84 90 312 3456</div><div class="lp-contact-addr">Tầng 3, Tòa nhà Dophin Plaza, 56 Trần Bình, Hà Nội</div></div></div>
+        <div class="lp-contact-item"><span class="lp-contact-pin">📍</span><div><div class="lp-contact-name">POP ART SCHOOL</div><div class="lp-contact-phone">+82 10 9197 4991</div><div class="lp-contact-addr">4F, Laura Tower, 138 Wausan-ro, Mapo-gu, Seoul</div></div></div>
+        <div class="lp-contact-item"><span class="lp-contact-pin">📍</span><div><div class="lp-contact-name">IDP VIETNAM</div><div class="lp-contact-phone">+84 1900 6955</div><div class="lp-contact-addr">161-163A Hải Ba Trưng, TP.HCM, Việt Nam</div></div></div>
+        <div class="lp-contact-item"><span class="lp-contact-pin">📍</span><div><div class="lp-contact-name">JANSIS IN</div><div class="lp-contact-phone">+84 28 3930 9920</div><div class="lp-contact-addr">563 Song, Phường An Phú, TP. Thủ Đức</div></div></div>
+        <div class="lp-contact-item"><span class="lp-contact-pin">📍</span><div><div class="lp-contact-name">Medax Inc. 한국</div><div class="lp-contact-phone">+82 1577 1000</div><div class="lp-contact-addr">10 Hoedong-gil, Paju-si, Gyeonggi, South Korea</div></div></div>
+      </div>
+
+      <!-- Blogger profile widget -->
+      <$BlogMemberProfile$>
+
+    </div>
+    <!-- /#sidebar -->
+
+  </div><!-- /.lp-grid -->
+</div><!-- /#content -->
+
+<!-- ===== FOOTER ===== -->
+<div id="footer"><div><div>
+  <div class="lp-footer-inner">
+    <div class="lp-footer-logo">
+      <a href="<$BlogURL$>"><span class="g">Life</span><span class="d">plaza</span></a>
+    </div>
+    <div class="lp-footer-copy">
+      © <$BlogTitle$> · Powered by <a href="https://www.blogger.com" target="_blank">Blogger</a>
+    </div>
+    <div class="lp-footer-social">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+</div></div></div>
+
+<!-- ===== JS ===== -->
+<script type="text/javascript">
+//<![CDATA[
+// ── SLIDER ──
+(function(){
+  var slides=document.querySelectorAll('#lpSlider .lp-slide');
+  var dotsEl=document.getElementById('lpDots');
+  var progEl=document.getElementById('lpProgress');
+  if(!slides||!slides.length||!dotsEl||!progEl)return;
+  var cur=0,total=slides.length,tmr;
+  for(var i=0;i<total;i++){
+    var d=document.createElement('button');
+    d.className='lp-dot'+(i===0?' active':'');
+    d.setAttribute('data-i',i);
+    (function(n){d.onclick=function(){stop();go(n);start();};})(i);
+    dotsEl.appendChild(d);
+  }
+  function ui(){dotsEl.querySelectorAll('.lp-dot').forEach(function(d,i){d.className='lp-dot'+(i===cur?' active':'');});progEl.style.width=(((cur+1)/total)*100)+'%';}
+  function go(n){slides[cur].classList.remove('active');cur=(n+total)%total;slides[cur].classList.add('active');ui();}
+  function start(){tmr=setInterval(function(){go(cur+1);},5000);}
+  function stop(){clearInterval(tmr);}
+  window.sliderMove=function(d){stop();go(cur+d);start();};
+  ui();start();
+})();
+
+// ── AUTO THUMBNAIL: extract first img from post body ──
+(function(){
+  var PLACEHOLDER='https://placehold.co/96x68/f0f0f0/aaa?text=News';
+  document.querySelectorAll('.post-outer').forEach(function(card){
+    var bodyEl=card.querySelector('.lp-body-src');
+    var thumbEl=card.querySelector('.lp-auto-thumb');
+    var excerptEl=card.querySelector('.post-excerpt-text');
+    if(!bodyEl||!thumbEl)return;
+    var html=bodyEl.innerHTML;
+    var m=html.match(/<img[^>]+src=["']([^"']+)["']/i);
+    thumbEl.src=(m&&m[1])?m[1]:PLACEHOLDER;
+    if(!m)thumbEl.style.opacity='0.4';
+    if(excerptEl){
+      var tmp=document.createElement('div');
+      tmp.innerHTML=html;
+      var txt=(tmp.textContent||tmp.innerText||'').replace(/\s+/g,' ').trim();
+      excerptEl.textContent=txt.substring(0,120);
+    }
+    bodyEl.parentNode.removeChild(bodyEl);
+  });
+})();
+//]]>
+</script>
+
+</body>
+</html>

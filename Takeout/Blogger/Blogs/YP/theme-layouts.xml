@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+	<meta content='width=device-width,initial-scale=1.0' name='viewport'/>
+	<b:include data='blog' name='all-head-content'/>
+	<title>
+		<data:blog.pageTitle/>
+	</title>
+	<link href='https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'/>
+	<link href='https://elightup.github.io/clients/planadd/style.css' rel='stylesheet'/>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet'/>
+
+
+	
+	<b:template-skin>
+		<b:variable default='960px' name='content.width' type='length' value='950px'/>
+		<b:variable default='0' name='main.column.left.width' type='length'/>
+		<b:variable default='310px' name='main.column.right.width' type='length' value='290px'/>
+		<![CDATA[]]>
+	</b:template-skin>
+
+	<b:include data='blog' name='google-analytics'/>
+	<script src='https://cdn.jsdelivr.net/g/jquery@1.7.1,cufon@1.09,superfish@1.7.9,jquery.easing@1.3(jquery.easing.1.3.min.js)'/>
+	<script src='https://elightup.github.io/clients/planadd/flex.js'/>
+	<script src='https://elightup.github.io/clients/planadd/UTM_Bebas_400.font.js'/>
+	<script src='https://elightup.github.io/clients/planadd/camera.min.js'/>
+	<script src='https://elightup.github.io/clients/planadd/device.min.js'/>
+	<script src='https://elightup.github.io/clients/planadd/script.js'/>
+
+	<b:skin><![CDATA[]]></b:skin>
+
+	<style>
+	  *{
+      	margin: 0;
+		padding: 0;
+        box-sizing: border-box;
+      }
+      
+      
+	  html {
+        font-size: 16px; /* 1rem = 16px */
+      }
+
+      body {
+        font-size: 1rem; /* 16px */
+        font-family: &#39;Noto Sans KR&#39;, sans-serif; /* hoặc font khác nếu muốn */
+        line-height: 1.5; /* gọn mắt khi đọc */
+        color: #000; /* màu chữ mặc định */
+        margin: 0; /* loại bỏ margin mặc định */
+        padding: 0; /* loại bỏ padding mặc định */
+        box-sizing: border-box; /* chuẩn hóa box-sizing */
+      }
+
+	</style>
+
+	<style>
+	  .navbar {
+      	height: 30px;
+		min-height: 30px;
+      }
+
+      .header-top {
+        border-bottom: #e3e8ee solid 1px;
+        margin: 0;
+		padding: 20px;
+      }
+
+	  .widget, .section {
+      	margin: 0;
+      }
+
+      .header-top-inner {
+      width: 70%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0;
+      font-family: &#39;Noto Sans KR&#39;, sans-serif;
+      }
+
+      .header-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fbc531; /* vàng */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      }
+
+      .header-search {
+      flex: 1;
+      margin: 0 40px;
+      position: relative;
+      }
+
+      .header-search input {
+      width: 100%;
+      padding: 10px 45px 10px 15px;
+      border-radius: 25px;
+      border: 1px solid #ddd;
+      outline: none;
+      font-size: 1rem;
+      transition: all 0.3s;
+      }
+
+      .header-search input:focus {
+      border-color: #fbc531;
+      box-shadow: 0 0 5px rgba(251,197,49,0.4);
+      }
+
+      .header-search button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fbc531;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      }
+
+      .header-search button:hover {
+      background: #e1a725;
+      }
+
+      .header-search svg {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
+      }
+
+      .header-button {
+      background: #fbc531;
+      border: none;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      }
+
+      .header-button:hover {
+      background: #e1a725;
+      }
+    </style>
+
+	<style>
+	  .header-bottom {
+      	border-bottom: #e3e8ee solid 1px;
+		margin: 0;
+		padding: 0px;
+      }
+
+      .header-bottom .header-bottom-inner&gt;div {
+        padding: 5px 0;
+        font-family: &#39;Noto Sans KR&#39;, sans-serif;
+      	border-bottom: #e3e8ee solid 1px;
+      }
+      
+      .header-bottom .header-bottom-inner&gt;div:last-child {
+      	border-bottom: #FBE901 solid 1px;
+      }
+      
+      #header-bottom-left, #header-bottom-right {
+      	width: 70%;
+        margin: 0 auto;
+      	display: flex;
+      	justify-content: space-between;
+      }
+      
+      #header-bottom-right {
+      	width: 60%;
+      }
+      
+      
+      /* Left links */
+      .header-bottom-left a {
+      margin-right: 20px;
+      color: #000;
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.3s;
+      }
+
+      .header-bottom-left a:last-child {
+      margin-right: 0;
+      }
+
+      /* Right link */
+      .header-bottom-right a {
+      color: #000;
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+      }
+
+      .header-bottom-right a:hover {
+      color: #0077ff; /* xanh khi hover */
+      text-decoration: underline;
+      }
+    </style>
+   
+  </head>
+
+  <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
+	<b:section class='navbar' id='navbar' maxwidgets='3' showaddelement='yes'>
+<b:widget id='Navbar1' locked='true' title='Navbar' type='Navbar' version='1'>
+  <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener(&#39;load&#39;,
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; });
+      }
+    }
+  &lt;/script&gt;
+&lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/platform.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+      gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
+        if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: &#39;https://www.blogger.com/navbar/4471238558543901047?origin\x3dhttp://localhost:80&#39;,
+              where: document.getElementById(&quot;navbar-iframe-container&quot;),
+              id: &quot;navbar-iframe&quot;
+          });
+        }
+      });
+    &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+var script = document.createElement(&#39;script&#39;);
+script.type = &#39;text/javascript&#39;;
+script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
+var head = document.getElementsByTagName(&#39;head&#39;)[0];
+if (head) {
+head.appendChild(script);
+}})();
+&lt;/script&gt;
+</b:includable>
+</b:widget>
+</b:section>
+	
+
+    
+    
+	<header class='header'>
+      <!-- HEADER TOP -->
+      <b:section class='header-top' id='header-top' showaddelement='yes'>
+        <b:widget id='Header1' locked='true' title='YP (Header)' type='Header' version='1'>
+          <b:widget-settings>
+            <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEgy-VCSIs7fwuj8IZI3uK7Ac2Bpmq4LEU7KpTLx6lfTL0YKQ8r_3Iyk-gp5hyec31jZeQOu2vKjTgHIH0PExvgsFw9LIEwSNbzuyLKgMQSlv2j4Npa4xyeimGrDGJe2Y4LA0W9FYHYk6-L2GnHpUrwMmamJx2nJWJCbPQsCyJMS31sdMiRB3GCvbN6PNw=s150</b:widget-setting>
+            <b:widget-setting name='displayHeight'>50</b:widget-setting>
+            <b:widget-setting name='sectionWidth'>1400</b:widget-setting>
+            <b:widget-setting name='useImage'>true</b:widget-setting>
+            <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+            <b:widget-setting name='imagePlacement'>REPLACE</b:widget-setting>
+            <b:widget-setting name='displayWidth'>150</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='header-top-inner'>
+              <div class='header-logo'>Yellow Page</div>
+				
+              <button class='header-button'>전화번호부 등록</button>
+              
+              <div class='header-search'>
+                <input placeholder='검색어를 입력하세요...' type='text'/>
+                <button aria-label='Search'>
+                  <svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                    <path d='M10 2a8 8 0 105.293 14.293l5.707 5.707 1.414-1.414-5.707-5.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z'/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </b:includable>
+          <b:includable id='description'>
+            <div class='descriptionwrapper'>
+              <p class='description'><span><data:description/></span></p>
+            </div>
+          </b:includable>
+          <b:includable id='title'>
+            <b:tag cond='data:blog.url != data:blog.homepageUrl' expr:href='data:blog.homepageUrl' name='a'>
+              <data:title/>
+            </b:tag>
+          </b:includable>
+        </b:widget>
+      </b:section>
+      
+
+      <b:section class='header-bottom' id='header-bottom' showaddelement='yes'>
+        <b:widget id='Header2' locked='true' title='YP (Header)' type='Header' version='1'>
+          <b:widget-settings>
+            <b:widget-setting name='displayUrl'/>
+            <b:widget-setting name='displayHeight'>0</b:widget-setting>
+            <b:widget-setting name='sectionWidth'>-1</b:widget-setting>
+            <b:widget-setting name='useImage'>false</b:widget-setting>
+            <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+            <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+            <b:widget-setting name='displayWidth'>0</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='header-bottom-inner'>
+              <!-- LEFT LINKS -->
+              <div>
+                <ul class='header-bottom-left' id='header-bottom-left'>
+                  <li><a href='#'>이삿짐센터</a></li>
+                  <li><a href='#'>부동산</a></li>
+                  <li><a href='#'>포토스튜디오</a></li>
+                  <li><a href='#'>애완동물</a></li>
+                  <li><a href='#'>꽃/화원</a></li>
+                  <li><a href='#'>가구</a></li>
+                  <li><a href='#'>가전/전기</a></li>
+                  <li><a href='#'>생활용품</a></li>
+                  <li><a href='#'>백화점</a></li>
+                  <li><a href='#'>대형마트</a></li>
+                  <li><a href='#'>할인점</a></li>
+                  <li><a href='#'>슈퍼마켓</a></li>
+                </ul>
+			</div>
+              <div>
+                <!-- RIGHT LINK -->
+                <ul class='header-bottom-right' id='header-bottom-right'>
+                  <li><a class='current' href='#'>이삿짐센터</a></li>
+                  <li><a href='#'>부동산</a></li>
+                  <li><a href='#'>포토스튜디오</a></li>
+                  <li><a href='#'>애완동물</a></li>
+                  <li><a href='#'>꽃/화원</a></li>
+                  <li><a href='#'>가구</a></li>
+                  <li><a href='#'>가전/전기</a></li>
+                  <li><a href='#'>생활용품</a></li>
+                  <li><a href='#'>백화점</a></li>
+                </ul>
+              </div>
+            </div>
+          </b:includable>
+          <b:includable id='description'>
+            <div class='descriptionwrapper'>
+              <p class='description'><span><data:description/></span></p>
+            </div>
+          </b:includable>
+          <b:includable id='title'>
+            <b:tag cond='data:blog.url != data:blog.homepageUrl' expr:href='data:blog.homepageUrl' name='a'>
+              <data:title/>
+            </b:tag>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </header>
+
+
+
+	<!-- ===== MAIN CONTENT START ===== -->
+    <b:section class='main-content' id='main-content' showaddelement='yes'>
+      <b:widget id='HTML1' locked='true' title='TEST (Header)' type='HTML' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='content'/>
+        </b:widget-settings>
+        <b:includable id='main'>
+          <style>
+			.main-content {
+              
+            }
+
+            .main-inner {
+              display: flex;
+              padding: 0;
+            }
+
+            .main-left {
+              flex: 6.5; /* 70% */
+              display: flex;
+              flex-direction: column;
+            }
+
+            .main-right {
+              flex: 3.5; /* 30% */
+              display: flex;
+              flex-direction: column;
+              border-left: #e3e8ee solid 1px;
+            }
+            
+            .main-left &gt; div {
+              padding: 10px 10px 10px 250px;
+            }
+            
+            .main-left &gt; div:not(:last-child) {
+              border-bottom: #e3e8ee solid 1px;
+            }
+            
+            .main-right&gt;div {
+              padding: 10px 250px 10px 10px;
+            }
+            
+            .main-right&gt;div:not(:last-child) {
+              border-bottom: #e3e8ee solid 1px;
+            }
+
+
+			.categories {
+              display: flex;
+              flex-direction: column;
+              font-family: &#39;Noto Sans KR&#39;, sans-serif;
+			  background-color: white;
+			  
+            }
+
+            /* Phần trên: link home */
+            .categories-top {
+              display: flex;
+              align-item: center;
+              justify-content: space-between;
+            }
+            
+            .business-item {
+              display: flex;
+              align-items: flex-start;
+              padding: 12px;
+              border-bottom: 1px solid #eee;
+            }
+
+            .business-item:last-child {
+              border-bottom: none;
+            }
+
+            .item-left {
+              position: relative;
+              flex-shrink: 0;
+            }
+
+            .main-img {
+              width: 90px;
+              height: 90px;
+              object-fit: cover;
+              border-radius: 8px;
+            }
+
+            .badge-img {
+              margin: 0 10px;
+              width: 24px;
+              height: 24px;
+            }
+
+            .item-right {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+
+            .item-header {
+              display: flex;
+              align-items: baseline;
+              gap: 8px;
+              margin-bottom: 6px;
+            }
+
+            .item-title {
+              font-size: 16px;
+              font-weight: 600;
+              color: #333;
+              text-decoration: none;
+            }
+
+            .item-title:hover {
+              color: #007bff;
+            }
+
+            .item-category {
+              font-size: 13px;
+              color: #666;
+            }
+
+            .item-contact {
+              font-size: 14px;
+              color: #444;
+              margin-bottom: 6px;
+            }
+
+            .item-contact .item-phone {
+              font-weight: 500;
+              margin-right: 10px;
+            }
+
+            .item-address {
+              display: flex;
+              align-items: center;
+              font-size: 13px;
+              color: #666;
+            }
+
+            .item-map-icon {
+              width: 14px;
+              height: 14px;
+              margin-right: 4px;
+              opacity: 0.6;
+            }
+
+
+			
+          </style>
+
+          <div class='main-inner'>
+            <!-- LEFT COLUMN -->
+            <div class='main-left'>
+              <div class='banner'>
+				<img alt='Top Ad' src='https://www.isuperpage.co.kr/image/pr_ad.png' style='width:100%; height:auto; display:block; margin:0 auto;'/>
+			  </div>
+              <div class='categories'>
+              	<!-- Phần trên: link về home -->
+                <div class='categories-top'>
+                  <p>스페셜 키워드 `` 관련 광고 입니다.</p>
+                  <a class='home-link' href='#'>스페셜 키워드 신청 &#65310;</a>
+                </div>
+
+                <!-- Phần dưới: 12 ô -->
+                <div class='categories-grid'>
+                  <li class='business-item'>
+                    <div class='item-left'>
+                      <img alt='Main image' class='main-img' onerror='this.src=&apos;/image/agent1.jpg&apos;' src='https://www.isuperpage.co.kr/image/agent1.jpg'/>
+
+                      <img alt='Badge' class='badge-img' src='https://www.isuperpage.co.kr/image/p0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_pdetail.asp?id=21423'>제주삼다수/백두산삼다수</a>
+                        <span class='item-category'>생수</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>02-522-4036</span>
+                        <span class='item-code'>1430-4</span>
+                      </div>
+
+                      <div class='item-address'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-map-text'>서울 서초구 서초중앙로2길 68</span>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <li class='business-item'>
+                    <div class='item-left'>
+                      <img alt='Main image' class='main-img' onerror='this.src=&apos;/image/agent1.jpg&apos;' src='https://www.isuperpage.co.kr/image/agent1.jpg'/>
+
+                      <img alt='Badge' class='badge-img' src='https://www.isuperpage.co.kr/image/p0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_pdetail.asp?id=21423'>제주삼다수/백두산삼다수</a>
+                        <span class='item-category'>생수</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>02-522-4036</span>
+                        <span class='item-code'>1430-4</span>
+                      </div>
+
+                      <div class='item-address'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-map-text'>서울 서초구 서초중앙로2길 68</span>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <li class='business-item'>
+                    <div class='item-left'>
+                      <img alt='Main image' class='main-img' onerror='this.src=&apos;/image/agent1.jpg&apos;' src='https://www.isuperpage.co.kr/image/agent1.jpg'/>
+
+                      <img alt='Badge' class='badge-img' src='https://www.isuperpage.co.kr/image/p0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_pdetail.asp?id=21423'>제주삼다수/백두산삼다수</a>
+                        <span class='item-category'>생수</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>02-522-4036</span>
+                        <span class='item-code'>1430-4</span>
+                      </div>
+
+                      <div class='item-address'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-map-text'>서울 서초구 서초중앙로2길 68</span>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <li class='business-item'>
+                    <div class='item-left'>
+                      <img alt='Main image' class='main-img' onerror='this.src=&apos;/image/agent1.jpg&apos;' src='https://www.isuperpage.co.kr/image/agent1.jpg'/>
+
+                      <img alt='Badge' class='badge-img' src='https://www.isuperpage.co.kr/image/p0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_pdetail.asp?id=21423'>제주삼다수/백두산삼다수</a>
+                        <span class='item-category'>생수</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>02-522-4036</span>
+                        <span class='item-code'>1430-4</span>
+                      </div>
+
+                      <div class='item-address'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-map-text'>서울 서초구 서초중앙로2길 68</span>
+                      </div>
+                    </div>
+                  </li>
+
+                  
+                  
+                </div>
+              </div>
+              <div class='content'>
+                <!-- Phần trên -->
+                <div class='content-top'>
+                  <span class='title-text' style='color: #000000;'>일반 검색 결과 &#39;&#39; 입니다.</span>
+  
+                  <div class='action-buttons'>
+                    <a class='btn-action' href='/bbs/ceo/regi_info.asp'>등록하기</a>
+                    <a class='btn-action' href='/bbs/ceo/regi_info.asp'>수정하기</a>
+                  </div>
+                </div>
+                <p style='margin: 0 0 12px;'>검색결과 - &#39;&#39; 근처 &#39;&#39; 검색결과</p>
+
+                <!-- Phần dưới: 2 cột -->
+                <div class='content-list'>
+                  <li class='content-item'>
+                    <div class='item-left'>
+                      <img alt='marker icon' class='item-icon' src='https://www.isuperpage.co.kr/image/n0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_detail.asp?id=1'>스타저축은행</a>
+                        <span class='item-category'>상호저축은행</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>063-277-2235</span>
+                        <span class='item-address-full'>전북 전주시 덕진구 진북동 361-8</span>
+                      </div>
+
+                      <div class='item-location'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-location-text'>전북 전주시</span>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <li class='content-item'>
+                    <div class='item-left'>
+                      <img alt='marker icon' class='item-icon' src='https://www.isuperpage.co.kr/image/n0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_detail.asp?id=1'>스타저축은행</a>
+                        <span class='item-category'>상호저축은행</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>063-277-2235</span>
+                        <span class='item-address-full'>전북 전주시 덕진구 진북동 361-8</span>
+                      </div>
+
+                      <div class='item-location'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-location-text'>전북 전주시</span>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <li class='content-item'>
+                    <div class='item-left'>
+                      <img alt='marker icon' class='item-icon' src='https://www.isuperpage.co.kr/image/n0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_detail.asp?id=1'>스타저축은행</a>
+                        <span class='item-category'>상호저축은행</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>063-277-2235</span>
+                        <span class='item-address-full'>전북 전주시 덕진구 진북동 361-8</span>
+                      </div>
+
+                      <div class='item-location'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-location-text'>전북 전주시</span>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <li class='content-item'>
+                    <div class='item-left'>
+                      <img alt='marker icon' class='item-icon' src='https://www.isuperpage.co.kr/image/n0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_detail.asp?id=1'>스타저축은행</a>
+                        <span class='item-category'>상호저축은행</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>063-277-2235</span>
+                        <span class='item-address-full'>전북 전주시 덕진구 진북동 361-8</span>
+                      </div>
+
+                      <div class='item-location'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-location-text'>전북 전주시</span>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <li class='content-item'>
+                    <div class='item-left'>
+                      <img alt='marker icon' class='item-icon' src='https://www.isuperpage.co.kr/image/n0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_detail.asp?id=1'>스타저축은행</a>
+                        <span class='item-category'>상호저축은행</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>063-277-2235</span>
+                        <span class='item-address-full'>전북 전주시 덕진구 진북동 361-8</span>
+                      </div>
+
+                      <div class='item-location'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-location-text'>전북 전주시</span>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <li class='content-item'>
+                    <div class='item-left'>
+                      <img alt='marker icon' class='item-icon' src='https://www.isuperpage.co.kr/image/n0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_detail.asp?id=1'>스타저축은행</a>
+                        <span class='item-category'>상호저축은행</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>063-277-2235</span>
+                        <span class='item-address-full'>전북 전주시 덕진구 진북동 361-8</span>
+                      </div>
+
+                      <div class='item-location'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-location-text'>전북 전주시</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class='content-item'>
+                    <div class='item-left'>
+                      <img alt='marker icon' class='item-icon' src='https://www.isuperpage.co.kr/image/n0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_detail.asp?id=1'>스타저축은행</a>
+                        <span class='item-category'>상호저축은행</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>063-277-2235</span>
+                        <span class='item-address-full'>전북 전주시 덕진구 진북동 361-8</span>
+                      </div>
+
+                      <div class='item-location'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-location-text'>전북 전주시</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class='content-item'>
+                    <div class='item-left'>
+                      <img alt='marker icon' class='item-icon' src='https://www.isuperpage.co.kr/image/n0.png'/>
+                    </div>
+
+                    <div class='item-right'>
+                      <div class='item-header'>
+                        <a class='item-title' href='search_detail.asp?id=1'>스타저축은행</a>
+                        <span class='item-category'>상호저축은행</span>
+                      </div>
+
+                      <div class='item-contact'>
+                        <span class='item-phone'>063-277-2235</span>
+                        <span class='item-address-full'>전북 전주시 덕진구 진북동 361-8</span>
+                      </div>
+
+                      <div class='item-location'>
+                        <img alt='map icon' class='item-map-icon' src='https://www.isuperpage.co.kr/image/loadi.png'/>
+                        <span class='item-location-text'>전북 전주시</span>
+                      </div>
+                    </div>
+                  </li>
+                  
+	
+                </div>
+                
+                <ul class='content-navigation' style='margin: 40px 0 10px 0px;'>
+                  <li><a class='current' href='#'>1</a></li>
+                  <li><a href='#'>2</a></li>
+                  <li><a href='#'>3</a></li>
+                  <li><a href='#'>4</a></li>
+                  <li><a href='#'>5</a></li>
+                  <li><a href='#'>6</a></li>
+                  <li><a href='#'>7</a></li>
+                  <li><a href='#'>8</a></li>
+                  <li><a href='#'>9</a></li>
+                  <li><a href='#'>10</a></li>
+                </ul>
+
+
+                <style>
+                  .content {
+                  	background-color: white;
+                    padding: 0 15px 20px;
+                  	
+                  }
+                  
+                  .content-top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-top: 10px;
+                  }
+
+                  .title-text {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #333;
+                  }
+
+                  .action-buttons {
+                    display: flex;
+                    gap: 8px;
+                  }
+
+                  .btn-action {
+                    display: inline-block;
+                    padding: 6px 12px;
+                    font-size: 14px;
+                    color: #333;
+                    text-decoration: none;
+                    border: 1px solid #ccc;
+                    background: transparent;
+                    transition: all 0.2s ease;
+                  }
+
+                  .btn-action:hover {
+                    background: #f5f5f5;
+                    border-color: #999;
+                  }
+                  
+                  
+                  .content-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                  }
+
+                  .content-item {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 12px;
+                    padding: 12px;
+                    border-bottom: 1px solid #eee;
+                  }
+
+                  .content-item:last-child {
+                    border-bottom: none;
+                  }
+
+                  .item-left {
+                    flex-shrink: 0;
+                  }
+
+                  .item-icon {
+                    width: 40px;
+                    height: 40px;
+                    object-fit: contain;
+                  }
+
+                  .item-right {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                  }
+
+                  .item-header {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 8px;
+                    margin-bottom: 6px;
+                  }
+
+                  .item-title {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #000000;
+                    text-decoration: none;
+                  }
+
+                  .item-title:hover {
+                    color: #007bff;
+                  }
+
+                  .item-category {
+                    font-size: 13px;
+                    color: #666;
+                  }
+
+                  .item-contact {
+                    font-size: 14px;
+                    color: #444;
+                    margin-bottom: 6px;
+                  }
+
+                  .item-contact .item-phone {
+                    font-weight: 500;
+                    margin-right: 10px;
+                  }
+
+                  .item-location {
+                    display: flex;
+                    align-items: center;
+                    font-size: 13px;
+                    color: #666;
+                  }
+
+                  .item-map-icon {
+                    width: 5%;
+                    margin-right: 4px;
+                    opacity: 1;
+                  }
+
+
+
+                  .content-navigation {
+                    display: flex;
+                    list-style: none;
+                    padding: 0;
+                    
+                    justify-content: center;
+                  }
+
+                  .content-navigation li a {
+                    display: inline-block;
+                    width: 32px;
+                    height: 32px;
+                    line-height: 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    color: #333;
+                    font-size: 14px;
+                    border: 1px solid #ccc;
+                    background: transparent;
+                    transition: all 0.2s ease;
+                  }
+
+                  .content-navigation li a:hover {
+                    background-color: #f0f0f0;
+                    border-color: #999;
+                  }
+
+                  .content-navigation li a.current {
+                    background-color: #007bff;
+                    color: #fff;
+                    border-color: #007bff;
+                  }
+
+                </style>
+              </div>
+
+              <div class='contact' style='text-align: center;'>
+              	<p class='infor-top' style='text-align: left;'>광고</p>
+              	<img alt='Top Ad' src='https://www.isuperpage.co.kr/img3/ad/bnr_300x250.jpg' style='width:40%; height:auto; display:block; margin:0 auto;'/>
+
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class='main-right'>
+              
+              
+              <div id='login-area' style='background-color: #FAFAFA;'>
+                <img alt='Top Ad' src='https://www.isuperpage.co.kr/image/yp_work_info.png' style='width:100%; height:auto; display:block; margin:0 auto;'/>
+              </div>
+              
+              
+              <div id='clock-area'>
+                <iframe allowfullscreen='' height='350' loading='lazy' referrerpolicy='no-referrer-when-downgrade' src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.073879852585!2d105.77388297596977!3d21.029729687744087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134553b2367ca7b%3A0x4aea87d9e3511e84!2sChung%20c%C6%B0%20Dolphin%20Plaza!5e0!3m2!1sen!2s!4v1763000685332!5m2!1sen!2s' style='border:0;' width='100%'/>
+              </div>
+
+              <div class='carousel'>
+                <p class='infor-top'>이벤트 축제 안내</p>
+              	<img alt='Top Ad' src='https://www.isuperpage.co.kr/img3/kimchon_fes.jpg' style='width:100%; height:auto; display:block; margin:0 auto;'/>
+              </div>
+              
+              
+              
+            </div>
+          </div>
+        </b:includable>
+      </b:widget>
+    </b:section>
+    <!-- ===== MAIN CONTENT END ===== -->
+
+
+	<b:section class='footer' id='footer' showaddelement='yes'>
+<b:widget id='HTML2' locked='false' title='Footer' type='HTML' version='1'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'>
+          <style>
+			.footer.section {
+              border-top: #e3e8ee solid 1px;
+            }
+
+            .footer {
+              width: 100%;
+              padding: 25px 0;
+              text-align: center;
+              font-family: &#39;Noto Sans KR&#39;, sans-serif;
+              font-size: 0.9rem;
+              color: #333;
+            }
+
+            .footer b {
+              font-weight: 700;
+            }
+
+            .footer a {
+              color: #333;
+              text-decoration: none;
+            }
+
+            .footer a:hover {
+              text-decoration: underline;
+              color: #0077ff;
+            }
+          </style>
+
+          <div class='footer'>
+            Copyright &#169; 2013 <b>ADD건설Group</b> &#160; | &#160; +82.2.554.8171 &#160; | &#160; All rights reserved | Powered by <a href='https://www.blogger.com' target='_blank'>Blogger</a>.
+          </div>
+        </b:includable>
+</b:widget>
+</b:section>
+
+
+	
+	
+  </body>
+</html>

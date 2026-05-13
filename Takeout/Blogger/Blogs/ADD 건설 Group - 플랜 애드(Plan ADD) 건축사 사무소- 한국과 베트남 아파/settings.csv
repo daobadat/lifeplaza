@@ -1,0 +1,80 @@
+blog_publishing_mode,blog_admin_permission,blog_author_permission,blog_reader_permission,blog_by_post_archiving,blog_name,blog_description,blog_send_email,blog_adult_content,blog_analytics_account_number,blog_archive_date_format,blog_date_format,blog_time_stamp_format,blog_archive_frequency,blog_locale,blog_time_zone,blog_read_access_mode,blog_use_lightbox,blog_per_post_feed,blog_post_feed,blog_convert_line_breaks,blog_ideas_panel_opt_out,blog_feed_redirect_url,blog_subdomain,blog_float_alignment,blog_searchable,blog_email_post_links,blog_max_num,blog_max_unit,blog_show_url,blog_quick_editing,blog_comment_access,blog_comment_captcha,blog_comment_email,blog_comment_feed,blog_comment_form_location,blog_comment_moderation,blog_comment_moderation_delay,blog_comment_moderation_email,blog_comment_profile_images,blog_comments_allowed,blog_comments_time_stamp_format,blog_default_comments_mode,blog_comment_message,blog_custom_ads_txt,blog_custom_ads_txt_enabled,blog_custom_page_not_found,blog_custom_robots_txt,blog_custom_robots_txt_enabled,blog_meta_description,blog_meta_description_enabled,blog_post_feed_footer,blog_post_template,blog_jump_text,email_for_posting,publish_email_posts,visible_on_profile_page,stats_timeframe,navbar_type,web_fonts,current_layout_type,show_mobile_view,mobile_skin,mobile_skin_variant,adsense_prefs
+HOSTED,"leeyl@add-group.net,tientt@add-group.net,nthue@planadd.com,tvluat@add-group.net,Vietnam@planadd.com,sonyj@add-group.net","txhuy@planadd.com,kimjh@planadd.com,kimwh09@planadd.com,nlhuong@planadd.com,nvvu@planadd.com",,true,"ADD 건설 Group / 플랜 애드(Plan ADD) 건축사 사무소/ 한국과 베트남 아파트 건축 평면 설계와 입면 디자인, 조경디자인 / 베트남 공장 건설","Architecture, Design, Development, ADD 건설 Group
+(KOREA,VIETNAM,INDIA) 
+베트남 공장건설,공장 유지보수, 베트남 아파트 건축설계. 도시설계, 환경디자인 , 조경디자인, 입면 특화 디자인,Thiết kế kiến ​​trúc căn hộ Việt Nam. Thiết kế đô thị, thiết kế môi trường, thiết kế cảnh quan, thiết kế chuyên ngành độ cao, 베트남 일하는 한국 건축사,Kiến trúc sư Hàn Quốc làm việc tại Việt Nam,부동산개발,phát triển bất động sản",,false,G-QJ8WF4T102,,14,27,MONTHLY,ko,Asia/Seoul,PUBLIC,true,FULL,FULL,,,,plan-add,true,true,false,7,POSTS,false,false,ANYONE,true,,FULL,POP_UP,ENABLED,14,,true,true,29,DEFAULT_HAVE_COMMENTS,,,false,,,false,"베트남 공장건설, 베트남 아파트 건축설계. 도시설계, 조경디자인, Thiết kế kiến ​​trúc căn hộ Việt Nam.",true,ADD 건설 GROUP,,Read More »,,,,,DISABLED,"web_fonts {
+  font_name: ""Black Han Sans""
+}
+web_fonts {
+  font_name: ""Dongle""
+}
+web_fonts {
+  font_name: ""Cute Font""
+}
+web_fonts {
+  font_name: ""Poor Story""
+}
+web_fonts {
+  font_name: ""East Sea Dokdo""
+}
+web_fonts {
+  font_name: ""Single Day""
+}
+web_fonts {
+  font_name: ""Black And White Picture""
+}
+web_fonts {
+  font_name: ""Gugi""
+}
+web_fonts {
+  font_name: ""Dokdo""
+}
+web_fonts {
+  font_name: ""Nanum Brush Script""
+}
+web_fonts {
+  font_name: ""Hi Melody""
+}
+web_fonts {
+  font_name: ""Song Myung""
+}
+web_fonts {
+  font_name: ""Nanum Pen Script""
+}
+web_fonts {
+  font_name: ""Gaegu""
+}
+web_fonts {
+  font_name: ""Yeon Sung""
+}
+web_fonts {
+  font_name: ""Stylish""
+}
+web_fonts {
+  font_name: ""Gamja Flower""
+}
+web_fonts {
+  font_name: ""Nanum Gothic Coding""
+}
+web_fonts {
+  font_name: ""Jua""
+}
+web_fonts {
+  font_name: ""Nanum Myeongjo""
+}
+web_fonts {
+  font_name: ""Gothic A1""
+}
+web_fonts {
+  font_name: ""Nanum Gothic""
+}
+web_fonts {
+  font_name: ""Do Hyeon""
+}
+web_fonts {
+  font_name: ""Kirang Haerang""
+}
+web_fonts {
+  font_name: ""Lato""
+}
+",LAYOUTS,false,,,"account_id: ""pub-5273225769922008""
+"

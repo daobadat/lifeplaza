@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+	<meta content='width=device-width,initial-scale=1.0' name='viewport'/>
+	<b:include data='blog' name='all-head-content'/>
+	<title>
+		<data:blog.pageTitle/>
+	</title>
+	<link href='https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'/>
+	<link href='https://elightup.github.io/clients/planadd/style.css' rel='stylesheet'/>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' rel='stylesheet'/>
+
+
+	
+	<b:template-skin>
+		<b:variable default='960px' name='content.width' type='length' value='950px'/>
+		<b:variable default='0' name='main.column.left.width' type='length'/>
+		<b:variable default='310px' name='main.column.right.width' type='length' value='290px'/>
+		<![CDATA[]]>
+	</b:template-skin>
+	<b:include data='blog' name='google-analytics'/>
+	<script src='https://cdn.jsdelivr.net/g/jquery@1.7.1,cufon@1.09,superfish@1.7.9,jquery.easing@1.3(jquery.easing.1.3.min.js)'/>
+	<script src='https://elightup.github.io/clients/planadd/flex.js'/>
+	<script src='https://elightup.github.io/clients/planadd/UTM_Bebas_400.font.js'/>
+	<script src='https://elightup.github.io/clients/planadd/camera.min.js'/>
+	<script src='https://elightup.github.io/clients/planadd/device.min.js'/>
+	<script src='https://elightup.github.io/clients/planadd/script.js'/>
+
+	<b:skin><![CDATA[]]></b:skin>
+    <b:if cond='data:blog.pageType != &quot;item&quot;'> 
+      <style>
+        /* === Custom Header === */
+        .add-header {
+          background-color: #ffd33b; /* vàng */
+          padding: 10px 0;
+          font-family: &#39;Noto Sans KR&#39;, sans-serif;
+        }
+
+        .add-header-inner {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        .add-logo .logo-main {
+          font-weight: bold;
+          font-size: 22px;
+          color: #222;
+        }
+
+        .add-logo .logo-sub {
+          font-size: 18px;
+          margin-left: 6px;
+        }
+
+        .add-search {
+          display: flex;
+          align-items: center;
+          flex: 1;
+          max-width: 450px;
+          margin: 0 30px;
+        }
+
+        .add-search input {
+          flex: 1;
+          padding: 7px 10px;
+          border: none;
+          border-radius: 4px 0 0 4px;
+          outline: none;
+          font-size: 14px;
+        }
+
+        .add-search button {
+          background-color: #f4b400;
+          border: none;
+          padding: 7px 12px;
+          border-radius: 0 4px 4px 0;
+          cursor: pointer;
+          color: white;
+        }
+
+        .add-search button i {
+          font-size: 14px;
+        }
+
+        .add-menu a {
+          color: #222;
+          text-decoration: none;
+          margin-left: 20px;
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        .add-menu a:hover {
+          text-decoration: underline;
+        }
+
+		#main-section {
+        	width: 80%; 
+			margin: 20px auto;
+			display: flex
+        }
+
+        #company-list {
+          width: 80%;                /* chiếm 80% chiều ngang */
+          
+		  
+        }
+
+		#company-list #list {   
+          display: flex;
+          flex-wrap: wrap;
+		  justify-content: space-between;
+		  
+        }
+
+
+        /* Mỗi ô danh bạ */
+        .company-card {
+		  width: 25%;
+          padding: 5px;
+		  overflow: hidden;
+        }
+
+        .company-card div{
+          border: 1px solid #ddd;
+          border-radius: 8px;
+		  padding: 12px;
+          background: #fff;
+          text-align: left;
+          transition: box-shadow 0.2s ease;
+        }
+
+        .company-card div:hover {
+          box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .company-card h3 {
+          margin: 0 0 8px;
+          font-size: 18px;
+          color: #333;
+        }
+
+        .company-card p {
+          margin: 2px 0;
+          color: #555;
+          font-size: 15px;
+        }
+
+        .company-card a {
+          display: block;
+          width: 100%;
+          height: 100%;
+		  border: 1px solid black;
+        }
+
+		.company-card img {
+          width: 100%;
+		  height: 100%;
+		  object-fit: cover;	
+        }
+      </style>
+
+
+      <style>
+		h2 {
+			width: 100%;
+		}
+	
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;         /* tự động xuống hàng nếu tràn */
+        justify-content: center; /* căn giữa hàng */
+        gap: 10px 23px;               /* khoảng cách giữa các thẻ */
+        margin: 20px auto;
+        max-width: 80%;          /* không chiếm full màn hình */
+      }
+
+      .tag-list a {
+        background: #f2f2f2;
+        border-radius: 20px;
+        padding: 6px 14px;
+        color: #333;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.2s ease;
+      }
+
+      .tag-list a:hover {
+        background: #007bff;
+        color: #fff;
+      }
+
+		.category-section {
+          width: 20%;
+          margin-right: 10px;
+        }
+
+		.category-section ul{
+		  background-color: #D1D1D1;
+		  padding: 10px;
+			list-style-type: disc; /* &#9989; hiện chấm tròn đen mặc định */
+  			list-style-position: inside; /* chấm nằm trong vùng nền xám */
+        }
+
+
+        #main-section h2 {
+          font-size: 22px;
+          color: #222;
+          margin-bottom: 15px;
+          text-align: left;
+          border-bottom: 1px solid #f1c40f;
+          display: inline-block;
+          padding-bottom: 5px;
+        }
+
+        .category-list {
+          list-style-type: disc;
+          padding-left: 20px;
+        }
+
+        .category-list li {
+          margin: 6px 0;
+        }
+
+        .category-list a {
+          color: #0066cc;
+		  font-size: 16px;
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+
+        .category-list a:hover {
+          color: #e67e22;
+          text-decoration: underline;
+        }
+
+
+		.recommended-section {
+          width: 80%;
+          margin: 40px auto;
+          font-family: Arial, sans-serif;
+        }
+
+        .recommended-section h2 {
+          font-size: 22px;
+          color: #222;
+          margin-bottom: 15px;
+          text-align: left;
+          border-bottom: 1px solid #f1c40f;
+          display: inline-block;
+          padding-bottom: 5px;
+        }
+
+        #recommended-list {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr); /* &#9989; 3 cột */
+          gap: 20px;
+        }
+
+        .recommended-card {
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          padding: 12px 15px;
+          background: #f9f9f9;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .recommended-top {
+          display: flex;
+          justify-content: space-between; /* tên bên trái, số bên phải */
+          align-items: center;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+
+        .recommended-name {
+          color: #333;
+          font-size: 16px;
+          flex: 1;
+        }
+
+        .recommended-phone {
+          color: #555;
+		  font-size: 14px;
+          white-space: nowrap; /* tránh xuống dòng */
+        }
+
+        .recommended-address {
+          font-size: 14px;
+          color: #666;
+          line-height: 1.4;
+        }
+
+		.site-footer {
+          text-align: center;
+          padding: 40px 10px;
+          font-size: 14px;
+          color: #555;
+          background-color: #f5f5f5;
+          border-top: 1px solid #ddd;
+          margin-top: 40px;
+        }
+
+        .site-footer b {
+          color: #222;
+          font-weight: 600;
+        }
+
+		/* --- Phần tổng thể --- */
+        .learn-more-section {
+          text-align: center;
+          margin: 40px auto;
+          width: 80%;
+        }
+
+        .learn-more-section h2 {
+          font-size: 22px;
+          color: #222;
+          margin-bottom: 15px;
+          text-align: left;
+          border-bottom: 1px solid #f1c40f;
+          display: inline-block;
+          padding-bottom: 5px;
+        }
+
+        /* --- Lưới 3 cột --- */
+        .learn-more-grid {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          flex-wrap: wrap; /* để tự xuống hàng khi màn hình hẹp */
+        }
+
+        /* --- Mỗi cột --- */
+        .learn-more-column {
+          flex: 1 1 300px; /* min width 300px, co giãn linh hoạt */
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px 12px;
+        }
+
+        /* --- Mỗi item nhỏ --- */
+        .learn-more-column a {
+          background: #f2f2f2;
+          border-radius: 20px;
+          padding: 6px 14px;
+          color: #333;
+          text-decoration: none;
+          font-size: 14px;
+          transition: all 0.2s ease;
+          white-space: nowrap;
+        }
+
+        .learn-more-column a:hover {
+          background: #e0e0e0;
+          transform: translateY(-2px);
+        }
+
+		.info-section {
+          width: 80%;
+          margin: 60px auto;
+          text-align: center;
+          font-family: sans-serif;
+        }
+
+		.info-section h2 {
+        	font-size: 22px;
+            color: #222;
+            margin-bottom: 15px;
+            text-align: left;
+            border-bottom: 1px solid #f1c40f;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* --- Tabs trên cùng --- */
+        .info-tabs {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+          margin-bottom: 20px;
+        }
+
+        .info-tabs button {
+          background: #f2f2f2;
+          border: none;
+          border-radius: 20px;
+          padding: 8px 16px;
+          cursor: pointer;
+          font-size: 15px;
+          color: #333;
+          transition: all 0.2s ease;
+        }
+
+        .info-tabs button:hover {
+          background: #e0e0e0;
+        }
+
+        .info-tabs button.active {
+          background: #333;
+          color: #fff;
+        }
+
+        /* --- Slider chính --- */
+        .info-slider {
+          overflow: hidden;
+          position: relative;
+          width: 100%;
+        }
+
+        .slider-track {
+          display: flex;
+          transition: transform 0.4s ease-in-out;
+          width: 900%; /* tổng chiều rộng của 9 tab */
+			transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* --- Mỗi panel (options của 1 tab) --- */
+        
+        .tab-panel {
+          flex: 0 0 100%;
+          min-width: 100%; /* thêm dòng này để panel luôn full width */
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+          padding: 10px 0;
+          box-sizing: border-box;
+        }
+
+        /* --- Các option nhỏ --- */
+        .tab-panel a {
+          background: #f2f2f2;
+          border-radius: 20px;
+          padding: 6px 14px;
+          color: #333;
+          text-decoration: none;
+          font-size: 14px;
+          transition: all 0.2s ease;
+          white-space: nowrap;
+        }
+
+        .tab-panel a:hover {
+          background: #e0e0e0;
+        }
+
+
+
+      </style>
+    </b:if>
+
+   
+  </head>
+
+  <body expr:class='&quot;loading&quot; + data:blog.mobileClass'>
+	<b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='no'>
+<b:widget id='Navbar1' locked='true' title='Navbar' type='Navbar' version='1'>
+  <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener(&#39;load&#39;,
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; });
+      }
+    }
+  &lt;/script&gt;
+&lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/platform.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+      gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
+        if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: &#39;https://www.blogger.com/navbar/5965705453297649276?origin\x3dhttp://localhost:80&#39;,
+              where: document.getElementById(&quot;navbar-iframe-container&quot;),
+              id: &quot;navbar-iframe&quot;
+          });
+        }
+      });
+    &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+var script = document.createElement(&#39;script&#39;);
+script.type = &#39;text/javascript&#39;;
+script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
+var head = document.getElementsByTagName(&#39;head&#39;)[0];
+if (head) {
+head.appendChild(script);
+}})();
+&lt;/script&gt;
+</b:includable>
+</b:widget>
+</b:section>
+
+
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+	<div itemscope='itemscope' itemtype='http://schema.org/Blog' style='display: none;'>
+		<meta expr:content='data:blog.title' itemprop='name'/>
+		<b:if cond='data:blog.metaDescription'>
+			<meta expr:content='data:blog.metaDescription' itemprop='description'/>
+		</b:if>
+	</div>
+</b:if>
+<div class='body-fauxcolumns'>
+	<div class='fauxcolumn-outer body-fauxcolumn-outer'>
+		<div class='cap-top'>
+			<div class='cap-left'/>
+			<div class='cap-right'/>
+		</div>
+		<div class='fauxborder-left'>
+			<div class='fauxborder-right'/>
+			<div class='fauxcolumn-inner'>
+			</div>
+		</div>
+		<div class='cap-bottom'>
+			<div class='cap-left'/>
+			<div class='cap-right'/>
+		</div>
+	</div>
+</div>
+
+
+    
+ <div class='add-header'>
+  <div class='add-header-inner'>
+    <div class='add-logo'>
+      <a href='/'>
+        <span class='logo-main'>ADD<span class='logo-sub'>Directory</span></span>
+      </a>
+    </div>
+
+    <div class='add-search'>
+      <input placeholder='Tìm kiếm doanh nghiệp...' type='text'/>
+      <button><i class='fa fa-search'/></button>
+    </div>
+
+    <nav class='add-menu'>
+      <a href='#'>Giới thiệu</a>
+      <a href='#'>Đăng doanh nghiệp</a>
+      <a href='#'>Liên hệ</a>
+    </nav>
+  </div>
+</div>
+
+<div class='tag-list'>
+  <a href='#'>#lawyer</a>
+  <a href='#'>#primary care physician</a>
+  <a href='#'>#surgery</a>
+  <a href='#'>#internal medicine</a>
+  <a href='#'>#obstetrics and gynecology</a>
+  <a href='#'>#pediatrics</a>
+  <a href='#'>#ophthalmology</a>
+  <a href='#'>#dermatology</a>
+  <a href='#'>#plastic surgery</a>
+  <a href='#'>#insurance</a>
+  <a href='#'>#CPA</a>
+  <a href='#'>#moving</a>
+  <a href='#'>#plumbing</a>
+  <a href='#'>#handyman</a>
+  <a href='#'>#air conditioning</a>
+  <a href='#'>#taxi</a>
+  <a href='#'>#towing</a>
+</div>
+
+<div id='main-section'>
+	<div class='category-section'>
+      <h2>Industry Category</h2>
+      <ul class='category-list'>
+        <li><a href='#'>Public institutions / libraries / organizations</a></li>
+        <li><a href='#'>Alumni association (school)</a></li>
+        <li><a href='#'>Volunteer organizations</a></li>
+        <li><a href='#'>General organization</a></li>
+        <li><a href='#'>Religious organizations (churches)</a></li>
+        <li><a href='#'>Religious organizations (prayer centers)</a></li>
+        <li><a href='#'>Religious organizations (Buddhist temples)</a></li>
+        <li><a href='#'>Religious organizations (missionary societies)</a></li>
+        <li><a href='#'>Religious organizations (seminaries)</a></li>
+        <li><a href='#'>Religious group (Won Buddhism)</a></li>
+        <li><a href='#'>Religious group (Catholic Church)</a></li>
+      </ul>
+    </div>
+
+    <div id='company-list'>
+      <h2>Premium Business</h2>
+      <div id='list'>
+        
+      </div>
+	</div>
+</div>
+
+
+  
+<section class='info-section'>
+	<h2>Popular business types</h2>
+  <div class='info-tabs'>
+    <button class='active' data-tab='0'>변호사</button>
+    <button data-tab='1'>병원</button>
+    <button data-tab='2'>한의원</button>
+    <button data-tab='3'>보험</button>
+    <button data-tab='4'>운송</button>
+    <button data-tab='5'>교육</button>
+    <button data-tab='6'>건축/플러밍/루핑</button>
+    <button data-tab='7'>냉동/에어콘</button>
+    <button data-tab='8'>기타</button>
+  </div>
+
+  <div class='info-slider'>
+    <div class='slider-track'>
+      <div class='tab-panel'>
+        <a href='#'>법률 상담소</a>
+        <a href='#'>이민 전문 변호사</a>
+        <a href='#'>세금 소송</a>
+      </div>
+      <div class='tab-panel'>
+        <a href='#'>서울 병원</a>
+        <a href='#'>내과</a>
+        <a href='#'>치과</a>
+      </div>
+      <div class='tab-panel'>
+        <a href='#'>한방의료원</a>
+        <a href='#'>침구 클리닉</a>
+      </div>
+      <div class='tab-panel'>
+        <a href='#'>생명 보험</a>
+        <a href='#'>자동차 보험</a>
+        <a href='#'>의료 보험</a>
+      </div>
+      <div class='tab-panel'>
+        <a href='#'>운송회사 A</a>
+        <a href='#'>택배</a>
+        <a href='#'>국제 운송</a>
+      </div>
+      <div class='tab-panel'>
+        <a href='#'>한국어 학교</a>
+        <a href='#'>유학원</a>
+        <a href='#'>교육 센터</a>
+      </div>
+      <div class='tab-panel'>
+        <a href='#'>건축회사</a>
+        <a href='#'>플러밍 서비스</a>
+        <a href='#'>루핑 전문</a>
+      </div>
+      <div class='tab-panel'>
+        <a href='#'>에어컨 수리</a>
+        <a href='#'>냉동 창고</a>
+      </div>
+      <div class='tab-panel'>
+        <a href='#'>청소 서비스</a>
+        <a href='#'>통역</a>
+        <a href='#'>기타 지원</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class='learn-more-section'>
+  <h2>Learn More</h2>
+  <div class='learn-more-grid'>
+
+    <div class='learn-more-column'>
+      <a href='#'>Han River Moving</a>
+      <a href='#'>LOS ANGELES, CA</a>
+      <a href='#'>Los Angeles</a>
+      <a href='#'>Han River Moving</a>
+      <a href='#'>Korean Community Event Tickets</a>
+      <a href='#'>Terms of Use</a>
+	  <a href='#'>Economic News Analysis</a>
+      <a href='#'>Korean Broadcasting Advertisement</a>
+      <a href='#'>Latest IT devices</a>
+    </div>
+	<div class='learn-more-column'>
+      <a href='#'>Han River Moving</a>
+      <a href='#'>LOS ANGELES, CA</a>
+      <a href='#'>Los Angeles</a>
+      <a href='#'>Han River Moving</a>
+      <a href='#'>Korean Community Event Tickets</a>
+      <a href='#'>Terms of Use</a>
+	  <a href='#'>Economic News Analysis</a>
+      <a href='#'>Korean Broadcasting Advertisement</a>
+      <a href='#'>Latest IT devices</a>
+    </div>
+	<div class='learn-more-column'>
+      <a href='#'>Han River Moving</a>
+      <a href='#'>LOS ANGELES, CA</a>
+      <a href='#'>Los Angeles</a>
+      <a href='#'>Han River Moving</a>
+      <a href='#'>Korean Community Event Tickets</a>
+      <a href='#'>Terms of Use</a>
+	  <a href='#'>Economic News Analysis</a>
+      <a href='#'>Korean Broadcasting Advertisement</a>
+      <a href='#'>Latest IT devices</a>
+    </div>
+
+  </div>
+</section>
+
+
+<section class='recommended-section'>
+  <h2>Recommended Businesses</h2>
+  <div id='recommended-list'>
+  	
+  </div>
+</section>
+
+<footer class='site-footer'>
+  Copyright &#169; 2013 <b>ADD건설Group</b> &#160; | &#160; +82.2.554.8171 &#160; | &#160; All rights reserved | Powered by Blogger.
+</footer>
+
+
+
+<script>
+//<![CDATA[
+function showDanhBa(json) {
+  const entries = json.feed.entry || [];
+  let html = "";
+
+  entries.forEach(e => {
+	console.log(e)
+    let postUrl = "";
+    let imgSrc = "";
+    let title = e.title?.$t || "Xem chi tiết";
+
+    // 1. Lấy permalink chính xác (ưu tiên rel="alternate")
+    if (e.link && e.link.length) {
+      const altLink = e.link.find(l => l.rel === "alternate" && l.type === "text/html");
+      if (altLink) postUrl = altLink.href;
+    }
+
+    // 2. Lấy ảnh đầu tiên trong nội dung
+    if (e.content && e.content.$t) {
+      const div = document.createElement("div");
+      div.innerHTML = e.content.$t;
+
+      const img = div.querySelector("img");
+      imgSrc = img ? img.src : "";
+    }
+
+    // 3. Nếu có ảnh + có link thì render card
+    if (imgSrc && postUrl) {
+      html += `
+        <div class="company-card">
+          <a href="${postUrl}" target="_blank" rel="noopener noreferrer" title="${title}">
+            <img src="${imgSrc}" alt="${title}" loading="lazy" />
+          </a>
+        </div>
+      `;
+    }
+  });
+
+  document.getElementById("list").innerHTML += html;
+}
+//]]>
+</script>
+
+<script>
+//<![CDATA[
+document.write('<script src="/feeds/posts/default/-/DANHBA?alt=json-in-script&max-results=500&callback=showDanhBa"><\/script>');
+//]]>
+</script>
+
+    
+<script>
+document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+  const tabs = document.querySelectorAll(&quot;.info-tabs button&quot;);
+  const sliderTrack = document.querySelector(&quot;.slider-track&quot;);
+
+  tabs.forEach(tab =&gt; {
+    tab.addEventListener(&quot;click&quot;, () =&gt; {
+      // toggle nút active
+      tabs.forEach(t =&gt; t.classList.remove(&quot;active&quot;));
+      tab.classList.add(&quot;active&quot;);
+
+      // dịch slide
+      const index = parseInt(tab.getAttribute(&quot;data-tab&quot;), 10);
+      sliderTrack.style.transform = `translateX(-${index * 100}%)`;
+    });
+  });
+});
+</script>
+
+
+    
+    
+<script>
+//<![CDATA[
+function showRecommended(json) {
+  const entries = json.feed.entry || [];
+  let html = "";
+
+  entries.forEach(e => {
+    const content = e.content?.$t || "";
+    const div = document.createElement("div");
+    div.innerHTML = content;
+
+    const ps = [...div.querySelectorAll("p")]
+      .map(p => p.textContent.trim())
+      .filter(t => t);
+
+    const company = {
+      name: ps[0] || "Chưa có tên",
+      phone: ps[1] || "",
+      address: ps[2] || ""
+    };
+
+    html += `
+      <div class="recommended-card">
+        <div class="recommended-top">
+          <span class="recommended-name">${company.name}</span>
+          <span class="recommended-phone">${company.phone}</span>
+        </div>
+        <div class="recommended-address">${company.address}</div>
+      </div>
+    `;
+  });
+
+  document.getElementById("recommended-list").innerHTML = html;
+}
+//]]>
+</script>	
+
+<script>
+//<![CDATA[
+document.write('<script src=\"/feeds/posts/default/-/DANHBA?alt=json-in-script&callback=showRecommended\"><\/script>');
+//]]>
+</script> 
+  </body>
+</html>

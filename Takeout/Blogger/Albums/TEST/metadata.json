@@ -1,0 +1,12 @@
+{
+  "title": "TEST",
+  "remainingCapacity": "19957",
+  "totalItems": "43",
+  "totalItemsAccuracy": "EXACT",
+  "timeInfo": {
+    "startMs": "1763535821000",
+    "endMs": "1765436929000",
+    "creationMs": "1763535820000",
+    "newestOperationTimeMs": "1765436929060"
+  }
+}
