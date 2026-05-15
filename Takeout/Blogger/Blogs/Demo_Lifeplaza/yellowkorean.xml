@@ -424,7 +424,7 @@ body {
   max-width: 100% !important;
   height: auto !important;
   display: block !important;
-  border-radius: 4px;
+  border-radius: 3px;
   margin: 12px 0;
 }
 .lp-single-post .post-body p{margin-bottom:12px}
@@ -893,6 +893,11 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-star.empty { color:#ddd; }
 .yk-rating-score { font-size:13px; font-weight:700; color:#555; margin-left:4px; }
 .yk-card-meta { display:flex; flex-direction:column; align-items:flex-end; gap:4px; flex-shrink:0; }
+  /* ===== GOOGLE TRANSLATE TOOLBAR HIDE ===== */
+  .goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt,.skiptranslate{display:none!important}
+  body{top:0!important}
+  .goog-te-gadget{font-size:0!important}
+  .lp-flag-btn.lp-lang-active{border-color:#8BC34A!important;box-shadow:0 0 0 2px rgba(139,195,74,.4)}
   </style>
 </head>
 
@@ -916,13 +921,15 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
           <button class="lp-search-btn" onclick="window.location='<$BlogURL$>search?q='+encodeURIComponent(document.getElementById('lpSearchInput').value)">🔍</button>
         </div>
         <div class="lp-lang-flags">
-          <button class="lp-flag-btn" title="Tiếng Việt">
+          <button class="lp-flag-btn" id="lpFlagVN" title="Tiếng Việt" onclick="lpSwitchLang('vi')">
             <img alt="Vietnam" src="https://flagcdn.com/w40/vn.png"/>
           </button>
-          <button class="lp-flag-btn" title="한국어">
+          <button class="lp-flag-btn" id="lpFlagKR" title="한국어" onclick="lpSwitchLang('ko')">
             <img alt="Korea" src="https://flagcdn.com/w40/kr.png"/>
           </button>
         </div>
+        <!-- Google Translate hidden widget -->
+        <div id="google_translate_element" style="display:none"></div>
       </div>
     </div>
   </div>
@@ -1172,7 +1179,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
       <!-- ── COMPANY LISTINGS ── -->
       <div id="lp-company-section">
       <div class="lp-section-title">
-        <div class="bar"></div><h2>기업 정보</h2><div class="line"></div>
+        <div class="bar"></div><h2 >기업 정보</h2><div class="line"></div>
       </div>
       <div class="lp-card lp-divider" style="margin-bottom:18px">
 
@@ -1184,9 +1191,9 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
                  style="width:100%;height:100%;object-fit:contain;padding:4px"/>
           </div>
           <div class="lp-company-info">
-            <div class="lp-company-name-row">
-              <span class="lp-company-name">ADD GROUP</span>
-              <span class="lp-company-tag cat-default">CONSTRUCTION</span>
+            <div class="lp-company-name-row" translate="no" class="notranslate">
+              <span class="lp-company-name" translate="no" class="notranslate">ADD GROUP</span>
+              <span class="lp-company-tag cat-default" translate="no" class="notranslate">CONSTRUCTION</span>
             </div>
             <div class="lp-company-phone">+84 90 613 3456</div>
             <div class="lp-company-addr">Tầng 3, Tòa nhà Dolphin Plaza, 56 Trần Bình, Phường Cầu Giấy, Hà Nội</div>
@@ -1202,9 +1209,9 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
                  style="width:100%;height:100%;object-fit:contain;padding:4px"/>
           </div>
           <div class="lp-company-info">
-            <div class="lp-company-name-row">
-              <span class="lp-company-name">KPOP ART SCHOOL</span>
-              <span class="lp-company-tag cat-EDUCATION">EDUCATION</span>
+            <div class="lp-company-name-row" translate="no" class="notranslate">
+              <span class="lp-company-name" translate="no" class="notranslate">KPOP ART SCHOOL</span>
+              <span class="lp-company-tag cat-EDUCATION" translate="no" class="notranslate">EDUCATION</span>
             </div>
             <div class="lp-company-phone">+82 10 5107 5991</div>
             <div class="lp-company-addr">4F, Lasara Tower, 138 Wausan-ro, Mapo-gu, Seoul</div>
@@ -1220,9 +1227,9 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
                  style="width:100%;height:100%;object-fit:contain;padding:4px"/>
           </div>
           <div class="lp-company-info">
-            <div class="lp-company-name-row">
-              <span class="lp-company-name">IDP VIETNAM</span>
-              <span class="lp-company-tag cat-EDUCATION">EDUCATION</span>
+            <div class="lp-company-name-row" translate="no" class="notranslate">
+              <span class="lp-company-name" translate="no" class="notranslate">IDP VIETNAM</span>
+              <span class="lp-company-tag cat-EDUCATION" translate="no" class="notranslate">EDUCATION</span>
             </div>
             <div class="lp-company-phone">+84 1900 6955</div>
             <div class="lp-company-addr">161-163A Hải Bà Trưng, Phường Xuân Hòa, TP.HCM</div>
@@ -1334,7 +1341,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
       <!-- HOT NEWS (dynamic) -->
       <div class="lp-sidebar-block" id="lpHotNewsBlock">
         <div class="lp-sidebar-head lp-head-green">
-          <span class="material-icons-outlined" style="font-size:18px;color:white">trending_up</span><span class="stitle">HOT NEWS</span>
+          <span class="material-icons-outlined notranslate" style="font-size:18px;color:white" translate="no">trending_up</span><span class="stitle">HOT NEWS</span>
         </div>
         <div id="lpHotNewsWrapper"></div>
       </div>
@@ -1362,7 +1369,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
       <!-- CATEGORIES — all labels -->
       <div class="lp-sidebar-block">
         <div class="lp-sidebar-head lp-head-gray">
-          <span class="material-icons-outlined" style="font-size:18px;color:#fff">label</span><span class="stitle">CATEGORY</span>
+          <span class="material-icons-outlined notranslate" style="font-size:18px;color:#fff" translate="no">label</span><span class="stitle">CATEGORY</span>
         </div>
         <div class="lp-cats">
           <a class="lp-cat-pill" href="<$BlogURL$>search/label/NEWS" style="background:#dbeafe;color:#1d4ed8">NEWS</a>
@@ -1407,7 +1414,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
       <!-- CONTACT (AJAX - dynamic from label CONTACT) -->
       <div class="lp-sidebar-block">
         <div class="lp-sidebar-head lp-head-dark">
-          <span class="material-icons-outlined" style="font-size:18px;color:#fff">phone</span><span class="stitle">CONTACT</span>
+          <span class="material-icons-outlined notranslate" style="font-size:18px;color:#fff" translate="no">phone</span><span class="stitle">CONTACT</span>
         </div>
         <div id="lp-contact-list">
           <div style="padding:15px;text-align:center;font-size:12px;color:#888;">Đang tải...</div>
@@ -1480,7 +1487,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
           cards.push(
             '<a class="lp-contact-item" href="' + postUrl + '">' +
               '<div class="lp-contact-logo">' + logoHtml + '</div>' +
-              '<div>' +
+              '<div translate="no" class="notranslate">' +
                 '<div class="lp-contact-name">' + title + '</div>' +
                 '<div class="lp-contact-phone">' + (phone || 'Xem chi tiết') + '</div>' +
                 '<div class="lp-contact-addr">' + (address || '') + '</div>' +
@@ -1770,23 +1777,45 @@ window.initLpSlider = function(){
       renderPage(1);
     }
 
-    // 4. Latest News Labels & Date
-    var latestItems = document.querySelectorAll('#lp-latest-list li');
-    latestItems.forEach(function(li){
-      var url = li.getAttribute('data-post-url');
-      if(!url) return;
-      var path = url.replace(/^https?:\/\/[^\/]+/i, '').split('?')[0];
-      var matched = allPosts.find(function(p){ return p.url.indexOf(path) > -1; });
-      if(matched) {
-        if(matched.hasExcluded && !isExcludePage) { li.style.display = 'none'; return; }
-        var span = li.querySelector('.lp-ln-labels');
-        if(span && matched.labels.length) {
-          span.innerHTML = '<a href="/search/label/'+encodeURIComponent(matched.labels[0])+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+matched.labels[0]+'</a>';
+    // 4. Latest News Labels & Date (Generate if empty, else enhance)
+    var latestList = document.getElementById('lp-latest-list');
+    if (latestList) {
+      var latestItems = latestList.querySelectorAll('li');
+      if (latestItems.length === 0) {
+        // On ItemPage, BloggerPreviousItems is empty, so we build it from validGlobal
+        var lnHtml = '';
+        var lCount = Math.min(5, validGlobal.length);
+        for(var i=0; i<lCount; i++){
+          var p = validGlobal[i];
+          var firstLabel = p.labels.length ? p.labels[0] : '';
+          var labelHtml = firstLabel ? '<a href="/search/label/'+encodeURIComponent(firstLabel)+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+firstLabel+'</a>' : '';
+          lnHtml += '<li data-post-url="'+p.url+'">' +
+            '<a class="lp-ln-title" href="'+p.url+'">'+p.title+'</a>' +
+            '<div class="lp-ln-meta">' +
+              '<span class="lp-label-wrap lp-ln-labels">'+labelHtml+'</span>' +
+              '<span class="lp-ln-date">'+p.date+'</span>' +
+            '</div>' +
+          '</li>';
         }
-        var dateSpan = li.querySelector('.lp-ln-date');
-        if(dateSpan) dateSpan.textContent = matched.date;
+        latestList.innerHTML = lnHtml;
+      } else {
+        latestItems.forEach(function(li){
+          var url = li.getAttribute('data-post-url');
+          if(!url) return;
+          var path = url.replace(/^https?:\/\/[^\/]+/i, '').split('?')[0];
+          var matched = allPosts.find(function(p){ return p.url.indexOf(path) > -1; });
+          if(matched) {
+            if(matched.hasExcluded && !isExcludePage) { li.style.display = 'none'; return; }
+            var span = li.querySelector('.lp-ln-labels');
+            if(span && matched.labels.length) {
+              span.innerHTML = '<a href="/search/label/'+encodeURIComponent(matched.labels[0])+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+matched.labels[0]+'</a>';
+            }
+            var dateSpan = li.querySelector('.lp-ln-date');
+            if(dateSpan) dateSpan.textContent = matched.date;
+          }
+        });
       }
-    });
+    }
 
     // 5. Contact List (Main & Sidebar)
     var contactMainWrap = document.getElementById('lpContactMainWrap');
@@ -1814,12 +1843,12 @@ window.initLpSlider = function(){
                 '<img src="'+p.img+'" alt="'+p.title+'" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:4px"/>' +
               '</div>' +
               '<div class="lp-company-info">' +
-                '<div class="lp-company-name-row">' +
+                '<div class="lp-company-name-row" translate="no" class="notranslate">' +
                   '<span class="lp-company-name">'+p.title+'</span>' +
                   '<span class="lp-company-tag cat-'+secondLabel+'">'+secondLabel+'</span>' +
                 '</div>' +
-                '<div class="lp-company-phone">'+phone+'</div>' +
-                '<div class="lp-company-addr">'+addr+'</div>' +
+                '<div class="lp-company-phone" translate="no" class="notranslate">'+phone+'</div>' +
+                '<div class="lp-company-addr" translate="no" class="notranslate">'+addr+'</div>' +
               '</div>' +
               '<span class="lp-external">↗</span>' +
             '</a>';
@@ -1834,7 +1863,7 @@ window.initLpSlider = function(){
                 '<img src="'+p.img+'" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" alt="'+p.title+'" loading="lazy"/>' +
                 '<div class="lp-contact-fallback" style="display:none;background:'+bg+';color:#fff;font-weight:800;font-size:11px">'+fallback+'</div>' +
               '</div>' +
-              '<div>' +
+              '<div translate="no" class="notranslate">' +
                 '<div class="lp-contact-name">'+p.title+'</div>' +
                 '<div class="lp-contact-phone">'+phone+'</div>' +
                 '<div class="lp-contact-addr">'+addr+'</div>' +
@@ -2087,11 +2116,11 @@ window.initLpSlider = function(){
     var starsHtml = (b.rating > 0) ? buildStars(b.rating) : '';
     return '<div class="yk-card" data-cat="'+escH(b.cat)+'" data-city="'+escH(b.city)+'">' +
       '<div class="yk-card-top">' +
-        '<div>' +
+        '<div translate="no" class="notranslate">' +
           '<div class="yk-card-name">'+escH(b.name)+'</div>' +
           '<div class="yk-card-cat">'+escH(b.cat)+'</div>' +
         '</div>' +
-        '<div class="yk-card-meta">' +
+        '<div class="yk-card-meta" translate="no" class="notranslate">' +
           (starsHtml ? starsHtml : '') +
           '<span style="font-size:12px;color:#aaa;">'+escH(b.city)+'</span>' +
         '</div>' +
@@ -2101,7 +2130,7 @@ window.initLpSlider = function(){
         (phone ? '<div class="yk-card-info-row"><svg class="yk-card-info-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span>'+escH(phone)+'</span></div>' : '') +
       '</div>' +
       '<div class="yk-card-actions">' +
-        '<a class="yk-btn-primary" href="'+telHref+'"><span class="material-icons-outlined" style="font-size:18px;color:#fff">phone</span> 연락하기</a>' +
+        '<a class="yk-btn-primary" href="'+telHref+'"><span class="material-icons-outlined notranslate" style="font-size:18px;color:#fff" translate="no">phone</span> 연락하기</a>' +
         '<a class="yk-btn-secondary" href="#" onclick="ykSearch(\''+escH(b.name).replace(/'/g,"\\'")+'\'  );return false">› 검색</a>' +
       '</div>' +
     '</div>';
@@ -2317,6 +2346,107 @@ function lpSubToggle(arrow){
 })();
 //]]>
 </script>
+
+<!-- ===== GOOGLE TRANSLATE + LANG SWITCHER ===== -->
+<script type="text/javascript">
+//<![CDATA[
+// ── Cookie helper ──
+function lpSetCookie(name, value) {
+  var host = location.hostname;
+  document.cookie = name + '=' + value + ';path=/;domain=' + host;
+  document.cookie = name + '=' + value + ';path=/;domain=.' + host;
+  document.cookie = name + '=' + value + ';path=/';
+}
+function lpGetCookie(name) {
+  var m = document.cookie.match('(?:^|;)\\s*' + name + '=([^;]+)');
+  return m ? decodeURIComponent(m[1]) : '';
+}
+
+// ── Cookie expirer (aggressive) ──
+function lpExpireCookie(name) {
+  var host = location.hostname;
+  var past = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
+  var hostParts = host.split('.');
+  
+  // Try expiring on current path
+  document.cookie = name + '=;' + past + ';path=/';
+  document.cookie = name + '=;' + past + ';path=/;domain=' + host;
+  document.cookie = name + '=;' + past + ';path=/;domain=.' + host;
+  
+  // Try expiring on parent domains if applicable (e.g. lifeplaza.net)
+  if (hostParts.length > 2) {
+    var parentDomain = hostParts.slice(1).join('.');
+    document.cookie = name + '=;' + past + ';path=/;domain=' + parentDomain;
+    document.cookie = name + '=;' + past + ';path=/;domain=.' + parentDomain;
+  }
+}
+
+// ── Lang switcher ──
+window.lpSwitchLang = function(lang) {
+  if (lang === 'ko') {
+    lpExpireCookie('googtrans');
+    // For good measure, try setting to 'auto' or empty
+    lpSetCookie('googtrans', '');
+    
+    // Also try GT widget own restore
+    try {
+      var sel = document.querySelector('.goog-te-combo');
+      if (sel) { sel.value = ''; sel.dispatchEvent(new Event('change')); }
+    } catch(e) {}
+  } else {
+    lpSetCookie('googtrans', '/ko/' + lang);
+  }
+  
+  // Delay navigation slightly to allow cookie changes to register
+  setTimeout(function() {
+    window.location.href = location.pathname + location.search;
+  }, 100);
+};
+
+
+// ── On load: restore active flag from cookie ──
+(function() {
+  var gt = lpGetCookie('googtrans');
+  var activeLang = 'ko';
+  if (gt && gt.indexOf('/ko/vi') !== -1) activeLang = 'vi';
+
+  function markActive() {
+    var btn = (activeLang === 'vi')
+      ? document.getElementById('lpFlagVN')
+      : document.getElementById('lpFlagKR');
+    if (btn) btn.classList.add('lp-lang-active');
+  }
+
+  // ── Protect navbar from translation ──
+  function markNoTranslate() {
+    document.querySelectorAll(
+      '#lp-nav a, #lp-menu a, #lp-mobile-menu a, .lp-ticker-label, #lp-nav-toggle, #lp-sticky-group'
+    ).forEach(function(el) {
+      el.setAttribute('translate', 'no');
+      el.classList.add('notranslate');
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() { markActive(); markNoTranslate(); });
+  } else {
+    markActive(); markNoTranslate();
+  }
+})();
+
+// ── Google Translate init ──
+window.googleTranslateElementInit = function() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'ko',
+    includedLanguages: 'vi,ko',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+};
+//]]>
+</script>
+<!-- Load Google Translate AFTER callback is defined -->
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
