@@ -2415,12 +2415,17 @@ window.lpSwitchLang = function(lang) {
       ? document.getElementById('lpFlagVN')
       : document.getElementById('lpFlagKR');
     if (btn) btn.classList.add('lp-lang-active');
+    
+    if (activeLang === 'vi') {
+      var tickerLabel = document.querySelector('.lp-ticker-label');
+      if (tickerLabel) tickerLabel.innerHTML = 'TIN NÓNG BREAKING';
+    }
   }
 
   // ── Protect navbar from translation ──
   function markNoTranslate() {
     document.querySelectorAll(
-      '#lp-nav a, #lp-menu a, #lp-mobile-menu a, .lp-ticker-label, #lp-nav-toggle, #lp-sticky-group'
+      '#lp-nav a, #lp-menu a, #lp-mobile-menu a, .lp-ticker-label, #lp-nav-toggle'
     ).forEach(function(el) {
       el.setAttribute('translate', 'no');
       el.classList.add('notranslate');
