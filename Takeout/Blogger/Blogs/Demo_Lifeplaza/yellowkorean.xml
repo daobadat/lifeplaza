@@ -499,18 +499,19 @@ body {
 
 /* ===== MOBILE NAV TOGGLE ===== */
 #lp-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;color:#fff;font-size:22px;line-height:1;flex-shrink:0}
+#lp-home-btn{display:none}
 #lp-nav-mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000}
 #lp-nav-mobile-overlay.open{display:block}
 #lp-mobile-menu{
   display:none;
   position:fixed;
   top:0;left:0;
-  width:260px;
+  width:100%;
   height:100vh;
   background:#fff;
   z-index:1001;
   overflow-y:auto;
-  box-shadow:4px 0 18px rgba(0,0,0,.18);
+  box-shadow:none;
   transform:translateX(-100%);
   transition:transform .3s ease;
   flex-direction:column;
@@ -580,20 +581,52 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
   /* Topbar */
   #header{padding:6px 0!important}
   #blog-title img{height:40px!important}
-  .lp-topbar-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
-  #blog-title{font-size:20px;flex-shrink:0;padding-left:0;order:1}
+  .lp-topbar-inner{display:grid!important;grid-template-columns:1fr auto 1fr!important;align-items:center!important;width:100%!important;gap:0!important;padding:0 12px}
+  #blog-title{font-size:20px;flex-shrink:0;padding-left:0;justify-self:center!important;margin:0!important;display:flex!important;justify-content:center!important;align-items:center!important}
   #description{display:none}
   .lp-search-wrap{display:contents}
-  .lp-lang-flags{order:2;gap:6px;display:flex}
-  .lp-search-box{order:3;width:100%;flex:none}
-  .lp-search-box input{font-size:13px;padding:8px 34px 8px 12px;border-radius:3px}
+  .lp-lang-flags{gap:6px;display:flex;justify-self:end!important}
+  .lp-search-wrap .lp-search-box{display:none !important}
   .lp-flag-btn{width:50px;height:36px}
   .lp-flag-btn img{width:100%;height:100%}
 
-  /* Nav: show hamburger, hide desktop menu */
-  #lp-nav-toggle{display:flex!important;align-items:center;justify-content:center}
-  #lp-nav .lp-wrap{display:flex;align-items:center;justify-content:space-between;padding:0 12px;min-height:40px}
-  #lp-nav ul#lp-menu{display:none!important}
+  /* Nav: show hamburger, horizontal menu next to it on mobile */
+  #lp-nav-toggle{display:flex!important;align-items:center;justify-content:center;flex-shrink:0;color:#8BC34A!important;font-size:26px!important;padding:6px 0!important;background:none!important;border:none!important;justify-self:start!important}
+  #lp-home-btn{display:flex!important;align-items:center;justify-content:center;color:#fff!important;padding:8px 10px!important;flex-shrink:0!important;text-decoration:none!important}
+  #lp-home-btn svg{display:block!important;width:20px;height:20px}
+  #lp-nav .lp-wrap{display:flex;align-items:center;justify-content:flex-start;padding:0 12px;min-height:40px;overflow:hidden}
+  #lp-nav ul#lp-menu{
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+    overflow-x:auto!important;
+    white-space:nowrap!important;
+    flex:1;
+    min-width:0;
+    margin:0;
+    padding:0 0 0 10px;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  #lp-nav ul#lp-menu::-webkit-scrollbar{
+    display:none!important;
+    width:0!important;
+    height:0!important;
+  }
+  #lp-nav ul#lp-menu > li{
+    display:inline-block!important;
+    flex:0 0 auto!important;
+    border:none!important;
+  }
+  #lp-nav ul#lp-menu > li > a{
+    padding:10px 8px!important;
+    font-size:11px!important;
+    white-space:nowrap!important;
+  }
+  #lp-nav ul#lp-menu ul.lp-dropdown{
+    display:none!important;
+  }
 
   /* Content */
   #content{padding:12px 8px 30px}
@@ -701,7 +734,7 @@ body.yk-page .lp-post-list,
 body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 
 /* Header */
-.yk-header { margin-bottom: 28px; }
+.yk-header { margin-bottom: 15px; }
 .yk-header h1 { font-size:30px; font-weight:900; color:#1a1a1a; margin-bottom:6px; font-family:'Noto Sans','Noto Sans KR','Segoe UI',Arial,sans-serif; }
 .yk-header p { font-size:15px; color:#777; }
 
@@ -835,7 +868,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-filter-select {
   height: 44px;
   box-sizing: border-box;
-  padding: 0 14px;
+  padding: 0 24px 0 10px;
   border: 1px solid #e0e0e0;
   border-radius: 3px;
   font-size: 13px;
@@ -844,10 +877,91 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
   font-family: inherit;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23007aff%22 stroke-width=%223.5%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpolyline points=%2218 15 12 21 6 15%22%3E%3C/polyline%3E%3Cpolyline points=%226 9 12 3 18 9%22%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .yk-filter-select:focus {
   border-color: #2D9B4E;
   box-shadow: 0 0 4px rgba(45,155,78,0.15);
+}
+
+/* ── YK Toolbar responsive layout ── */
+.yk-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.yk-search-wrapper {
+  position: relative;
+  width: 100%;
+}
+.yk-right-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.yk-selects-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.yk-selects-wrapper .yk-filter-select {
+  flex: 1;
+  min-width: 0;
+  width: 0;
+}
+.yk-counter-wrapper {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .yk-selects-wrapper .yk-filter-select {
+    padding: 0 16px 0 6px !important;
+    font-size: 10px !important;
+    background-position: right 4px center !important;
+    background-size: 10px 10px !important;
+  }
+  .yk-counter-wrapper span {
+    font-size: 11px !important;
+  }
+}
+@media (min-width: 761px) {
+  .yk-toolbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+  .yk-search-wrapper {
+    width: 100%;
+  }
+  .yk-right-controls {
+    flex-direction: row;
+    gap: 12px;
+  }
+  .yk-selects-wrapper {
+    flex: 1;
+    gap: 10px;
+  }
+  .yk-counter-wrapper {
+    align-self: center;
+    margin-left: auto;
+  }
 }
   /* ===== GOOGLE TRANSLATE TOOLBAR HIDE ===== */
   .goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt,.skiptranslate{display:none!important}
@@ -870,6 +984,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 <div id="header">
   <div class="lp-wrap">
     <div class="lp-topbar-inner">
+      <button id="lp-nav-toggle" onclick="lpMenuOpen()" title="Menu">&#9776;</button>
       <h1 id="blog-title">
   <a href="<$BlogURL$>">
     <img src="https://blogger.googleusercontent.com/img/a/AVvXsEimZpVMLBOwAuZRLhO94AqNQcX1fswtzjZiJRr_IgLlvHpaLTlrJTcmys2Oag1gIWt10o7z611v3m1QJ3qfwl8g_zSWtj9IeYKTxQJZV3ih4Hp1iP-Y96ZH3yy6XpbcYyWo_D0zb1GNyt6HgXJXy5ZiEmLX4JaZuhPtprdob3MKZWPnd8xM6nNNyiI5rjk=s320"
@@ -905,6 +1020,17 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
   <div id="lp-mobile-menu-head">
     <a class="mm-logo" href="<$BlogURL$>">Life<span>plaza</span></a>
     <button id="lp-mobile-menu-close" onclick="lpMenuClose()">&#10005;</button>
+  </div>
+  <div class="lp-mobile-menu-search" style="padding: 12px 16px; background: #fafafa; border-bottom: 1px solid #eee;">
+    <div style="position:relative; width: 100%;">
+      <input id="lpSearchInputMobile" onkeydown="if(event.key=='Enter'){window.location='<$BlogURL$>search?q='+encodeURIComponent(this.value)}" placeholder="콘텐츠를 입력해주세요..." type="text"
+        style="width: 100%; height: 42px; box-sizing: border-box; padding: 0 38px 0 14px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 13px; outline: none; font-family: inherit; transition: border-color 0.2s; -webkit-appearance: none; appearance: none;"
+        onfocus="this.style.borderColor='#8BC34A'" onblur="this.style.borderColor='#e0e0e0'"/>
+      <button onclick="window.location='<$BlogURL$>search?q='+encodeURIComponent(document.getElementById('lpSearchInputMobile').value)"
+        style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%); border: none; background: none; cursor: pointer; padding: 8px; font-size: 14px; display: flex; align-items: center; justify-content: center; height: 100%;">
+        🔍
+      </button>
+    </div>
   </div>
   <ul>
     <li><a href="<$BlogURL$>search/label/NEWS">NEWS</a><i class="mm-arrow" onclick="lpSubToggle(this)">&#9660;</i>
@@ -963,7 +1089,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
     </li>
     <li><a href="<$BlogURL$>search/label/PHOTO">PHOTO</a></li>
     <li><a href="<$BlogURL$>search/label/YOUTUBE">YOUTUBE</a></li>
-    <li><a href="<$BlogURL$>search/label/YELLOWKOREA">YELLOWKOREA</a>
+    <li><a href="<$BlogURL$>search/label/YELLOWKOREA">YELLOWPAGE</a>
     </li>
   </ul>
 </nav>
@@ -971,8 +1097,12 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 <div id="lp-sticky-group">
 <div id="lp-nav">
   <div class="lp-wrap">
-    <!-- Hamburger button (mobile only) -->
-    <button id="lp-nav-toggle" onclick="lpMenuOpen()" title="Menu">&#9776;</button>
+    <!-- Home button (replaces hamburger button on the green nav bar) -->
+    <a id="lp-home-btn" href="<$BlogURL$>" title="Home">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+    </a>
     <ul id="lp-menu">
 
       <li id="mn-news" class="has-sub">
@@ -1086,8 +1216,8 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
         </div>
 
         <!-- Toolbar: search + category + city + rating sort + counter -->
-        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;align-items:center">
-          <div style="position:relative;flex:1;min-width:180px;">
+        <div class="yk-toolbar">
+          <div class="yk-search-wrapper">
             <input id="ykSearchInput" type="text" placeholder="업체명 검색..." oninput="ykSearch()"
               style="width:100%;height:44px;box-sizing:border-box;padding:0 36px 0 14px;border:1px solid #e0e0e0;border-radius:3px;font-size:13px;outline:none;font-family:inherit;transition:border-color 0.2s, box-shadow 0.2s;"
               onfocus="this.style.borderColor='#2D9B4E';this.style.boxShadow='0 0 4px rgba(45,155,78,0.15)';" onblur="this.style.borderColor='#e0e0e0';this.style.boxShadow='none';"/>
@@ -1097,23 +1227,29 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
               </svg>
             </span>
           </div>
-          <select id="ykCategorySelect" onchange="ykCategorySelectFilter(this)" class="yk-filter-select">
-            <option value="전체">모든 업종</option>
-          </select>
-          <select id="ykCitySelect" onchange="ykCityFilter(this)" class="yk-filter-select">
-            <option value="">모든 지역</option>
-          </select>
-          <select id="ykSortRating" onchange="ykRatingSort(this)" class="yk-filter-select">
-            <option value="">평점 및 정렬</option>
-            <option value="high">별점 높은 순 (★5 → ★1)</option>
-            <option value="low">별점 낮은 순 (★1 → ★5)</option>
-            <option value="5">★★★★★ (5성)</option>
-            <option value="4">★★★★☆ (4성)</option>
-            <option value="3">★★★☆☆ (3성)</option>
-            <option value="2">★★☆☆☆ (2성)</option>
-            <option value="1">★☆☆☆☆ (1성)</option>
-          </select>
-          <span id="ykCounter" style="font-size:13px;color:#000000;white-space:nowrap;font-weight:600"></span>
+          <div class="yk-right-controls">
+            <div class="yk-selects-wrapper">
+              <select id="ykCategorySelect" onchange="ykCategorySelectFilter(this)" class="yk-filter-select">
+                <option value="전체">모든 업종</option>
+              </select>
+              <select id="ykCitySelect" onchange="ykCityFilter(this)" class="yk-filter-select">
+                <option value="">모든 지역</option>
+              </select>
+              <select id="ykSortRating" onchange="ykRatingSort(this)" class="yk-filter-select">
+                <option value="">평점 및 정렬</option>
+                <option value="high">별점 높은 순 (★5 → ★1)</option>
+                <option value="low">별점 낮은 순 (★1 → ★5)</option>
+                <option value="5">★★★★★ (5성)</option>
+                <option value="4">★★★★☆ (4성)</option>
+                <option value="3">★★★☆☆ (3성)</option>
+                <option value="2">★★☆☆☆ (2성)</option>
+                <option value="1">★☆☆☆☆ (1성)</option>
+              </select>
+            </div>
+            <div class="yk-counter-wrapper">
+              <span id="ykCounter" style="font-size:13px;color:#000000;white-space:nowrap;font-weight:600"></span>
+            </div>
+          </div>
         </div>
 
         <div class="yk-grid" id="ykGrid"></div>
