@@ -15,7 +15,7 @@ a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 ul,ol{list-style:none;padding:0;margin:0}
 
-/* ===== STICKY NAVBAR + TICKER ===== */
+/* ===== STICKY NAVBAR ===== */
 #lp-sticky-group {
   position: -webkit-sticky;
   position: sticky;
@@ -29,7 +29,7 @@ body.scrolled #lp-sticky-group {
 #header {
   background: #fff;
   margin: 0 !important;
-  padding: 12px 0 !important;
+  padding: 6px 0 !important;
   max-height: 150px;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
@@ -55,10 +55,11 @@ body {
 .lp-wrap{max-width:1650px;margin:0 auto;padding:0 20px}
 
 /* ===== TOPBAR ===== */
-#header{background:#fff;padding:12px 0!important;margin:0!important}
+#header{background:#fff;padding:6px 0!important;margin:0!important}
 .lp-topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-#blog-title{font-size:26px;font-weight:800;margin:0;padding-bottom:5px;line-height:1}
+#blog-title{font-size:26px;font-weight:800;margin:0;padding-bottom:0;line-height:1}
 #blog-title a{text-decoration:none}
+#blog-title img{height:36px!important;width:auto;display:block}
 #blog-title .g{color:#8BC34A}
 #blog-title .d{color:#444}
 #description{display:none}
@@ -68,9 +69,9 @@ body {
 .lp-search-box input:focus{border-color:#8BC34A}
 .lp-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#888;font-size:15px;padding:0}
 .lp-lang-flags{display:flex;align-items:center;gap:4px;flex-shrink:0}
-.lp-flag-btn{display:inline-flex;align-items:center;justify-content:center;border:2px solid rgba(0,0,0,.12);border-radius:4px;overflow:hidden;cursor:pointer;background:none;padding:0;transition:border-color .2s,transform .2s;width:40px;height:28px}
+.lp-flag-btn{display:inline-flex;align-items:center;justify-content:center;border:2px solid rgba(0,0,0,.12);border-radius:4px;overflow:hidden;cursor:pointer;background:none;padding:0;transition:border-color .2s,transform .2s;width:50px;height:36px}
 .lp-flag-btn:hover{border-color:#8BC34A;transform:scale(1.08)}
-.lp-flag-btn img{width:40px;height:28px;object-fit:cover;display:block}
+.lp-flag-btn img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ===== NAV (Dropdown Menu) ===== */
 #lp-nav{background:#8BC34A;margin:0;padding:0;position:relative;z-index:200}
@@ -155,22 +156,22 @@ body {
 
 /* CARD */
 .lp-card{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07)}
-.lp-divider>*+*{border-top:1px solid #f0f0f0}
+.lp-divider>*+*{border-top:1px solid #ccc}
 
 /* ===== NEWS SLIDER ===== */
-.lp-slider{position:relative;height:360px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:18px}
-.lp-slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+.lp-slider{position:relative;height:453px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:18px}
+.lp-slide{position:absolute;inset:0;opacity:0;transition:none}
 .lp-slide.active{opacity:1;z-index:2}
-.lp-slide img{width:100%;height:100%;object-fit:cover}
+.lp-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;flex-shrink:0}
 .lp-slide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 55%,transparent 100%)}
 .lp-slide-content{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:3}
 .lp-slide-cat{display:inline-block;background:#8BC34A;color:#fff;font-size:10px;font-weight:700;padding:3px 9px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
 .lp-slide-date{color:rgba(255,255,255,.65);font-size:11px;margin-bottom:6px}
 .lp-slide-title{color:#fff;font-size:16px;font-weight:700;line-height:1.4;overflow:hidden;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.lp-slide-sub{color:rgba(255,255,255,.75);font-size:12px;line-height:1.5;overflow:hidden;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.lp-slide-sub{color:rgba(255, 255, 255, 0.85);font-size:12px;line-height:1.5;overflow:hidden;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .lp-slide-btn{display:inline-block;background:#8BC34A;color:#fff;font-size:11px;font-weight:600;padding:6px 14px;cursor:pointer;border:none;transition:background .2s}
 .lp-slide-btn:hover{background:#7CB342}
-.lp-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(0,0,0,.4);color:#fff;border:none;cursor:pointer;padding:8px 11px;font-size:20px;transition:background .2s;line-height:1}
+.lp-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:30;background:rgba(0,0,0,.4);color:#fff;border:none;cursor:pointer;padding:8px 11px;font-size:20px;transition:background .2s;line-height:1;pointer-events:auto}
 .lp-slider-arrow:hover{background:rgba(0,0,0,.65)}
 .lp-slider-arrow.prev{left:8px}
 .lp-slider-arrow.next{right:8px}
@@ -180,35 +181,47 @@ body {
 .lp-slider-progress{position:absolute;bottom:0;left:0;height:3px;background:#8BC34A;z-index:10;transition:width .4s}
 
 /* ===== COMPANY LISTINGS ===== */
-.lp-company-item{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;transition:background .2s}
+.lp-company-item{display:flex;align-items:stretch;gap:12px;padding:12px 14px;cursor:pointer;transition:background .2s}
 .lp-company-item:hover{background:#fafafa}
-.lp-company-logo{width:52px;height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
-.lp-company-info{flex:1;min-width:0}
-.lp-company-name-row{display:flex;align-items:center;gap:6px;margin-bottom:3px}
-.lp-company-name{font-size:15px;font-weight:700;color:#222;transition:color .2s}
+.lp-company-logo, .lp-contact-logo {
+  width: 100px !important;
+  height: 60px !important;
+  align-self: center !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #fff !important;
+  border: 1px solid #eee !important;
+  border-radius: 3px !important;
+  overflow: hidden !important;
+}
+.lp-company-info{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;align-self:stretch}
+.lp-company-name-row{display:flex;align-items:center;gap:6px;margin-bottom:0}
+.lp-company-name{font-size:17px;font-weight:700;color:#222;transition:color .2s;line-height:1.2}
 .lp-company-item:hover .lp-company-name{color:#8BC34A}
-.lp-company-tag{font-size:10px;padding:1px 6px}
+.lp-company-tag{font-size:10px;padding: 0 6px}
 /* FIX: phone icon + green color */
-.lp-company-phone{font-size:13px;color:#8BC34A;font-weight:600;display:flex;align-items:center;gap:4px}
+.lp-company-phone{font-size:13px;color:#8BC34A;font-weight:600;display:flex;align-items:center;gap:4px;line-height:1.2}
 .lp-company-phone::before{content:"";display:inline-block;width:12px;height:12px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238BC34A'%3E%3Cpath d='M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:contain;flex-shrink:0}
-.lp-company-addr{font-size:13px;color:#aaa;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lp-company-addr{font-size:13px;color:#333;margin-top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.2}
 /* FIX: external icon */
-.lp-external{color:#ccc;font-size:13px;flex-shrink:0;transition:color .2s;line-height:1;display:flex;align-items:center;justify-content:center;width:24px;height:24px}
+.lp-external{color:#ccc;font-size:13px;flex-shrink:0;transition:color .2s;line-height:1;display:flex;align-items:center;justify-content:center;width:24px;height:24px;align-self:center}
 .lp-company-item:hover .lp-external{color:#8BC34A}
 
 /* ===== NEWS LIST (improved) ===== */
 .lp-post-list .post-outer,
-.lp-news-item{display:flex;gap:14px;padding:14px 16px;cursor:pointer;transition:background .2s;align-items:flex-start}
+.lp-news-item{display:flex;gap:14px;padding:12px 14px;cursor:pointer;transition:background .2s;align-items:stretch}
 .lp-post-list .post-outer:hover,
 .lp-news-item:hover{background:#fafafa}
 .lp-post-list .post-outer+.post-outer,
-.lp-divider .post-outer+.post-outer{border-top:1px solid #f0f0f0}
+.lp-divider .post-outer+.post-outer{border-top:1px solid #ccc}
 
-.lp-news-thumb,.post-thumbnail{width:110px;height:76px;flex-shrink:0;overflow:hidden;border-radius:2px}
+.lp-news-thumb,.post-thumbnail{width:140px;height:auto;min-height:90px;flex-shrink:0;overflow:hidden;border-radius:2px}
 .lp-news-thumb img,.post-thumbnail img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .lp-news-item:hover .lp-news-thumb img,
 .lp-post-list .post-outer:hover .post-thumbnail img{transform:scale(1.06)}
-.lp-news-body,.post-body-container{flex:1;min-width:0}
+.lp-news-body,.post-body-container{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
 
 /* Meta row: badge + date */
 .lp-news-meta,.post-meta{display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap}
@@ -299,7 +312,7 @@ body {
 .lp-label-wrap a[href*="VISION"]{background:#f0fdf4;color:#166534}
 /* Xóa dấu phẩy/khoảng trắng thêm: dùng JS hoặc font-size:0 trick ở trên */
 #lp-latest-list{list-style:none;margin:0;padding:0}
-#lp-latest-list li{padding:10px 14px;border-top:1px solid #f0f0f0;transition:background .2s}
+#lp-latest-list li{padding:10px 14px;border-top:1px solid #ccc;transition:background .2s}
 #lp-latest-list li:first-child{border-top:none}
 #lp-latest-list li:hover{background:#fafafa}
 #lp-latest-list li a.lp-ln-title{
@@ -339,7 +352,7 @@ body {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-#sidebar{float:none;width:auto;margin:0;font-size:16px;line-height:1.6}
+#sidebar{float:none;width:auto;margin:0;font-size:16px;line-height:1.6;min-width:0;overflow:hidden}
 .lp-sidebar-block{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);overflow:hidden;margin-bottom:14px;animation:fadeSlideUp 0.6s ease-out both}
 .lp-sidebar-block:nth-child(1){animation-delay:0.1s}
 .lp-sidebar-block:nth-child(2){animation-delay:0.2s}
@@ -353,18 +366,19 @@ body {
 .lp-head-dark{background:#1f2937}
 .lp-head-gray{background:#374151}
 
-.lp-hot-item{display:flex;gap:10px;padding:10px 12px;cursor:pointer;transition:background .2s;border-top:1px solid #f0f0f0}
+.lp-hot-item{display:flex;gap:12px;padding:10px 12px;cursor:pointer;transition:background .2s;border-top:1px solid #ccc;align-items:stretch}
 .lp-hot-item:first-of-type{border-top:none}
 .lp-hot-item:hover{background:#fafafa}
-.lp-hot-thumb{position:relative;width:60px;height:46px;flex-shrink:0;overflow:hidden}
+.lp-hot-thumb{position:relative;width:90px;height:60px;flex-shrink:0;overflow:hidden;border-radius:1px}
 .lp-hot-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .lp-hot-item:hover .lp-hot-thumb img{transform:scale(1.06)}
-.lp-hot-num{position:absolute;top:0;left:0;width:18px;height:18px;background:#8BC34A;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
-.lp-hot-title{font-size:14px;font-weight:600;color:#333;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s}
+.lp-hot-num{position:absolute;top:0;left:0;width:18px;height:18px;background:#8BC34A;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;border-bottom-right-radius:3px;z-index:2}
+.lp-hot-item > div:last-child{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;align-self:stretch}
+.lp-hot-title{font-size:14px;font-weight:600;color:#333;line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s;margin-top:-3px;margin-bottom:2px}
 .lp-hot-item:hover .lp-hot-title{color:#8BC34A}
-.lp-hot-date{font-size:12px;color:#aaa;margin-top:3px}
+.lp-hot-date{font-size:12px;color:#aaa;margin-top:auto;display:flex;align-items:center;gap:3px;line-height:1}
 
-.lp-latest-item{padding:10px 14px;cursor:pointer;transition:background .2s;border-top:1px solid #f0f0f0}
+.lp-latest-item{padding:10px 14px;cursor:pointer;transition:background .2s;border-top:1px solid #ccc}
 .lp-latest-item:first-of-type{border-top:none}
 .lp-latest-item:hover{background:#fafafa}
 .lp-latest-inner{display:flex;align-items:flex-start;gap:8px}
@@ -388,7 +402,7 @@ body {
 
 /* Recent posts in sidebar */
 #recently{margin:0;padding:0;list-style:none}
-#recently li{border-top:1px solid #f0f0f0;padding:9px 14px}
+#recently li{border-top:1px solid #ccc;padding:9px 14px}
 #recently li:first-child{border-top:none}
 #recently li a{font-size:14px;font-weight:600;color:#333;transition:color .2s;display:flex;align-items:flex-start;gap:6px}
 #recently li a::before{content:"•";color:#8BC34A;font-weight:900;flex-shrink:0}
@@ -396,22 +410,23 @@ body {
 
 /* Archive list */
 .archive-list{margin:0;padding:0;list-style:none}
-.archive-list li{border-top:1px solid #f0f0f0;padding:8px 14px}
+.archive-list li{border-top:1px solid #ccc;padding:8px 14px}
 .archive-list li:first-child{border-top:none}
 .archive-list li a{font-size:14px;color:#555;transition:color .2s}
 .archive-list li a:hover{color:#8BC34A}
 
 /* Contact sidebar */
-.lp-contact-item{display:flex;gap:12px;padding:10px 14px;transition:background .2s;border-top:1px solid #f0f0f0;align-items:center}
+.lp-contact-item{display:flex;gap:12px;padding:8px 10px;transition:background .2s;border-top:1px solid #ccc;align-items:stretch;min-width:0;overflow:hidden}
 .lp-contact-item:first-of-type{border-top:none}
 .lp-contact-item:hover{background:#fafafa}
-.lp-contact-logo{width:56px;height:56px;flex-shrink:0;border:1px solid #eee;border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
-.lp-contact-logo img{width:100%;height:100%;object-fit:contain;padding:4px}
-.lp-contact-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:4px;font-size:11px;font-weight:800}
-.lp-contact-name{font-size:14px;font-weight:700;color:#333;transition:color .2s;margin-bottom:2px}
+.lp-contact-logo-sidebar{width:100px;height:60px;flex-shrink:0;border:1px solid #eee;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
+.lp-contact-logo-sidebar img{width:100%;height:100%;object-fit:contain;padding:4px}
+.lp-contact-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:11px;font-weight:800}
+.lp-contact-info{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;align-self:stretch}
+.lp-contact-name{font-size:15px;font-weight:700;color:#333;transition:color .2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.2}
 .lp-contact-item:hover .lp-contact-name{color:#8BC34A}
-.lp-contact-phone{font-size:13px;color:#8BC34A;font-weight:600}
-.lp-contact-addr{font-size:12px;color:#aaa;line-height:1.4}
+.lp-contact-phone{font-size:13px;color:#8BC34A;font-weight:600;line-height:1.2}
+.lp-contact-addr{font-size:12px;color:#333;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* ===== SINGLE POST PAGE ===== */
 .lp-single-post{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);padding:20px 24px;margin-bottom:16px}
@@ -424,7 +439,7 @@ body {
   max-width: 100% !important;
   height: auto !important;
   display: block !important;
-  border-radius: 4px;
+  border-radius: 3px;
   margin: 12px 0;
 }
 .lp-single-post .post-body p{margin-bottom:12px}
@@ -563,16 +578,17 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
 /* ===== RESPONSIVE — MOBILE ===== */
 @media(max-width:640px){
   /* Topbar */
-  #header{padding:12px 0}
+  #header{padding:6px 0!important}
+  #blog-title img{height:40px!important}
   .lp-topbar-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
   #blog-title{font-size:20px;flex-shrink:0;padding-left:0;order:1}
   #description{display:none}
   .lp-search-wrap{display:contents}
   .lp-lang-flags{order:2;gap:6px;display:flex}
   .lp-search-box{order:3;width:100%;flex:none}
-  .lp-search-box input{font-size:13px;padding:8px 34px 8px 12px;border-radius:4px}
-  .lp-flag-btn{width:36px;height:24px}
-  .lp-flag-btn img{width:36px;height:24px}
+  .lp-search-box input{font-size:13px;padding:8px 34px 8px 12px;border-radius:3px}
+  .lp-flag-btn{width:50px;height:36px}
+  .lp-flag-btn img{width:100%;height:100%}
 
   /* Nav: show hamburger, hide desktop menu */
   #lp-nav-toggle{display:flex!important;align-items:center;justify-content:center}
@@ -588,18 +604,25 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
   .lp-slider-arrow{padding:5px 8px;font-size:16px}
 
   /* Company items */
-  .lp-company-logo{width:40px;height:40px;font-size:10px}
-  .lp-company-name{font-size:12px}
+  .lp-company-logo, .lp-contact-logo { width: 90px !important; height: 60px !important; }
+  .lp-company-name{font-size:14px}
   .lp-company-addr{display:none}
 
-  /* News list */
-  .lp-news-thumb,.post-thumbnail{width:76px;height:56px}
-  .lp-news-title,.post-title{font-size:12px}
+  /* News list — mobile: vertical stack (title → labels → excerpt → image) */
+  .lp-post-list .post-outer,
+  .lp-news-item{flex-direction:column;align-items:stretch;gap:8px;padding:12px 12px}
+  .lp-news-thumb,.post-thumbnail{width:100%;height:160px;min-height:0;align-self:stretch;order:4}
+  .lp-news-thumb img,.post-thumbnail img{width:100%;height:100%;object-fit:cover}
+  .lp-news-body,.post-body-container{display:flex;flex-direction:column;order:1}
+  .lp-news-title,.post-title{font-size:13px;font-weight:700;order:1;margin-bottom:4px}
+  .lp-news-meta,.post-meta{order:2;margin-bottom:4px}
+  .post-excerpt-text, .lp-news-excerpt, .post-snippet{order:3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:11px;color:#000 !important;line-height:1.5;margin-top:2px}
 
   /* Sidebar */
-  #sidebar{margin-top:12px}
-  .lp-hot-thumb{width:50px;height:38px}
-  .lp-hot-title{font-size:11px}
+  #sidebar{margin-top:12px;overflow:visible;width:100%}
+  .lp-sidebar-block{overflow:hidden}
+  .lp-hot-thumb{width:80px;height:52px}
+  .lp-hot-title{font-size:13px}
 
   /* Single post */
   .lp-single-post{padding:14px 12px}
@@ -632,8 +655,8 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
 @media(max-width:380px){
   #blog-title{font-size:17px}
   .lp-search-box input{font-size:11px}
-  .lp-flag-btn{width:28px;height:20px}
-  .lp-flag-btn img{width:28px;height:20px}
+  .lp-flag-btn{width:46px;height:33px}
+  .lp-flag-btn img{width:100%;height:100%}
   .lp-slider{height:170px}
   .lp-company-item{padding:10px 10px}
 }
@@ -646,7 +669,7 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
   min-width:34px;height:34px;padding:0 10px;
   font-size:13px;font-weight:500;
   border:0.5px solid #d0d0d0;
-  border-radius:6px;
+  border-radius:3px;
   background:#fff;color:#444;
   text-decoration:none;
   transition:background .15s,border-color .15s,color .15s;
@@ -660,83 +683,15 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
 .blog-pager .bp-arrow.disabled{opacity:.3;pointer-events:none;cursor:default}
 .blog-pager .bp-ellipsis{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;font-size:13px;color:#bbb;pointer-events:none;letter-spacing:1px}
 
-/* ===== BREAKING NEWS TICKER ===== */
-.lp-ticker-wrap {
-  background: #1e3a1e ;
-  padding: 10px 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  position: relative;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-.lp-ticker-label {
-  background: #d4500a;
-  padding: 10px 20px;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  flex-shrink: 0;
-  color: #fff;
-  position: relative;
-  z-index: 10;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-.lp-ticker-track {
-  display: flex;
-  flex-shrink: 0;
-  margin-left: 40px;
-  -webkit-animation: -webkit-ticker 80s linear infinite;
-  animation: ticker 80s linear infinite;
-  -webkit-transform: translate3d(0, 0, 0); /* bắt buộc */
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-@media (hover: hover) {
-  .lp-ticker-track:hover {
-    animation-play-state: paused;
-  }
-}
-.lp-ticker-content {
-  display: flex;
-  flex-shrink: 0;
-  gap: 64px;
-  padding-right: 64px;
-}
-.lp-ticker-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 15px;
-  color: #fff;
-  white-space: nowrap;
-  font-family: 'Noto Sans KR', sans-serif;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.lp-ticker-item:hover {
-  color: #a5d6a7;
-}
-.lp-ticker-item-icon {
-  color: #a5d6a7;
-}
 
-@-webkit-keyframes -webkit-ticker {
-  0%   { -webkit-transform: translate3d(0, 0, 0); }
-  100% { -webkit-transform: translate3d(-50%, 0, 0); }
-}
-
-@keyframes ticker {
-  0%   { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
-}
 
 /* ===== YELLOWKOREA DIRECTORY PAGE ===== */
 #lp-yk-directory { display:none; padding-bottom: 48px; }
 #lp-yk-directory.active { display:block; }
+
+#ykSearchInput:focus + .yk-search-icon-wrapper svg {
+  color: #2D9B4E !important;
+}
 
 /* Hide normal content when YK directory is active */
 body.yk-page .lp-slider,
@@ -750,22 +705,6 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-header h1 { font-size:30px; font-weight:900; color:#1a1a1a; margin-bottom:6px; font-family:'Noto Sans','Noto Sans KR','Segoe UI',Arial,sans-serif; }
 .yk-header p { font-size:15px; color:#777; }
 
-/* Category filter pills */
-.yk-filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; }
-.yk-filter-btn {
-  padding: 7px 16px;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  border: 1px solid #e0e0e0;
-  background: #fff;
-  color: #666;
-  transition: all .2s;
-  font-family:'Segoe UI',Arial,sans-serif;
-}
-.yk-filter-btn:hover { background:#e8f5e9; color:#2e7d32; border-color:#a5d6a7; }
-.yk-filter-btn.active { background:#2D9B4E; color:#fff; border-color:#2D9B4E; box-shadow:0 0px 6px rgba(33, 179, 40, 1); }
 
 /* Grid - 2 cột, responsive */
 .yk-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
@@ -792,7 +731,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
   display:inline-block;
   background:#2e7d32; color:#fff;
   font-size:10px; font-weight:700;
-  padding:2px 8px; border-radius:4px;
+  padding:2px 8px; border-radius:3px;
   letter-spacing:.5px; margin-left:8px;
   vertical-align:middle;
 }
@@ -806,7 +745,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-card-actions { display:flex; gap:10px; grid-column:1/-1; }
 .yk-btn-primary {
   flex:1 1 0; background:#2D9B4E; color:#fff;
-  border:none; border-radius:8px;
+  border:none; border-radius:3px;
   font-size:14px; font-weight:600;
   padding:12px 0; cursor:pointer;
   transition:background .2s;
@@ -816,7 +755,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-btn-primary:hover { background:#2e7d32; }
 .yk-btn-secondary {
   flex:1 1 0; background:#fff; color:#1a1a1a;
-  border:1px solid #e0e0e0; border-radius:8px;
+  border:1px solid #e0e0e0; border-radius:3px;
   font-size:14px; font-weight:600;
   padding:12px 0; cursor:pointer;
   transition:background .2s;
@@ -841,7 +780,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-cta-btn {
   display:inline-flex; align-items:center; gap:8px;
   background:#2e7d32; color:#fff;
-  border:none; border-radius:8px;
+  border:none; border-radius:3px;
   padding:12px 28px;
   font-size:13px; font-weight:700;
   cursor:pointer; transition:background .2s;
@@ -870,7 +809,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
   min-width:36px;
   height:36px;
   padding:0 8px;
-  border-radius:8px;
+  border-radius:3px;
   font-size:14px;
   font-weight:600;
   cursor:pointer;
@@ -893,7 +832,36 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-star.empty { color:#ddd; }
 .yk-rating-score { font-size:13px; font-weight:700; color:#555; margin-left:4px; }
 .yk-card-meta { display:flex; flex-direction:column; align-items:flex-end; gap:4px; flex-shrink:0; }
+.yk-filter-select {
+  height: 44px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  font-size: 13px;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.yk-filter-select:focus {
+  border-color: #2D9B4E;
+  box-shadow: 0 0 4px rgba(45,155,78,0.15);
+}
+  /* ===== GOOGLE TRANSLATE TOOLBAR HIDE ===== */
+  .goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt,.skiptranslate{display:none!important}
+  body{top:0!important}
+  .goog-te-gadget{font-size:0!important}
+  .lp-flag-btn.lp-lang-active{border-color:#8BC34A!important;box-shadow:0 0 0 2px rgba(139,195,74,.4)}
   </style>
+  <ItemPage>
+  <style type="text/css">
+  #lpLatestNewsBlock, #lpContactBlock {
+    display: none !important;
+  }
+  </style>
+  </ItemPage>
 </head>
 
 <body>
@@ -916,13 +884,15 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
           <button class="lp-search-btn" onclick="window.location='<$BlogURL$>search?q='+encodeURIComponent(document.getElementById('lpSearchInput').value)">🔍</button>
         </div>
         <div class="lp-lang-flags">
-          <button class="lp-flag-btn" title="Tiếng Việt">
+          <button class="lp-flag-btn" id="lpFlagVN" title="Tiếng Việt" onclick="lpSwitchLang('vi')">
             <img alt="Vietnam" src="https://flagcdn.com/w40/vn.png"/>
           </button>
-          <button class="lp-flag-btn" title="한국어">
+          <button class="lp-flag-btn" id="lpFlagKR" title="한국어" onclick="lpSwitchLang('ko')">
             <img alt="Korea" src="https://flagcdn.com/w40/kr.png"/>
           </button>
         </div>
+        <!-- Google Translate hidden widget -->
+        <div id="google_translate_element" style="display:none"></div>
       </div>
     </div>
   </div>
@@ -1085,21 +1055,14 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
       </li>
 
       <li id="mn-yellow">
-        <a href="<$BlogURL$>search/label/YELLOWKOREA" translate="no">YELLOWKOREA</a>
+        <a href="<$BlogURL$>search/label/YELLOWKOREA" translate="no">YELLOWPAGE</a>
       </li>
 
     </ul>
   </div>
 </div>
 
-<!-- ===== BREAKING NEWS TICKER ===== -->
-<div class="lp-ticker-wrap">
-  <div class="lp-ticker-label">
-    속보 BREAKING
-  </div>
-  <div class="lp-ticker-track">
-  </div>
-</div>
+
 </div><!-- /#lp-sticky-group -->
 
 <!-- ===== MAIN CONTENT AREA ===== -->
@@ -1122,30 +1085,35 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
           <p>베트남에서 필요한 모든 한국 업체 정보를 한곳에서 확인하세요</p>
         </div>
 
-        <div class="yk-filters" id="ykFilters">
-          <button class="yk-filter-btn active" data-cat="전체" onclick="ykFilter(this)">전체</button>
-          <button class="yk-filter-btn" data-cat="식당/카페" onclick="ykFilter(this)">식당/카페</button>
-          <button class="yk-filter-btn" data-cat="병원/의료" onclick="ykFilter(this)">병원/의료</button>
-          <button class="yk-filter-btn" data-cat="교육" onclick="ykFilter(this)">교육</button>
-          <button class="yk-filter-btn" data-cat="부동산" onclick="ykFilter(this)">부동산</button>
-          <button class="yk-filter-btn" data-cat="법률/세무" onclick="ykFilter(this)">법률/세무</button>
-          <button class="yk-filter-btn" data-cat="물류/운송" onclick="ykFilter(this)">물류/운송</button>
-          <button class="yk-filter-btn" data-cat="제조업" onclick="ykFilter(this)">제조업</button>
-          <button class="yk-filter-btn" data-cat="서비스" onclick="ykFilter(this)">서비스</button>
-          <button class="yk-filter-btn" data-cat="건설/인테리어" onclick="ykFilter(this)">건설/인테리어</button>
-          <button class="yk-filter-btn" data-cat="IT/소프트웨어" onclick="ykFilter(this)">IT/소프트웨어</button>
-        </div>
-
-        <!-- Toolbar: search + city filter + counter -->
+        <!-- Toolbar: search + category + city + rating sort + counter -->
         <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;align-items:center">
-          <input id="ykSearchInput" type="text" placeholder="업체명 검색..." oninput="ykSearch()"
-            style="flex:1;min-width:180px;padding:9px 14px;border:1px solid #e0e0e0;border-radius:3px;font-size:13px;outline:none;font-family:inherit"
-            onfocus="this.style.borderColor='#2e7d32'" onblur="this.style.borderColor='#e0e0e0'"/>
-          <select id="ykCitySelect" onchange="ykCityFilter(this)"
-            style="padding:9px 14px;border:1px solid #e0e0e0;border-radius:3px;font-size:13px;background:#fff;cursor:pointer;font-family:inherit">
+          <div style="position:relative;flex:1;min-width:180px;">
+            <input id="ykSearchInput" type="text" placeholder="업체명 검색..." oninput="ykSearch()"
+              style="width:100%;height:44px;box-sizing:border-box;padding:0 36px 0 14px;border:1px solid #e0e0e0;border-radius:3px;font-size:13px;outline:none;font-family:inherit;transition:border-color 0.2s, box-shadow 0.2s;"
+              onfocus="this.style.borderColor='#2D9B4E';this.style.boxShadow='0 0 4px rgba(45,155,78,0.15)';" onblur="this.style.borderColor='#e0e0e0';this.style.boxShadow='none';"/>
+            <span class="yk-search-icon-wrapper" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);display:flex;align-items:center;pointer-events:none;">
+              <svg style="width:16px;height:16px;color:#888;transition:color 0.2s;" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </span>
+          </div>
+          <select id="ykCategorySelect" onchange="ykCategorySelectFilter(this)" class="yk-filter-select">
+            <option value="전체">모든 업종</option>
+          </select>
+          <select id="ykCitySelect" onchange="ykCityFilter(this)" class="yk-filter-select">
             <option value="">모든 지역</option>
           </select>
-          <span id="ykCounter" style="font-size:12px;color:##000000;white-space:nowrap"></span>
+          <select id="ykSortRating" onchange="ykRatingSort(this)" class="yk-filter-select">
+            <option value="">평점 및 정렬</option>
+            <option value="high">별점 높은 순 (★5 → ★1)</option>
+            <option value="low">별점 낮은 순 (★1 → ★5)</option>
+            <option value="5">★★★★★ (5성)</option>
+            <option value="4">★★★★☆ (4성)</option>
+            <option value="3">★★★☆☆ (3성)</option>
+            <option value="2">★★☆☆☆ (2성)</option>
+            <option value="1">★☆☆☆☆ (1성)</option>
+          </select>
+          <span id="ykCounter" style="font-size:13px;color:#000000;white-space:nowrap;font-weight:600"></span>
         </div>
 
         <div class="yk-grid" id="ykGrid"></div>
@@ -1172,7 +1140,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
       <!-- ── COMPANY LISTINGS ── -->
       <div id="lp-company-section">
       <div class="lp-section-title">
-        <div class="bar"></div><h2>기업 정보</h2><div class="line"></div>
+        <div class="bar"></div><h2 >기업 정보</h2><div class="line"></div>
       </div>
       <div class="lp-card lp-divider" style="margin-bottom:18px">
 
@@ -1184,9 +1152,9 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
                  style="width:100%;height:100%;object-fit:contain;padding:4px"/>
           </div>
           <div class="lp-company-info">
-            <div class="lp-company-name-row">
-              <span class="lp-company-name">ADD GROUP</span>
-              <span class="lp-company-tag cat-default">CONSTRUCTION</span>
+            <div class="lp-company-name-row" translate="no" class="notranslate">
+              <span class="lp-company-name" translate="no" class="notranslate">ADD GROUP</span>
+              <span class="lp-company-tag cat-default" translate="no" class="notranslate">CONSTRUCTION</span>
             </div>
             <div class="lp-company-phone">+84 90 613 3456</div>
             <div class="lp-company-addr">Tầng 3, Tòa nhà Dolphin Plaza, 56 Trần Bình, Phường Cầu Giấy, Hà Nội</div>
@@ -1202,9 +1170,9 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
                  style="width:100%;height:100%;object-fit:contain;padding:4px"/>
           </div>
           <div class="lp-company-info">
-            <div class="lp-company-name-row">
-              <span class="lp-company-name">KPOP ART SCHOOL</span>
-              <span class="lp-company-tag cat-EDUCATION">EDUCATION</span>
+            <div class="lp-company-name-row" translate="no" class="notranslate">
+              <span class="lp-company-name" translate="no" class="notranslate">KPOP ART SCHOOL</span>
+              <span class="lp-company-tag cat-EDUCATION" translate="no" class="notranslate">EDUCATION</span>
             </div>
             <div class="lp-company-phone">+82 10 5107 5991</div>
             <div class="lp-company-addr">4F, Lasara Tower, 138 Wausan-ro, Mapo-gu, Seoul</div>
@@ -1220,9 +1188,9 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
                  style="width:100%;height:100%;object-fit:contain;padding:4px"/>
           </div>
           <div class="lp-company-info">
-            <div class="lp-company-name-row">
-              <span class="lp-company-name">IDP VIETNAM</span>
-              <span class="lp-company-tag cat-EDUCATION">EDUCATION</span>
+            <div class="lp-company-name-row" translate="no" class="notranslate">
+              <span class="lp-company-name" translate="no" class="notranslate">IDP VIETNAM</span>
+              <span class="lp-company-tag cat-EDUCATION" translate="no" class="notranslate">EDUCATION</span>
             </div>
             <div class="lp-company-phone">+84 1900 6955</div>
             <div class="lp-company-addr">161-163A Hải Bà Trưng, Phường Xuân Hòa, TP.HCM</div>
@@ -1334,13 +1302,13 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
       <!-- HOT NEWS (dynamic) -->
       <div class="lp-sidebar-block" id="lpHotNewsBlock">
         <div class="lp-sidebar-head lp-head-green">
-          <span class="material-icons-outlined" style="font-size:18px;color:white">trending_up</span><span class="stitle">HOT NEWS</span>
+          <span class="material-icons-outlined notranslate" style="font-size:18px;color:white" translate="no">trending_up</span><span class="stitle">HOT NEWS</span>
         </div>
         <div id="lpHotNewsWrapper"></div>
       </div>
 
       <!-- LATEST NEWS (BloggerPreviousItems - server-side, always works) -->
-      <div class="lp-sidebar-block">
+      <div class="lp-sidebar-block" id="lpLatestNewsBlock">
         <div class="lp-sidebar-head lp-head-dark">
           <span class="icon">📖</span><span class="stitle">LATEST NEWS</span>
         </div>
@@ -1362,7 +1330,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
       <!-- CATEGORIES — all labels -->
       <div class="lp-sidebar-block">
         <div class="lp-sidebar-head lp-head-gray">
-          <span class="material-icons-outlined" style="font-size:18px;color:#fff">label</span><span class="stitle">CATEGORY</span>
+          <span class="material-icons-outlined notranslate" style="font-size:18px;color:#fff" translate="no">label</span><span class="stitle">CATEGORY</span>
         </div>
         <div class="lp-cats">
           <a class="lp-cat-pill" href="<$BlogURL$>search/label/NEWS" style="background:#dbeafe;color:#1d4ed8">NEWS</a>
@@ -1398,16 +1366,16 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
           <a class="lp-cat-pill" href="<$BlogURL$>search/label/PLAN+ADD" style="background:#ede9fe;color:#5b21b6">PLAN ADD</a>
 
           <a class="lp-cat-pill" href="<$BlogURL$>search/label/SOCIAL+MEDIA" style="background:#fdf4ff;color:#7e22ce">SOCIAL MEDIA</a>
-          <a class="lp-cat-pill" href="<$BlogURL$>search/label/YELLOWKOREA" style="background:#fef3c7;color:#92400e">YELLOWKOREA</a>
+          <a class="lp-cat-pill" href="<$BlogURL$>search/label/YELLOWKOREA" style="background:#fef3c7;color:#92400e">YELLOWPAGE</a>
         </div>
       </div>
 
 
 
       <!-- CONTACT (AJAX - dynamic from label CONTACT) -->
-      <div class="lp-sidebar-block">
+      <div class="lp-sidebar-block" id="lpContactBlock">
         <div class="lp-sidebar-head lp-head-dark">
-          <span class="material-icons-outlined" style="font-size:18px;color:#fff">phone</span><span class="stitle">CONTACT</span>
+          <span class="material-icons-outlined notranslate" style="font-size:18px;color:#fff" translate="no">phone</span><span class="stitle">CONTACT</span>
         </div>
         <div id="lp-contact-list">
           <div style="padding:15px;text-align:center;font-size:12px;color:#888;">Đang tải...</div>
@@ -1479,8 +1447,8 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 
           cards.push(
             '<a class="lp-contact-item" href="' + postUrl + '">' +
-              '<div class="lp-contact-logo">' + logoHtml + '</div>' +
-              '<div>' +
+              '<div class="lp-contact-logo-sidebar">' + logoHtml + '</div>' +
+              '<div translate="no" class="notranslate lp-contact-info" style="flex:1;min-width:0;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;align-self:stretch;">' +
                 '<div class="lp-contact-name">' + title + '</div>' +
                 '<div class="lp-contact-phone">' + (phone || 'Xem chi tiết') + '</div>' +
                 '<div class="lp-contact-addr">' + (address || '') + '</div>' +
@@ -1560,24 +1528,194 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 //<![CDATA[
 // ── SLIDER & HOT NEWS (DYNAMIC) ──
 window.initLpSlider = function(){
+  var sliderEl=document.getElementById('lpSlider');
   var slides=document.querySelectorAll('#lpSlider .lp-slide');
   var dotsEl=document.getElementById('lpDots');
   var progEl=document.getElementById('lpProgress');
   if(!slides||!slides.length||!dotsEl||!progEl)return;
-  var cur=0,total=slides.length,tmr;
+
+  var COLS=12, ROWS=8, TRANS_MS=2200, SLIDE_MS=6000;
+  var cur=0, total=slides.length, tmr, animating=false;
+
+  /* ── Tạo 1 lớp content cố định luôn ở trên cùng (z-index 20)
+       Khi chuyển slide chỉ cần update HTML của lớp này ngay lập tức,
+       không bao giờ bị overlay grid che hay bị ẩn ── */
+  var contentLayer=document.createElement('div');
+  contentLayer.style.cssText='position:absolute;bottom:0;left:0;right:0;z-index:20;pointer-events:none;';
+  sliderEl.appendChild(contentLayer);
+
+  /* Ẩn tất cả .lp-slide-overlay và .lp-slide-content gốc
+     (gradient + chữ trong từng slide) vì ta dùng contentLayer thay thế */
+  slides.forEach(function(sl){
+    var ov=sl.querySelector('.lp-slide-overlay');
+    var ct=sl.querySelector('.lp-slide-content');
+    if(ov) ov.style.display='none';
+    if(ct) ct.style.display='none';
+  });
+
+  /* Clone gradient overlay vào contentLayer 1 lần */
+  var gradDiv=document.createElement('div');
+  gradDiv.className='lp-slide-overlay';
+  gradDiv.style.cssText='position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 55%,transparent 100%);pointer-events:none;';
+  contentLayer.appendChild(gradDiv);
+
+  /* Vùng chữ */
+  var textDiv=document.createElement('div');
+  textDiv.className='lp-slide-content';
+  textDiv.style.cssText='position:relative;padding:20px;pointer-events:auto;';
+  contentLayer.appendChild(textDiv);
+
+  function getSlideContent(sl){
+    var ct=sl.querySelector('.lp-slide-content');
+    return ct?ct.innerHTML:'';
+  }
+
+  function updateContent(sl){
+    textDiv.innerHTML=getSlideContent(sl);
+  }
+
+  /* ── Build dots ── */
   dotsEl.innerHTML='';
   for(var i=0;i<total;i++){
     var d=document.createElement('button');
     d.className='lp-dot'+(i===0?' active':'');
     d.setAttribute('data-i',i);
-    (function(n){d.onclick=function(){stop();go(n);start();};})(i);
+    (function(n){d.onclick=function(){if(animating)return;stop();go(n);start();};})(i);
     dotsEl.appendChild(d);
   }
-  function ui(){dotsEl.querySelectorAll('.lp-dot').forEach(function(d,i){d.className='lp-dot'+(i===cur?' active':'');});progEl.style.width=(((cur+1)/total)*100)+'%';}
-  function go(n){slides[cur].classList.remove('active');cur=(n+total)%total;slides[cur].classList.add('active');ui();}
-  function start(){tmr=setInterval(function(){go(cur+1);},5000);}
+
+  /* hiện content slide đầu */
+  updateContent(slides[0]);
+
+  function ui(){
+    dotsEl.querySelectorAll('.lp-dot').forEach(function(d,i){d.className='lp-dot'+(i===cur?' active':'');});
+    progEl.style.width=(((cur+1)/total)*100)+'%';
+  }
+
+  function easeOutQuad(t){ return t*(2-t); }
+
+  function buildOverlay(imgSrc, onDone){
+    var old=sliderEl.querySelector('.lp-grid-overlay');
+    if(old) old.parentNode.removeChild(old);
+
+    var wrap=document.createElement('div');
+    wrap.className='lp-grid-overlay';
+    wrap.style.cssText='position:absolute;inset:0;z-index:15;display:grid;pointer-events:none;'
+      +'grid-template-columns:repeat('+COLS+',1fr);grid-template-rows:repeat('+ROWS+',1fr);';
+
+    var W=sliderEl.offsetWidth||800;
+    var H=sliderEl.offsetHeight||360;
+    var maxDist=(COLS-1)+(ROWS-1);
+    var cellDur=TRANS_MS*0.45;
+    var maxDelay=TRANS_MS-cellDur;
+
+    /* Tính background-size cover đúng cách:
+       Load ảnh để lấy naturalWidth/naturalHeight, rồi tính như object-fit:cover.
+       Nếu ảnh chưa load xong dùng fallback W×H trước, update sau. */
+    function computeCoverSize(natW, natH, cW, cH){
+      var scaleW=cW/natW, scaleH=cH/natH;
+      var scale=Math.max(scaleW,scaleH);
+      return {w:Math.round(natW*scale), h:Math.round(natH*scale)};
+    }
+    function computeCoverOffset(bgW, bgH, cW, cH){
+      return {x:Math.round((cW-bgW)/2), y:Math.round((cH-bgH)/2)};
+    }
+
+    /* Tạo cells trước với fallback, rồi update khi ảnh load */
+    var cells=[];
+    for(var r=0;r<ROWS;r++){
+      for(var c=0;c<COLS;c++){
+        var cell=document.createElement('div');
+        cell.dataset.c=c; cell.dataset.r=r;
+        cell.style.cssText=
+          'background-image:url('+imgSrc+');'
+          +'background-size:'+W+'px '+H+'px;'
+          +'background-position:0px 0px;'
+          +'background-repeat:no-repeat;'
+          +'transform:scale(0);'
+          +'transform-origin:center center;'
+          +'will-change:transform;';
+        cells.push(cell);
+        wrap.appendChild(cell);
+      }
+    }
+
+    sliderEl.appendChild(wrap);
+
+    /* Load ảnh để lấy kích thước tự nhiên */
+    var probe=new Image();
+    probe.onload=function(){
+      var sz=computeCoverSize(probe.naturalWidth, probe.naturalHeight, W, H);
+      var off=computeCoverOffset(sz.w, sz.h, W, H);
+      var cellW=W/COLS, cellH=H/ROWS;
+      cells.forEach(function(cell){
+        var c=parseInt(cell.dataset.c,10);
+        var r=parseInt(cell.dataset.r,10);
+        /* offset của ô này = offset cover + dịch trái/lên theo vị trí ô */
+        var px=off.x - c*cellW;
+        var py=off.y - r*cellH;
+        cell.style.backgroundSize=sz.w+'px '+sz.h+'px';
+        cell.style.backgroundPosition=px.toFixed(1)+'px '+py.toFixed(1)+'px';
+      });
+    };
+    probe.onerror=function(){/* giữ fallback */};
+    probe.src=imgSrc;
+
+    /* Chạy animation sau 1 rAF để DOM đã render */
+    requestAnimationFrame(function(){
+      cells.forEach(function(cell){
+        var c=parseInt(cell.dataset.c,10);
+        var r=parseInt(cell.dataset.r,10);
+        var dist=r+c;
+        var delay=easeOutQuad(dist/maxDist)*maxDelay;
+        (function(el,dl){
+          setTimeout(function(){
+            el.style.transition='transform '+cellDur+'ms cubic-bezier(0.25,0.46,0.45,0.94)';
+            el.style.transform='scale(1)';
+          },dl);
+        })(cell,delay);
+      });
+    });
+
+    setTimeout(function(){
+      if(wrap.parentNode) wrap.parentNode.removeChild(wrap);
+      onDone();
+    }, TRANS_MS+60);
+  }
+
+  function go(n){
+    if(animating)return;
+    animating=true;
+    var next=(n+total)%total;
+
+    var nextImg=slides[next].querySelector('img');
+    var imgSrc=nextImg?nextImg.src:'';
+
+    /* Update chữ NGAY LẬP TỨC trước khi grid bắt đầu
+       — contentLayer z-index 20 luôn hiển thị, không bị che */
+    updateContent(slides[next]);
+    ui_next(next);
+
+    buildOverlay(imgSrc, function(){
+      /* Khi grid xong: swap ảnh nền slide */
+      slides[cur].classList.remove('active');
+      slides[cur].style.opacity='';
+      slides[cur].style.zIndex='';
+      cur=next;
+      slides[cur].classList.add('active');
+      slides[cur].style.zIndex='2';
+      animating=false;
+    });
+  }
+
+  function ui_next(next){
+    dotsEl.querySelectorAll('.lp-dot').forEach(function(d,i){d.className='lp-dot'+(i===next?' active':'');});
+    progEl.style.width=(((next+1)/total)*100)+'%';
+  }
+
+  function start(){tmr=setInterval(function(){go(cur+1);},SLIDE_MS);}
   function stop(){clearInterval(tmr);}
-  window.sliderMove=function(d){stop();go(cur+d);start();};
+  window.sliderMove=function(d){stop();animating=false;go(cur+d);start();};
   ui();start();
 };
 
@@ -1738,17 +1876,7 @@ window.initLpSlider = function(){
       hotWrap.innerHTML = hotHtml;
     }
 
-    // 2.5 Breaking News Ticker
-    var tickerTrack = document.querySelector('.lp-ticker-track');
-    if(tickerTrack) {
-      var tCount = Math.min(10, validGlobal.length);
-      var tickerHtml = '';
-      for(var t=0; t<tCount; t++){
-        var p = validGlobal[t];
-        tickerHtml += '<a class="lp-ticker-item" href="'+p.url+'"><span class="lp-ticker-item-icon">&#9656;</span><span>'+p.title+'</span></a>';
-      }
-      tickerTrack.innerHTML = '<div class="lp-ticker-content">' + tickerHtml + '</div><div class="lp-ticker-content">' + tickerHtml + '</div>';
-    }
+
 
     // 3. Main Post List & Pagination (AJAX)
     if(postListWrap) {
@@ -1770,23 +1898,45 @@ window.initLpSlider = function(){
       renderPage(1);
     }
 
-    // 4. Latest News Labels & Date
-    var latestItems = document.querySelectorAll('#lp-latest-list li');
-    latestItems.forEach(function(li){
-      var url = li.getAttribute('data-post-url');
-      if(!url) return;
-      var path = url.replace(/^https?:\/\/[^\/]+/i, '').split('?')[0];
-      var matched = allPosts.find(function(p){ return p.url.indexOf(path) > -1; });
-      if(matched) {
-        if(matched.hasExcluded && !isExcludePage) { li.style.display = 'none'; return; }
-        var span = li.querySelector('.lp-ln-labels');
-        if(span && matched.labels.length) {
-          span.innerHTML = '<a href="/search/label/'+encodeURIComponent(matched.labels[0])+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+matched.labels[0]+'</a>';
+    // 4. Latest News Labels & Date (Generate if empty, else enhance)
+    var latestList = document.getElementById('lp-latest-list');
+    if (latestList) {
+      var latestItems = latestList.querySelectorAll('li');
+      if (latestItems.length === 0) {
+        // On ItemPage, BloggerPreviousItems is empty, so we build it from validGlobal
+        var lnHtml = '';
+        var lCount = Math.min(5, validGlobal.length);
+        for(var i=0; i<lCount; i++){
+          var p = validGlobal[i];
+          var firstLabel = p.labels.length ? p.labels[0] : '';
+          var labelHtml = firstLabel ? '<a href="/search/label/'+encodeURIComponent(firstLabel)+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+firstLabel+'</a>' : '';
+          lnHtml += '<li data-post-url="'+p.url+'">' +
+            '<a class="lp-ln-title" href="'+p.url+'">'+p.title+'</a>' +
+            '<div class="lp-ln-meta">' +
+              '<span class="lp-label-wrap lp-ln-labels">'+labelHtml+'</span>' +
+              '<span class="lp-ln-date">'+p.date+'</span>' +
+            '</div>' +
+          '</li>';
         }
-        var dateSpan = li.querySelector('.lp-ln-date');
-        if(dateSpan) dateSpan.textContent = matched.date;
+        latestList.innerHTML = lnHtml;
+      } else {
+        latestItems.forEach(function(li){
+          var url = li.getAttribute('data-post-url');
+          if(!url) return;
+          var path = url.replace(/^https?:\/\/[^\/]+/i, '').split('?')[0];
+          var matched = allPosts.find(function(p){ return p.url.indexOf(path) > -1; });
+          if(matched) {
+            if(matched.hasExcluded && !isExcludePage) { li.style.display = 'none'; return; }
+            var span = li.querySelector('.lp-ln-labels');
+            if(span && matched.labels.length) {
+              span.innerHTML = '<a href="/search/label/'+encodeURIComponent(matched.labels[0])+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+matched.labels[0]+'</a>';
+            }
+            var dateSpan = li.querySelector('.lp-ln-date');
+            if(dateSpan) dateSpan.textContent = matched.date;
+          }
+        });
       }
-    });
+    }
 
     // 5. Contact List (Main & Sidebar)
     var contactMainWrap = document.getElementById('lpContactMainWrap');
@@ -1814,12 +1964,12 @@ window.initLpSlider = function(){
                 '<img src="'+p.img+'" alt="'+p.title+'" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:4px"/>' +
               '</div>' +
               '<div class="lp-company-info">' +
-                '<div class="lp-company-name-row">' +
+                '<div class="lp-company-name-row" translate="no" class="notranslate">' +
                   '<span class="lp-company-name">'+p.title+'</span>' +
                   '<span class="lp-company-tag cat-'+secondLabel+'">'+secondLabel+'</span>' +
                 '</div>' +
-                '<div class="lp-company-phone">'+phone+'</div>' +
-                '<div class="lp-company-addr">'+addr+'</div>' +
+                '<div class="lp-company-phone" translate="no" class="notranslate">'+phone+'</div>' +
+                '<div class="lp-company-addr" translate="no" class="notranslate">'+addr+'</div>' +
               '</div>' +
               '<span class="lp-external">↗</span>' +
             '</a>';
@@ -1834,7 +1984,7 @@ window.initLpSlider = function(){
                 '<img src="'+p.img+'" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" alt="'+p.title+'" loading="lazy"/>' +
                 '<div class="lp-contact-fallback" style="display:none;background:'+bg+';color:#fff;font-weight:800;font-size:11px">'+fallback+'</div>' +
               '</div>' +
-              '<div>' +
+              '<div translate="no" class="notranslate">' +
                 '<div class="lp-contact-name">'+p.title+'</div>' +
                 '<div class="lp-contact-phone">'+phone+'</div>' +
                 '<div class="lp-contact-addr">'+addr+'</div>' +
@@ -1981,33 +2131,7 @@ window.initLpSlider = function(){
     }
   };
 
-  // ―― FIX IOS SAFARI TICKER ANIMATION (BFCACHE & LOAD) ――
-  window.addEventListener('load', function() {
-    var track = document.querySelector('.lp-ticker-track');
-    if (!track) return;
-    track.style.animation = 'none';
-    track.offsetHeight; /* force reflow */
-    track.style.animation = 'ticker 80s linear infinite';
-    track.style.webkitAnimation = '-webkit-ticker 80s linear infinite';
-    
-    setTimeout(function() {
-      track.style.animation = 'none';
-      track.offsetHeight;
-      track.style.animation = 'ticker 80s linear infinite';
-      track.style.webkitAnimation = '-webkit-ticker 80s linear infinite';
-    }, 300);
-  });
 
-  window.addEventListener('pageshow', function(e) {
-    if (e.persisted) {
-      var track = document.querySelector('.lp-ticker-track');
-      if (!track) return;
-      track.style.animation = 'none';
-      track.offsetHeight;
-      track.style.animation = 'ticker 80s linear infinite';
-      track.style.webkitAnimation = '-webkit-ticker 80s linear infinite';
-    }
-  });
 //]]>
 </script>
 
@@ -2087,11 +2211,11 @@ window.initLpSlider = function(){
     var starsHtml = (b.rating > 0) ? buildStars(b.rating) : '';
     return '<div class="yk-card" data-cat="'+escH(b.cat)+'" data-city="'+escH(b.city)+'">' +
       '<div class="yk-card-top">' +
-        '<div>' +
+        '<div translate="no" class="notranslate">' +
           '<div class="yk-card-name">'+escH(b.name)+'</div>' +
           '<div class="yk-card-cat">'+escH(b.cat)+'</div>' +
         '</div>' +
-        '<div class="yk-card-meta">' +
+        '<div class="yk-card-meta" translate="no" class="notranslate">' +
           (starsHtml ? starsHtml : '') +
           '<span style="font-size:12px;color:#aaa;">'+escH(b.city)+'</span>' +
         '</div>' +
@@ -2101,7 +2225,7 @@ window.initLpSlider = function(){
         (phone ? '<div class="yk-card-info-row"><svg class="yk-card-info-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span>'+escH(phone)+'</span></div>' : '') +
       '</div>' +
       '<div class="yk-card-actions">' +
-        '<a class="yk-btn-primary" href="'+telHref+'"><span class="material-icons-outlined" style="font-size:18px;color:#fff">phone</span> 연락하기</a>' +
+        '<a class="yk-btn-primary" href="'+telHref+'"><span class="material-icons-outlined notranslate" style="font-size:18px;color:#fff" translate="no">phone</span> 연락하기</a>' +
         '<a class="yk-btn-secondary" href="#" onclick="ykSearch(\''+escH(b.name).replace(/'/g,"\\'")+'\'  );return false">› 검색</a>' +
       '</div>' +
     '</div>';
@@ -2114,6 +2238,8 @@ window.initLpSlider = function(){
 
   // ── Render grid with current filters ──
   function applyFilters() {
+    var sortVal = document.getElementById('ykSortRating') ? document.getElementById('ykSortRating').value : '';
+
     YK_FILTERED = YK_ALL.filter(function(b) {
       if (YK_ACTIVE_CAT !== '전체' && b.cat !== YK_ACTIVE_CAT) return false;
       if (YK_ACTIVE_CITY && b.city.indexOf(YK_ACTIVE_CITY) === -1) return false;
@@ -2122,8 +2248,31 @@ window.initLpSlider = function(){
         if (b.name.toLowerCase().indexOf(q) === -1 &&
             b.addr.toLowerCase().indexOf(q) === -1) return false;
       }
+      if (sortVal && !isNaN(sortVal)) {
+        if (b.rating !== parseInt(sortVal, 10)) return false;
+      }
       return true;
     });
+
+    // Apply rating sorting if active, otherwise sort alphabetically by name A-Z by default
+    if (sortVal === 'high') {
+      YK_FILTERED.sort(function(a, b) {
+        var diff = (b.rating || 0) - (a.rating || 0);
+        if (diff !== 0) return diff;
+        return a.name.localeCompare(b.name);
+      });
+    } else if (sortVal === 'low') {
+      YK_FILTERED.sort(function(a, b) {
+        var diff = (a.rating || 0) - (b.rating || 0);
+        if (diff !== 0) return diff;
+        return a.name.localeCompare(b.name);
+      });
+    } else {
+      YK_FILTERED.sort(function(a, b) {
+        return a.name.localeCompare(b.name);
+      });
+    }
+
     YK_PAGE = 1;
     renderYKGrid();
   }
@@ -2165,15 +2314,17 @@ window.initLpSlider = function(){
 
   window.ykGoPage = function(p) { YK_PAGE = p; renderYKGrid(); document.getElementById('lp-yk-directory').scrollIntoView({behavior:'smooth',block:'start'}); };
 
-  window.ykFilter = function(btn) {
-    document.querySelectorAll('.yk-filter-btn').forEach(function(b){ b.classList.remove('active'); });
-    btn.classList.add('active');
-    YK_ACTIVE_CAT = btn.getAttribute('data-cat');
+  window.ykCategorySelectFilter = function(sel) {
+    YK_ACTIVE_CAT = sel.value;
     applyFilters();
   };
 
   window.ykCityFilter = function(sel) {
     YK_ACTIVE_CITY = sel.value;
+    applyFilters();
+  };
+
+  window.ykRatingSort = function(sel) {
     applyFilters();
   };
 
@@ -2204,17 +2355,20 @@ window.initLpSlider = function(){
     });
   }
 
-  // ── Build cat filter pills from data ──
+  // ── Build cat dropdown from data ──
   function buildCatFilters(data) {
     var cats = {};
     data.forEach(function(b){ if(b.cat) cats[b.cat] = (cats[b.cat]||0)+1; });
-    var wrap = document.getElementById('ykFilters');
-    if (!wrap) return;
-    var html = '<button class="yk-filter-btn active" data-cat="전체" onclick="ykFilter(this)">전체 ('+data.length+')</button>';
-    Object.keys(cats).sort().forEach(function(c){
-      html += '<button class="yk-filter-btn" data-cat="'+escH(c)+'" onclick="ykFilter(this)">'+escH(c)+' ('+cats[c]+')</button>';
-    });
-    wrap.innerHTML = html;
+
+    // Build category select dropdown
+    var sel = document.getElementById('ykCategorySelect');
+    if (sel) {
+      var optHtml = '<option value="전체">모든 업종 ('+data.length+')</option>';
+      Object.keys(cats).sort().forEach(function(c){
+        optHtml += '<option value="'+escH(c)+'">'+escH(c)+' ('+cats[c]+')</option>';
+      });
+      sel.innerHTML = optHtml;
+    }
   }
 
   // ── Detect YELLOWKOREA page ──
@@ -2254,6 +2408,9 @@ window.initLpSlider = function(){
       .then(function(r){ return r.text(); })
       .then(function(text){
         YK_ALL = parseCSV(text);
+        YK_ALL.sort(function(a, b) {
+          return a.name.localeCompare(b.name);
+        });
         buildCatFilters(YK_ALL);
         buildCitySelect(YK_ALL);
         YK_FILTERED = YK_ALL.slice();
@@ -2302,16 +2459,14 @@ function lpSubToggle(arrow){
 <script type="text/javascript">
 //<![CDATA[
 (function(){
-  var lastY = 0;
-  var threshold = 60;
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
-    if (y > threshold) {
+    var isScrolled = document.body.classList.contains('scrolled');
+    if (!isScrolled && y > 150) {
       document.body.classList.add('scrolled');
-    } else {
+    } else if (isScrolled && y <= 20) {
       document.body.classList.remove('scrolled');
     }
-    lastY = y;
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -2319,6 +2474,109 @@ function lpSubToggle(arrow){
 })();
 //]]>
 </script>
+
+<!-- ===== GOOGLE TRANSLATE + LANG SWITCHER ===== -->
+<script type="text/javascript">
+//<![CDATA[
+// ── Cookie helper ──
+function lpSetCookie(name, value) {
+  var host = location.hostname;
+  document.cookie = name + '=' + value + ';path=/;domain=' + host;
+  document.cookie = name + '=' + value + ';path=/;domain=.' + host;
+  document.cookie = name + '=' + value + ';path=/';
+}
+function lpGetCookie(name) {
+  var m = document.cookie.match('(?:^|;)\\s*' + name + '=([^;]+)');
+  return m ? decodeURIComponent(m[1]) : '';
+}
+
+// ── Cookie expirer (aggressive) ──
+function lpExpireCookie(name) {
+  var host = location.hostname;
+  var past = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
+  var hostParts = host.split('.');
+  
+  // Try expiring on current path
+  document.cookie = name + '=;' + past + ';path=/';
+  document.cookie = name + '=;' + past + ';path=/;domain=' + host;
+  document.cookie = name + '=;' + past + ';path=/;domain=.' + host;
+  
+  // Try expiring on parent domains if applicable (e.g. lifeplaza.net)
+  if (hostParts.length > 2) {
+    var parentDomain = hostParts.slice(1).join('.');
+    document.cookie = name + '=;' + past + ';path=/;domain=' + parentDomain;
+    document.cookie = name + '=;' + past + ';path=/;domain=.' + parentDomain;
+  }
+}
+
+// ── Lang switcher ──
+window.lpSwitchLang = function(lang) {
+  if (lang === 'ko') {
+    lpExpireCookie('googtrans');
+    // For good measure, try setting to 'auto' or empty
+    lpSetCookie('googtrans', '');
+    
+    // Also try GT widget own restore
+    try {
+      var sel = document.querySelector('.goog-te-combo');
+      if (sel) { sel.value = ''; sel.dispatchEvent(new Event('change')); }
+    } catch(e) {}
+  } else {
+    lpSetCookie('googtrans', '/ko/' + lang);
+  }
+  
+  // Delay navigation slightly to allow cookie changes to register
+  setTimeout(function() {
+    window.location.href = location.pathname + location.search;
+  }, 100);
+};
+
+
+// ── On load: restore active flag from cookie ──
+(function() {
+  var gt = lpGetCookie('googtrans');
+  var activeLang = 'ko';
+  if (gt && gt.indexOf('/ko/vi') !== -1) activeLang = 'vi';
+
+  function markActive() {
+    var btn = (activeLang === 'vi')
+      ? document.getElementById('lpFlagVN')
+      : document.getElementById('lpFlagKR');
+    if (btn) btn.classList.add('lp-lang-active');
+    
+
+  }
+
+  // ── Protect navbar from translation ──
+  function markNoTranslate() {
+    document.querySelectorAll(
+      '#lp-nav a, #lp-menu a, #lp-mobile-menu a, #lp-nav-toggle'
+    ).forEach(function(el) {
+      el.setAttribute('translate', 'no');
+      el.classList.add('notranslate');
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() { markActive(); markNoTranslate(); });
+  } else {
+    markActive(); markNoTranslate();
+  }
+})();
+
+// ── Google Translate init ──
+window.googleTranslateElementInit = function() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'ko',
+    includedLanguages: 'vi,ko',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+};
+//]]>
+</script>
+<!-- Load Google Translate AFTER callback is defined -->
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

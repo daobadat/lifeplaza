@@ -2,27 +2,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="vi" lang="vi" dir="<$BlogLanguageDirection$>">
 <head>
   <title><$BlogPageTitle$></title>
-  <$BlogMetaData$>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizUqjZuHuromQCSH794matdgebJGe-65SJ8hIxrpHQGTeEULUzmq_a4p0jumvdbSA4Kw1WpBGSNjjcIX19ILSayAgaqKSqeTuNFoIV4zCHyIOy5Dcyu0BgN9XaFFAIs_TZJm93iGKzaD-h2PbhO0rc-dFELk_mo1079DZcSEIx-6eDTei7qULk2Xp_UjxL/s48/download.png' rel='icon' type='image/png'/>
-  <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizUqjZuHuromQCSH794matdgebJGe-65SJ8hIxrpHQGTeEULUzmq_a4p0jumvdbSA4Kw1WpBGSNjjcIX19ILSayAgaqKSqeTuNFoIV4zCHyIOy5Dcyu0BgN9XaFFAIs_TZJm93iGKzaD-h2PbhO0rc-dFELk_mo1079DZcSEIx-6eDTei7qULk2Xp_UjxL/s48/download.png' rel='shortcut icon' type='image/png'/>
+  <link href='https://www.lifeplaza.net/favicon.ico' rel='icon' type='image/x-icon'/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   <style type="text/css">
 /* ===== RESET ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{overflow-x:hidden;width:100%}
-body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#333;font-size:14px;text-align:left}
+html,body{overflow-x:clip;width:100%}
+body{font-family:'Noto Sans','Noto Sans KR','Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#333;font-size:16px;text-align:left}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 ul,ol{list-style:none;padding:0;margin:0}
 
+/* ===== STICKY NAVBAR ===== */
+#lp-sticky-group {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: box-shadow 0.3s ease;
+}
+body.scrolled #lp-sticky-group {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+#header {
+  background: #fff;
+  margin: 0 !important;
+  padding: 12px 0 !important;
+  max-height: 150px;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+body.scrolled #header {
+  max-height: 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  opacity: 0;
+}
+
 body {
   padding-top: 0 !important;
   margin-top: 0 !important;
-}
-#header {
-  margin: 0 !important;
-  padding: 12px 0 !important;
 }
 #navbar-iframe {
   display: none !important;
@@ -33,16 +55,16 @@ body {
 .lp-wrap{max-width:1650px;margin:0 auto;padding:0 20px}
 
 /* ===== TOPBAR ===== */
-#header{background:#fff;border-bottom:1px solid #e0e0e0;padding:12px 0!important;margin:0!important}
+#header{background:#fff;padding:12px 0!important;margin:0!important}
 .lp-topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-#blog-title{font-size:24px;font-weight:800;margin:0;padding-bottom:5px;line-height:1}
+#blog-title{font-size:26px;font-weight:800;margin:0;padding-bottom:5px;line-height:1}
 #blog-title a{text-decoration:none}
 #blog-title .g{color:#8BC34A}
 #blog-title .d{color:#444}
 #description{display:none}
 .lp-search-wrap{display:flex;align-items:center;gap:6px;flex:1;max-width:400px}
 .lp-search-box{position:relative;flex:1}
-.lp-search-box input{width:100%;padding:7px 34px 7px 10px;border:1px solid #ccc;font-size:13px;outline:none;background:#fafafa;font-family:inherit}
+.lp-search-box input{width:100%;padding:7px 34px 7px 10px;border:1px solid #ccc;font-size:15px;outline:none;background:#fafafa;font-family:inherit}
 .lp-search-box input:focus{border-color:#8BC34A}
 .lp-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#888;font-size:15px;padding:0}
 .lp-lang-flags{display:flex;align-items:center;gap:4px;flex-shrink:0}
@@ -58,7 +80,7 @@ body {
 
 /* Top-level items */
 #lp-menu > li{position:relative;text-align:center;flex:1}
-#lp-menu > li > a{display:block;padding:11px 10px;color:#fff;font-size:12px;font-weight:700;letter-spacing:.5px;white-space:nowrap;transition:background .2s;text-transform:uppercase}
+#lp-menu > li > a{display:block;padding:11px 10px;color:#fff;font-size:13px;font-weight:700;letter-spacing:.5px;white-space:nowrap;transition:background .2s;text-transform:uppercase}
 #lp-menu > li:hover > a,
 #lp-menu > li > a:hover{background:rgba(0,0,0,.18);color:#fff}
 #lp-menu > li#mn-yellow:hover > a{background:#FFD200;color:#333}
@@ -95,7 +117,7 @@ body {
 #lp-menu ul.lp-dropdown li a{
   display:block;
   padding:9px 18px;
-  font-size:12px;
+  font-size:14px;
   font-weight:600;
   color:#333;
   white-space:nowrap;
@@ -128,27 +150,27 @@ body {
 /* SECTION TITLE */
 .lp-section-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .lp-section-title .bar{width:4px;height:20px;background:#8BC34A;flex-shrink:0}
-.lp-section-title h2{font-size:15px;font-weight:700;color:#333;white-space:nowrap;margin:0;padding:0;line-height:1}
+.lp-section-title h2{font-size:17px;font-weight:700;color:#333;white-space:nowrap;margin:0;padding:0;line-height:1}
 .lp-section-title .line{flex:1;height:1px;background:#e0e0e0}
 
 /* CARD */
 .lp-card{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07)}
-.lp-divider>*+*{border-top:1px solid #f0f0f0}
+.lp-divider>*+*{border-top:1px solid #ccc}
 
 /* ===== NEWS SLIDER ===== */
-.lp-slider{position:relative;height:360px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:18px}
-.lp-slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+.lp-slider{position:relative;height:453px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:18px}
+.lp-slide{position:absolute;inset:0;opacity:0;transition:none}
 .lp-slide.active{opacity:1;z-index:2}
-.lp-slide img{width:100%;height:100%;object-fit:cover}
+.lp-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;flex-shrink:0}
 .lp-slide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 55%,transparent 100%)}
 .lp-slide-content{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:3}
 .lp-slide-cat{display:inline-block;background:#8BC34A;color:#fff;font-size:10px;font-weight:700;padding:3px 9px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
 .lp-slide-date{color:rgba(255,255,255,.65);font-size:11px;margin-bottom:6px}
 .lp-slide-title{color:#fff;font-size:16px;font-weight:700;line-height:1.4;overflow:hidden;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.lp-slide-sub{color:rgba(255,255,255,.75);font-size:12px;line-height:1.5;overflow:hidden;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.lp-slide-sub{color:rgba(255, 255, 255, 0.85);font-size:12px;line-height:1.5;overflow:hidden;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .lp-slide-btn{display:inline-block;background:#8BC34A;color:#fff;font-size:11px;font-weight:600;padding:6px 14px;cursor:pointer;border:none;transition:background .2s}
 .lp-slide-btn:hover{background:#7CB342}
-.lp-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(0,0,0,.4);color:#fff;border:none;cursor:pointer;padding:8px 11px;font-size:20px;transition:background .2s;line-height:1}
+.lp-slider-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:30;background:rgba(0,0,0,.4);color:#fff;border:none;cursor:pointer;padding:8px 11px;font-size:20px;transition:background .2s;line-height:1;pointer-events:auto}
 .lp-slider-arrow:hover{background:rgba(0,0,0,.65)}
 .lp-slider-arrow.prev{left:8px}
 .lp-slider-arrow.next{right:8px}
@@ -158,54 +180,66 @@ body {
 .lp-slider-progress{position:absolute;bottom:0;left:0;height:3px;background:#8BC34A;z-index:10;transition:width .4s}
 
 /* ===== COMPANY LISTINGS ===== */
-.lp-company-item{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;transition:background .2s}
+.lp-company-item{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;transition:background .2s;min-width:0;overflow:hidden}
 .lp-company-item:hover{background:#fafafa}
-.lp-company-logo{width:52px;height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+.lp-company-logo, .lp-contact-logo {
+  width: 100px !important;
+  height: 68px !important;
+  align-self: center !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #fff !important;
+  border: 1px solid #eee !important;
+  border-radius: 3px !important;
+  overflow: hidden !important;
+}
 .lp-company-info{flex:1;min-width:0}
-.lp-company-name-row{display:flex;align-items:center;gap:6px;margin-bottom:3px}
-.lp-company-name{font-size:13px;font-weight:700;color:#222;transition:color .2s}
+.lp-company-name-row{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.lp-company-name{font-size:17px;font-weight:700;color:#222;transition:color .2s}
 .lp-company-item:hover .lp-company-name{color:#8BC34A}
-.lp-company-tag{font-size:10px;padding:1px 6px}
+.lp-company-tag{font-size:10px;padding: 0 6px}
 /* FIX: phone icon + green color */
-.lp-company-phone{font-size:11px;color:#8BC34A;font-weight:600;display:flex;align-items:center;gap:4px}
+.lp-company-phone{font-size:13px;color:#8BC34A;font-weight:600;display:flex;align-items:center;gap:4px}
 .lp-company-phone::before{content:"";display:inline-block;width:12px;height:12px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238BC34A'%3E%3Cpath d='M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:contain;flex-shrink:0}
-.lp-company-addr{font-size:11px;color:#aaa;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lp-company-addr{font-size:13px;color:#333;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* FIX: external icon */
 .lp-external{color:#ccc;font-size:13px;flex-shrink:0;transition:color .2s;line-height:1;display:flex;align-items:center;justify-content:center;width:24px;height:24px}
 .lp-company-item:hover .lp-external{color:#8BC34A}
 
 /* ===== NEWS LIST (improved) ===== */
 .lp-post-list .post-outer,
-.lp-news-item{display:flex;gap:14px;padding:14px 16px;cursor:pointer;transition:background .2s;align-items:flex-start}
+.lp-news-item{display:flex;gap:14px;padding:12px 14px;cursor:pointer;transition:background .2s;align-items:stretch}
 .lp-post-list .post-outer:hover,
 .lp-news-item:hover{background:#fafafa}
 .lp-post-list .post-outer+.post-outer,
-.lp-divider .post-outer+.post-outer{border-top:1px solid #f0f0f0}
+.lp-divider .post-outer+.post-outer{border-top:1px solid #ccc}
 
-.lp-news-thumb,.post-thumbnail{width:110px;height:76px;flex-shrink:0;overflow:hidden;border-radius:2px}
+.lp-news-thumb,.post-thumbnail{width:140px;height:auto;min-height:90px;flex-shrink:0;overflow:hidden;border-radius:2px}
 .lp-news-thumb img,.post-thumbnail img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .lp-news-item:hover .lp-news-thumb img,
 .lp-post-list .post-outer:hover .post-thumbnail img{transform:scale(1.06)}
-.lp-news-body,.post-body-container{flex:1;min-width:0}
+.lp-news-body,.post-body-container{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
 
 /* Meta row: badge + date */
 .lp-news-meta,.post-meta{display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap}
-.lp-cat-badge{font-size:10px;padding:2px 7px;font-weight:700;border-radius:2px}
-.lp-news-date,.post-date{font-size:11px;color:#aaa;white-space:nowrap}
+.lp-cat-badge{font-size:12px;padding:2px 7px;font-weight:700;border-radius:2px}
+.lp-news-date,.post-date{font-size:13px;color:#aaa;white-space:nowrap}
 
 /* Title: green on hover like image */
 .lp-news-title,.post-title{
-  font-size:13px;font-weight:700;color:#222;line-height:1.45;
+  font-size:15px;font-weight:700;color:#222;line-height:1.45;
   overflow:hidden;transition:color .2s;margin-bottom:4px;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;padding:0
 }
-.lp-news-title a,.post-title a{color:#222;font-size:13px;font-weight:700}
+.lp-news-title a,.post-title a{color:#222;font-size:15px;font-weight:700}
 .lp-news-item:hover .lp-news-title,
 .lp-post-list .post-outer:hover .post-title,
 .lp-post-list .post-outer:hover .post-title a{color:#5a9e1a}
 
 /* Excerpt */
-.lp-news-excerpt,.post-snippet{font-size:11px;color:#888;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.lp-news-excerpt,.post-snippet{font-size:13px;color:#888;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 
 /* Label wrap — dùng font-size:0 để ẩn dấu phẩy text node (CSS trick) */
 .lp-label-wrap,
@@ -277,12 +311,12 @@ body {
 .lp-label-wrap a[href*="VISION"]{background:#f0fdf4;color:#166534}
 /* Xóa dấu phẩy/khoảng trắng thêm: dùng JS hoặc font-size:0 trick ở trên */
 #lp-latest-list{list-style:none;margin:0;padding:0}
-#lp-latest-list li{padding:10px 14px;border-top:1px solid #f0f0f0;transition:background .2s}
+#lp-latest-list li{padding:10px 14px;border-top:1px solid #ccc;transition:background .2s}
 #lp-latest-list li:first-child{border-top:none}
 #lp-latest-list li:hover{background:#fafafa}
 #lp-latest-list li a.lp-ln-title{
   display:flex;align-items:flex-start;gap:7px;
-  font-size:12px;font-weight:600;color:#333;
+  font-size:14px;font-weight:600;color:#333;
   text-decoration:none;line-height:1.4;
   transition:color .2s;
 }
@@ -317,7 +351,7 @@ body {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-#sidebar{float:none;width:auto;margin:0;font-size:14px;line-height:1.5}
+#sidebar{float:none;width:auto;margin:0;font-size:16px;line-height:1.6;min-width:0;overflow:hidden}
 .lp-sidebar-block{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);overflow:hidden;margin-bottom:14px;animation:fadeSlideUp 0.6s ease-out both}
 .lp-sidebar-block:nth-child(1){animation-delay:0.1s}
 .lp-sidebar-block:nth-child(2){animation-delay:0.2s}
@@ -326,99 +360,99 @@ body {
 .lp-sidebar-block:nth-child(5){animation-delay:0.5s}
 .lp-sidebar-head{display:flex;align-items:center;gap:8px;padding:9px 14px}
 .lp-sidebar-head .icon{font-size:13px}
-.lp-sidebar-head .stitle{font-size:13px;font-weight:700;color:#fff}
+.lp-sidebar-head .stitle{font-size:15px;font-weight:700;color:#fff}
 .lp-head-green{background:#8BC34A}
 .lp-head-dark{background:#1f2937}
 .lp-head-gray{background:#374151}
 
-.lp-hot-item{display:flex;gap:10px;padding:10px 12px;cursor:pointer;transition:background .2s;border-top:1px solid #f0f0f0}
+.lp-hot-item{display:flex;gap:10px;padding:10px 12px;cursor:pointer;transition:background .2s;border-top:1px solid #ccc}
 .lp-hot-item:first-of-type{border-top:none}
 .lp-hot-item:hover{background:#fafafa}
 .lp-hot-thumb{position:relative;width:60px;height:46px;flex-shrink:0;overflow:hidden}
 .lp-hot-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .lp-hot-item:hover .lp-hot-thumb img{transform:scale(1.06)}
 .lp-hot-num{position:absolute;top:0;left:0;width:18px;height:18px;background:#8BC34A;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
-.lp-hot-title{font-size:12px;font-weight:600;color:#333;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s}
+.lp-hot-title{font-size:14px;font-weight:600;color:#333;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s}
 .lp-hot-item:hover .lp-hot-title{color:#8BC34A}
-.lp-hot-date{font-size:10px;color:#aaa;margin-top:3px}
+.lp-hot-date{font-size:12px;color:#aaa;margin-top:3px}
 
-.lp-latest-item{padding:10px 14px;cursor:pointer;transition:background .2s;border-top:1px solid #f0f0f0}
+.lp-latest-item{padding:10px 14px;cursor:pointer;transition:background .2s;border-top:1px solid #ccc}
 .lp-latest-item:first-of-type{border-top:none}
 .lp-latest-item:hover{background:#fafafa}
 .lp-latest-inner{display:flex;align-items:flex-start;gap:8px}
 .lp-latest-dot{width:6px;height:6px;background:#8BC34A;border-radius:50%;flex-shrink:0;margin-top:5px}
-.lp-latest-title{font-size:12px;font-weight:600;color:#333;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s;margin-bottom:3px}
+.lp-latest-title{font-size:14px;font-weight:600;color:#333;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s;margin-bottom:3px}
 .lp-latest-item:hover .lp-latest-title{color:#8BC34A}
 .lp-latest-title a{color:inherit;font-size:inherit;font-weight:inherit}
-.lp-latest-date{font-size:10px;color:#aaa}
+.lp-latest-date{font-size:12px;color:#aaa}
 
 /* Blogger sidebar widget reset */
 .box,.box2,.box3{background:none!important;margin:0!important;padding:0!important}
 .sidebar-title{display:none}
 .profile-textblock,.profile-img,.profile-data{padding:8px 14px}
 #profile-container{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);margin-bottom:14px;padding:0}
-#profile-container h2{background:#374151;color:#fff;font-size:13px;font-weight:700;padding:9px 14px;margin:0;border:none}
+#profile-container h2{background:#374151;color:#fff;font-size:15px;font-weight:700;padding:9px 14px;margin:0;border:none}
 #profile-container a{color:#8BC34A}
 
 .lp-cats{padding:12px 14px;display:flex;flex-wrap:wrap;gap:6px}
-.lp-cat-pill{padding:4px 11px;font-size:11px;font-weight:600;cursor:pointer;border:none;border-radius:3px;display:inline-block;transition:all .2s ease;transform:translateY(0)}
+.lp-cat-pill{padding:5px 13px;font-size:13px;font-weight:600;cursor:pointer;border:none;border-radius:3px;display:inline-block;transition:all .2s ease;transform:translateY(0)}
 .lp-cat-pill:hover{filter:brightness(0.85);transform:translateY(-2px);box-shadow:0 3px 8px rgba(0,0,0,.15)}
 
 /* Recent posts in sidebar */
 #recently{margin:0;padding:0;list-style:none}
-#recently li{border-top:1px solid #f0f0f0;padding:9px 14px}
+#recently li{border-top:1px solid #ccc;padding:9px 14px}
 #recently li:first-child{border-top:none}
-#recently li a{font-size:12px;font-weight:600;color:#333;transition:color .2s;display:flex;align-items:flex-start;gap:6px}
+#recently li a{font-size:14px;font-weight:600;color:#333;transition:color .2s;display:flex;align-items:flex-start;gap:6px}
 #recently li a::before{content:"•";color:#8BC34A;font-weight:900;flex-shrink:0}
 #recently li a:hover{color:#8BC34A}
 
 /* Archive list */
 .archive-list{margin:0;padding:0;list-style:none}
-.archive-list li{border-top:1px solid #f0f0f0;padding:8px 14px}
+.archive-list li{border-top:1px solid #ccc;padding:8px 14px}
 .archive-list li:first-child{border-top:none}
-.archive-list li a{font-size:12px;color:#555;transition:color .2s}
+.archive-list li a{font-size:14px;color:#555;transition:color .2s}
 .archive-list li a:hover{color:#8BC34A}
 
 /* Contact sidebar */
-.lp-contact-item{display:flex;gap:12px;padding:10px 14px;transition:background .2s;border-top:1px solid #f0f0f0;align-items:center}
+.lp-contact-item{display:flex;gap:12px;padding:8px 10px;transition:background .2s;border-top:1px solid #ccc;align-items:center;min-width:0;overflow:hidden}
 .lp-contact-item:first-of-type{border-top:none}
 .lp-contact-item:hover{background:#fafafa}
-.lp-contact-logo{width:56px;height:56px;flex-shrink:0;border:1px solid #eee;border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
-.lp-contact-logo img{width:100%;height:100%;object-fit:contain;padding:4px}
-.lp-contact-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:4px;font-size:11px;font-weight:800}
-.lp-contact-name{font-size:12px;font-weight:700;color:#333;transition:color .2s;margin-bottom:2px}
+.lp-contact-logo-sidebar{width:90px;height:68px;flex-shrink:0;border:1px solid #eee;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
+.lp-contact-logo-sidebar img{width:100%;height:100%;object-fit:contain;padding:4px}
+.lp-contact-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:11px;font-weight:800}
+.lp-contact-name{font-size:15px;font-weight:700;color:#333;transition:color .2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lp-contact-item:hover .lp-contact-name{color:#8BC34A}
-.lp-contact-phone{font-size:11px;color:#8BC34A;font-weight:600}
-.lp-contact-addr{font-size:10px;color:#aaa;line-height:1.4}
+.lp-contact-phone{font-size:13px;color:#8BC34A;font-weight:600}
+.lp-contact-addr{font-size:12px;color:#333;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* ===== SINGLE POST PAGE ===== */
 .lp-single-post{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);padding:20px 24px;margin-bottom:16px}
 .lp-single-post .post-title{font-size:20px;font-weight:700;color:#222;line-height:1.4;margin-bottom:8px;display:block;-webkit-line-clamp:unset}
 .lp-single-post .post-title a{font-size:20px;font-weight:700;color:#222}
 .lp-single-post .lp-news-meta{margin-bottom:14px}
-.lp-single-post .post-body{font-size:14px;line-height:1.8;color:#333;margin-bottom:16px}
+.lp-single-post .post-body{font-size:16px;line-height:1.9;color:#333;margin-bottom:16px}
 .lp-single-post .post-body img {
   width: 100% !important;
   max-width: 100% !important;
   height: auto !important;
   display: block !important;
-  border-radius: 4px;
+  border-radius: 3px;
   margin: 12px 0;
 }
 .lp-single-post .post-body p{margin-bottom:12px}
 .lp-single-post .post-body h2{font-size:17px;font-weight:700;margin:18px 0 8px;color:#222}
 .lp-single-post .post-body blockquote{border-left:3px solid #8BC34A;margin:12px 0;padding:8px 14px;background:#f9f9f9;color:#555;font-style:italic}
-.lp-single-post .post-footer-info{font-size:11px;color:#aaa;padding-top:12px;border-top:1px solid #f0f0f0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lp-single-post .post-footer-info{font-size:13px;color:#aaa;padding-top:12px;border-top:1px solid #f0f0f0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .lp-single-post .post-footer-info a{color:#8BC34A}
 
 /* (label badge CSS đã được định nghĩa đầy đủ ở trên) */
 
 /* Comments */
 #comments{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07);padding:20px 24px;margin-bottom:16px}
-#comments h4{font-size:14px;font-weight:700;color:#333;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #f0f0f0}
-.comment-data{font-size:11px;color:#aaa;margin-bottom:4px}
+#comments h4{font-size:16px;font-weight:700;color:#333;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #f0f0f0}
+.comment-data{font-size:13px;color:#aaa;margin-bottom:4px}
 .comment-poster{font-weight:700;color:#333}
-.comment-body{font-size:13px;color:#555;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0}
+.comment-body{font-size:15px;color:#555;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #f0f0f0}
 .comment-body:last-child{border-bottom:none}
 
 /* ===== FOOTER ===== */
@@ -462,7 +496,7 @@ body {
 
 /* ===== MOBILE NAV TOGGLE ===== */
 #lp-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;color:#fff;font-size:22px;line-height:1;flex-shrink:0}
-#lp-nav-mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:400}
+#lp-nav-mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000}
 #lp-nav-mobile-overlay.open{display:block}
 #lp-mobile-menu{
   display:none;
@@ -471,7 +505,7 @@ body {
   width:260px;
   height:100vh;
   background:#fff;
-  z-index:500;
+  z-index:1001;
   overflow-y:auto;
   box-shadow:4px 0 18px rgba(0,0,0,.18);
   transform:translateX(-100%);
@@ -566,16 +600,23 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
   .lp-slider-arrow{padding:5px 8px;font-size:16px}
 
   /* Company items */
-  .lp-company-logo{width:40px;height:40px;font-size:10px}
-  .lp-company-name{font-size:12px}
-  .lp-company-addr{display:none}
+  .lp-company-logo, .lp-contact-logo { width: 90px !important; height: 60px !important; }
+  .lp-company-name{font-size:14px}
+  .lp-company-addr{display:block;font-size:11px;margin-top:2px}
 
-  /* News list */
-  .lp-news-thumb,.post-thumbnail{width:76px;height:56px}
-  .lp-news-title,.post-title{font-size:12px}
+  /* News list — mobile: vertical stack (title → labels → excerpt → image) */
+  .lp-post-list .post-outer,
+  .lp-news-item{flex-direction:column;align-items:stretch;gap:8px;padding:12px 12px}
+  .lp-news-thumb,.post-thumbnail{width:100%;height:160px;min-height:0;align-self:stretch;order:4}
+  .lp-news-thumb img,.post-thumbnail img{width:100%;height:100%;object-fit:cover}
+  .lp-news-body,.post-body-container{display:flex;flex-direction:column;order:1}
+  .lp-news-title,.post-title{font-size:13px;font-weight:700;order:1;margin-bottom:4px}
+  .lp-news-meta,.post-meta{order:2;margin-bottom:4px}
+  .post-excerpt-text{order:3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:11px;color:#888;line-height:1.5;margin-top:2px}
 
   /* Sidebar */
-  #sidebar{margin-top:12px}
+  #sidebar{margin-top:12px;overflow:visible;width:100%}
+  .lp-sidebar-block{overflow:hidden}
   .lp-hot-thumb{width:50px;height:38px}
   .lp-hot-title{font-size:11px}
 
@@ -638,79 +679,7 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
 .blog-pager .bp-arrow.disabled{opacity:.3;pointer-events:none;cursor:default}
 .blog-pager .bp-ellipsis{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;font-size:13px;color:#bbb;pointer-events:none;letter-spacing:1px}
 
-/* ===== BREAKING NEWS TICKER ===== */
-.lp-ticker-wrap {
-  background: #1e3a1e ;
-  padding: 10px 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  position: relative;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-.lp-ticker-label {
-  background: #d4500a;
-  padding: 10px 20px;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  flex-shrink: 0;
-  color: #fff;
-  position: relative;
-  z-index: 10;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-.lp-ticker-track {
-  display: flex;
-  flex-shrink: 0;
-  margin-left: 40px;
-  -webkit-animation: -webkit-ticker 80s linear infinite;
-  animation: ticker 80s linear infinite;
-  -webkit-transform: translate3d(0, 0, 0); /* bắt buộc */
-  transform: translate3d(0, 0, 0);
-  will-change: transform;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-@media (hover: hover) {
-  .lp-ticker-track:hover {
-    animation-play-state: paused;
-  }
-}
-.lp-ticker-content {
-  display: flex;
-  flex-shrink: 0;
-  gap: 64px;
-  padding-right: 64px;
-}
-.lp-ticker-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: #fff;
-  white-space: nowrap;
-  font-family: 'Noto Sans KR', sans-serif;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.lp-ticker-item:hover {
-  color: #a5d6a7;
-}
-.lp-ticker-item-icon {
-  color: #a5d6a7;
-}
 
-@-webkit-keyframes -webkit-ticker {
-  0%   { -webkit-transform: translate3d(0, 0, 0); }
-  100% { -webkit-transform: translate3d(-50%, 0, 0); }
-}
-
-@keyframes ticker {
-  0%   { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
-}
 
 /* ===== YELLOWKOREA DIRECTORY PAGE ===== */
 #lp-yk-directory { display:none; padding-bottom: 48px; }
@@ -721,18 +690,18 @@ body.yk-page .lp-slider,
 body.yk-page #lp-company-section,
 body.yk-page #lp-news-section,
 body.yk-page .lp-post-list,
-body.yk-page .blog-pager { display:none !important; }
+body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 
 /* Header */
 .yk-header { margin-bottom: 28px; }
-.yk-header h1 { font-size:26px; font-weight:900; color:#1a1a1a; margin-bottom:6px; font-family:'Segoe UI',Arial,sans-serif; }
-.yk-header p { font-size:13px; color:#777; }
+.yk-header h1 { font-size:30px; font-weight:900; color:#1a1a1a; margin-bottom:6px; font-family:'Noto Sans','Noto Sans KR','Segoe UI',Arial,sans-serif; }
+.yk-header p { font-size:15px; color:#777; }
 
 /* Category filter pills */
 .yk-filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; }
 .yk-filter-btn {
   padding: 7px 16px;
-  border-radius: 8px;
+  border-radius: 3px;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -743,60 +712,63 @@ body.yk-page .blog-pager { display:none !important; }
   font-family:'Segoe UI',Arial,sans-serif;
 }
 .yk-filter-btn:hover { background:#e8f5e9; color:#2e7d32; border-color:#a5d6a7; }
-.yk-filter-btn.active { background:#2e7d32; color:#fff; border-color:#2e7d32; box-shadow:0 2px 6px rgba(46,125,50,.3); }
+.yk-filter-btn.active { background:#2D9B4E; color:#fff; border-color:#2D9B4E; box-shadow:0 0px 6px rgba(33, 179, 40, 1); }
 
-/* Grid */
-.yk-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-@media(max-width:700px){ .yk-grid { grid-template-columns:1fr; } }
+/* Grid - 2 cột, responsive */
+.yk-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media(max-width:760px){ .yk-grid { grid-template-columns:1fr; } }
 
-/* Business Card */
+/* Business Card - larger horizontal layout */
 .yk-card {
   background:#fff;
   border:1px solid #e0e0e0;
-  border-radius:10px;
-  padding:22px;
+  border-radius:3px;
+  padding:24px 28px;
   transition: border-color .2s, box-shadow .2s;
   cursor:pointer;
+  display:grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  gap:0;
 }
-.yk-card:hover { border-color:#2e7d32; box-shadow:0 4px 16px rgba(46,125,50,.12); }
+.yk-card:hover { border-color:#2e7d32; box-shadow:0 4px 20px rgba(46,125,50,.13); }
 
-.yk-card-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; }
-.yk-card-name { font-size:17px; font-weight:800; color:#1a1a1a; margin-bottom:4px; font-family:'Segoe UI',Arial,sans-serif; }
+.yk-card-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px; grid-column:1/-1; padding-bottom:15px }
+.yk-card-name { font-size:22px; font-weight:800; color:#1a1a1a; margin-bottom:5px; font-family:'Noto Sans','Noto Sans KR','Segoe UI',Arial,sans-serif; }
 .yk-card-badge {
   display:inline-block;
   background:#2e7d32; color:#fff;
-  font-size:9px; font-weight:700;
-  padding:2px 7px; border-radius:3px;
-  letter-spacing:.5px; margin-left:6px;
+  font-size:10px; font-weight:700;
+  padding:2px 8px; border-radius:4px;
+  letter-spacing:.5px; margin-left:8px;
   vertical-align:middle;
 }
-.yk-card-cat { font-size:11px; color:#2e7d32; font-weight:700; letter-spacing:.5px; text-transform:uppercase; }
-.yk-card-rating { display:flex; align-items:center; gap:3px; font-size:13px; font-weight:700; color:#1a1a1a; flex-shrink:0; }
-.yk-card-rating .star { color:#2e7d32; }
+.yk-card-cat { font-size:15px; color:#2e7d32; font-weight:700; letter-spacing:.3px; text-transform:uppercase; }
+.yk-card-city { font-size:14px; color:#999; flex-shrink:0; text-align:right; padding-top:4px; }
 
-.yk-card-desc { font-size:12px; color:#666; line-height:1.6; margin-bottom:14px; }
+.yk-card-info { margin-bottom:16px; display:flex; flex-direction:column; gap:8px; grid-column:1/-1; }
+.yk-card-info-row { display:flex; align-items:center; gap:8px; font-size:15px; color:#555; }
+.yk-card-info-icon { width:16px; height:16px; flex-shrink:0; fill:none; stroke:#2e7d32; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
 
-.yk-card-info { margin-bottom:16px; display:flex; flex-direction:column; gap:6px; }
-.yk-card-info-row { display:flex; align-items:center; gap:7px; font-size:11px; color:#666; }
-.yk-card-info-icon { width:14px; height:14px; flex-shrink:0; color:#2e7d32; fill:none; stroke:#2e7d32; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
-
-.yk-card-actions { display:flex; gap:8px; }
+.yk-card-actions { display:flex; gap:10px; grid-column:1/-1; }
 .yk-btn-primary {
-  flex:1; background:#2e7d32; color:#fff;
-  border:none; border-radius:6px;
-  font-size:12px; font-weight:600;
-  padding:10px 0; cursor:pointer;
+  flex:1 1 0; background:#2D9B4E; color:#fff;
+  border:none; border-radius:8px;
+  font-size:14px; font-weight:600;
+  padding:12px 0; cursor:pointer;
   transition:background .2s;
   display:flex; align-items:center; justify-content:center; gap:6px;
+  text-decoration:none;
 }
-.yk-btn-primary:hover { background:#1b5e20; }
+.yk-btn-primary:hover { background:#2e7d32; }
 .yk-btn-secondary {
-  flex:1; background:#fff; color:#1a1a1a;
-  border:1px solid #e0e0e0; border-radius:6px;
-  font-size:12px; font-weight:600;
-  padding:10px 0; cursor:pointer;
+  flex:1 1 0; background:#fff; color:#1a1a1a;
+  border:1px solid #e0e0e0; border-radius:8px;
+  font-size:14px; font-weight:600;
+  padding:12px 0; cursor:pointer;
   transition:background .2s;
   display:flex; align-items:center; justify-content:center; gap:6px;
+  text-decoration:none;
 }
 .yk-btn-secondary:hover { background:#e8f5e9; }
 
@@ -805,7 +777,7 @@ body.yk-page .blog-pager { display:none !important; }
   margin-top:40px;
   background:linear-gradient(135deg,#c8e6c9,#a5d6a7);
   border:1px solid #81c784;
-  border-radius:12px;
+  border-radius:3px;
   padding:36px 24px;
   text-align:center;
   box-shadow:0 2px 8px rgba(46,125,50,.1);
@@ -827,6 +799,52 @@ body.yk-page .blog-pager { display:none !important; }
 
 /* No results */
 .yk-no-result { text-align:center; padding:40px 20px; color:#aaa; font-size:13px; }
+
+/* ── YK Pagination ── */
+#ykPager {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:6px;
+  padding:16px 0 8px;
+}
+#ykPager .bp-arrow,
+#ykPager .bp-num {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:36px;
+  height:36px;
+  padding:0 8px;
+  border-radius:8px;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  border:1px solid #e0e0e0;
+  background:#fff;
+  color:#444;
+  transition:all .18s;
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+#ykPager .bp-arrow:hover,
+#ykPager .bp-num:hover { background:#e8f5e9; border-color:#a5d6a7; color:#2e7d32; }
+#ykPager .bp-active { background:#2e7d32 !important; color:#fff !important; border-color:#2e7d32 !important; box-shadow:0 2px 6px rgba(46,125,50,.3); }
+#ykPager .bp-arrow.disabled { opacity:.35; cursor:default; pointer-events:none; }
+#ykPager .bp-ellipsis { display:inline-flex; align-items:center; padding:0 4px; color:#aaa; font-size:14px; letter-spacing:2px; }
+
+/* ── YK Star Rating ── */
+.yk-stars { display:inline-flex; align-items:center; gap:2px; }
+.yk-star { font-size:16px; line-height:1; }
+.yk-star.full  { color:#FFB400; }
+.yk-star.empty { color:#ddd; }
+.yk-rating-score { font-size:13px; font-weight:700; color:#555; margin-left:4px; }
+.yk-card-meta { display:flex; flex-direction:column; align-items:flex-end; gap:4px; flex-shrink:0; }
+  /* ===== GOOGLE TRANSLATE TOOLBAR HIDE ===== */
+  .goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt,.skiptranslate{display:none!important}
+  body{top:0!important}
+  .goog-te-gadget{font-size:0!important}
+  .lp-flag-btn.lp-lang-active{border-color:#8BC34A!important;box-shadow:0 0 0 2px rgba(139,195,74,.4)}
   </style>
 </head>
 
@@ -850,13 +868,15 @@ body.yk-page .blog-pager { display:none !important; }
           <button class="lp-search-btn" onclick="window.location='<$BlogURL$>search?q='+encodeURIComponent(document.getElementById('lpSearchInput').value)">🔍</button>
         </div>
         <div class="lp-lang-flags">
-          <button class="lp-flag-btn" title="Tiếng Việt">
+          <button class="lp-flag-btn" id="lpFlagVN" title="Tiếng Việt" onclick="lpSwitchLang('vi')">
             <img alt="Vietnam" src="https://flagcdn.com/w40/vn.png"/>
           </button>
-          <button class="lp-flag-btn" title="한국어">
+          <button class="lp-flag-btn" id="lpFlagKR" title="한국어" onclick="lpSwitchLang('ko')">
             <img alt="Korea" src="https://flagcdn.com/w40/kr.png"/>
           </button>
         </div>
+        <!-- Google Translate hidden widget -->
+        <div id="google_translate_element" style="display:none"></div>
       </div>
     </div>
   </div>
@@ -927,22 +947,12 @@ body.yk-page .blog-pager { display:none !important; }
     </li>
     <li><a href="<$BlogURL$>search/label/PHOTO">PHOTO</a></li>
     <li><a href="<$BlogURL$>search/label/YOUTUBE">YOUTUBE</a></li>
-    <li><a href="<$BlogURL$>search/label/YELLOWKOREA">YELLOWKOREA</a><i class="mm-arrow" onclick="lpSubToggle(this)">&#9660;</i>
-      <ul class="mm-sub">
-        <li><a href="<$BlogURL$>search/label/APPs">APPs</a></li>
-        <li><a href="<$BlogURL$>search/label/AUDITING">AUDITING</a></li>
-        <li><a href="<$BlogURL$>search/label/CONSTRUCTION">CONSTRUCTION</a></li>
-        <li><a href="<$BlogURL$>search/label/EDUCATION">EDUCATION</a></li>
-        <li><a href="<$BlogURL$>search/label/FURNITURE">FURNITURE</a></li>
-        <li><a href="<$BlogURL$>search/label/MEDICATION">MEDICATION</a></li>
-        <li><a href="<$BlogURL$>search/label/NEWS">NEWS</a></li>
-        <li><a href="<$BlogURL$>search/label/SOFTWARE">SOFTWARE</a></li>
-        <li><a href="<$BlogURL$>search/label/TECHNOLOGY">TECHNOLOGY</a></li>
-      </ul>
+    <li><a href="<$BlogURL$>search/label/YELLOWKOREA">YELLOWKOREA</a>
     </li>
   </ul>
 </nav>
 
+<div id="lp-sticky-group">
 <div id="lp-nav">
   <div class="lp-wrap">
     <!-- Hamburger button (mobile only) -->
@@ -1028,33 +1038,16 @@ body.yk-page .blog-pager { display:none !important; }
         <a href="<$BlogURL$>search/label/YOUTUBE" translate="no">YOUTUBE</a>
       </li>
 
-      <li id="mn-yellow" class="has-sub">
+      <li id="mn-yellow">
         <a href="<$BlogURL$>search/label/YELLOWKOREA" translate="no">YELLOWKOREA</a>
-        <ul class="lp-dropdown">
-          <li><a href="<$BlogURL$>search/label/APPs">APPs</a></li>
-          <li><a href="<$BlogURL$>search/label/AUDITING">AUDITING</a></li>
-          <li><a href="<$BlogURL$>search/label/CONSTRUCTION">CONSTRUCTION</a></li>
-          <li><a href="<$BlogURL$>search/label/EDUCATION">EDUCATION</a></li>
-          <li><a href="<$BlogURL$>search/label/FURNITURE">FURNITURE</a></li>
-          <li><a href="<$BlogURL$>search/label/MEDICATION">MEDICATION</a></li>
-          <li><a href="<$BlogURL$>search/label/NEWS">NEWS</a></li>
-          <li><a href="<$BlogURL$>search/label/SOFTWARE">SOFTWARE</a></li>
-          <li><a href="<$BlogURL$>search/label/TECHNOLOGY">TECHNOLOGY</a></li>
-        </ul>
       </li>
 
     </ul>
   </div>
 </div>
 
-<!-- ===== BREAKING NEWS TICKER ===== -->
-<div class="lp-ticker-wrap">
-  <div class="lp-ticker-label">
-    속보 BREAKING
-  </div>
-  <div class="lp-ticker-track">
-  </div>
-</div>
+
+</div><!-- /#lp-sticky-group -->
 
 <!-- ===== MAIN CONTENT AREA ===== -->
 <div id="content">
@@ -1090,7 +1083,20 @@ body.yk-page .blog-pager { display:none !important; }
           <button class="yk-filter-btn" data-cat="IT/소프트웨어" onclick="ykFilter(this)">IT/소프트웨어</button>
         </div>
 
+        <!-- Toolbar: search + city filter + counter -->
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;align-items:center">
+          <input id="ykSearchInput" type="text" placeholder="업체명 검색..." oninput="ykSearch()"
+            style="flex:1;min-width:180px;padding:9px 14px;border:1px solid #e0e0e0;border-radius:3px;font-size:13px;outline:none;font-family:inherit"
+            onfocus="this.style.borderColor='#2e7d32'" onblur="this.style.borderColor='#e0e0e0'"/>
+          <select id="ykCitySelect" onchange="ykCityFilter(this)"
+            style="padding:9px 14px;border:1px solid #e0e0e0;border-radius:3px;font-size:13px;background:#fff;cursor:pointer;font-family:inherit">
+            <option value="">모든 지역</option>
+          </select>
+          <span id="ykCounter" style="font-size:12px;color:##000000;white-space:nowrap"></span>
+        </div>
+
         <div class="yk-grid" id="ykGrid"></div>
+        <div id="ykPager" style="margin-top:28px"></div>
 
         <div class="yk-cta">
           <div class="yk-cta-icon">🏢</div>
@@ -1113,7 +1119,7 @@ body.yk-page .blog-pager { display:none !important; }
       <!-- ── COMPANY LISTINGS ── -->
       <div id="lp-company-section">
       <div class="lp-section-title">
-        <div class="bar"></div><h2>기업 정보</h2><div class="line"></div>
+        <div class="bar"></div><h2 >기업 정보</h2><div class="line"></div>
       </div>
       <div class="lp-card lp-divider" style="margin-bottom:18px">
 
@@ -1125,9 +1131,9 @@ body.yk-page .blog-pager { display:none !important; }
                  style="width:100%;height:100%;object-fit:contain;padding:4px"/>
           </div>
           <div class="lp-company-info">
-            <div class="lp-company-name-row">
-              <span class="lp-company-name">ADD GROUP</span>
-              <span class="lp-company-tag cat-default">CONSTRUCTION</span>
+            <div class="lp-company-name-row" translate="no" class="notranslate">
+              <span class="lp-company-name" translate="no" class="notranslate">ADD GROUP</span>
+              <span class="lp-company-tag cat-default" translate="no" class="notranslate">CONSTRUCTION</span>
             </div>
             <div class="lp-company-phone">+84 90 613 3456</div>
             <div class="lp-company-addr">Tầng 3, Tòa nhà Dolphin Plaza, 56 Trần Bình, Phường Cầu Giấy, Hà Nội</div>
@@ -1143,9 +1149,9 @@ body.yk-page .blog-pager { display:none !important; }
                  style="width:100%;height:100%;object-fit:contain;padding:4px"/>
           </div>
           <div class="lp-company-info">
-            <div class="lp-company-name-row">
-              <span class="lp-company-name">KPOP ART SCHOOL</span>
-              <span class="lp-company-tag cat-EDUCATION">EDUCATION</span>
+            <div class="lp-company-name-row" translate="no" class="notranslate">
+              <span class="lp-company-name" translate="no" class="notranslate">KPOP ART SCHOOL</span>
+              <span class="lp-company-tag cat-EDUCATION" translate="no" class="notranslate">EDUCATION</span>
             </div>
             <div class="lp-company-phone">+82 10 5107 5991</div>
             <div class="lp-company-addr">4F, Lasara Tower, 138 Wausan-ro, Mapo-gu, Seoul</div>
@@ -1161,9 +1167,9 @@ body.yk-page .blog-pager { display:none !important; }
                  style="width:100%;height:100%;object-fit:contain;padding:4px"/>
           </div>
           <div class="lp-company-info">
-            <div class="lp-company-name-row">
-              <span class="lp-company-name">IDP VIETNAM</span>
-              <span class="lp-company-tag cat-EDUCATION">EDUCATION</span>
+            <div class="lp-company-name-row" translate="no" class="notranslate">
+              <span class="lp-company-name" translate="no" class="notranslate">IDP VIETNAM</span>
+              <span class="lp-company-tag cat-EDUCATION" translate="no" class="notranslate">EDUCATION</span>
             </div>
             <div class="lp-company-phone">+84 1900 6955</div>
             <div class="lp-company-addr">161-163A Hải Bà Trưng, Phường Xuân Hòa, TP.HCM</div>
@@ -1171,7 +1177,7 @@ body.yk-page .blog-pager { display:none !important; }
           <span class="lp-external">↗</span>
         </a>
 
-      </div><!-- /.lp-card lp-divider (company list) -->
+      </div>
       </div><!-- /#lp-company-section -->
 
       <!-- ── NEWS & EVENTS (Blogger posts) ── -->
@@ -1275,7 +1281,7 @@ body.yk-page .blog-pager { display:none !important; }
       <!-- HOT NEWS (dynamic) -->
       <div class="lp-sidebar-block" id="lpHotNewsBlock">
         <div class="lp-sidebar-head lp-head-green">
-          <span class="material-icons-outlined" style="font-size:18px;color:white">trending_up</span><span class="stitle">HOT NEWS</span>
+          <span class="material-icons-outlined notranslate" style="font-size:18px;color:white" translate="no">trending_up</span><span class="stitle">HOT NEWS</span>
         </div>
         <div id="lpHotNewsWrapper"></div>
       </div>
@@ -1303,7 +1309,7 @@ body.yk-page .blog-pager { display:none !important; }
       <!-- CATEGORIES — all labels -->
       <div class="lp-sidebar-block">
         <div class="lp-sidebar-head lp-head-gray">
-          <span class="material-icons-outlined" style="font-size:18px;color:#fff">label</span><span class="stitle">CATEGORY</span>
+          <span class="material-icons-outlined notranslate" style="font-size:18px;color:#fff" translate="no">label</span><span class="stitle">CATEGORY</span>
         </div>
         <div class="lp-cats">
           <a class="lp-cat-pill" href="<$BlogURL$>search/label/NEWS" style="background:#dbeafe;color:#1d4ed8">NEWS</a>
@@ -1348,7 +1354,7 @@ body.yk-page .blog-pager { display:none !important; }
       <!-- CONTACT (AJAX - dynamic from label CONTACT) -->
       <div class="lp-sidebar-block">
         <div class="lp-sidebar-head lp-head-dark">
-          <span class="material-icons-outlined" style="font-size:18px;color:#fff">phone</span><span class="stitle">CONTACT</span>
+          <span class="material-icons-outlined notranslate" style="font-size:18px;color:#fff" translate="no">phone</span><span class="stitle">CONTACT</span>
         </div>
         <div id="lp-contact-list">
           <div style="padding:15px;text-align:center;font-size:12px;color:#888;">Đang tải...</div>
@@ -1420,8 +1426,8 @@ body.yk-page .blog-pager { display:none !important; }
 
           cards.push(
             '<a class="lp-contact-item" href="' + postUrl + '">' +
-              '<div class="lp-contact-logo">' + logoHtml + '</div>' +
-              '<div>' +
+              '<div class="lp-contact-logo-sidebar">' + logoHtml + '</div>' +
+              '<div translate="no" class="notranslate" style="flex:1;min-width:0;overflow:hidden;">' +
                 '<div class="lp-contact-name">' + title + '</div>' +
                 '<div class="lp-contact-phone">' + (phone || 'Xem chi tiết') + '</div>' +
                 '<div class="lp-contact-addr">' + (address || '') + '</div>' +
@@ -1469,7 +1475,7 @@ body.yk-page .blog-pager { display:none !important; }
 <!-- ===== FOOTER ===== -->
 <div id="footer">
 <div><div>
-<div style="background:#1a1a1a;border-top:3px solid #8BC34A;padding:18px 32px">
+<div style="background:#1a1a1a;padding:18px 32px">
   <div style="max-width:1600px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
     
     <!-- Logo -->
@@ -1501,24 +1507,194 @@ body.yk-page .blog-pager { display:none !important; }
 //<![CDATA[
 // ── SLIDER & HOT NEWS (DYNAMIC) ──
 window.initLpSlider = function(){
+  var sliderEl=document.getElementById('lpSlider');
   var slides=document.querySelectorAll('#lpSlider .lp-slide');
   var dotsEl=document.getElementById('lpDots');
   var progEl=document.getElementById('lpProgress');
   if(!slides||!slides.length||!dotsEl||!progEl)return;
-  var cur=0,total=slides.length,tmr;
+
+  var COLS=12, ROWS=8, TRANS_MS=2200, SLIDE_MS=6000;
+  var cur=0, total=slides.length, tmr, animating=false;
+
+  /* ── Tạo 1 lớp content cố định luôn ở trên cùng (z-index 20)
+       Khi chuyển slide chỉ cần update HTML của lớp này ngay lập tức,
+       không bao giờ bị overlay grid che hay bị ẩn ── */
+  var contentLayer=document.createElement('div');
+  contentLayer.style.cssText='position:absolute;bottom:0;left:0;right:0;z-index:20;pointer-events:none;';
+  sliderEl.appendChild(contentLayer);
+
+  /* Ẩn tất cả .lp-slide-overlay và .lp-slide-content gốc
+     (gradient + chữ trong từng slide) vì ta dùng contentLayer thay thế */
+  slides.forEach(function(sl){
+    var ov=sl.querySelector('.lp-slide-overlay');
+    var ct=sl.querySelector('.lp-slide-content');
+    if(ov) ov.style.display='none';
+    if(ct) ct.style.display='none';
+  });
+
+  /* Clone gradient overlay vào contentLayer 1 lần */
+  var gradDiv=document.createElement('div');
+  gradDiv.className='lp-slide-overlay';
+  gradDiv.style.cssText='position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 55%,transparent 100%);pointer-events:none;';
+  contentLayer.appendChild(gradDiv);
+
+  /* Vùng chữ */
+  var textDiv=document.createElement('div');
+  textDiv.className='lp-slide-content';
+  textDiv.style.cssText='position:relative;padding:20px;pointer-events:auto;';
+  contentLayer.appendChild(textDiv);
+
+  function getSlideContent(sl){
+    var ct=sl.querySelector('.lp-slide-content');
+    return ct?ct.innerHTML:'';
+  }
+
+  function updateContent(sl){
+    textDiv.innerHTML=getSlideContent(sl);
+  }
+
+  /* ── Build dots ── */
   dotsEl.innerHTML='';
   for(var i=0;i<total;i++){
     var d=document.createElement('button');
     d.className='lp-dot'+(i===0?' active':'');
     d.setAttribute('data-i',i);
-    (function(n){d.onclick=function(){stop();go(n);start();};})(i);
+    (function(n){d.onclick=function(){if(animating)return;stop();go(n);start();};})(i);
     dotsEl.appendChild(d);
   }
-  function ui(){dotsEl.querySelectorAll('.lp-dot').forEach(function(d,i){d.className='lp-dot'+(i===cur?' active':'');});progEl.style.width=(((cur+1)/total)*100)+'%';}
-  function go(n){slides[cur].classList.remove('active');cur=(n+total)%total;slides[cur].classList.add('active');ui();}
-  function start(){tmr=setInterval(function(){go(cur+1);},5000);}
+
+  /* hiện content slide đầu */
+  updateContent(slides[0]);
+
+  function ui(){
+    dotsEl.querySelectorAll('.lp-dot').forEach(function(d,i){d.className='lp-dot'+(i===cur?' active':'');});
+    progEl.style.width=(((cur+1)/total)*100)+'%';
+  }
+
+  function easeOutQuad(t){ return t*(2-t); }
+
+  function buildOverlay(imgSrc, onDone){
+    var old=sliderEl.querySelector('.lp-grid-overlay');
+    if(old) old.parentNode.removeChild(old);
+
+    var wrap=document.createElement('div');
+    wrap.className='lp-grid-overlay';
+    wrap.style.cssText='position:absolute;inset:0;z-index:15;display:grid;pointer-events:none;'
+      +'grid-template-columns:repeat('+COLS+',1fr);grid-template-rows:repeat('+ROWS+',1fr);';
+
+    var W=sliderEl.offsetWidth||800;
+    var H=sliderEl.offsetHeight||360;
+    var maxDist=(COLS-1)+(ROWS-1);
+    var cellDur=TRANS_MS*0.45;
+    var maxDelay=TRANS_MS-cellDur;
+
+    /* Tính background-size cover đúng cách:
+       Load ảnh để lấy naturalWidth/naturalHeight, rồi tính như object-fit:cover.
+       Nếu ảnh chưa load xong dùng fallback W×H trước, update sau. */
+    function computeCoverSize(natW, natH, cW, cH){
+      var scaleW=cW/natW, scaleH=cH/natH;
+      var scale=Math.max(scaleW,scaleH);
+      return {w:Math.round(natW*scale), h:Math.round(natH*scale)};
+    }
+    function computeCoverOffset(bgW, bgH, cW, cH){
+      return {x:Math.round((cW-bgW)/2), y:Math.round((cH-bgH)/2)};
+    }
+
+    /* Tạo cells trước với fallback, rồi update khi ảnh load */
+    var cells=[];
+    for(var r=0;r<ROWS;r++){
+      for(var c=0;c<COLS;c++){
+        var cell=document.createElement('div');
+        cell.dataset.c=c; cell.dataset.r=r;
+        cell.style.cssText=
+          'background-image:url('+imgSrc+');'
+          +'background-size:'+W+'px '+H+'px;'
+          +'background-position:0px 0px;'
+          +'background-repeat:no-repeat;'
+          +'transform:scale(0);'
+          +'transform-origin:center center;'
+          +'will-change:transform;';
+        cells.push(cell);
+        wrap.appendChild(cell);
+      }
+    }
+
+    sliderEl.appendChild(wrap);
+
+    /* Load ảnh để lấy kích thước tự nhiên */
+    var probe=new Image();
+    probe.onload=function(){
+      var sz=computeCoverSize(probe.naturalWidth, probe.naturalHeight, W, H);
+      var off=computeCoverOffset(sz.w, sz.h, W, H);
+      var cellW=W/COLS, cellH=H/ROWS;
+      cells.forEach(function(cell){
+        var c=parseInt(cell.dataset.c,10);
+        var r=parseInt(cell.dataset.r,10);
+        /* offset của ô này = offset cover + dịch trái/lên theo vị trí ô */
+        var px=off.x - c*cellW;
+        var py=off.y - r*cellH;
+        cell.style.backgroundSize=sz.w+'px '+sz.h+'px';
+        cell.style.backgroundPosition=px.toFixed(1)+'px '+py.toFixed(1)+'px';
+      });
+    };
+    probe.onerror=function(){/* giữ fallback */};
+    probe.src=imgSrc;
+
+    /* Chạy animation sau 1 rAF để DOM đã render */
+    requestAnimationFrame(function(){
+      cells.forEach(function(cell){
+        var c=parseInt(cell.dataset.c,10);
+        var r=parseInt(cell.dataset.r,10);
+        var dist=r+c;
+        var delay=easeOutQuad(dist/maxDist)*maxDelay;
+        (function(el,dl){
+          setTimeout(function(){
+            el.style.transition='transform '+cellDur+'ms cubic-bezier(0.25,0.46,0.45,0.94)';
+            el.style.transform='scale(1)';
+          },dl);
+        })(cell,delay);
+      });
+    });
+
+    setTimeout(function(){
+      if(wrap.parentNode) wrap.parentNode.removeChild(wrap);
+      onDone();
+    }, TRANS_MS+60);
+  }
+
+  function go(n){
+    if(animating)return;
+    animating=true;
+    var next=(n+total)%total;
+
+    var nextImg=slides[next].querySelector('img');
+    var imgSrc=nextImg?nextImg.src:'';
+
+    /* Update chữ NGAY LẬP TỨC trước khi grid bắt đầu
+       — contentLayer z-index 20 luôn hiển thị, không bị che */
+    updateContent(slides[next]);
+    ui_next(next);
+
+    buildOverlay(imgSrc, function(){
+      /* Khi grid xong: swap ảnh nền slide */
+      slides[cur].classList.remove('active');
+      slides[cur].style.opacity='';
+      slides[cur].style.zIndex='';
+      cur=next;
+      slides[cur].classList.add('active');
+      slides[cur].style.zIndex='2';
+      animating=false;
+    });
+  }
+
+  function ui_next(next){
+    dotsEl.querySelectorAll('.lp-dot').forEach(function(d,i){d.className='lp-dot'+(i===next?' active':'');});
+    progEl.style.width=(((next+1)/total)*100)+'%';
+  }
+
+  function start(){tmr=setInterval(function(){go(cur+1);},SLIDE_MS);}
   function stop(){clearInterval(tmr);}
-  window.sliderMove=function(d){stop();go(cur+d);start();};
+  window.sliderMove=function(d){stop();animating=false;go(cur+d);start();};
   ui();start();
 };
 
@@ -1679,17 +1855,7 @@ window.initLpSlider = function(){
       hotWrap.innerHTML = hotHtml;
     }
 
-    // 2.5 Breaking News Ticker
-    var tickerTrack = document.querySelector('.lp-ticker-track');
-    if(tickerTrack) {
-      var tCount = Math.min(10, validGlobal.length);
-      var tickerHtml = '';
-      for(var t=0; t<tCount; t++){
-        var p = validGlobal[t];
-        tickerHtml += '<a class="lp-ticker-item" href="'+p.url+'"><span class="lp-ticker-item-icon">&#9656;</span><span>'+p.title+'</span></a>';
-      }
-      tickerTrack.innerHTML = '<div class="lp-ticker-content">' + tickerHtml + '</div><div class="lp-ticker-content">' + tickerHtml + '</div>';
-    }
+
 
     // 3. Main Post List & Pagination (AJAX)
     if(postListWrap) {
@@ -1711,23 +1877,45 @@ window.initLpSlider = function(){
       renderPage(1);
     }
 
-    // 4. Latest News Labels & Date
-    var latestItems = document.querySelectorAll('#lp-latest-list li');
-    latestItems.forEach(function(li){
-      var url = li.getAttribute('data-post-url');
-      if(!url) return;
-      var path = url.replace(/^https?:\/\/[^\/]+/i, '').split('?')[0];
-      var matched = allPosts.find(function(p){ return p.url.indexOf(path) > -1; });
-      if(matched) {
-        if(matched.hasExcluded && !isExcludePage) { li.style.display = 'none'; return; }
-        var span = li.querySelector('.lp-ln-labels');
-        if(span && matched.labels.length) {
-          span.innerHTML = '<a href="/search/label/'+encodeURIComponent(matched.labels[0])+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+matched.labels[0]+'</a>';
+    // 4. Latest News Labels & Date (Generate if empty, else enhance)
+    var latestList = document.getElementById('lp-latest-list');
+    if (latestList) {
+      var latestItems = latestList.querySelectorAll('li');
+      if (latestItems.length === 0) {
+        // On ItemPage, BloggerPreviousItems is empty, so we build it from validGlobal
+        var lnHtml = '';
+        var lCount = Math.min(5, validGlobal.length);
+        for(var i=0; i<lCount; i++){
+          var p = validGlobal[i];
+          var firstLabel = p.labels.length ? p.labels[0] : '';
+          var labelHtml = firstLabel ? '<a href="/search/label/'+encodeURIComponent(firstLabel)+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+firstLabel+'</a>' : '';
+          lnHtml += '<li data-post-url="'+p.url+'">' +
+            '<a class="lp-ln-title" href="'+p.url+'">'+p.title+'</a>' +
+            '<div class="lp-ln-meta">' +
+              '<span class="lp-label-wrap lp-ln-labels">'+labelHtml+'</span>' +
+              '<span class="lp-ln-date">'+p.date+'</span>' +
+            '</div>' +
+          '</li>';
         }
-        var dateSpan = li.querySelector('.lp-ln-date');
-        if(dateSpan) dateSpan.textContent = matched.date;
+        latestList.innerHTML = lnHtml;
+      } else {
+        latestItems.forEach(function(li){
+          var url = li.getAttribute('data-post-url');
+          if(!url) return;
+          var path = url.replace(/^https?:\/\/[^\/]+/i, '').split('?')[0];
+          var matched = allPosts.find(function(p){ return p.url.indexOf(path) > -1; });
+          if(matched) {
+            if(matched.hasExcluded && !isExcludePage) { li.style.display = 'none'; return; }
+            var span = li.querySelector('.lp-ln-labels');
+            if(span && matched.labels.length) {
+              span.innerHTML = '<a href="/search/label/'+encodeURIComponent(matched.labels[0])+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+matched.labels[0]+'</a>';
+            }
+            var dateSpan = li.querySelector('.lp-ln-date');
+            if(dateSpan) dateSpan.textContent = matched.date;
+          }
+        });
       }
-    });
+    }
 
     // 5. Contact List (Main & Sidebar)
     var contactMainWrap = document.getElementById('lpContactMainWrap');
@@ -1755,12 +1943,12 @@ window.initLpSlider = function(){
                 '<img src="'+p.img+'" alt="'+p.title+'" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:4px"/>' +
               '</div>' +
               '<div class="lp-company-info">' +
-                '<div class="lp-company-name-row">' +
+                '<div class="lp-company-name-row" translate="no" class="notranslate">' +
                   '<span class="lp-company-name">'+p.title+'</span>' +
                   '<span class="lp-company-tag cat-'+secondLabel+'">'+secondLabel+'</span>' +
                 '</div>' +
-                '<div class="lp-company-phone">'+phone+'</div>' +
-                '<div class="lp-company-addr">'+addr+'</div>' +
+                '<div class="lp-company-phone" translate="no" class="notranslate">'+phone+'</div>' +
+                '<div class="lp-company-addr" translate="no" class="notranslate">'+addr+'</div>' +
               '</div>' +
               '<span class="lp-external">↗</span>' +
             '</a>';
@@ -1775,7 +1963,7 @@ window.initLpSlider = function(){
                 '<img src="'+p.img+'" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" alt="'+p.title+'" loading="lazy"/>' +
                 '<div class="lp-contact-fallback" style="display:none;background:'+bg+';color:#fff;font-weight:800;font-size:11px">'+fallback+'</div>' +
               '</div>' +
-              '<div>' +
+              '<div translate="no" class="notranslate">' +
                 '<div class="lp-contact-name">'+p.title+'</div>' +
                 '<div class="lp-contact-phone">'+phone+'</div>' +
                 '<div class="lp-contact-addr">'+addr+'</div>' +
@@ -1922,33 +2110,7 @@ window.initLpSlider = function(){
     }
   };
 
-  // ―― FIX IOS SAFARI TICKER ANIMATION (BFCACHE & LOAD) ――
-  window.addEventListener('load', function() {
-    var track = document.querySelector('.lp-ticker-track');
-    if (!track) return;
-    track.style.animation = 'none';
-    track.offsetHeight; /* force reflow */
-    track.style.animation = 'ticker 80s linear infinite';
-    track.style.webkitAnimation = '-webkit-ticker 80s linear infinite';
-    
-    setTimeout(function() {
-      track.style.animation = 'none';
-      track.offsetHeight;
-      track.style.animation = 'ticker 80s linear infinite';
-      track.style.webkitAnimation = '-webkit-ticker 80s linear infinite';
-    }, 300);
-  });
 
-  window.addEventListener('pageshow', function(e) {
-    if (e.persisted) {
-      var track = document.querySelector('.lp-ticker-track');
-      if (!track) return;
-      track.style.animation = 'none';
-      track.offsetHeight;
-      track.style.animation = 'ticker 80s linear infinite';
-      track.style.webkitAnimation = '-webkit-ticker 80s linear infinite';
-    }
-  });
 //]]>
 </script>
 
@@ -1957,159 +2119,254 @@ window.initLpSlider = function(){
 //<![CDATA[
 (function() {
 
-  // ── Business data (add/remove companies here) ──
-  var YK_BUSINESSES = [
-    {
-      id: 1,
-      name: "ADD GROUP",
-      verified: true,
-      cat: "건설/인테리어",
-      rating: 4.8,
-      desc: "베트남 건설·인테리어 전문 그룹. 하노이 오피스 및 주거 공간 시공",
-      location: "Tầng 3, Dolphin Plaza, 56 Trần Bình, Hà Nội",
-      phone: "+84 90 613 3456",
-      website: "addgroup.vn",
-      url: ""
-    },
-    {
-      id: 2,
-      name: "KPOP ART SCHOOL",
-      verified: true,
-      cat: "교육",
-      rating: 4.7,
-      desc: "K-POP 댄스 및 보컬 전문 교육기관. 서울·하노이 동시 운영",
-      location: "4F, Lasara Tower, 138 Wausan-ro, Mapo-gu, Seoul",
-      phone: "+82 10 5107 5991",
-      website: "kpopartschool.com",
-      url: ""
-    },
-    {
-      id: 3,
-      name: "IDP VIETNAM",
-      verified: true,
-      cat: "교육",
-      rating: 4.6,
-      desc: "국제 어학 시험·유학 컨설팅 전문. IELTS 공식 시험센터 운영",
-      location: "161-163A Hải Bà Trưng, Phường Xuân Hòa, TP.HCM",
-      phone: "+84 1900 6955",
-      website: "idp.com/vietnam",
-      url: ""
-    },
-    {
-      id: 4,
-      name: "서울 한식당",
-      verified: true,
-      cat: "식당/카페",
-      rating: 4.8,
-      desc: "정통 한식을 맛볼 수 있는 호치민 최고의 한식당",
-      location: "District 1, Ho Chi Minh City",
-      phone: "+84 28 3823 xxxx",
-      website: "seoulrestaurant.vn",
-      url: ""
-    },
-    {
-      id: 5,
-      name: "한국 국제병원",
-      verified: true,
-      cat: "병원/의료",
-      rating: 4.9,
-      desc: "한국어 가능 의료진, 24시간 응급실 운영",
-      location: "District 2, Ho Chi Minh City",
-      phone: "+84 28 3744 xxxx",
-      website: "koreanhospital.vn",
-      url: ""
-    },
-    {
-      id: 6,
-      name: "K-LAW FIRM",
-      verified: false,
-      cat: "법률/세무",
-      rating: 4.5,
-      desc: "베트남 법인 설립·세무·노무 전문 한국 법률 사무소",
-      location: "Ba Đình, Hà Nội",
-      phone: "+84 24 3xxx xxxx",
-      website: "klawvn.com",
-      url: ""
-    }
-  ];
+  // ── Google Sheets CSV public URL ──
+  var CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQSfB-FOOv_NO04oJSZMBcoqF_MjB4k6eYa1KgiDLfrqG8DmhKzRlDN_yPV2NjJtkxI7rvV-_3RUjAq/pub?output=csv';
 
-  // SVG icons (inline, no external dependency)
-  var SVG_PIN  = '<svg class="yk-card-info-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>';
-  var SVG_PHONE= '<svg class="yk-card-info-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>';
-  var SVG_GLOBE= '<svg class="yk-card-info-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>';
+  var YK_ALL = [];       // all parsed companies
+  var YK_FILTERED = [];  // after filter/search
+  var YK_PAGE = 1;
+  var YK_PER_PAGE = 20;
+  var YK_ACTIVE_CAT = '전체';
+  var YK_ACTIVE_CITY = '';
+  var YK_SEARCH = '';
+
+  // ── CSV parser (handles quoted fields) ──
+  function parseCSV(text) {
+    var rows = [];
+    var lines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
+    for (var i = 1; i < lines.length; i++) {
+      var line = lines[i];
+      if (!line.trim()) continue;
+      var fields = [];
+      var cur = '';
+      var inQ = false;
+      for (var c = 0; c < line.length; c++) {
+        var ch = line[c];
+        if (ch === '"') {
+          if (inQ && line[c+1] === '"') { cur += '"'; c++; }
+          else inQ = !inQ;
+        } else if (ch === ',' && !inQ) {
+          fields.push(cur); cur = '';
+        } else {
+          cur += ch;
+        }
+      }
+      fields.push(cur);
+      if (fields.length >= 5) {
+        // Clean address: strip 회비 납부 notes
+        var addr = (fields[2] || '').replace(/\s*회비\s*납부.*$/i, '').trim();
+        // Parse star rating from column F (e.g. ★★★☆☆ => 3)
+        var rawRating = (fields[5] || '').trim();
+        var ratingVal = 0;
+        for (var ri = 0; ri < rawRating.length; ri++) {
+          if (rawRating[ri] === '★') ratingVal++;
+        }
+        rows.push({
+          cat:    fields[0].trim(),
+          name:   fields[1].trim(),
+          addr:   addr,
+          phone:  fields[3].trim(),
+          city:   fields[4].trim().toUpperCase().replace(/BẮC /g,'BAC ').replace(/Ắ/g,'A').replace(/Ầ/g,'A'),
+          rating: ratingVal
+        });
+      }
+    }
+    return rows;
+  }
+
+  // ── Build card HTML ──
+  function buildStars(n) {
+    var html = '<span class="yk-stars">';
+    for (var i = 1; i <= 5; i++) {
+      html += '<span class="yk-star ' + (i <= n ? 'full' : 'empty') + '">★</span>';
+    }
+    html += '</span>';
+    return html;
+  }
 
   function buildCard(b) {
-    var contactHref = b.phone ? 'tel:' + b.phone.replace(/\s/g,'') : '#';
-    var detailHref  = b.url || '#';
-    return '<div class="yk-card" data-cat="'+b.cat+'">' +
+    var phone = b.phone || '';
+    var telHref = phone ? 'tel:' + phone.replace(/[\s\-\(\)~]/g,'').replace(/^\'/, '') : '#';
+    var starsHtml = (b.rating > 0) ? buildStars(b.rating) : '';
+    return '<div class="yk-card" data-cat="'+escH(b.cat)+'" data-city="'+escH(b.city)+'">' +
       '<div class="yk-card-top">' +
-        '<div>' +
-          '<div class="yk-card-name">'+b.name+(b.verified?'<span class="yk-card-badge">인증</span>':'')+'</div>' +
-          '<div class="yk-card-cat">'+b.cat+'</div>' +
+        '<div translate="no" class="notranslate">' +
+          '<div class="yk-card-name">'+escH(b.name)+'</div>' +
+          '<div class="yk-card-cat">'+escH(b.cat)+'</div>' +
         '</div>' +
-        '<div class="yk-card-rating"><span class="star">★</span>'+b.rating+'</div>' +
+        '<div class="yk-card-meta" translate="no" class="notranslate">' +
+          (starsHtml ? starsHtml : '') +
+          '<span style="font-size:12px;color:#aaa;">'+escH(b.city)+'</span>' +
+        '</div>' +
       '</div>' +
-      '<div class="yk-card-desc">'+b.desc+'</div>' +
-      '<div class="yk-card-info">' +
-        '<div class="yk-card-info-row">'+SVG_PIN+'<span>'+b.location+'</span></div>' +
-        '<div class="yk-card-info-row">'+SVG_PHONE+'<span>'+b.phone+'</span></div>' +
-        '<div class="yk-card-info-row">'+SVG_GLOBE+'<span>'+b.website+'</span></div>' +
+      '<div class="yk-card-info" style="margin-bottom:12px">' +
+        (b.addr ? '<div class="yk-card-info-row"><svg class="yk-card-info-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>'+escH(b.addr.substring(0,80))+(b.addr.length>80?'...':'')+'</span></div>' : '') +
+        (phone ? '<div class="yk-card-info-row"><svg class="yk-card-info-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span>'+escH(phone)+'</span></div>' : '') +
       '</div>' +
       '<div class="yk-card-actions">' +
-        '<a class="yk-btn-primary" href="'+contactHref+'">📞 연락하기</a>' +
-        '<a class="yk-btn-secondary" href="'+detailHref+'">› 상세보기</a>' +
+        '<a class="yk-btn-primary" href="'+telHref+'"><span class="material-icons-outlined notranslate" style="font-size:18px;color:#fff" translate="no">phone</span> 연락하기</a>' +
+        '<a class="yk-btn-secondary" href="#" onclick="ykSearch(\''+escH(b.name).replace(/'/g,"\\'")+'\'  );return false">› 검색</a>' +
       '</div>' +
     '</div>';
   }
+//<span class="stitle">CONTACT</span>
 
-  function renderGrid(cat) {
+  function escH(s) {
+    return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ── Render grid with current filters ──
+  function applyFilters() {
+    YK_FILTERED = YK_ALL.filter(function(b) {
+      if (YK_ACTIVE_CAT !== '전체' && b.cat !== YK_ACTIVE_CAT) return false;
+      if (YK_ACTIVE_CITY && b.city.indexOf(YK_ACTIVE_CITY) === -1) return false;
+      if (YK_SEARCH) {
+        var q = YK_SEARCH.toLowerCase();
+        if (b.name.toLowerCase().indexOf(q) === -1 &&
+            b.addr.toLowerCase().indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+    YK_PAGE = 1;
+    renderYKGrid();
+  }
+
+  function renderYKGrid() {
     var grid = document.getElementById('ykGrid');
+    var pager = document.getElementById('ykPager');
+    var counter = document.getElementById('ykCounter');
     if (!grid) return;
-    var list = cat === '전체' ? YK_BUSINESSES : YK_BUSINESSES.filter(function(b){ return b.cat === cat; });
-    if (list.length === 0) {
-      grid.innerHTML = '<div class="yk-no-result" style="grid-column:1/-1">해당 카테고리의 업체 정보가 없습니다.</div>';
+
+    var total = YK_FILTERED.length;
+    var totalPages = Math.ceil(total / YK_PER_PAGE);
+    var start = (YK_PAGE - 1) * YK_PER_PAGE;
+    var slice = YK_FILTERED.slice(start, start + YK_PER_PAGE);
+
+    if (counter) counter.textContent = total + '개 업체';
+
+    if (slice.length === 0) {
+      grid.innerHTML = '<div class="yk-no-result" style="grid-column:1/-1">검색 결과가 없습니다.</div>';
     } else {
-      grid.innerHTML = list.map(buildCard).join('');
+      grid.innerHTML = slice.map(buildCard).join('');
+    }
+
+    // Pagination
+    if (pager) {
+      if (totalPages <= 1) { pager.innerHTML = ''; return; }
+      var ph = '';
+      var sp = Math.max(1, YK_PAGE - 2);
+      var ep = Math.min(totalPages, sp + 4);
+      sp = Math.max(1, ep - 4);
+      ph += YK_PAGE > 1 ? '<button class="bp-arrow" onclick="ykGoPage('+(YK_PAGE-1)+')">&#8249;</button>' : '<button class="bp-arrow disabled">&#8249;</button>';
+      if (sp > 1) { ph += '<button class="bp-num" onclick="ykGoPage(1)">1</button>'; if (sp > 2) ph += '<span class="bp-ellipsis">&middot;&middot;&middot;</span>'; }
+      for (var p = sp; p <= ep; p++) ph += p === YK_PAGE ? '<button class="bp-num bp-active">'+p+'</button>' : '<button class="bp-num" onclick="ykGoPage('+p+')">'+p+'</button>';
+      if (ep < totalPages) { if (ep < totalPages-1) ph += '<span class="bp-ellipsis">&middot;&middot;&middot;</span>'; ph += '<button class="bp-num" onclick="ykGoPage('+totalPages+')">'+totalPages+'</button>'; }
+      ph += YK_PAGE < totalPages ? '<button class="bp-arrow" onclick="ykGoPage('+(YK_PAGE+1)+')">&#8250;</button>' : '<button class="bp-arrow disabled">&#8250;</button>';
+      pager.innerHTML = ph;
     }
   }
+
+  window.ykGoPage = function(p) { YK_PAGE = p; renderYKGrid(); document.getElementById('lp-yk-directory').scrollIntoView({behavior:'smooth',block:'start'}); };
 
   window.ykFilter = function(btn) {
     document.querySelectorAll('.yk-filter-btn').forEach(function(b){ b.classList.remove('active'); });
     btn.classList.add('active');
-    renderGrid(btn.getAttribute('data-cat'));
+    YK_ACTIVE_CAT = btn.getAttribute('data-cat');
+    applyFilters();
   };
 
-  // ── Detect YELLOWKOREA page and activate directory ──
-  function initYKDirectory() {
-    var path = window.location.pathname + window.location.search;
-    var isYKPage = path.indexOf('YELLOWKOREA') !== -1 || path.indexOf('yellowkorea') !== -1;
+  window.ykCityFilter = function(sel) {
+    YK_ACTIVE_CITY = sel.value;
+    applyFilters();
+  };
 
-    if (!isYKPage) return;
-
-    // Show directory, hide normal page elements
-    var dir = document.getElementById('lp-yk-directory');
-    if (dir) {
-      dir.classList.add('active');
-      document.body.classList.add('yk-page');
+  window.ykSearch = function(q) {
+    if (q !== undefined) {
+      var inp = document.getElementById('ykSearchInput');
+      if (inp) inp.value = q;
+      YK_SEARCH = q;
+    } else {
+      var inp2 = document.getElementById('ykSearchInput');
+      YK_SEARCH = inp2 ? inp2.value.trim() : '';
     }
+    applyFilters();
+  };
 
-    // Hide slider, company section, post list, pager
-    var toHide = ['lpSlider', 'lp-company-section', 'lp-news-section', 'blog-pager'];
-    toHide.forEach(function(id){
-      var el = document.getElementById(id);
-      if(el) el.style.display = 'none';
+  // ── Build city dropdown from data ──
+  function buildCitySelect(data) {
+    var cities = {};
+    data.forEach(function(b){ if(b.city) cities[b.city] = 1; });
+    var cityList = Object.keys(cities).sort();
+    var sel = document.getElementById('ykCitySelect');
+    if (!sel) return;
+    sel.innerHTML = '<option value="">모든 지역</option>';
+    cityList.forEach(function(c){
+      var opt = document.createElement('option');
+      opt.value = c; opt.textContent = c;
+      sel.appendChild(opt);
     });
-
-    // Also hide section-title divs and post list
-    document.querySelectorAll('.lp-post-list, .blog-pager, .lp-slider').forEach(function(el){
-      el.style.display = 'none';
-    });
-
-    // Render default (all)
-    renderGrid('전체');
   }
 
-  // Run on DOM ready
+  // ── Build cat filter pills from data ──
+  function buildCatFilters(data) {
+    var cats = {};
+    data.forEach(function(b){ if(b.cat) cats[b.cat] = (cats[b.cat]||0)+1; });
+    var wrap = document.getElementById('ykFilters');
+    if (!wrap) return;
+    var html = '<button class="yk-filter-btn active" data-cat="전체" onclick="ykFilter(this)">전체 ('+data.length+')</button>';
+    Object.keys(cats).sort().forEach(function(c){
+      html += '<button class="yk-filter-btn" data-cat="'+escH(c)+'" onclick="ykFilter(this)">'+escH(c)+' ('+cats[c]+')</button>';
+    });
+    wrap.innerHTML = html;
+  }
+
+  // ── Detect YELLOWKOREA page ──
+  function initYKDirectory() {
+    var path = window.location.pathname.toLowerCase();
+    var search = window.location.search.toLowerCase();
+    var full = path + search;
+
+    // Only activate on the YELLOWKOREA label page or a dedicated page slug
+    // e.g. /search/label/YELLOWKOREA  or  /p/yellowkorea.html
+    var isYK = full.indexOf('yellowkorea') !== -1 ||
+               full.indexOf('yellow-korea') !== -1 ||
+               full.indexOf('ko-cham') !== -1;
+
+    if (!isYK) return;
+
+    var dir = document.getElementById('lp-yk-directory');
+    if (dir) { dir.classList.add('active'); document.body.classList.add('yk-page'); }
+
+    ['lpSlider','lp-company-section','lp-news-section','blog-pager'].forEach(function(id){
+      var el = document.getElementById(id); if(el) el.style.display = 'none';
+    });
+    document.querySelectorAll('.lp-post-list,.lp-slider').forEach(function(el){ el.style.display='none'; });
+    // Hide blog-pager but NOT ykPager
+    document.querySelectorAll('.blog-pager:not(#ykPager)').forEach(function(el){ el.style.display='none'; });
+
+    var style = document.createElement('style');
+    style.textContent = '#sidebar{display:none!important}.lp-grid{grid-template-columns:1fr!important}#main{max-width:100%!important}';
+    document.head.appendChild(style);
+
+    // Show loading
+    var grid = document.getElementById('ykGrid');
+    if (grid) grid.innerHTML = '<div class="yk-no-result" style="grid-column:1/-1">⏳ 데이터를 불러오는 중...</div>';
+
+    // Fetch CSV
+    fetch(CSV_URL)
+      .then(function(r){ return r.text(); })
+      .then(function(text){
+        YK_ALL = parseCSV(text);
+        buildCatFilters(YK_ALL);
+        buildCitySelect(YK_ALL);
+        YK_FILTERED = YK_ALL.slice();
+        renderYKGrid();
+      })
+      .catch(function(err){
+        if (grid) grid.innerHTML = '<div class="yk-no-result" style="grid-column:1/-1">⚠️ 데이터 로드 실패. 잠시 후 다시 시도해주세요.</div>';
+      });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initYKDirectory);
   } else {
@@ -2144,42 +2401,128 @@ function lpSubToggle(arrow){
 //]]>
 </script>
 
-<!-- ===== YELLOWKOREA PAGE: ẨN SIDEBAR ===== -->
+<!-- ===== STICKY NAVBAR JS ===== -->
 <script type="text/javascript">
 //<![CDATA[
 (function(){
-  // Detect nếu đang ở trang YELLOWKOREA (Blogger Page URL thường có /p/yellow hoặc tên page)
-  var path = window.location.pathname.toLowerCase();
-  var isYKPage = path.indexOf('yellow') !== -1 || path.indexOf('yk') !== -1 ||
-                 path.indexOf('ko-cham') !== -1 || path.indexOf('kocham') !== -1 ||
-                 path.indexOf('주소록') !== -1;
-
-  // Cũng check title của page
-  var pageTitle = (document.title || '').toLowerCase();
-  if (!isYKPage) {
-    isYKPage = pageTitle.indexOf('yellow') !== -1 || pageTitle.indexOf('주소록') !== -1;
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    var isScrolled = document.body.classList.contains('scrolled');
+    if (!isScrolled && y > 150) {
+      document.body.classList.add('scrolled');
+    } else if (isScrolled && y <= 20) {
+      document.body.classList.remove('scrolled');
+    }
   }
-
-  // Check nếu có #yk-wrap trong DOM (dấu hiệu chắc chắn nhất)
-  if (!isYKPage && document.getElementById('yk-wrap')) {
-    isYKPage = true;
-  }
-
-  if (!isYKPage) return;
-
-  // Inject CSS để ẩn sidebar và mở rộng main
-  var style = document.createElement('style');
-  style.textContent =
-    '#sidebar { display: none !important; }' +
-    '.lp-grid { grid-template-columns: 1fr !important; }' +
-    '#main { max-width: 100% !important; }' +
-    /* Ẩn post meta (date, author) vì đây là page directory */
-    '.post-header, .post-footer, .date-header, #yk-wrap + .post-footer { display:none !important; }';
-  document.head.appendChild(style);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
 })();
 //]]>
 </script>
+
+<!-- ===== GOOGLE TRANSLATE + LANG SWITCHER ===== -->
+<script type="text/javascript">
+//<![CDATA[
+// ── Cookie helper ──
+function lpSetCookie(name, value) {
+  var host = location.hostname;
+  document.cookie = name + '=' + value + ';path=/;domain=' + host;
+  document.cookie = name + '=' + value + ';path=/;domain=.' + host;
+  document.cookie = name + '=' + value + ';path=/';
+}
+function lpGetCookie(name) {
+  var m = document.cookie.match('(?:^|;)\\s*' + name + '=([^;]+)');
+  return m ? decodeURIComponent(m[1]) : '';
+}
+
+// ── Cookie expirer (aggressive) ──
+function lpExpireCookie(name) {
+  var host = location.hostname;
+  var past = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
+  var hostParts = host.split('.');
+  
+  // Try expiring on current path
+  document.cookie = name + '=;' + past + ';path=/';
+  document.cookie = name + '=;' + past + ';path=/;domain=' + host;
+  document.cookie = name + '=;' + past + ';path=/;domain=.' + host;
+  
+  // Try expiring on parent domains if applicable (e.g. lifeplaza.net)
+  if (hostParts.length > 2) {
+    var parentDomain = hostParts.slice(1).join('.');
+    document.cookie = name + '=;' + past + ';path=/;domain=' + parentDomain;
+    document.cookie = name + '=;' + past + ';path=/;domain=.' + parentDomain;
+  }
+}
+
+// ── Lang switcher ──
+window.lpSwitchLang = function(lang) {
+  if (lang === 'ko') {
+    lpExpireCookie('googtrans');
+    // For good measure, try setting to 'auto' or empty
+    lpSetCookie('googtrans', '');
+    
+    // Also try GT widget own restore
+    try {
+      var sel = document.querySelector('.goog-te-combo');
+      if (sel) { sel.value = ''; sel.dispatchEvent(new Event('change')); }
+    } catch(e) {}
+  } else {
+    lpSetCookie('googtrans', '/ko/' + lang);
+  }
+  
+  // Delay navigation slightly to allow cookie changes to register
+  setTimeout(function() {
+    window.location.href = location.pathname + location.search;
+  }, 100);
+};
+
+
+// ── On load: restore active flag from cookie ──
+(function() {
+  var gt = lpGetCookie('googtrans');
+  var activeLang = 'ko';
+  if (gt && gt.indexOf('/ko/vi') !== -1) activeLang = 'vi';
+
+  function markActive() {
+    var btn = (activeLang === 'vi')
+      ? document.getElementById('lpFlagVN')
+      : document.getElementById('lpFlagKR');
+    if (btn) btn.classList.add('lp-lang-active');
+    
+
+  }
+
+  // ── Protect navbar from translation ──
+  function markNoTranslate() {
+    document.querySelectorAll(
+      '#lp-nav a, #lp-menu a, #lp-mobile-menu a, #lp-nav-toggle'
+    ).forEach(function(el) {
+      el.setAttribute('translate', 'no');
+      el.classList.add('notranslate');
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() { markActive(); markNoTranslate(); });
+  } else {
+    markActive(); markNoTranslate();
+  }
+})();
+
+// ── Google Translate init ──
+window.googleTranslateElementInit = function() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'ko',
+    includedLanguages: 'vi,ko',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+};
+//]]>
+</script>
+<!-- Load Google Translate AFTER callback is defined -->
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
