@@ -10,7 +10,7 @@
 /* ===== RESET ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{overflow-x:clip;width:100%}
-body{font-family:'Noto Sans','Noto Sans KR','Segoe UI',Arial,sans-serif;background:#f5f5f5;color:#333;font-size:16px;text-align:left}
+body{font-family:'Noto Sans','Noto Sans KR','Segoe UI',Arial,sans-serif;background:#eeeeee;color:#333;font-size:16px;text-align:left}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 ul,ol{list-style:none;padding:0;margin:0}
@@ -57,6 +57,9 @@ body {
 /* ===== TOPBAR ===== */
 #header{background:#fff;padding:6px 0!important;margin:0!important}
 .lp-topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.lp-logo-group{display:flex;align-items:center;gap:12px}
+.lp-header-date{font-size:13px;color:#666;border-left:1px solid #ddd;padding-left:12px;font-weight:600;white-space:nowrap}
+@media(max-width:768px){.lp-header-date{display:none!important}}
 #blog-title{font-size:26px;font-weight:800;margin:0;padding-bottom:0;line-height:1}
 #blog-title a{text-decoration:none}
 #blog-title img{height:36px!important;width:auto;display:block}
@@ -69,7 +72,7 @@ body {
 .lp-search-box input:focus{border-color:#8BC34A}
 .lp-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#888;font-size:15px;padding:0}
 .lp-lang-flags{display:flex;align-items:center;gap:4px;flex-shrink:0}
-.lp-flag-btn{display:inline-flex;align-items:center;justify-content:center;border:2px solid rgba(0,0,0,.12);border-radius:4px;overflow:hidden;cursor:pointer;background:none;padding:0;transition:border-color .2s,transform .2s;width:50px;height:36px}
+.lp-flag-btn{display:inline-flex;align-items:center;justify-content:center;border:2px solid rgba(0,0,0,.12);border-radius:2px;overflow:hidden;cursor:pointer;background:none;padding:0;transition:border-color .2s,transform .2s;width:50px;height:36px}
 .lp-flag-btn:hover{border-color:#8BC34A;transform:scale(1.08)}
 .lp-flag-btn img{width:100%;height:100%;object-fit:cover;display:block}
 
@@ -94,7 +97,7 @@ body {
   top:100%;
   min-width:170px;
   background:#fff;
-  border-radius:0 0 6px 6px;
+  border-radius:0 0 2px 2px;
   box-shadow:0 4px 12px rgba(0,0,0,.18);
   list-style:none;
   padding:4px 0;
@@ -152,14 +155,14 @@ body {
 .lp-section-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .lp-section-title .bar{width:4px;height:20px;background:#8BC34A;flex-shrink:0}
 .lp-section-title h2{font-size:17px;font-weight:700;color:#333;white-space:nowrap;margin:0;padding:0;line-height:1}
-.lp-section-title .line{flex:1;height:1px;background:#e0e0e0}
+.lp-section-title .line{flex:1;height:1px;background:#d0d0d0}
 
 /* CARD */
 .lp-card{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.07)}
 .lp-divider>*+*{border-top:1px solid #ccc}
 
 /* ===== NEWS SLIDER ===== */
-.lp-slider{position:relative;height:446px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:18px}
+.lp-slider{position:relative;height:445px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:18px;background-color:#111}
 .lp-slide{position:absolute;inset:0;opacity:0;transition:none}
 .lp-slide.active{opacity:1;z-index:2}
 .lp-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;flex-shrink:0}
@@ -193,7 +196,7 @@ body {
   justify-content: center !important;
   background: #fff !important;
   border: 1px solid #eee !important;
-  border-radius: 3px !important;
+  border-radius: 2px !important;
   overflow: hidden !important;
 }
 .lp-company-info{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;align-self:stretch}
@@ -259,7 +262,7 @@ body {
   font-size:10px !important; /* override font-size:0 của cha */
   padding:2px 8px;
   font-weight:700;
-  border-radius:3px;
+  border-radius:2px;
   text-decoration:none;
   white-space:nowrap;
   letter-spacing:.3px;
@@ -369,7 +372,7 @@ body {
 .lp-hot-item{display:flex;gap:12px;padding:10px 12px;cursor:pointer;transition:background .2s;border-top:1px solid #ccc;align-items:stretch}
 .lp-hot-item:first-of-type{border-top:none}
 .lp-hot-item:hover{background:#fafafa}
-.lp-hot-thumb{position:relative;width:90px;height:60px;flex-shrink:0;overflow:hidden;border-radius:1px}
+.lp-hot-thumb{position:relative;width:90px;height:60px;flex-shrink:0;overflow:hidden;border-radius:2px}
 .lp-hot-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .lp-hot-item:hover .lp-hot-thumb img{transform:scale(1.06)}
 .lp-hot-num{position:absolute;top:0;left:0;width:18px;height:18px;background:#8BC34A;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;border-bottom-right-radius:3px;z-index:2}
@@ -397,7 +400,7 @@ body {
 #profile-container a{color:#8BC34A}
 
 .lp-cats{padding:12px 14px;display:flex;flex-wrap:wrap;gap:6px}
-.lp-cat-pill{padding:5px 13px;font-size:13px;font-weight:600;cursor:pointer;border:none;border-radius:3px;display:inline-block;transition:all .2s ease;transform:translateY(0)}
+.lp-cat-pill{padding:5px 13px;font-size:13px;font-weight:600;cursor:pointer;border:none;border-radius:2px;display:inline-block;transition:all .2s ease;transform:translateY(0)}
 .lp-cat-pill:hover{filter:brightness(0.85);transform:translateY(-2px);box-shadow:0 3px 8px rgba(0,0,0,.15)}
 
 /* Recent posts in sidebar */
@@ -419,9 +422,9 @@ body {
 .lp-contact-item{display:flex;gap:12px;padding:8px 10px;transition:background .2s;border-top:1px solid #ccc;align-items:stretch;min-width:0;overflow:hidden}
 .lp-contact-item:first-of-type{border-top:none}
 .lp-contact-item:hover{background:#fafafa}
-.lp-contact-logo-sidebar{width:100px;height:60px;flex-shrink:0;border:1px solid #eee;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
+.lp-contact-logo-sidebar{width:100px;height:60px;flex-shrink:0;border:1px solid #eee;border-radius:2px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
 .lp-contact-logo-sidebar img{width:100%;height:100%;object-fit:contain;padding:4px}
-.lp-contact-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:11px;font-weight:800}
+.lp-contact-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:2px;font-size:11px;font-weight:800}
 .lp-contact-info{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;align-self:stretch}
 .lp-contact-name{font-size:15px;font-weight:700;color:#333;transition:color .2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.2}
 .lp-contact-item:hover .lp-contact-name{color:#8BC34A}
@@ -439,7 +442,7 @@ body {
   max-width: 100% !important;
   height: auto !important;
   display: block !important;
-  border-radius: 3px;
+  border-radius: 2px;
   margin: 12px 0;
 }
 .lp-single-post .post-body p{margin-bottom:12px}
@@ -460,7 +463,7 @@ body {
 
 /* ===== FOOTER ===== */
 #footer{clear:both;margin:0;padding:0}
-#footer div{background:#f9f9f9;padding:0}
+#footer div{background:#eeeeee;padding:0}
     #footer div {
   border-top: none !important;
 }
@@ -619,12 +622,13 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
   }
   #blog-title img{height:38px!important}
   .lp-topbar-inner{display:grid!important;grid-template-columns:auto 1fr auto!important;align-items:center!important;width:100%!important;gap:0!important}
-  #blog-title{font-size:20px;flex-shrink:0;padding-left:0;justify-self:start!important;margin:0 0 0 45px!important;display:flex!important;justify-content:center!important;align-items:center!important}
+  .lp-logo-group{flex-shrink:0;justify-self:start!important;margin:0 0 0 45px!important;display:flex!important;align-items:center!important}
+  #blog-title{font-size:20px;padding-left:0;margin:0!important;display:flex!important;justify-content:center!important;align-items:center!important}
   #description{display:none}
   .lp-search-wrap{display:contents}
   .lp-lang-flags{gap:6px;display:flex;justify-self:end!important}
   .lp-search-wrap .lp-search-box{display:none !important}
-  .lp-flag-btn{width:38px!important;height:38px!important;border-radius:6px!important;border:1.5px solid rgba(0,0,0,.15)!important;box-shadow:0 1px 3px rgba(0,0,0,0.06)!important;overflow:hidden!important}
+  .lp-flag-btn{width:48px!important;height:38px!important;border-radius:2px!important;border:1.5px solid rgba(0,0,0,.15)!important;box-shadow:0 1px 3px rgba(0,0,0,0.06)!important;overflow:hidden!important}
   .lp-flag-btn img{width:100%;height:100%}
 
   /* Nav: show hamburger, horizontal menu next to it on mobile */
@@ -723,7 +727,8 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
 }
 /* ===== RESPONSIVE — SMALL PHONE ===== */
 @media(max-width:380px){
-  #blog-title{font-size:17px;margin:0 0 0 35px!important}
+  .lp-logo-group{margin:0 0 0 35px!important}
+  #blog-title{font-size:17px;margin:0!important}
   #blog-title img{height:34px!important}
   .lp-search-box input{font-size:11px}
   .lp-flag-btn{width:34px!important;height:34px!important}
@@ -746,7 +751,7 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
   min-width:34px;height:34px;padding:0 10px;
   font-size:13px;font-weight:500;
   border:0.5px solid #d0d0d0;
-  border-radius:3px;
+  border-radius:2px;
   background:#fff;color:#444;
   text-decoration:none;
   transition:background .15s,border-color .15s,color .15s;
@@ -791,7 +796,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-card {
   background:#fff;
   border:1px solid #e0e0e0;
-  border-radius:3px;
+  border-radius:2px;
   padding:24px 28px;
   transition: border-color .2s, box-shadow .2s;
   cursor:pointer;
@@ -808,7 +813,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
   display:inline-block;
   background:#2e7d32; color:#fff;
   font-size:10px; font-weight:700;
-  padding:2px 8px; border-radius:3px;
+  padding:2px 8px; border-radius:2px;
   letter-spacing:.5px; margin-left:8px;
   vertical-align:middle;
 }
@@ -822,7 +827,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-card-actions { display:flex; gap:10px; grid-column:1/-1; }
 .yk-btn-primary {
   flex:1 1 0; background:#2D9B4E; color:#fff;
-  border:none; border-radius:3px;
+  border:none; border-radius:2px;
   font-size:14px; font-weight:600;
   padding:12px 0; cursor:pointer;
   transition:background .2s;
@@ -832,7 +837,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-btn-primary:hover { background:#2e7d32; }
 .yk-btn-secondary {
   flex:1 1 0; background:#fff; color:#1a1a1a;
-  border:1px solid #e0e0e0; border-radius:3px;
+  border:1px solid #e0e0e0; border-radius:2px;
   font-size:14px; font-weight:600;
   padding:12px 0; cursor:pointer;
   transition:background .2s;
@@ -846,7 +851,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
   margin-top:40px;
   background:linear-gradient(135deg,#c8e6c9,#a5d6a7);
   border:1px solid #81c784;
-  border-radius:3px;
+  border-radius:2px;
   padding:36px 24px;
   text-align:center;
   box-shadow:0 2px 8px rgba(46,125,50,.1);
@@ -857,7 +862,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
 .yk-cta-btn {
   display:inline-flex; align-items:center; gap:8px;
   background:#2e7d32; color:#fff;
-  border:none; border-radius:3px;
+  border:none; border-radius:2px;
   padding:12px 28px;
   font-size:13px; font-weight:700;
   cursor:pointer; transition:background .2s;
@@ -886,7 +891,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
   min-width:36px;
   height:36px;
   padding:0 8px;
-  border-radius:3px;
+  border-radius:2px;
   font-size:14px;
   font-weight:600;
   cursor:pointer;
@@ -914,7 +919,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
   box-sizing: border-box;
   padding: 0 24px 0 10px;
   border: 1px solid #e0e0e0;
-  border-radius: 3px;
+  border-radius: 2px;
   font-size: 13px;
   background: #fff;
   cursor: pointer;
@@ -1022,7 +1027,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
     height: 42px;
     background: #ffffff;
     border: 1.5px solid #333333;
-    border-radius: 8px;
+    border-radius: 2px;
     color: #555555;
     display: flex;
     align-items: center;
@@ -1062,6 +1067,10 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
       display: none !important;
     }
   }
+  /* ===== HEADER DATE STYLE ===== */
+  .lp-logo-group { display: flex; align-items: center; gap: 15px; }
+  .lp-header-date { font-size: 14px; color: #555; font-weight: 500; border-left: 1px solid #ddd; padding-left: 15px; }
+  @media(max-width: 600px) { .lp-header-date { display: none; } }
   </style>
   <ItemPage>
   <style type="text/css">
@@ -1079,13 +1088,16 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
   <div class="lp-wrap">
     <div class="lp-topbar-inner">
       <button id="lp-nav-toggle" onclick="lpMenuOpen()" title="Menu">&#9776;</button>
-      <h1 id="blog-title">
-  <a href="<$BlogURL$>">
-    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEimZpVMLBOwAuZRLhO94AqNQcX1fswtzjZiJRr_IgLlvHpaLTlrJTcmys2Oag1gIWt10o7z611v3m1QJ3qfwl8g_zSWtj9IeYKTxQJZV3ih4Hp1iP-Y96ZH3yy6XpbcYyWo_D0zb1GNyt6HgXJXy5ZiEmLX4JaZuhPtprdob3MKZWPnd8xM6nNNyiI5rjk=s320"
-         alt="Lifeplaza"
-         style="height:45px;width:auto;display:block"/>
-  </a>
-</h1>
+      <div class="lp-logo-group">
+        <h1 id="blog-title">
+          <a href="<$BlogURL$>">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEimZpVMLBOwAuZRLhO94AqNQcX1fswtzjZiJRr_IgLlvHpaLTlrJTcmys2Oag1gIWt10o7z611v3m1QJ3qfwl8g_zSWtj9IeYKTxQJZV3ih4Hp1iP-Y96ZH3yy6XpbcYyWo_D0zb1GNyt6HgXJXy5ZiEmLX4JaZuhPtprdob3MKZWPnd8xM6nNNyiI5rjk=s320"
+                 alt="Lifeplaza"
+                 style="height:45px;width:auto;display:block"/>
+          </a>
+        </h1>
+        <div class="lp-header-date" id="lpHeaderDate"></div>
+      </div>
       <p id="description"><$BlogDescription$></p>
       <div class="lp-search-wrap">
         <div class="lp-search-box">
@@ -1118,7 +1130,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
   <div class="lp-mobile-menu-search" style="padding: 12px 16px; background: #fafafa; border-bottom: 1px solid #eee;">
     <div style="position:relative; width: 100%;">
       <input id="lpSearchInputMobile" onkeydown="if(event.key=='Enter'){window.location='<$BlogURL$>search?q='+encodeURIComponent(this.value)}" placeholder="콘텐츠를 입력해주세요..." type="text"
-        style="width: 100%; height: 42px; box-sizing: border-box; padding: 0 38px 0 14px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 13px; outline: none; font-family: inherit; transition: border-color 0.2s; -webkit-appearance: none; appearance: none;"
+        style="width: 100%; height: 42px; box-sizing: border-box; padding: 0 38px 0 14px; border: 1px solid #e0e0e0; border-radius: 2px; font-size: 13px; outline: none; font-family: inherit; transition: border-color 0.2s; -webkit-appearance: none; appearance: none;"
         onfocus="this.style.borderColor='#8BC34A'" onblur="this.style.borderColor='#e0e0e0'"/>
       <button onclick="window.location='<$BlogURL$>search?q='+encodeURIComponent(document.getElementById('lpSearchInputMobile').value)"
         style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%); border: none; background: none; cursor: pointer; padding: 8px; font-size: 14px; display: flex; align-items: center; justify-content: center; height: 100%;">
@@ -1313,7 +1325,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
         <div class="yk-toolbar">
           <div class="yk-search-wrapper">
             <input id="ykSearchInput" type="text" placeholder="업체명 검색..." oninput="ykSearch()"
-              style="width:100%;height:44px;box-sizing:border-box;padding:0 36px 0 14px;border:1px solid #e0e0e0;border-radius:3px;font-size:13px;outline:none;font-family:inherit;transition:border-color 0.2s, box-shadow 0.2s;"
+              style="width:100%;height:44px;box-sizing:border-box;padding:0 36px 0 14px;border:1px solid #e0e0e0;border-radius:2px;font-size:13px;outline:none;font-family:inherit;transition:border-color 0.2s, box-shadow 0.2s;"
               onfocus="this.style.borderColor='#2D9B4E';this.style.boxShadow='0 0 4px rgba(45,155,78,0.15)';" onblur="this.style.borderColor='#e0e0e0';this.style.boxShadow='none';"/>
             <span class="yk-search-icon-wrapper" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);display:flex;align-items:center;pointer-events:none;">
               <svg style="width:16px;height:16px;color:#888;transition:color 0.2s;" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1614,7 +1626,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
       </div>
 
       <style>
-        .lp-contact-page{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:11px;color:#555;border:1px solid #ddd;cursor:pointer;background:#fff;text-decoration:none;border-radius:3px}
+        .lp-contact-page{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:11px;color:#555;border:1px solid #ddd;cursor:pointer;background:#fff;text-decoration:none;border-radius:2px}
         .lp-contact-page:hover{background:#f5f5f5}
         .lp-contact-page.lp-pg-active{background:#1f2937;color:#fff;border-color:#1f2937;font-weight:bold}
       </style>
@@ -2139,7 +2151,7 @@ window.initLpSlider = function(){
         for(var i=0; i<lCount; i++){
           var p = validGlobal[i];
           var firstLabel = p.labels.length ? p.labels[0] : '';
-          var labelHtml = firstLabel ? '<a href="/search/label/'+encodeURIComponent(firstLabel)+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+firstLabel+'</a>' : '';
+          var labelHtml = firstLabel ? '<a href="/search/label/'+encodeURIComponent(firstLabel)+'" style="border-radius:2px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+firstLabel+'</a>' : '';
           lnHtml += '<li data-post-url="'+p.url+'">' +
             '<a class="lp-ln-title" href="'+p.url+'">'+p.title+'</a>' +
             '<div class="lp-ln-meta">' +
@@ -2159,7 +2171,7 @@ window.initLpSlider = function(){
             if(matched.hasExcluded && !isExcludePage) { li.style.display = 'none'; return; }
             var span = li.querySelector('.lp-ln-labels');
             if(span && matched.labels.length) {
-              span.innerHTML = '<a href="/search/label/'+encodeURIComponent(matched.labels[0])+'" style="border-radius:3px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+matched.labels[0]+'</a>';
+              span.innerHTML = '<a href="/search/label/'+encodeURIComponent(matched.labels[0])+'" style="border-radius:2px;font-size:9px !important;padding:1px 6px;margin-right:2px">'+matched.labels[0]+'</a>';
             }
             var dateSpan = li.querySelector('.lp-ln-date');
             if(dateSpan) dateSpan.textContent = matched.date;
@@ -2795,8 +2807,24 @@ window.lpSwitchLang = function(lang) {
       ? document.getElementById('lpFlagVN')
       : document.getElementById('lpFlagKR');
     if (btn) btn.classList.add('lp-lang-active');
-    
+  }
 
+  function updateHeaderDate() {
+    var el = document.getElementById('lpHeaderDate');
+    if (!el) return;
+    var now = new Date();
+    var day = now.getDay();
+    var date = now.getDate();
+    var month = now.getMonth() + 1;
+    var year = now.getFullYear();
+    
+    if (activeLang === 'vi') {
+      var daysVi = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'];
+      el.textContent = daysVi[day] + ', ' + date + '/' + month + '/' + year;
+    } else {
+      var daysKo = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+      el.textContent = year + '년 ' + month + '월 ' + date + '일 ' + daysKo[day];
+    }
   }
 
   // ── Protect navbar from translation ──
@@ -2810,9 +2838,9 @@ window.lpSwitchLang = function(lang) {
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() { markActive(); markNoTranslate(); });
+    document.addEventListener('DOMContentLoaded', function() { markActive(); markNoTranslate(); updateHeaderDate(); });
   } else {
-    markActive(); markNoTranslate();
+    markActive(); markNoTranslate(); updateHeaderDate();
   }
 })();
 

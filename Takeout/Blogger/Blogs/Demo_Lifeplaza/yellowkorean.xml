@@ -162,10 +162,10 @@ body {
 .lp-divider>*+*{border-top:1px solid #ccc}
 
 /* ===== NEWS SLIDER ===== */
-.lp-slider{position:relative;height:445px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:18px}
+.lp-slider{position:relative;height:580px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:18px;background-color:#111}
 .lp-slide{position:absolute;inset:0;opacity:0;transition:none}
 .lp-slide.active{opacity:1;z-index:2}
-.lp-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;flex-shrink:0}
+.lp-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;flex-shrink:0}
 .lp-slide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.2) 55%,transparent 100%)}
 .lp-slide-content{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:3}
 .lp-slide-cat{display:inline-block;background:#8BC34A;color:#fff;font-size:10px;font-weight:700;padding:3px 9px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
@@ -328,7 +328,7 @@ body {
 #lp-latest-list li a.lp-ln-title::before{content:"■";color:#8BC34A;font-size:8px;flex-shrink:0;margin-top:4px}
 .lp-ln-meta{display:flex;align-items:center;gap:6px;margin-top:4px;padding-left:15px}
 .lp-ln-badge{font-size:9px;padding:1px 6px;font-weight:700;border-radius:2px}
-.lp-ln-date{font-size:10px;color:#aaa}
+.lp-ln-date{font-size:12px;color:#aaa}
 
 /* Blogger native post reset inside our layout */
 #main .date-header{display:none}
@@ -369,17 +369,19 @@ body {
 .lp-head-dark{background:#1f2937}
 .lp-head-gray{background:#374151}
 
-.lp-hot-item{display:flex;gap:12px;padding:10px 12px;cursor:pointer;transition:background .2s;border-top:1px solid #ccc;align-items:stretch}
+#lpHotNewsBlock{height:580px;display:flex;flex-direction:column}
+#lpHotNewsWrapper{flex:1;display:flex;flex-direction:column}
+.lp-hot-item{display:flex;gap:12px;padding:10px 14px;cursor:pointer;transition:background .2s;border-top:1px solid #ccc;align-items:center;flex:1;box-sizing:border-box}
 .lp-hot-item:first-of-type{border-top:none}
 .lp-hot-item:hover{background:#fafafa}
-.lp-hot-thumb{position:relative;width:90px;height:60px;flex-shrink:0;overflow:hidden;border-radius:2px}
+.lp-hot-thumb{position:relative;width:135px;height:86px;flex-shrink:0;overflow:hidden;border-radius:2px}
 .lp-hot-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .lp-hot-item:hover .lp-hot-thumb img{transform:scale(1.06)}
-.lp-hot-num{position:absolute;top:0;left:0;width:18px;height:18px;background:#8BC34A;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;border-bottom-right-radius:3px;z-index:2}
+.lp-hot-num{position:absolute;top:0;left:0;width:20px;height:20px;background:#8BC34A;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;border-bottom-right-radius:3px;z-index:2}
 .lp-hot-item > div:last-child{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;align-self:stretch}
-.lp-hot-title{font-size:14px;font-weight:600;color:#333;line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s;margin-top:-3px;margin-bottom:2px}
+.lp-hot-title{font-size:15px;font-weight:700;color:#333;line-height:1.35;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;transition:color .2s;margin-top:0;margin-bottom:4px}
 .lp-hot-item:hover .lp-hot-title{color:#8BC34A}
-.lp-hot-date{font-size:12px;color:#aaa;margin-top:auto;display:flex;align-items:center;gap:3px;line-height:1}
+.lp-hot-date{font-size:14px;color:#aaa;display:flex;align-items:center;gap:4px;line-height:1}
 
 .lp-latest-item{padding:10px 14px;cursor:pointer;transition:background .2s;border-top:1px solid #ccc}
 .lp-latest-item:first-of-type{border-top:none}
@@ -448,6 +450,27 @@ body {
 .lp-single-post .post-body p{margin-bottom:12px}
 .lp-single-post .post-body h2{font-size:17px;font-weight:700;margin:18px 0 8px;color:#222}
 .lp-single-post .post-body blockquote{border-left:3px solid #8BC34A;margin:12px 0;padding:8px 14px;background:#f9f9f9;color:#555;font-style:italic}
+.lp-single-post .post-body ul {
+  list-style-type: disc;
+  padding-left: 24px;
+  margin: 12px 0;
+}
+.lp-single-post .post-body ol {
+  list-style-type: decimal;
+  padding-left: 24px;
+  margin: 12px 0;
+}
+.lp-single-post .post-body li {
+  display: list-item;
+  margin-bottom: 6px;
+}
+.lp-single-post .post-body ul ul, 
+.lp-single-post .post-body ul ol, 
+.lp-single-post .post-body ol ul, 
+.lp-single-post .post-body ol ol {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
 .lp-single-post .post-footer-info{font-size:13px;color:#aaa;padding-top:12px;border-top:1px solid #f0f0f0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .lp-single-post .post-footer-info a{color:#8BC34A}
 
@@ -574,7 +597,11 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
 @media(max-width:900px){
   .lp-grid{grid-template-columns:1fr!important}
   #sidebar{margin-top:0}
-  .lp-slider{height:280px}
+  .lp-slider{height:380px}
+  #lpHotNewsBlock{height:auto}
+  .lp-hot-item{flex:none;padding:12px 14px}
+  .lp-hot-thumb{width:90px;height:60px}
+  .lp-hot-title{font-size:14px;font-weight:600}
   #lp-nav ul#lp-menu{padding:0 4px}
   #lp-menu > li > a{padding:10px 7px;font-size:11px}
 }
@@ -671,7 +698,7 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
 
   /* Content */
   #content{padding:12px 8px 30px}
-  .lp-slider{height:200px}
+  .lp-slider{height:300px}
   .lp-slide-title{font-size:12px;-webkit-line-clamp:2}
   .lp-slide-sub{display:none}
   .lp-slide-content{padding:12px}
@@ -685,8 +712,8 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
   /* News list — mobile: vertical stack (title → labels → excerpt → image) */
   .lp-post-list .post-outer,
   .lp-news-item{flex-direction:column;align-items:stretch;gap:8px;padding:12px 12px}
-  .lp-news-thumb,.post-thumbnail{width:100%;height:160px;min-height:0;align-self:stretch;order:4}
-  .lp-news-thumb img,.post-thumbnail img{width:100%;height:100%;object-fit:cover}
+  .lp-news-thumb,.post-thumbnail{width:100%;height:230px;min-height:0;align-self:stretch;order:4}
+  .lp-news-thumb img,.post-thumbnail img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
   .lp-news-body,.post-body-container{display:flex;flex-direction:column;order:1}
   .lp-news-title,.post-title{font-size:13px;font-weight:700;order:1;margin-bottom:4px}
   .lp-news-meta,.post-meta{order:2;margin-bottom:4px}
@@ -733,7 +760,7 @@ li.mm-open .mm-arrow{transform:rotate(180deg)}
   .lp-search-box input{font-size:11px}
   .lp-flag-btn{width:34px!important;height:34px!important}
   #lp-nav-toggle{width:34px!important;height:34px!important;font-size:22px!important}
-  .lp-slider{height:170px}
+  .lp-slider{height:250px}
   .lp-company-item{padding:10px 10px}
   #lp-sticky-group {
     top: 46px !important;
@@ -1187,12 +1214,7 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
         <li><a href="<$BlogURL$>search/label/MARKET">MarketPlace</a></li>
       </ul>
     </li>
-    <li><a href="<$BlogURL$>search/label/EBOOK">E-BOOK</a><i class="mm-arrow" onclick="lpSubToggle(this)">&#9660;</i>
-      <ul class="mm-sub">
-        <li><a href="<$BlogURL$>search/label/EBOOK">HN E-Book</a></li>
-        <li><a href="<$BlogURL$>search/label/EBOOK">Laterest E-Book</a></li>
-      </ul>
-    </li>
+    <li><a href="https://lifeplaza.com.vn/ebook">E-BOOK</a></li>
     <li><a href="<$BlogURL$>search/label/PHOTO">PHOTO</a></li>
     <li><a href="<$BlogURL$>search/label/YOUTUBE">YOUTUBE</a></li>
     <li><a href="<$BlogURL$>search/label/YELLOWKOREA">YELLOWPAGE</a>
@@ -1274,12 +1296,8 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
         </ul>
       </li>
 
-      <li id="mn-ebook" class="has-sub">
-        <a href="<$BlogURL$>search/label/EBOOK" translate="no">E-BOOK</a>
-        <ul class="lp-dropdown">
-          <li><a href="<$BlogURL$>search/label/EBOOK">HN E-Book</a></li>
-          <li><a href="<$BlogURL$>search/label/EBOOK">Laterest E-Book</a></li>
-        </ul>
+      <li id="mn-ebook">
+        <a href="https://lifeplaza.com.vn/ebook" translate="no">E-BOOK</a>
       </li>
 
       <li id="mn-photo">
@@ -1860,7 +1878,7 @@ window.initLpSlider = function(){
       return {w:Math.round(natW*scale), h:Math.round(natH*scale)};
     }
     function computeCoverOffset(bgW, bgH, cW, cH){
-      return {x:Math.round((cW-bgW)/2), y:Math.round((cH-bgH)/2)};
+      return {x:Math.round((cW-bgW)/2), y:Math.round((cH-bgH)*0.20)};
     }
 
     /* Tạo cells trước với fallback, rồi update khi ảnh load */
@@ -2074,7 +2092,7 @@ window.initLpSlider = function(){
     // 1. Slider
     if(sliderWrap) {
       var sliderHtml = '';
-      var sCount = Math.min(4, validGlobal.length);
+      var sCount = Math.min(6, validGlobal.length);
       for(var s=0; s<sCount; s++){
         var p = validGlobal[s];
         var firstLabel = p.labels.length ? p.labels[0] : 'NEWS';
@@ -2111,7 +2129,7 @@ window.initLpSlider = function(){
           '</div>' +
           '<div>' +
             '<div class="lp-hot-title">'+p.title+'</div>' +
-            '<div class="lp-hot-date">⏰ '+p.date+'</div>' +
+            '<div class="lp-hot-date">📅 '+p.date+'</div>' +
           '</div>' +
         '</a>';
       }
@@ -2430,7 +2448,8 @@ window.initLpSlider = function(){
           addr:   addr,
           phone:  fields[3].trim(),
           city:   fields[4].trim().toUpperCase().replace(/BẮC /g,'BAC ').replace(/Ắ/g,'A').replace(/Ầ/g,'A'),
-          rating: ratingVal
+          rating: ratingVal,
+          map:    (fields[7] || '').trim()
         });
       }
     }
@@ -2468,7 +2487,7 @@ window.initLpSlider = function(){
       '</div>' +
       '<div class="yk-card-actions">' +
         '<a class="yk-btn-primary" href="'+telHref+'"><span class="material-icons-outlined notranslate" style="font-size:18px;color:#fff" translate="no">phone</span> 연락하기</a>' +
-        '<a class="yk-btn-secondary" href="#" onclick="ykSearch(\''+escH(b.name).replace(/'/g,"\\'")+'\'  );return false">› 검색</a>' +
+        (b.map ? '<a class="yk-btn-secondary" href="'+escH(b.map)+'" target="_blank">› 길찾기</a>' : '<a class="yk-btn-secondary" href="#" onclick="ykSearch(\''+escH(b.name).replace(/'/g,"\\'")+'\'  );return false">› 검색</a>') +
       '</div>' +
     '</div>';
   }
