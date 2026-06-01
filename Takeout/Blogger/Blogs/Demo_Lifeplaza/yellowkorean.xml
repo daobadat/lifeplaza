@@ -2092,7 +2092,7 @@ window.initLpSlider = function(){
     // 1. Slider
     if(sliderWrap) {
       var sliderHtml = '';
-      var sCount = Math.min(6, validGlobal.length);
+      var sCount = Math.min(6, validGlobal.length); 
       for(var s=0; s<sCount; s++){
         var p = validGlobal[s];
         var firstLabel = p.labels.length ? p.labels[0] : 'NEWS';
