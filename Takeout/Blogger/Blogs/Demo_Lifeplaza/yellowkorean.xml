@@ -220,11 +220,11 @@ body {
 .lp-post-list .post-outer+.post-outer,
 .lp-divider .post-outer+.post-outer{border-top:1px solid #ccc}
 
-.lp-news-thumb,.post-thumbnail{width:140px;height:auto;min-height:90px;flex-shrink:0;overflow:hidden;border-radius:2px}
+.lp-news-thumb,.post-thumbnail{width:240px;height:160px;flex-shrink:0;overflow:hidden;border-radius:2px}
 .lp-news-thumb img,.post-thumbnail img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
 .lp-news-item:hover .lp-news-thumb img,
 .lp-post-list .post-outer:hover .post-thumbnail img{transform:scale(1.06)}
-.lp-news-body,.post-body-container{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.lp-news-body,.post-body-container{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:flex-start}
 
 /* Meta row: badge + date */
 .lp-news-meta,.post-meta{display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap}
@@ -233,17 +233,17 @@ body {
 
 /* Title: green on hover like image */
 .lp-news-title,.post-title{
-  font-size:15px;font-weight:700;color:#222;line-height:1.45;
+  font-size:18px;font-weight:700;color:#222;line-height:1.45;
   overflow:hidden;transition:color .2s;margin-bottom:4px;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;padding:0
 }
-.lp-news-title a,.post-title a{color:#222;font-size:15px;font-weight:700}
+.lp-news-title a,.post-title a{color:#222;font-size:18px;font-weight:700}
 .lp-news-item:hover .lp-news-title,
 .lp-post-list .post-outer:hover .post-title,
 .lp-post-list .post-outer:hover .post-title a{color:#5a9e1a}
 
 /* Excerpt */
-.lp-news-excerpt,.post-snippet{font-size:13px;color:#888;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.lp-news-excerpt,.post-snippet,.post-excerpt-text{font-size:15px;color:#666;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.5;margin-top:6px}
 
 /* Label wrap — dùng font-size:0 để ẩn dấu phẩy text node (CSS trick) */
 .lp-label-wrap,
@@ -1981,7 +1981,7 @@ window.initLpSlider = function(){
 
 (function(){
   // ── AUTO THUMBNAIL: extract first img from post body (Synchronous for server-rendered posts) ──
-  var PLACEHOLDER='https://placehold.co/96x68/f0f0f0/aaa?text=News';
+  var PLACEHOLDER='https://placehold.co/140x95/f0f0f0/aaa?text=News';
   document.querySelectorAll('.post-outer').forEach(function(card){
     var bodyEl=card.querySelector('.lp-body-src');
     var thumbEl=card.querySelector('.lp-auto-thumb');
@@ -1995,8 +1995,8 @@ window.initLpSlider = function(){
       var tmp=document.createElement('div');
       tmp.innerHTML=html;
       var txt=(tmp.textContent||tmp.innerText||'').replace(/\s+/g,' ').trim();
-      excerptEl.textContent=txt.substring(0,110);
-      excerptEl.style.cssText='font-size:11px;color:#888;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;margin-top:2px';
+      excerptEl.textContent=txt.substring(0,240);
+      excerptEl.style.cssText='font-size:11px;color:#888;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;line-height:1.5;margin-top:2px';
     }
     bodyEl.parentNode.removeChild(bodyEl);
   });
@@ -2070,7 +2070,7 @@ window.initLpSlider = function(){
       tmp.innerHTML = htmlWithNewlines;
       var rawText = (tmp.textContent || tmp.innerText || '').trim();
       var text = rawText.replace(/\s+/g, ' ').trim();
-      var excerpt = text.substring(0, 120) + (text.length > 120 ? '...' : '');
+      var excerpt = text.substring(0, 240) + (text.length > 240 ? '...' : '');
       
       var rawDate = entry.published.$t; // 2026-04-25T...
       var dateStr = rawDate.substring(0, 10);
@@ -2241,7 +2241,7 @@ window.initLpSlider = function(){
             var bg = bgColors[c % bgColors.length];
             sHtml += '<a class="lp-contact-item" href="'+p.url+'" onclick="jumpToCompany(\''+p.title+'\', event)">' +
               '<div class="lp-contact-logo">' +
-                '<img src="'+p.img+'" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" alt="'+p.title+'" loading="lazy"/>' +
+                '<img src="'+p.img+'" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" alt="'+p.title+'" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:4px"/>' +
                 '<div class="lp-contact-fallback" style="display:none;background:'+bg+';color:#fff;font-weight:800;font-size:11px">'+fallback+'</div>' +
               '</div>' +
               '<div translate="no" class="notranslate">' +
@@ -2277,16 +2277,16 @@ window.initLpSlider = function(){
         html += '<div class="post-outer">' +
           '<div class="post-thumbnail">' +
             '<a href="'+p.url+'">' +
-              '<img alt="" class="lp-auto-thumb" src="'+p.img+'" loading="lazy" onerror="this.src=\'https://placehold.co/96x68/f0f0f0/aaa?text=News\'"/>' +
+              '<img alt="" class="lp-auto-thumb" src="'+p.img+'" loading="lazy" onerror="this.src=\'https://placehold.co/140x95/f0f0f0/aaa?text=News\'"/>' +
             '</a>' +
           '</div>' +
           '<div class="post-body-container">' +
+            '<div class="post-title">' +
+              '<a href="'+p.url+'">' + p.title + '</a>' +
+            '</div>' +
             '<div class="post-meta">' +
               '<span class="lp-label-wrap lp-post-labels">' + badges + '</span>' +
               '<span class="post-date">' + p.date + '</span>' +
-            '</div>' +
-            '<div class="post-title">' +
-              '<a href="'+p.url+'">' + p.title + '</a>' +
             '</div>' +
             '<div class="post-excerpt-text">' + p.excerpt + '</div>' +
           '</div>' +
