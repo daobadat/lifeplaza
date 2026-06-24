@@ -219,6 +219,9 @@ body {
 .lp-news-item:hover{background:#fafafa}
 .lp-post-list .post-outer+.post-outer,
 .lp-divider .post-outer+.post-outer{border-top:1px solid #ccc}
+.lp-post-list .post-outer{position:relative}
+.lp-post-list .post-title a::after{content:'';position:absolute;inset:0;z-index:1}
+.lp-post-list .lp-label-wrap{position:relative;z-index:2}
 
 .lp-news-thumb,.post-thumbnail{width:240px;height:160px;flex-shrink:0;overflow:hidden;border-radius:2px}
 .lp-news-thumb img,.post-thumbnail img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
@@ -1485,7 +1488,6 @@ body.yk-page .blog-pager:not(#ykPager) { display:none !important; }
           </div>
           <div class="post-body-container">
             <div class="post-meta">
-              <!-- Labels: JS inject via JSONP (native tag chỉ hoạt động trên ItemPage) -->
               <span class="lp-label-wrap lp-post-labels"></span>
               <span class="post-date"><$BlogItemDateTime$></span>
             </div>
